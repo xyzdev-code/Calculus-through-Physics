@@ -11,7 +11,7 @@
   \end{equation}
   \begin{marginfigure}
     \begin{tikzpicture}[scale=0.525]
-      \begin{axis}[xlabel=\(x\), ylabel=\(y\)]
+      \begin{axis}[xlabel=\(x\), ylabel=\(y\), axis lines=left]
         \addplot[mark=none, color=blue]{x};
       \end{axis}
     \end{tikzpicture} 
@@ -64,7 +64,7 @@
     \begin{figure}[h]
   \begin{center}
   \begin{tikzpicture}
-    \begin{axis}[trig format plots=rad, axis equal]
+    \begin{axis}[trig format=rad, axis equal, axis lines=left, ymax=1.5, ymin=-1.5]
       \addplot[samples=1000, color=blue]({cos(x)}, {sin(x)});
     \end{axis}
   \end{tikzpicture}
