@@ -1,5 +1,4 @@
-
-\quad \quad Before we start on the calculus topics, this part of the book will acquaint you with the mathematics you would need to understand in order to read this book. If you are familiar with the these topics, you may skip to the Part II on Calculus I. For the rest of you, we will start with the idea of a function. By now, I am sure that many of you may have seen equations like these:
+\quad \quad Before we start on the calculus topics, this part of the book will acquaint you with the mathematics you would need to understand in order to read this book. If you are familiar with the these topics, you may skip to the Part II on Calculus I. For the rest of you, the pace of this part will be very fast, it is recommended that you read up on concepts you do understand very well. We will start with the idea of a \textit{function}. By now, I am sure that many of you may have seen equations like these:
   \begin{equation}
     x^2-5x+6=0
   \end{equation}
@@ -21,7 +20,7 @@
 
   Out of the three equations, notice that \ref{line} is special. There is not some fixed \(x\) values that you must plug in. Instead, the \(y\) value varies with the \(x\) value. Given a \(x\) value, the equation "produces" a \(y\) value. This brings us to the idea of a function. A function is simply something that takes in a value, and "produces" another value based on the input. You may have came across functions before, such as the trigonometric functions like \(sin\) and \(cos\). The value of \(sin(x)\) varies with different values of \(x\). Of course, it is time for me to give you the definition of a function. 
   \begin{definition}
-    A function \(f\) is a mathematical object that assigns its inputs, or domain, to its outputs, or range. The notation \(f:A \to B\) means that the function has a domain \(A\) and range \(B\).\mn{Note that A and B are sets.} The notation \(f(a)\) where \(a \in A\) denotes the element of \(B\) to which \(a\) is assigned to.    
+    A function \(f\) is a mathematical object that assigns its inputs, or \textit{domain}, to its outputs, or \textit{range}. The notation \(f:A \to B\) means that the function has a domain \(A\) and range \(B\).\marginnote{ \footnotesize \textit{Notice that A and B are sets.}} The notation \(f(a)\) where \(a \in A\) denotes the element of \(B\) to which \(a\) is assigned to.    
   \end{definition}
   \begin{example}
     Here are some examples of functions:
@@ -37,12 +36,10 @@
       \label{quadratic}
       f(x)=x^2-5x+6
     \end{equation}
-
     \quad \quad To evaluate the output of a function, you simply substitute the input to the expression that defines the function. Notice that for \ref{x+1}, it is simply the line \(y=x+1\). Each value of \(f(x)\) for some \(x \in \mathbb{R}\) is just \(y\). Take \(x=1\) for example, \(f(1)=1+1=2\) and for the line \(y=x+1\), notice the \(y\) value here is also 2. The function assigns each \(x\) value to \(x+1\). Hence, in this case, \(f:\mathbb{R} \to \mathbb{R}\). For \ref{sin} , the function takes any real \(x\) value and maps it to \(sin(x)\). As a result, its domain would be \(\mathbb{R}\) and its range would be \([-1,1]\). Again, it is just like the graph \(y=sin(x)\). Lastly, the quadratic \ref{quadratic} is another real function(i.e. it has a real domain and range). Think about what happens when \(f(x)=0\), what value of \(x\) must you plug in to make \(f(x)=0\). Well, isn't it just the roots of the quadratic. Hence, the roots of a function are just the values \(x\) such that \(f(x)=0\). In this case, it would be 2 and 3. Thus, \(f(2)=f(3)=0\).
   \end{example}
-  \begin{remark}
-    \quad \quad Actually, functions can be more than the usual \(f(x)=\textit{something}\). Let's say you want to have a function that outputs "1" if the input is rational and "0" if it is not, you can define it as such:
-    \mn{This is actually the famous Dirichlet function that shatters certain intuitions on functions and will be discussed in later chapters.}
+   Actually, functions can be more than the usual \(f(x)=\textit{something}\). Let's say you want to have a function that outputs "1" if the input is rational and "0" if it is not, you can define it as such:
+   \marginnote{\footnotesize \textit{This is actually the famous Dirichlet function that shatters certain intuitions on functions and will be discussed in later chapters.}}
     \begin{equation}
       f(x)=
       \begin{cases}
@@ -50,6 +47,7 @@
         0, & \text{if}\ x \notin \mathbb{Q}
       \end{cases}
     \end{equation}
+   
 
     Here, \(f(\frac{1}{2})\) would be 1 but \(f(\sqrt{2})\) would be 0. This is an example of having conditionals in a function. Lastly, functions may take more than one input and produce more than one output, examples include:
     \begin{equation}
@@ -61,8 +59,8 @@
       f(t)=(cos(t), sin(t))
     \end{equation}
 
-      \sn{As you will see in Part IV of the book, this is the \textbf{paramteric} equation of a circle.}
-    \ref{circle} is an example of a \textit{multivariate} function, in other words, it takes in multiple inputs. If \(x=2\) and \(y=2\), then \(f(2,2)=8\). On the other hand, \ref{paramcircle} does not have a single output. Instead, it has a tuple \sn{A tuple is basically a set where order matters. You can treat it as if it is a coordinate.} as its output. Evaluating it at \(t=\pi\), notice that the output is \((-1, 0)\). What is interesting is that if you trace out its outputs on a plane for all \(t \in \mathbb{R}\), you will get:
+    \marginnote{\footnotesize \textit{As you will see in Part IV of the book, this is the \textit{parametric} equation of a circle.}}
+      \ref{circle} is an example of a \textit{multivariate} function, in other words, it takes in multiple inputs. If \(x=2\) and \(y=2\), then \(f(2,2)=8\). On the other hand, \ref{paramcircle} does not have a single output. Instead, it has a tuple \marginnote{ \\ \footnotesize \textit{A tuple is basically a set where order matters. You can treat it as if it is a coordinate.}} as its output. Evaluating it at \(t=\pi\), notice that the output is \((-1, 0)\). What is interesting is that if you trace out its outputs on a plane for all \(t \in \mathbb{R}\), you will get:
     \begin{figure}[h]
   \begin{center}
   \begin{tikzpicture}
@@ -89,7 +87,7 @@
     \end{enumerate}} 
   \item{Given the following functions, write down \(f:A \to B\) where \(A\) is the domain and \(B\) is the range(do not consider complex inputs and outputs):
       \begin{enumerate}
-        \item{\(f(x)=x\) \mn{This function has a special name, the \textbf{identity} function.\\ Notice how its input and output are the same.}}
+        \item{\(f(x)=x\) \marginnote{\footnotesize \textit{This function has a special name, the \textbf{identity} function. Notice how its input and output are the same.}}}
         \item{\(f(x)=\frac{1}{x}\)}
         \item{\(f(x)=\sqrt{x}\)}
       \end{enumerate}
@@ -104,6 +102,5 @@
   \end{enumerate}
   \end{Exercise}
   \begin{Solution}
-    For (1), simply plug in the \(x\) and \(y\) values. Hence, the answer for 1(a) is 9, 1(b) is 4, 1(c) is 9 and 1(d) is 0. On the other hand, for 2(a), notice that there are no restrictions on the domain and range, hence the answer for 2(a) is \(f: \mathbb{R} \to \mathbb{R}\). However, 2(b) is not defined at \(x=0\), hence the solution is \(f: \mathbb{R} \setminus \{0\} \to \mathbb{R} \setminus \{0\}\). Similarly, the square root is not defined for negative numbers(not considering complex numbers), therefore the answer for 2(c) is \(f: \mathbb{R}^{+}_{0} \to \mathbb{R}^{+}_{0}\). Lastly, for (3), simply find the \(x\) value such that \(f(x)=0\). The answer is as follows, 2(a) is 0, 2(b) is 1 and 2(c) is \(n\pi, \, \forall n \in \mathbb{Z}\).
+  \quad \, For (1), simply plug in the \(x\) and \(y\) values. Hence, the answer for 1(a) is 9, 1(b) is 4, 1(c) is 9 and 1(d) is 0. On the other hand, for 2(a), notice that there are no restrictions on the domain and range, hence the answer for 2(a) is \(f: \mathbb{R} \to \mathbb{R}\). However, 2(b) is not defined at \(x=0\), hence the solution is \(f: \mathbb{R} \setminus \{0\} \to \mathbb{R} \setminus \{0\}\). Similarly, the square root is not defined for negative numbers(not considering complex numbers), therefore the answer for 2(c) is \(f: \mathbb{R}^{+}_{0} \to \mathbb{R}^{+}_{0}\). Lastly, for (3), simply find the \(x\) value such that \(f(x)=0\). The answer is as follows, 2(a) is 0, 2(b) is 1 and 2(c) is \(n\pi, \, \forall n \in \mathbb{Z}\).
   \end{Solution}
-  \end{remark}

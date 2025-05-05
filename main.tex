@@ -1,16 +1,28 @@
- \documentclass[10pt]{article} 
- \usepackage{NotesTeXV3, amsmath, pgfplots, tikz, caption}
- \pgfplotsset{compat=newest}
- \title{{\Huge Calculus done right} \\ {\Large \scshape first edition}}
- \author{Xiao Yaozi}
- \begin{document}
+\documentclass[10pt]{article} 
+\usepackage{NotesTeXV3, amsmath, pgfplots, tikz, caption}
+\renewcommand\qedsymbol{QED}
+\usetikzlibrary{calc}
+\newcommand{\MarkRightAngle}[4][.2cm]% #1=size (optional), #2-#4 three points: \angle #2#3#4
+{\coordinate (tempa) at ($(#3)!#1!(#2)$);
+ \coordinate (tempb) at ($(#3)!#1!(#4)$);
+ \coordinate (tempc) at ($(tempa)!0.5!(tempb)$);%midpoint
+ \draw (tempa) -- ($(#3)!2!(tempc)$) -- (tempb);
+}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{positioning}
+\title{{\Huge Calculus done right} \\ {\Large \scshape first edition}}
+\author{Xiao Yaozi}
+\begin{document}
   \maketitle
   \flushbottom
-  \section*{Preface}
-  Thank you for opening up this book. This is a book dedicated to you and those who want to learn calculus from calculus I to IV. I, myself, have taken a very windy path down the road of learning calculus, and I hope that you reading the book would not have to waste precious time like how I did. While the book assumes no calculus or precalculus knowledge, it does require knowing algebra, trigonometry and basic set theory. Also, you may feel that the precalculus section's pace is very fast, and it is intentional, this is not a precalculus book. There are many great precalculus material out there and I encourage you reading them to gain a deeper understanding on certain topics. With that said, I feel that the first section should feel manageable to most of you. In addition, while this book will cover both the theory and application of calculus, it would be more computation based instead of being very rigorous. This is not an analysis book. Hence, some parts make lack mathematical rigour but I will attach good resources to all parts of the book if I believe some other source explains certain things better than I do. Lastly, read the book thoughtfully, do not just blindly flip through the pages to not waste your precious time. I wish all readers find joy and learn something in reading the book. 
+  \newpage
+  \section*{Introduction}
+Calculus is one of those subjects in mathematics where it is generally associated with immense difficulty and boredom to the average person. Many are afraid of taking on the challenge to learn calculus. However, it cannot be understated how important calculus is to the modern science. It is basically the \textit{language} of the modern scientific world. Without calculus, we would not have the mathematical tools to describe continuum dynamics, quantum mechanics or even find the distance travelled by a object with non-constant acceleration. The goal of this book is to equip you with the proficiency to wield this important language which describes the world. However, while the book focuses on both the theory and application, it will not be the most rigorous text. Some parts may lack mathematical rigour in favour of more intuitive explanations. Hence, I will recommend you to read up other great resources on calculus by others. Lastly, it is important that you practice calculus, do the exercises and I assure you you will gain a deep understanding of the text. Happy reading.
   \newpage
   \part{Precalculus}
   \section{Functions}
   \subsection{Function basics}
   \input{chapters/chapter1.tex}
+  \subsection{Function composition and inverses}
+  \input{chapters/chapter2.tex}
  \end{document}
