@@ -44,7 +44,6 @@ When you compose the same function \(n\)-times, the notation for it is:
 f^n(x)=\underbrace{f(f(\ldots f(x)))}_{n-times} 
 \marginnote{\footnotesize \textit{However, this does not \\ apply to trigonometric functions. \(sin^2(x)\) is \(sin(x) \times sin(x)\) instead of \(sin(sin(x))\) and \(sin^{-1}(x)\) is \(arcsin(x)\).}}
 \end{equation*}
-\newpage
 \begin{example}
   Here are some examples of composing functions together:
   If \(x=3\) and \(f(x)=\pi x\), \(g(x)=sin(x)+1\):
@@ -89,14 +88,13 @@ Next, we will delve into inverse functions. Let us start with one I believe you 
 \caption{Figure of right triangle ABC.}
 \end{figure}
 
-If I ask you what is \(arcsin(B)\), you may say it is \(\frac{b}{c}\). But, what is \(arcsin(sin(B))\), well, that is just \(B\), isn't it. Hence, the \(arcsin\) sort of "cancels" the \(sin\). We call \(arcsin\) the \textit{inverse function} or just inverse of \(sin\). Generally, given a function \(f\), \(f^-1\) denotes the inverse function such that \(f^-1(f(x))=x\). Notice that if we apply both of the functions together, we get the identity function, that is:
+If I ask you what is \(arcsin(B)\), you may say it is \(\frac{b}{c}\). But, what is \(arcsin(sin(B))\), well, that is just \(B\), isn't it. Hence, the \(arcsin\) sort of "cancels" the \(sin\). We call \(arcsin\) the \textit{inverse function} or just inverse of \(sin\). Generally, given a function \(f\), \(f^{-1}\) denotes the inverse function such that \(f^{-1}(f(x))=x\). Notice that if we apply both of the functions together, we get the identity function, that is:
 \begin{equation}
-  f \circ f^-1 = id_x \textit{\,where \,} id_x \textit{\,is the identity function}
+  f \circ f^{-1} = id_x \textit{\,where \,} id_x \textit{\,is the identity function}
   \marginnote{\footnotesize \textit{The identity function is just \(f(x)=x\)}}
 \end{equation}
 
 To find the inverse function of a function \(f\), we have to find the function that maps the outputs of the \(f\) back to its inputs. To solve algebraically, we set \(f(x)\) for some arbitrary \(x\) to \(y\), and make \(x\) the subject of the equation.
-
 \begin{example}
   Given that \(f(x)=\frac{x+7}{3}\):
   \begin{align*}
@@ -105,5 +103,35 @@ To find the inverse function of a function \(f\), we have to find the function t
     x+7&=3y \\
     x&=3y-7
   \end{align*}
-  Hence, the inverse function \(f^-1(y)\) is \(f^-1(x)=3y-7\).
+  Hence, the inverse function is \(f^{-1}(x)=3y-7\).
 \end{example}
+
+\begin{Exercise}
+  \enumerate{
+    \item{Given \(f(x)=\frac{x^2+3}{2}\) and \(g(x)=tan(x)+1\), evaluate:
+        \begin{enumerate}
+          \item{\(f(g(\frac{\pi}{4}))\)}
+          \item{\(f^{3}(1)\)}
+          \item{\(f(g(arcsin(0)))\)}
+        \end{enumerate}
+      }
+    \item{Given that \(h(x)=(x-7)^2, \, x \geq 7\), find the inverse of \(h\).}
+    \item{Hence, evaluate:
+        \begin{enumerate}
+          \item{\(h^{-1}(1)\)}
+          \item{\(h(h^{-1}(69))\)}
+        \end{enumerate}
+      }
+  } 
+\end{Exercise}
+\begin{Solution}
+  \begin{enumerate}
+    \item{
+        \begin{enumerate}
+          \item{\(\frac{7}{2}\)}
+          \item{\(\frac{61}{8}\)}
+          \item{2}
+        \end{enumerate}
+      } 
+  \end{enumerate} 
+\end{Solution}

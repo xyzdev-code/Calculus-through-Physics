@@ -30,13 +30,14 @@
     \end{equation}
     \begin{equation}
       \label{sin}
-      f(x)=sin(x)
+      g(x)=sin(x)
     \end{equation}
     \begin{equation}
       \label{quadratic}
-      f(x)=x^2-5x+6
+      h(x)=x^2-5x+6
     \end{equation}
-    \quad \quad To evaluate the output of a function, you simply substitute the input to the expression that defines the function. Notice that for \ref{x+1}, it is simply the line \(y=x+1\). Each value of \(f(x)\) for some \(x \in \mathbb{R}\) is just \(y\). Take \(x=1\) for example, \(f(1)=1+1=2\) and for the line \(y=x+1\), notice the \(y\) value here is also 2. The function assigns each \(x\) value to \(x+1\). Hence, in this case, \(f:\mathbb{R} \to \mathbb{R}\). For \ref{sin} , the function takes any real \(x\) value and maps it to \(sin(x)\). As a result, its domain would be \(\mathbb{R}\) and its range would be \([-1,1]\). Again, it is just like the graph \(y=sin(x)\). Lastly, the quadratic \ref{quadratic} is another real function(i.e. it has a real domain and range). Think about what happens when \(f(x)=0\), what value of \(x\) must you plug in to make \(f(x)=0\). Well, isn't it just the roots of the quadratic. Hence, the roots of a function are just the values \(x\) such that \(f(x)=0\). In this case, it would be 2 and 3. Thus, \(f(2)=f(3)=0\).
+    \quad \quad To evaluate the output of a function, you simply substitute the input to the expression that defines the function. Notice that for \ref{x+1}, it is simply the line \(y=x+1\). Each value of \(f(x)\) for some \(x \in \mathbb{R}\) is just \(y\). Take \(x=1\) for example, \(f(1)=1+1=2\) and for the line \(y=x+1\), notice the \(y\) value here is also 2. The function assigns each \(x\) value to \(x+1\). Hence, in this case, \(f:\mathbb{R} \to \mathbb{R}\). For \ref{sin} , the function takes any real \(x\) value and maps it to \(sin(x)\). As a result, its domain would be \(\mathbb{R}\) and its range would be \([-1,1]\). Again, it is just like the graph \(y=sin(x)\). \newpage 
+   \quad \quad Lastly, the quadratic \ref{quadratic} is another real function(i.e. it has a real domain and range). Think about what happens when \(h(x)=0\), what value of \(x\) must you plug in to make \(h(x)=0\). Well, isn't it just the roots of the quadratic. Hence, the roots of a function are just the values \(x\) such that \(h(x)=0\). In this case, it would be 2 and 3. Thus, \(h(2)=h(3)=0\).
   \end{example}
    Actually, functions can be more than the usual \(f(x)=\textit{something}\). Let's say you want to have a function that outputs "1" if the input is rational and "0" if it is not, you can define it as such:
    \marginnote{\footnotesize \textit{This is actually the famous Dirichlet function that shatters certain intuitions on functions and will be discussed in later chapters.}}
@@ -56,7 +57,7 @@
     \end{equation}
     \begin{equation}
       \label{paramcircle}
-      f(t)=(cos(t), sin(t))
+      g(t)=(cos(t), sin(t))
     \end{equation}
 
     \marginnote{\footnotesize \textit{As you will see in Part IV of the book, this is the \textit{parametric} equation of a circle.}}
@@ -65,7 +66,7 @@
   \begin{center}
   \begin{tikzpicture}
     \begin{axis}[trig format=rad, axis equal, axis lines=left, ymax=1.5, ymin=-1.5]
-      \addplot[samples=1000, color=blue]({cos(x)}, {sin(x)});
+      \addplot[color=blue, samples=100]({cos(x)}, {sin(x)});
     \end{axis}
   \end{tikzpicture}
     \tiny\caption{Plot of \ref{paramcircle} for all \(t \in \mathbb{R}\)}.
@@ -102,5 +103,29 @@
   \end{enumerate}
   \end{Exercise}
   \begin{Solution}
-  \quad \, For (1), simply plug in the \(x\) and \(y\) values. Hence, the answer for 1(a) is 9, 1(b) is 4, 1(c) is 9 and 1(d) is 0. On the other hand, for 2(a), notice that there are no restrictions on the domain and range, hence the answer for 2(a) is \(f: \mathbb{R} \to \mathbb{R}\). However, 2(b) is not defined at \(x=0\), hence the solution is \(f: \mathbb{R} \setminus \{0\} \to \mathbb{R} \setminus \{0\}\). Similarly, the square root is not defined for negative numbers(not considering complex numbers), therefore the answer for 2(c) is \(f: \mathbb{R}^{+}_{0} \to \mathbb{R}^{+}_{0}\). Lastly, for (3), simply find the \(x\) value such that \(f(x)=0\). The answer is as follows, 2(a) is 0, 2(b) is 1 and 2(c) is \(n\pi, \, \forall n \in \mathbb{Z}\).
+  %\quad \, For (1), simply plug in the \(x\) and \(y\) values. Hence, the answer for 1(a) is 9, 1(b) is 4, 1(c) is 9 and 1(d) is 0. On the other hand, for 2(a), notice that there are no restrictions on the domain and range, hence the answer for 2(a) is \(f: \mathbb{R} \to \mathbb{R}\). However, 2(b) is not defined at \(x=0\), hence the solution is \(f: \mathbb{R} \setminus \{0\} \to \mathbb{R} \setminus \{0\}\). Similarly, the square root is not defined for negative numbers(not considering complex numbers), therefore the answer for 2(c) is \(f: \mathbb{R}^{+}_{0} \to \mathbb{R}^{+}_{0}\). Lastly, for (3), simply find the \(x\) value such that \(f(x)=0\). The answer is as follows, 2(a) is 0, 2(b) is 1 and 2(c) is \(n\pi, \, \forall n \in \mathbb{Z}\).
+    \begin{enumerate}
+      \item{
+          \begin{enumerate}
+            \item{9}
+            \item{4}
+            \item{9}
+            \item{0}
+          \end{enumerate}
+        }
+      \item{
+          \begin{enumerate}
+            \item{\(f: \mathbb{R} \to \mathbb{R}\)}
+            \item{\(f: \mathbb{R} \setminus \{0\} \to \mathbb{R} \setminus \{0\}\) (Note the function is not defined at \(x=0\))}
+            \item{\(f: \mathbb{R}^{+}_{0} \to \mathbb{R}^{+}_{0}\) (Square root not defined for negative numbers)}
+          \end{enumerate}
+      \item{
+          \begin{enumerate}
+            \item{0}
+            \item{1}
+            \item{\(n\pi, \, \forall n \in \mathbb{Z}\)}
+          \end{enumerate}
+        }
+        }
+    \end{enumerate}
   \end{Solution}
