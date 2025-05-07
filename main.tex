@@ -1,5 +1,5 @@
 \documentclass[10pt]{article} 
-\usepackage{NotesTeXV3, amsmath, pgfplots, tikz, caption, fancyhdr}
+\usepackage{NotesTeXV3, amsmath, pgfplots, tikz, caption, fancyhdr, cleveref}
 \renewcommand\qedsymbol{QED}
 \usetikzlibrary{calc}
 \newcommand{\MarkRightAngle}[4][.2cm]% #1=size (optional), #2-#4 three points: \angle #2#3#4
@@ -12,6 +12,7 @@
 \usetikzlibrary{positioning}
 \title{{\Huge Calculus done right} \\ {\Large \scshape first edition}}
 \author{Xiao Yaozi}
+\emailAdd{}
 \begin{document}
   \maketitle
   \flushbottom
@@ -20,7 +21,9 @@
   \part{Precalculus}
   \section{Functions}
   \subsection{Function basics}
-  \input{chapters/chapter1.tex}
+  \input{chapters/chapter1_1.tex}
   \subsection{Function composition and inverses}
-  \input{chapters/chapter2.tex}
+  \input{chapters/chapter1_2.tex}
+  \subsection{Injection, surjection and bijection}
+  \input{chapters/chapter1_3.tex}
  \end{document}

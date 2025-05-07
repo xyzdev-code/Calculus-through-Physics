@@ -42,13 +42,13 @@ Another notation for composing functions together(which we will not really use) 
 When you compose the same function \(n\)-times, the notation for it is:
 \begin{equation*}
 f^n(x)=\underbrace{f(f(\ldots f(x)))}_{n-times} 
-\marginnote{\footnotesize \textit{However, this does not \\ apply to trigonometric functions. \(sin^2(x)\) is \(sin(x) \times sin(x)\) instead of \(sin(sin(x))\) and \(sin^{-1}(x)\) is \(arcsin(x)\).}}
+\marginnote{\footnotesize \textit{However, this does not \\ apply to trigonometric functions. \(\sin^2(x)\) is \(\sin(x) \times \sin(x)\) instead of \(\sin(\sin(x))\).}}
 \end{equation*}
 \begin{example}
   Here are some examples of composing functions together:
-  If \(x=3\) and \(f(x)=\pi x\), \(g(x)=sin(x)+1\):
+  If \(x=3\) and \(f(x)=\pi x\), \(g(x)=\sin(x)+1\):
   \begin{equation}
-    g(f(x))=sin(\pi \times 3)+1=1 
+    g(f(x))=\sin(\pi \times 3)+1=1 
   \end{equation}
   \begin{equation}
     f^3(x)=\pi^{3}x 
@@ -88,9 +88,9 @@ Next, we will delve into inverse functions. Let us start with one I believe you 
 \caption{Figure of right triangle ABC.}
 \end{figure}
 
-If I ask you what is \(arcsin(B)\), you may say it is \(\frac{b}{c}\). But, what is \(arcsin(sin(B))\), well, that is just \(B\), isn't it. Hence, the \(arcsin\) sort of "cancels" the \(sin\). We call \(arcsin\) the \textit{inverse function} or just inverse of \(sin\). Generally, given a function \(f\), \(f^{-1}\) denotes the inverse function such that \(f^{-1}(f(x))=x\). Notice that if we apply both of the functions together, we get the identity function, that is:
+If I ask you what is \(\arcsin(B)\), you may say it is \(\frac{b}{c}\). But, what is \(\arcsin(\sin(B))\), well, that is just \(B\), isn't it. Hence, the \(\arcsin\) sort of "cancels" the \(\sin\). We call \(\arcsin\) the \textit{inverse function} or just inverse of \(\sin\). Generally, given a function \(f\), \(f^{-1}\) denotes the inverse function such that \(f(f^{-1}(x))=x\). Notice that if we apply both of the functions together, we get the identity function, that is:
 \begin{equation}
-  f \circ f^{-1} = id_x \textit{\,where \,} id_x \textit{\,is the identity function}
+  f \circ f^{-1} = id_x \text{\,where \,} id_x \text{\,is the identity function}
   \marginnote{\footnotesize \textit{The identity function is just \(f(x)=x\)}}
 \end{equation}
 
@@ -108,11 +108,11 @@ To find the inverse function of a function \(f\), we have to find the function t
 
 \begin{Exercise}
   \enumerate{
-    \item{Given \(f(x)=\frac{x^2+3}{2}\) and \(g(x)=tan(x)+1\), evaluate:
+    \item{Given \(f(x)=\frac{x^2+3}{2}\) and \(g(x)=\tan(x)+1\), evaluate:
         \begin{enumerate}
           \item{\(f(g(\frac{\pi}{4}))\)}
           \item{\(f^{3}(1)\)}
-          \item{\(f(g(arcsin(0)))\)}
+          \item{\(f(g(\arcsin(0)))\)}
         \end{enumerate}
       }
     \item{Given that \(h(x)=(x-7)^2, \, x \geq 7\), find the inverse of \(h\).}
@@ -133,5 +133,12 @@ To find the inverse function of a function \(f\), we have to find the function t
           \item{2}
         \end{enumerate}
       } 
+    \item{\(h^{-1}(y)=\sqrt{y}+7\)}
+    \item{
+        \begin{enumerate}
+          \item{8}
+          \item{69 (Inverse function and the original function "cancels".)}
+        \end{enumerate}
+      }
   \end{enumerate} 
 \end{Solution}
