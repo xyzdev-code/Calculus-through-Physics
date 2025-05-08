@@ -88,10 +88,9 @@ Next, we will delve into inverse functions. Let us start with one I believe you 
 \caption{Figure of right triangle ABC.}
 \end{figure}
 
-If I ask you what is \(\arcsin(B)\), you may say it is \(\frac{b}{c}\). But, what is \(\arcsin(\sin(B))\), well, that is just \(B\), isn't it. Hence, the \(\arcsin\) sort of "cancels" the \(\sin\). We call \(\arcsin\) the \textit{inverse function} or just inverse of \(\sin\). Generally, given a function \(f\), \(f^{-1}\) denotes the inverse function such that \(f(f^{-1}(x))=x\). Notice that if we apply both of the functions together, we get the identity function, that is:
+If I ask you what is \(\arcsin(B)\), you may say it is \(\frac{b}{c}\). But, what is \(\arcsin(\sin(B))\), well, that is just \(B\), isn't it. Hence, the \(\arcsin\) sort of "cancels" the \(\sin\). We call \(\arcsin\) the \textit{inverse function} or just inverse of \(\sin\). \marginnote{\footnotesize \textit{We will use \(\arcsin\) as the inverse of \(\sin\) instead of \(\sin^{-1}\) as it is clearer.}} Generally, given a function \(f: X \to Y\), \(f^{-1}\) denotes the inverse function that satisfies:
 \begin{equation}
-  f \circ f^{-1} = id_x \text{\,where \,} id_x \text{\,is the identity function}
-  \marginnote{\footnotesize \textit{The identity function is just \(f(x)=x\)}}
+  f \circ f^{-1}(y) = y, y \in Y \text{\, and \,} f^{-1} \circ f(x) = x, x \in X
 \end{equation}
 
 To find the inverse function of a function \(f\), we have to find the function that maps the outputs of the \(f\) back to its inputs. To solve algebraically, we set \(f(x)\) for some arbitrary \(x\) to \(y\), and make \(x\) the subject of the equation.

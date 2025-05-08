@@ -28,7 +28,7 @@ Of course, this explanation might not have been very clear. Here is a visualisat
 \end{figure}
 
 
-As you can see in \Cref{inj}, every output in \(Y\) of the function is associated with only one input in \(X\), hence the function is \textit{injective}.
+As you can see in \Cref{inj}, every output in \(Y\) of the function is associated with only one input in \(X\), hence the function is \textit{injective}. To prove that a function \(f\) is injective, you can either show that if \(x_1 \neq x_2\), then \(f(x_1) \neq f(x_2)\), or if \(f(x_1) = f(x_2)\), then \(x_1 = x_2\).
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}
@@ -54,7 +54,7 @@ Here, the function is \textit{not} injective. As you can see in \Cref{non_inj}, 
 \end{definition}
 
 
-From \Cref{inj} and \Cref{non_inj}, both functions are surjective as every output is associated with at least one input. Do take note that it does not matter how many inputs associate to one output, as long every output is associated with at least one input, the function is surjective.
+From \Cref{inj} and \Cref{non_inj}, both functions are surjective as every output is associated with at least one input. Do take note that it does not matter how many inputs associate to one output, as long every output is associated with at least one input, the function is surjective. To prove that a function is surjective, you must show that there exists an element in the domain of the function for any arbitrary output in the range.
 \newpage
 \begin{figure}[h]
 \centering
@@ -87,5 +87,11 @@ However, bijective functions have a superpower. A function is only bijective \te
   A function, \(f:A \to B\), has an inverse if and only if it is bijection.
 \end{theorem}
 \begin{proof}
-  To begin such proofs where there is a "if and only if" clause, we will prove both cases separately. First, we claim that if the function has an inverse, then it is bijective. To prove a bijection, we must prove that it is injective and surjective. Suppose \(a_1 , a_2 \in A\)
+  To begin such proofs where there is a "if and only if" clause, we will prove both cases separately. First, we claim that if the function has an inverse, then it is bijective.
+\end{proof}
+\begin{lemma}
+  If a function, \(f: A \to B\), has an inverse, then it is bijective. 
+\end{lemma}
+\begin{proof}
+  Suppose \(f^{-1}\) is the inverse of \(f\). Notice that \(f^{-1}(f(x))\) is injective as it is simply \(f(x)=x\). Suppose \(a, a^\prime \in A\) and \(f(a)=f(a^\prime)\), then \(f^{-1}(f(a))=f^{-1}(f(a^\prime)))\). Notice that by injectivity of \(f^{-1}(f(x))\), \(a=a^\prime\). Hence, \(f\) is injective. Then, suppose \(b \in B\), we wish to show that the function is surjective. Notice that \(f(f^{-1}(x))\) is surjective as again, it is the identity function.
 \end{proof}
