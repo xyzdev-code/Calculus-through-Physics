@@ -81,6 +81,11 @@
 % ----------------------------------------------------------------------
 %           User Page Prefrences 
 % ----------------------------------------------------------------------
+\newcommand\getcurrentref[1]{%
+ \ifnumequal{\value{#1}}{0}
+  {??}
+  {\the\value{#1}}%
+}    
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 
 \geometry{paperheight=11in,paperwidth=8.5in,                   %fix paperwidth and height.
@@ -127,7 +132,7 @@
     bodyfont={\normalfont},
     headpunct={\relax},%\newline,
     headformat={%
-        \makebox[0pt][r]{\NAME\ \NUMBER\hspace{\marginparsep}}\hskip-\spacelength{\normalsize\NOTE}},
+    \makebox[0pt][r]{\NAME\ \text{\getcurrentref{section}.}\NUMBER\hspace{\marginparsep}}\hskip-\spacelength{\normalsize\NOTE}},
 ]{theorem}
 \tcolorboxenvironment{theorem}{
   boxrule=0pt,
@@ -607,7 +612,7 @@
 }[-1.25in]}{0pt}{\Huge\bfseries\itshape}
 
 %Caption of figure and table
-\def\fnum@figure{\textbf{\figurename\nobreakspace\thefigure}}
+\def\fnum@figure{\textbf{\figurename\nobreakspace\getcurrentref{section}\text{.}\thefigure}}
 \def\fnum@table{\textbf{\tablename\nobreakspace\thetable}}
 
 %redefining \@makecaption, to have captions with \small font size
