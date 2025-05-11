@@ -102,3 +102,16 @@ However, bijective functions have a superpower. A function is only bijective \te
 \begin{proof}
   Let us define \(f^{-1}\) as \(f^{-1}: B \to A\). Let \(b \in B\). Since \(f\) is surjective, there exists \(a \in A\) such that \(f(a)=b\). Let \(f^{-1}(b)=a\). Since \(f\) is injective, \(f^{-1}\) is well-defined, or a function that outputs the same value given the same input. Next, we will show that \(f^{-1}\) is indeed the inverse of \(f\) by showing the composition of the two is an identity function. Again, let \(a \in A\) and \(b=f(a)\) which implies, by definition, \(f^{-1}(b)=a\). Composing the two functions, \(f(f^{-1}(b))=f(a)=b\), which shows that \(f^{-1}\) is indeed the inverse function. The other case of \(f^{-1} \circ f\) is similar. Hence, if \(f\) is a bijection, then it has an inverse.
 \end{proof}
+\begin{remark}
+  This serves as a very good example showing how the reader should prove the injectivity, surjectivity, and bijectivity of functions. Also, this explains why in the previous exercise, the function \(h(x)=(x-7)^2\) is bounded, only taking \(x\) values larger than 7. The function is not bijective in \(\mathbb{R}\), as evident in the graph as it is not injective. Hence, the bounds are needed for \(h\) to have an inverse.
+\begin{marginfigure}
+    \centering
+    \begin{tikzpicture}[scale=0.525]
+      \begin{axis}[xlabel=\(x\), ylabel=\(y\), axis lines=left, domain=0:20]
+        \addplot[mark=none, color=blue]{(x - 7)^2}; 
+      \end{axis} 
+    \end{tikzpicture}
+    \caption{Plot of \((x-7)^2\)}
+  \end{marginfigure}
+\end{remark}
+
