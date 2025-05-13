@@ -16,6 +16,7 @@ What is more interesting, perhaps, is taking the \textit{output} of a function a
   \begin{figure}[h]
   \centering
   \marginnote{\footnotesize \textit{Note that the rectangles are \\ functions and circles are values.}}
+
   \begin{tikzpicture}[
 roundnode/.style={circle, draw=black!60, fill=white!5, very thick, minimum size=10mm},
 squarednode/.style={rectangle, draw=black!60, fill=white!5, very thick, minimum size=15mm},
@@ -30,8 +31,8 @@ squarednode/.style={rectangle, draw=black!60, fill=white!5, very thick, minimum 
     \draw[->] (fx.east) -- (gtopic.west);
     \draw[->] (gtopic.east) -- (final.west);
   \end{tikzpicture}
-  \caption{Visual representation of function composition.}
 
+  \caption{Visual representation of function composition.}
 \end{figure} 
 
 Another notation for composing functions together(which we will not really use) is as such:
@@ -73,6 +74,7 @@ f^n(x)=\underbrace{f(f(\ldots f(x)))}_{n-times}
 \end{remark}
 
 Next, we will delve into inverse functions. Let us start with one I believe you may have seen before, look at the following figure: 
+
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}[scale=1.8]

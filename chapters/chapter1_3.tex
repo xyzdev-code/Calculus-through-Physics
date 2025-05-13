@@ -7,6 +7,7 @@
   \end{equation*}
 \end{definition}
 Of course, this explanation might not have been very clear. Here is a visualisation:
+
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}
@@ -21,13 +22,15 @@ Of course, this explanation might not have been very clear. Here is a visualisat
   \draw[->, black] (0,1) -- (4,0);
   \draw[->, black] (0,0) -- (4,1);
   \draw[->, black] (0,-1) -- (4,-1);
-\end{tikzpicture} 
+\end{tikzpicture}
+
 \caption{Illustration of an injective function with domain \(X\) and range \(Y\).}
 \label{inj}
 \end{figure}
 
 
 As you can see in \Cref{inj}, every output in \(Y\) of the function is associated with only one input in \(X\), hence the function is \textit{injective}. To prove that a function \(f\) is injective, you can either show that if \(x_1 \neq x_2\), then \(f(x_1) \neq f(x_2)\), or if \(f(x_1) = f(x_2)\), then \(x_1 = x_2\).
+
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}
@@ -54,6 +57,7 @@ Here, the function is \textit{not} injective. As you can see in \Cref{non_inj}, 
 
 
 From \Cref{inj} and \Cref{non_inj}, both functions are surjective as every output is \\ associated with at least one input. Do take note that it does not matter how many inputs associate to one output, as long every output is associated with at least one input, the function is surjective. To prove that a function is surjective, you must show that there exists an element in the domain of the function for any arbitrary output in the range.
+
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}

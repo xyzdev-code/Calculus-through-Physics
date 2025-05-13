@@ -1,14 +1,14 @@
 \documentclass[10pt]{article} 
 \usepackage{NotesTeXV3, amsmath, pgfplots, tikz, caption, fancyhdr, cleveref, amsthm}
 \renewcommand\qedsymbol{QED}
-\usetikzlibrary{calc}
+\usetikzlibrary{calc, external}
 \newcommand{\MarkRightAngle}[4][.2cm]% #1=size (optional), #2-#4 three points: \angle #2#3#4
 {\coordinate (tempa) at ($(#3)!#1!(#2)$);
  \coordinate (tempb) at ($(#3)!#1!(#4)$);
  \coordinate (tempc) at ($(tempa)!0.5!(tempb)$);%midpoint
  \draw (tempa) -- ($(#3)!2!(tempc)$) -- (tempb);
 }
-\pgfplotsset{compat=newest}
+\pgfplotsset{compat=1.14}
 \usetikzlibrary{positioning}
 \title{{\Huge Practical Calculus} \\ {\Large \scshape first edition}}
 \author{Xiao Yaozi}
@@ -25,6 +25,7 @@
   \newpage
   \subsection{Function composition and inverses}
   \input{chapters/chapter1_2.tex}
+  \newpage
   \subsection{Injection, surjection and bijection}
   \input{chapters/chapter1_3.tex}
  \end{document}

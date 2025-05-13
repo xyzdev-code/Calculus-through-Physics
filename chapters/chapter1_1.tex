@@ -9,6 +9,7 @@
     \label{line}
     y=mx+c
   \end{equation}
+
   \begin{marginfigure}
     \centering
     \begin{tikzpicture}[scale=0.525]
@@ -26,8 +27,7 @@
   \begin{example}
     Here are some examples of functions:
     \begin{equation}
-      f(x)=x+1 
-      \label{x+1}
+      f(x)=x+1 \label{x+1}
     \end{equation}
     \begin{equation}
       \label{sin}
@@ -63,15 +63,14 @@
 
     \marginnote{\footnotesize \textit{As you will see in Part IV of the book, this is the \textit{parametric} equation of a circle.}}
       \Cref{circle} is an example of a \textit{multivariate} function, in other words, it takes in multiple inputs. If \(x=2\) and \(y=2\), then \(f(2,2)=8\). On the other hand, \Cref{paramcircle} does not have a single output. Instead, it has a tuple \marginnote{ \\ \footnotesize \textit{A tuple is basically a set where order matters. You can treat it as if it is a coordinate.}} as its output. Evaluating it at \(t=\pi\), notice that the output is \((-1, 0)\). What is interesting is that if you trace out its outputs on a plane for all \(t \in \mathbb{R}\), you will get:
+
     \begin{figure}[h]
-  \begin{center}
   \begin{tikzpicture}
     \begin{axis}[trig format=rad, axis equal, axis lines=left, ymax=1.5, ymin=-1.5]
       \addplot[color=blue, samples=100]({cos(x)}, {sin(x)});
     \end{axis}
   \end{tikzpicture}
     \tiny\caption{Plot of \Cref{paramcircle} for all \(t \in \mathbb{R}\)}.
-  \end{center} 
   \end{figure}
 
   Functions are the building blocks of mathematics, and this book will deal extensively with it. Therefore, it is paramount that you get the basics right. Try the following exercise:
