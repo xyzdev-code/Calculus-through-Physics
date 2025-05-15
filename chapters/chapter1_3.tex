@@ -1,7 +1,7 @@
 \quad \quad You may have noticed in the previous exercise that question 2 is particularly \\ interesting. There is a restriction on the domain of \(h(x)\). Why is that? This is what this chapter is all about. However, before we explain that, I will go over some definitions of properties of functions. Firstly, we have \textit{injection}. 
 \begin{definition}
   An injective function, \(f\), or a \textit{one-to-one} function, is a function such that every distinct output of the function corresponds to only \textit{one} distinct input, that is:  
-  \marginnote{\footnotesize \textit{By contraposition, \(x_1 \neq x_2\) \\ implies \(f(x_1) \neq f(x_2)\).}}
+  \marginnote{\footnotesize \textit{By contraposition, \(x_1 \neq x_2\) \\ implies \(f(x_1) \neq f(x_2)\). If \(P => Q\), then \(\not P => \not Q\) is the original statements contraposition.}}
   \begin{equation*}
     f(x_1) = f(x_2) \text{\, implies \,} x_1 = x_2 
   \end{equation*}
@@ -122,8 +122,8 @@ However, bijective functions have a superpower. A function is only bijective \te
   \begin{enumerate}
     \item{Determine if the following functions are injective or surjective or bijective in its domain:
       \begin{enumerate}
-        \item{\(f(x)=\sqrt{x}\, x \leq 0\)}
-        \item{\(f(x)=1/x\, x \leq 0\)}
+        \item{\(f(x)=\sqrt{x}, f: \mathbb{R}^{+} \to \mathbb{R}^{+}\)}
+        \item{\(f(x)=\frac{1}{x}, x \geq 0\)}
         \item{\(f(x)=(x-7)^2, x \geq 5\)}
     \end{enumerate}}
   \item{\textit{Prove} that:
@@ -140,10 +140,17 @@ However, bijective functions have a superpower. A function is only bijective \te
     \begin{enumerate}
       \item{
           \begin{enumerate}
+            \item{Bijective}
             \item{Injective}
-            \item{Injective}
-            \item{None}
+            \item{Surjective}
           \end{enumerate}
         } 
+      \item{
+          \begin{enumerate}
+            \item{Let the two functions be \(f: A \to B\) and \(g: B \to C\). If \(g(f(x_1)=g(f(x_2)))\), by injectivity of \(g\), \(f(x_1)=f(x_2)\) and by injectivity of \(f\), \(x_1=x_2\). Thus, \(g \circ f\) is injective.}
+            \item{Let \(f:A \to B\) and \(f^{-1}\) be its inverse. Notice if \(f^{-1}(x_1)=f^{-1}(x_2)\), then \(f(f^{-1}(x_1))=f(f^{-1}(x_2))\) which implies \(x_1=x_2\). Hence, \(f^{-1}\) is injective.}
+            \item{Similarly, define \(f\) and \(f^{-1}\). Let \(y \in A\) and \(f^{-1}(x)=y\). Notice that \(x=f(y)\) and because \(f\) is surjective(by \Cref{inversebiject}), \(x \in B\), thus proving that \(f^{-1}\) is surjective.}
+          \end{enumerate}
+        }
     \end{enumerate} 
   \end{Solution}

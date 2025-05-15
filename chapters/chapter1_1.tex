@@ -1,4 +1,4 @@
-\quad \quad Before we start on the calculus topics, this part of the book will acquaint you with the mathematics you would need to understand in order to read this book. If you are familiar with the these topics, you may skip to the Part II on Calculus I. For the rest of you, the pace of this part will be very fast, it is recommended that you read up on concepts you do understand very well. We will start with the idea of a \textit{function}. By now, I am sure that many of you may have seen equations like these:
+\quad \quad Before we start on the calculus topics, this part of the book will acquaint you with the mathematics you would need to understand in order to read this book. If you are familiar with the these topics, you may skip to the Part II on Calculus I. For the rest of you, the pace of this part will be very fast, it is recommended that you read up on the concepts you do not understand very well. We will start with the idea of a \textit{function}. By now, I am sure that many of you may have seen equations like these:
   \begin{equation}
     x^2-5x+6=0
   \end{equation}
@@ -64,7 +64,8 @@
     \marginnote{\footnotesize \textit{As you will see in Part IV of the book, this is the \textit{parametric} equation of a circle.}}
       \Cref{circle} is an example of a \textit{multivariate} function, in other words, it takes in multiple inputs. If \(x=2\) and \(y=2\), then \(f(2,2)=8\). On the other hand, \Cref{paramcircle} does not have a single output. Instead, it has a tuple \marginnote{ \\ \footnotesize \textit{A tuple is basically a set where order matters. You can treat it as if it is a coordinate.}} as its output. Evaluating it at \(t=\pi\), notice that the output is \((-1, 0)\). What is interesting is that if you trace out its outputs on a plane for all \(t \in \mathbb{R}\), you will get:
 
-    \begin{figure}[h]
+  \begin{figure}[h]
+  \centering
   \begin{tikzpicture}
     \begin{axis}[trig format=rad, axis equal, axis lines=left, ymax=1.5, ymin=-1.5]
       \addplot[color=blue, samples=100]({cos(x)}, {sin(x)});
