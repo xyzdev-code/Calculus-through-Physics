@@ -1,6 +1,9 @@
 \documentclass[10pt]{article} 
 \usepackage{NotesTeXV3, amsmath, pgfplots, tikz, caption, fancyhdr, cleveref, amsthm}
 \renewcommand\qedsymbol{QED}
+\counterwithin{figure}{section}
+\newcommand{\ihat}{\boldsymbol{\hat{\textbf{\i}}}}
+\newcommand{\jhat}{\boldsymbol{\hat{\textbf{\j}}}}
 \usetikzlibrary{calc, external}
 \newcommand{\MarkRightAngle}[4][.2cm]% #1=size (optional), #2-#4 three points: \angle #2#3#4
 {\coordinate (tempa) at ($(#3)!#1!(#2)$);
@@ -29,4 +32,10 @@
   \subsection{Injection, surjection and bijection}
   \input{chapters/chapter1_3.tex}
   \newpage
+  \subsection{An aside: A more rigorous definition of a function}
+  TBD
+  \newpage
+  \section{Linear Algebra}
+  \subsection{Vector Basics}
+  \input{chapters/chapter2_1.tex}
  \end{document}

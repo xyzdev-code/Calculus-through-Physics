@@ -1,5 +1,0 @@
-\contentsline {part}{I\hspace {1em}Precalculus}{1}{part.1}%
-\contentsline {section}{\numberline {1}Functions}{1}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Function basics}{1}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Function composition and inverses}{4}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Injection, surjection and bijection}{7}{subsection.1.3}%

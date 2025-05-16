@@ -1,0 +1,43 @@
+\quad \quad Firstly, good job on finishing chapter 1, it is not an easy feat. Stepping into this chapter, you may feel overwhelmed by the name, \textit{Linear Algebra}. What is that? Is that algebra but somehow in a linear way? We will discuss both the theoretical and practical aspects of Linear Algebra. Please take note though, the knowledge in this chapter will not be used until Calculus III to IV in part IV of the book. If you are just willing to learn Calc I and II, you do not need the knowledge here. With that said, let's delve into Vectors. A concept that is very ubiquitous in this world is a coordinate, like the GPS coordinate in the maps app. A coordinate simply describes the position of a point in space. Generally, it is denoted \((x,y)\) in 2 dimensions and \((x,y,z)\) in 3 dimensions. Likewise, vectors are also behaves like coordinates and are written down in a \textit{similar} fashion. Think of a vector as an arrow pointing to a coordinate.
+\begin{definition}
+  A vector is a mathematical object with a magnitude, or length, and a direction. A vector, \(\vec{a}\) , pointing to the coordinate \((x,y)\) is denoted as:
+  \begin{equation*}
+    \vec{a} = \begin{bmatrix}
+                x \\
+                y
+              \end{bmatrix} 
+  \end{equation*}
+  \marginnote{\footnotesize \textit{Likewise, a vector pointing to the coordinate \((x,y,z)\) is denoted \(
+    \begin{bsmallmatrix}
+      x \\
+      y \\
+      z
+    \end{bsmallmatrix}
+\)}}
+\end{definition}
+
+
+Of course, vectors by themselves are not very useful. Hence, we shall define the vector space. For the purposes of this text, you may think of vector spaces as the 2 and 3 dimensional euclidean spaces you are very familiar with. In a vector space, we can finally meaningfully manipulate them. Take a look at the vector \( \vec{a}=
+  \begin{bsmallmatrix}
+    1 \\
+    2
+  \end{bsmallmatrix}
+  \) and the vector \( \vec{b}=
+  \begin{bsmallmatrix}
+    -2 \\
+    1
+  \end{bsmallmatrix}
+\) in the two dimensional euclidean space:
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[scale=0.8]
+    \draw[thin, gray!40] (-4,-4) grid (4,4);
+    \draw[line width=2pt, blue, -stealth] (0,0) -- (1,2) node[anchor=south west]{\(\vec{a}\)};
+    \draw[line width=2pt, red, -stealth] (0,0) -- (-2,1) node[anchor=south west]{\(\vec{b}\)};
+    \draw[<->] (-4,0) -- (4,0) node[right]{\(\ihat\)};
+    \draw[<->] (0,-4) -- (0,4) node[above]{\(\jhat\)};
+  \end{tikzpicture}
+  \caption{Figure of vectors \(\vec{a}\) and \(\vec{b}\).}
+  \label{vecab}
+\end{figure}
+
