@@ -33,7 +33,7 @@ Of course, vectors by themselves are not very useful. Hence, we shall define the
   \begin{tikzpicture}[scale=0.8]
     \draw[thin, gray!40] (-4,-4) grid (4,4);
     \draw[line width=2pt, blue, -stealth] (0,0) -- (1,2) node[anchor=south west]{\(\vec{a}\)};
-    \draw[line width=2pt, red, -stealth] (0,0) -- (-2,1) node[anchor=south west]{\(\vec{b}\)};
+    \draw[line width=2pt, red, -stealth] (0,0) -- (-2,1) node[anchor=south east]{\(\vec{b}\)};
     \draw[<->] (-4,0) -- (4,0) node[right]{\(\ihat\)};
     \draw[<->] (0,-4) -- (0,4) node[above]{\(\jhat\)};
   \end{tikzpicture}
@@ -41,3 +41,41 @@ Of course, vectors by themselves are not very useful. Hence, we shall define the
   \label{vecab}
 \end{figure}
 
+
+You may have noticed that the coordinate axes in \Cref{vecab} are unusual. Instead of the usual \(x\) axes, you have the \(\ihat\) and \(\jhat\) axes. This is a convention in linear algebra. \(\ihat\) translates to the \(x\) axis and \(\jhat\) translates to the \(y\) axis. Likewise, in the third dimension, \(\khat\) represents the \(z\) axis. With this in mind, another way of writing a vector \(\vec{a}=
+\begin{bsmallmatrix}
+  x \\
+  y 
+\end{bsmallmatrix} \) is \(\vec{a}=x \ihat + y \jhat \). Of course, vectors by themselves might not be that useful. Hence, we shall look at the \textit{addition} of vectors. A vector \(\vec{a}=
+    \begin{bsmallmatrix}
+      x_a \\ 
+      y_a
+    \end{bsmallmatrix}
+  \) added to a vector \(
+    \vec{b}=
+    \begin{bsmallmatrix}
+      x_b \\
+      y_b
+    \end{bsmallmatrix}
+  \) is the vector \(
+    \begin{bsmallmatrix}
+      x_a + x_b \\
+      y_a + y_b
+    \end{bsmallmatrix}
+  \). As you can see, the addition of two vectors results in another vector. Here is a illustration to help clear up things:
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \draw[thin, gray!40] (-4,-4) grid (4,4);
+    \draw[line width=2pt, blue, -stealth] (0,0) -- (1,2) node[anchor=south west]{\(\vec{a}\)};
+    \draw[line width=2pt, red, -stealth] (0,0) -- (1,1) node[anchor=south west]{\(\vec{b}\)};
+    \draw[line width=2pt, black, -stealth] (0,0) -- (2,3) node[anchor= south west]{\(\vec{a} + \vec{b}\)};
+    \draw[<->] (-4,0) -- (4,0) node[right]{\(\ihat\)};
+    \draw[<->] (0,-4) -- (0,4) node[above]{\(\jhat\)};
+  \end{tikzpicture}
+  \caption{illustration of vector addition.}
+  \label{vecadd}
+\end{figure}
+
+
+Let us analyze \Cref{vecadd}. Firstly, notice that \(\vec{a}=1 \ihat + 2 \jhat\) and \(\vec{b}=1 \ihat + 1 \jhat\).
