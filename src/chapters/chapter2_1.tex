@@ -73,9 +73,39 @@ You may have noticed that the coordinate axes in \Cref{vecab} are unusual. Inste
     \draw[<->] (-4,0) -- (4,0) node[right]{\(\ihat\)};
     \draw[<->] (0,-4) -- (0,4) node[above]{\(\jhat\)};
   \end{tikzpicture}
-  \caption{illustration of vector addition.}
+  \caption{Illustration of vector addition.}
   \label{vecadd}
 \end{figure}
 
 
-Let us analyze \Cref{vecadd}. Firstly, notice that \(\vec{a}=1 \ihat + 2 \jhat\) and \(\vec{b}=1 \ihat + 1 \jhat\).
+
+Let us analyze \Cref{vecadd}. Firstly, notice that \(\vec{a}=1 \ihat + 2 \jhat\) and \(\vec{b}=1 \ihat + 1 \jhat\). Thus, \(\vec{a}+\vec{b}=2 \ihat + 3 \jhat\), exactly like in our figure. One way to understand this is to "attach" the vector \(\vec{a}\)'s tail to \(\vec{b}\)'s head.
+\begin{marginfigure}
+  \centering
+  \begin{tikzpicture}[scale=0.525]
+    \draw[thin, gray!40] (-4,-4) grid (4,4);
+    \draw[line width=2pt, blue, -stealth] (1,1) -- (2,3) node[anchor=north west]{\(\vec{a}\)};
+    \draw[line width=2pt, red, -stealth] (0,0) -- (1,1) node[anchor=west]{\(\vec{b}\)};
+    \draw[line width=2pt, black, -stealth] (0,0) -- (2,3) node[anchor= south west]{\(\vec{a} + \vec{b}\)};
+    \draw[<->] (-4,0) -- (4,0) node[right]{\(\ihat\)};
+    \draw[<->] (0,-4) -- (0,4) node[above]{\(\jhat\)};
+  \end{tikzpicture}
+  \caption{Illustration of vector "head to tail" addition.}
+  \label{vecaddattach}
+\end{marginfigure}
+You may have seen this in your physics class before. Similarly, the subtraction of vectors \(\vec{x}=
+\begin{bsmallmatrix}
+  a \\
+  b
+\end{bsmallmatrix}
+\) and \(\vec{y}=
+  \begin{bsmallmatrix}
+    c \\
+    d
+  \end{bsmallmatrix}
+\) is \(\vec{x}-\vec{y}=
+\begin{bsmallmatrix}
+  a - c \\
+  b - d
+\end{bsmallmatrix}
+\). Of course, we can use the same "head to tail" model to explain vector subtraction. Subtracting \(\vec{y}\) from \(\vec{x}\) is simply finding the vector whose tail is on the head of \(\vec{y}\) and whose head is on the head of \(\vec{x}\).
