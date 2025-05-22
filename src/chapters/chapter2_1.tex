@@ -1,13 +1,13 @@
 \quad \quad Firstly, good job on finishing chapter 1, it is not an easy feat. Stepping into this chapter, you may feel overwhelmed by the name, \textit{Linear Algebra}. What is that? Is that algebra but somehow in a linear way? We will discuss both the theoretical and practical aspects of Linear Algebra. Please take note though, the knowledge in this chapter will not be used until Calculus III to IV in part IV of the book. If you are just willing to learn Calc I and II, you do not need the knowledge here. With that said, let's delve into Vectors. A concept that is very ubiquitous in this world is a coordinate, like the GPS coordinate in the maps app. A coordinate simply describes the position of a point in space. Generally, it is denoted \((x,y)\) in 2 dimensions and \((x,y,z)\) in 3 dimensions. Likewise, vectors are also behaves like coordinates and are written down in a \textit{similar} fashion. Think of a vector as an arrow pointing to a coordinate.
 \begin{definition}
-  A vector is a mathematical object with a magnitude, or length, and a direction. A vector, \(\vec{a}\) , pointing to the coordinate \((x,y)\) is denoted as:
+  A vector is a mathematical object with a magnitude, or length, and a direction. A vector, \(\vec{a}\) is a point \((x,y)\) in space drawn with an arrow. It is denoted as:
   \begin{equation*}
     \vec{a} = \begin{bmatrix}
                 x \\
                 y
               \end{bmatrix} 
   \end{equation*}
-  \marginnote{\footnotesize \textit{Likewise, a vector pointing to the coordinate \((x,y,z)\) is denoted \(
+  \marginnote{\footnotesize \textit{Likewise, a vector at \((x,y,z)\) is denoted \(
     \begin{bsmallmatrix}
       x \\
       y \\
@@ -42,7 +42,7 @@ Of course, vectors by themselves are not very useful. Hence, we shall define the
 \end{figure}
 
 
-You may have noticed that the coordinate axes in \Cref{vecab} are unusual. Instead of the usual \(x\) axes, you have the \(\ihat\) and \(\jhat\) axes. This is a convention in linear algebra. \(\ihat\) translates to the \(x\) axis and \(\jhat\) translates to the \(y\) axis. Likewise, in the third dimension, \(\khat\) represents the \(z\) axis. With this in mind, another way of writing a vector \(\vec{a}=
+You may have noticed that the coordinate axes in \Cref{vecab} are unusual. Instead of the usual \(xy\) axes, you have the \(\ihat\) and \(\jhat\) axes. This is a convention in linear algebra. \(\ihat\) translates to the \(x\) axis and \(\jhat\) translates to the \(y\) axis. Likewise, in the third dimension, \(\khat\) represents the \(z\) axis. With this in mind, another way of writing a vector \(\vec{a}=
 \begin{bsmallmatrix}
   x \\
   y 
@@ -79,7 +79,8 @@ You may have noticed that the coordinate axes in \Cref{vecab} are unusual. Inste
 
 
 
-Let us analyze \Cref{vecadd}. Firstly, notice that \(\vec{a}=1 \ihat + 2 \jhat\) and \(\vec{b}=1 \ihat + 1 \jhat\). Thus, \(\vec{a}+\vec{b}=2 \ihat + 3 \jhat\), exactly like in our figure. One way to understand this is to "attach" the vector \(\vec{a}\)'s tail to \(\vec{b}\)'s head.
+Let us analyze \Cref{vecadd}. Firstly, notice that \(\vec{a}=1 \ihat + 2 \jhat\) and \(\vec{b}=1 \ihat + 1 \jhat\). Thus, \(\vec{a}+\vec{b}=2 \ihat + 3 \jhat\), exactly like in our figure. One way to understand this is to "attach" the vector \(\vec{a}\)'s tail to \(\vec{b}\)'s head by translating \(\vec{a}\). 
+\marginnote{\footnotesize \textit{ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ Translation means moving something without rotation or any scaling.}}
 \begin{marginfigure}
   \centering
   \begin{tikzpicture}[scale=0.525]
@@ -108,4 +109,49 @@ You may have seen this in your physics class before. Similarly, the subtraction 
   a - c \\
   b - d
 \end{bsmallmatrix}
-\). Of course, we can use the same "head to tail" model to explain vector subtraction. Subtracting \(\vec{y}\) from \(\vec{x}\) is simply finding the vector whose tail is on the head of \(\vec{y}\) and whose head is on the head of \(\vec{x}\).
+\). Of course, we can use the same "head to tail" model to explain vector subtraction. Subtracting \(\vec{y}\) from \(\vec{x}\) is simply finding the vector whose tail is on the head of \(\vec{y}\) and whose head is on the head of \(\vec{x}\). However, some of you may be scratching your heads right now, what if a vector does not start from the \textit{origin} (or the coordinate \(0,0\)) but its tail lands on, say \((1,1)\). How do we express such a vector? The answer may be surprising, both vectors are the same and have the same representation. However, unless specifically stated, \textit{all} vectors start from the origin. This is also why the "head to tail" model works, while the "tail" of the vector is not at the origin, translating it to the origin results in an \textit{identical} vector. 
+\begin{example}
+  Here are some examples of vectors:
+  \begin{eqnarray*}
+    \vec{a} = \begin{bmatrix}
+      1 \\
+      2
+    \end{bmatrix} & 
+    \vec{b} = \begin{bmatrix}
+      -3 \\
+      4
+    \end{bmatrix} &
+    \vec{c} = \begin{bmatrix}
+      2 \\
+      -2
+    \end{bmatrix}
+  \end{eqnarray*}
+  Here are some examples of adding and subtracting vectors. Note that these operations are \textit{commutative}, in other words the order does not matter:
+  \begin{equation*}
+    \vec{a} + \vec{b} = \begin{bmatrix}
+      1 - 3 \\
+      2 + 4
+    \end{bmatrix} = \begin{bmatrix}
+      -2 \\
+      6
+    \end{bmatrix}
+  \end{equation*}
+  \begin{equation*}
+    \vec{a} - \vec{c} = \begin{bmatrix}
+      -1 \\
+      4
+    \end{bmatrix} 
+  \end{equation*}
+  \begin{equation*}
+    \vec{a} + \vec{b} - \vec{c} = \begin{bmatrix}
+      -2
+      6
+    \end{bmatrix} - \vec{c} = \begin{bmatrix}
+      -4
+      8
+    \end{bmatrix}
+  \end{equation*}
+\end{example}
+
+
+Easy stuff, right? Before we move on, there is one last thing I want to convey.
