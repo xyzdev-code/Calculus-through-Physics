@@ -1,4 +1,4 @@
-\quad \quad Firstly, good job on finishing chapter 1, it is not an easy feat. Stepping into this chapter, you may feel overwhelmed by the name, \textit{Linear Algebra}. What is that? Is that algebra but somehow in a linear way? We will discuss both the theoretical and practical aspects of Linear Algebra. Please take note though, the knowledge in this chapter will not be used until Calculus III to IV in part IV of the book. If you are just willing to learn Calc I and II, you do not need the knowledge here. With that said, let's delve into Vectors. A concept that is very ubiquitous in this world is a coordinate, like the GPS coordinate in the maps app. A coordinate simply describes the position of a point in space. Generally, it is denoted \((x,y)\) in 2 dimensions and \((x,y,z)\) in 3 dimensions. Likewise, vectors are also behaves like coordinates and are written down in a \textit{similar} fashion. Think of a vector as an arrow pointing to a coordinate.
+\quad \quad Firstly, good job on finishing chapter 1, it is not an easy feat. Stepping into this chapter, you may feel overwhelmed by the name, \textit{Linear Algebra}. What is that? Is that algebra but somehow in a linear way? We will discuss both the theoretical and practical aspects of Linear Algebra. Please take note though, the knowledge in this chapter will not be used until Calculus III to IV in part IV of the book. If you are just willing to learn Calc I and II, you do not need the knowledge here. With that said, let's delve into Vectors. A concept that is very ubiquitous in this world is a coordinate, like the GPS coordinate in the maps app. A coordinate simply describes the position of a point in space. Generally, it is denoted \((x,y)\) in 2 dimensions and \((x,y,z)\) in 3 dimensions. Likewise, vectors are also behaves like coordinates and are written down in a \textit{similar} fashion. Think of a vector as a coordinate.
 \begin{definition}
   A vector is a mathematical object with a magnitude, or length, and a direction. A vector, \(\vec{a}\) is a point \((x,y)\) in space drawn with an arrow. It is denoted as:
   \begin{equation*}
@@ -109,7 +109,7 @@ You may have seen this in your physics class before. Similarly, the subtraction 
   a - c \\
   b - d
 \end{bsmallmatrix}
-\). Of course, we can use the same "head to tail" model to explain vector subtraction. Subtracting \(\vec{y}\) from \(\vec{x}\) is simply finding the vector whose tail is on the head of \(\vec{y}\) and whose head is on the head of \(\vec{x}\). However, some of you may be scratching your heads right now, what if a vector does not start from the \textit{origin} (or the coordinate \(0,0\)) but its tail lands on, say \((1,1)\). How do we express such a vector? The answer may be surprising, both vectors are the same and have the same representation. However, unless specifically stated, \textit{all} vectors start from the origin. This is also why the "head to tail" model works, while the "tail" of the vector is not at the origin, translating it to the origin results in an \textit{identical} vector. 
+\). Of course, we can use the same "head to tail" model to explain vector subtraction. Subtracting \(\vec{y}\) from \(\vec{x}\) is simply finding the vector whose tail is on the head of \(\vec{y}\) and whose head is on the head of \(\vec{x}\). However, some of you may be scratching your heads right now, what if a vector does not start from the \textit{origin} (or the coordinate \((0,0)\)) but its tail lands on, say \((1,1)\). How do we express such a vector? The answer may be surprising, both vectors have the same representation. However, unless specifically stated, \textit{all} vectors start from the origin. This is also why the "head to tail" model works, while the "tail" of the vector is not at the origin, translating it to the origin results in an \textit{identical} vector. 
 \begin{example}
   Here are some examples of vectors:
   \begin{eqnarray*}
@@ -144,14 +144,100 @@ You may have seen this in your physics class before. Similarly, the subtraction 
   \end{equation*}
   \begin{equation*}
     \vec{a} + \vec{b} - \vec{c} = \begin{bmatrix}
-      -2
+      -2 \\
       6
     \end{bmatrix} - \vec{c} = \begin{bmatrix}
-      -4
+      -4 \\
       8
     \end{bmatrix}
   \end{equation*}
 \end{example}
 
 
-Easy stuff, right? Before we move on, there is one last thing I want to convey.
+Easy stuff, right? Before we move on, there is one last thing. Given a vector \(\vec{a}\), \(-\vec{a}\) can be thought of the same vector with the same magnitude but pointing in the \textit{opposite} direction. To find it, simply flip the signs of all the components in \(\vec{a}\). If you add \(\vec{a}\) to \(-\vec{a}\), you get what is called the \textit{zero vector}, or the vector \(\begin{bsmallmatrix}
+ 0 \\
+ 0
+\end{bsmallmatrix}\). This is a vector without direction has zero magnitude. We shall denote it \(\vec{0}\).
+\begin{Exercise}
+  \begin{enumerate}
+    \item{Given that \(\vec{a}=\begin{bsmallmatrix}
+      3 \\
+      4
+      \end{bsmallmatrix} \) and \(\vec{b}=\begin{bsmallmatrix}
+      -2 \\
+      1
+      \end{bsmallmatrix} \) and \(\vec{c}=\begin{bsmallmatrix}
+       -3 \\
+       -2
+      \end{bsmallmatrix} \), calculate: \begin{enumerate}
+      \item{\(\vec{a}+\vec{b}\)}
+      \item{\(\vec{a} - \vec{c}\)}
+      \item{\(\vec{a} - \vec{b} - \vec{c}\)}
+    \end{enumerate} }
+  \item{Are the following statements true or false: 
+    \begin{enumerate}
+      \item{The subtraction of two vectors \textit{always} results in a vector.}
+      \item{When any vector is added to the zero vector, the result \textit{always} is not a zero vector.}
+    \end{enumerate}
+  \item{\textbf{(Difficult)} Prove that the addition of vectors is \textit{associative} given that the addition in \(\mathbb{R}\) is associative. \marginnote{\footnotesize \textit{An operation \(\circ\) is associative if order in which it is applied does not matter, in this case \((\vec{x} + \vec{y}) + \vec{z} = \vec{x} + (\vec{y} + \vec{z})\) .}} }
+    }
+  \end{enumerate} 
+\end{Exercise}
+\begin{Solution}
+  \begin{enumerate}
+    \item{\begin{enumerate}
+      \item{\(\begin{bmatrix}
+        1 \\ 
+        5
+      \end{bmatrix}\)} 
+    \item{\(\begin{bmatrix}
+      6 \\
+      6
+    \end{bmatrix}\)}
+  \item{\(\begin{bmatrix}
+    8 \\
+    7
+  \end{bmatrix} \)}
+    \end{enumerate} } 
+  \item{\begin{enumerate}
+    \item{True since subtraction can be viewed as \(\vec{a} + (-\vec{b})\) and \(-\vec{b}\) is a vector.}
+    \item{False since \(\vec{0}+\vec{0}=\vec{0}\).}
+  \end{enumerate}}
+\item{Let \(\vec{x}, \vec{y}, \vec{z}\) be vectors in \(\mathbb{R}^{n}\) (N-dimensional euclidean space). Notice that:
+    \begin{align*}
+      (\vec{x} + \vec{y}) + \vec{z} &= \left( \begin{bmatrix}
+        x_1 \\
+        \dots \\
+        x_n
+      \end{bmatrix} + \begin{bmatrix}
+        y_1 \\
+        \dots \\
+        y_n
+      \end{bmatrix} \right) + \begin{bmatrix}
+        z_1 \\
+        \dots \\
+        z_n
+        \end{bmatrix} \\ &= \begin{bmatrix}
+        x_1 + y_1 + z_1 \\ 
+        \dots \\
+        x_n + y_n + z_n
+        \end{bmatrix} \\ &= \begin{bmatrix}
+      x_1 + (y_1 + z_1) \\ 
+        \dots \\
+      x_n + (y_n + z_n) \end{bmatrix} \\ &= \begin{bmatrix}
+        x_1 \\
+        \dots \\
+        x_n
+      \end{bmatrix} + \left( \begin{bmatrix}
+        y_1 \\
+        \dots \\
+        y_n
+      \end{bmatrix}  + \begin{bmatrix}
+        z_1 \\
+        \dots \\
+        z_n
+      \end{bmatrix} \right) \\ &= \vec{x} + (\vec{y} + \vec{z}) 
+    \end{align*}
+  }
+  \end{enumerate} 
+\end{Solution}
