@@ -434,78 +434,7 @@
 
 %first page
 \renewcommand\maketitle{
-%% First page
 \pagestyle{empty}
-\thispagestyle{titlepage}
-\newgeometry{marginparwidth=0pt,marginparsep=0pt,textwidth=.8\paperwidth,hoffset=0in,voffset=0in}
-\setcounter{page}{0}
-\noindent{\small\scshape\@fpheader}\@preprint\par
-\afterLogoSpace
-% Subheader
-\if!\@subheader!\else\noindent{\trfont{\@subheader}}\fi
-\afterSubheaderSpace
-% Proceedings
-\if!\@proceeding!\else\noindent{\sc\@proceeding}\fi
-\afterProceedingsSpace
-% Title
-{\huge\centering\sffamily\bfseries\sc\@title\par}
-\afterTitleSpace
-% Rule
-{\color{Maroon}\hrule height .6\p@}%
-\afterRuleSpace
-% Collaboration
-\if!\@collaboration!\else
-{\Large\bfseries\sffamily\raggedright\@collaboration}\par
-\afterCollaborationSpace
-\fi
-%
-\if!\@collaborationImg!\else
-{\normalsize\bfseries\sffamily\raggedright\@collaborationImg}\par
-\afterCollaborationImgSpace
-%% I leave the size and font so that if there are two collaboration
-%% they can be linked with an 'and'
-\fi
-% Author
-%{\bfseries\raggedright\sffamily\the\auth@toks\par}
-{\bfseries\raggedright\sffamily\sc\the\auth@toks\par}
-\afterAuthorSpace
-% Affiliation
-\ifaffil\begin{list}{}{%
-\setlength{\leftmargin}{0.28cm}%
-\setlength{\labelsep}{0pt}%
-\setlength{\itemsep}{\affiliationsSep}%
-\setlength{\topsep}{-\parskip}}
-\itshape\small%
-\the\affil@toks
-\end{list}\fi
-\afterAffiliationSpace
-% E-mail
-\ifemailadd %% if emailadd is true
-\noindent\hspace{0.28cm}\begin{minipage}[l]{.9\textwidth}
-\begin{flushleft}
-%\textit{E-mail:} \the\email@toks
-\the\email@toks
-\end{flushleft}
-\end{minipage}
-\else %% if emailaddfalse do nothing
-\PackageWarningNoLine{\jname}{E-mails are missing.\MessageBreak Plese use \protect\emailAdd\space macro to provide e-mails.}
-\fi
-\afterEmailSpace
-%Erratum or addendum
-\if!\@xtum!\else\noindent{\@xtum}\afterXtumSpace\fi
-% Abstract
-%\if!\@abstract!\else\noindent{\renewcommand\baselinestretch{.9}\textsc{Abstract:}}\ \@abstract\afterAbstractSpace\fi
-\if!\@abstract!\else\noindent\@abstract\afterAbstractSpace\fi
-% Keywords
-\if!\@keywords!\else\noindent{\textsc{Keywords:}} \@keywords\afterKeywordsSpace\fi
-% Arxivnumber
-\if!\@arxivnumber!\else\noindent{\textsc{ArXiv ePrint:}} \href{http://arxiv.org/abs/\@arxivnumber}{\@arxivnumber}\afterArxivSpace\fi
-% Dedication
-\if!\@dedicated!\else\vbox{\small\it\raggedleft\@dedicated}\afterDedicatedSpace\fi
-%
-\ifnotoc\else
-\iftoccontinuous\else\newpage\fi
-\beforetochook\hrule
 \newpage
 \section*{\bfseries \sc Preface to the first edition}
 \newpage
@@ -513,7 +442,6 @@
 \afterTocSpace
 \hrule
 \afterTocRuleSpace
-\fi
 %\if!\@acknowledgments!\else\vfill\noindent{\renewcommand\baselinestretch{.9}\textsc{Acknowledgments:}}\ \@acknowledgments\afterAbstractSpace\fi
 \setcounter{footnote}{0}
 \restoregeometry

@@ -42,7 +42,7 @@ Of course, vectors by themselves are not very useful. Hence, we shall define the
 \end{figure}
 
 
-You may have noticed that the coordinate axes in \Cref{vecab} are unusual. Instead of the usual \(xy\) axes, you have the \(\ihat\) and \(\jhat\) axes. This is a convention in linear algebra. \(\ihat\) translates to the \(x\) axis and \(\jhat\) translates to the \(y\) axis. Likewise, in the third dimension, \(\khat\) represents the \(z\) axis. With this in mind, another way of writing a vector \(\vec{a}=
+You may have noticed that the coordinate axes in \Cref{vecab} are unusual. Instead of the usual \(xy\) axes, you have the \(\ihat\) and \(\jhat\) axes. \marginnote{\footnotesize \textit{Some authors use \(\hat{\textbf{x}}, \hat{\textbf{y}}, \hat{\textbf{z}}\) instead of the usual \(\ihat , \jhat , \khat\). We shall use the former.}} This is a convention in linear algebra. \(\ihat\) translates to the \(x\) axis and \(\jhat\) translates to the \(y\) axis. Likewise, in the third dimension, \(\khat\) represents the \(z\) axis. With this in mind, another way of writing a vector \(\vec{a}=
 \begin{bsmallmatrix}
   x \\
   y 
@@ -110,6 +110,21 @@ You may have seen this in your physics class before. Similarly, the subtraction 
   b - d
 \end{bsmallmatrix}
 \). Of course, we can use the same "head to tail" model to explain vector subtraction. Subtracting \(\vec{y}\) from \(\vec{x}\) is simply finding the vector whose tail is on the head of \(\vec{y}\) and whose head is on the head of \(\vec{x}\). However, some of you may be scratching your heads right now, what if a vector does not start from the \textit{origin} (or the coordinate \((0,0)\)) but its tail lands on, say \((1,1)\). How do we express such a vector? The answer may be surprising, both vectors have the same representation. However, unless specifically stated, \textit{all} vectors start from the origin. This is also why the "head to tail" model works, while the "tail" of the vector is not at the origin, translating it to the origin results in an \textit{identical} vector. 
+\newpage
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \draw[thin, gray!40] (-4,-4) grid (4,4);
+    \draw[line width=2pt, blue, -stealth] (2,1) -- (3,2);
+    \draw[line width=2pt, red, -stealth] (0,0) -- (1,1);
+    \draw[line width=2pt, black, -stealth] (-3,-2) -- (-2,-1);
+    \draw[<->] (-4,0) -- (4,0) node[right]{\(\ihat\)};
+    \draw[<->] (0,-4) -- (0,4) node[above]{\(\jhat\)}; 
+  \end{tikzpicture}
+  \caption{Three identical vectors.}
+\end{figure}
+
+
 \begin{example}
   Here are some examples of vectors:
   \begin{eqnarray*}
@@ -158,6 +173,14 @@ Easy stuff, right? Before we move on, there is one last thing. Given a vector \(
  0 \\
  0
 \end{bsmallmatrix}\). This is a vector without direction has zero magnitude. We shall denote it \(\vec{0}\).
+\begin{marginfigure}
+        \centering
+        \begin{tikzpicture}[scale=0.525]
+          \draw[line width=2pt, blue, -stealth] (0,0) -- (3,4) node[anchor=west] {\(\vec{a}\)};
+          \draw[line width=2pt, blue, -stealth] (3,4) -- (1,5) node[anchor=east] {\(\vec{b}\)};
+        \end{tikzpicture}
+        \caption{Visualisation of "head to tail" addition of \(\vec{a}\) and \(\vec{b}\).}
+    \end{marginfigure}
 \begin{Exercise}
   \begin{enumerate}
     \item{Given that \(\vec{a}=\begin{bsmallmatrix}
@@ -173,7 +196,9 @@ Easy stuff, right? Before we move on, there is one last thing. Given a vector \(
       \item{\(\vec{a}+\vec{b}\)}
       \item{\(\vec{a} - \vec{c}\)}
       \item{\(\vec{a} - \vec{b} - \vec{c}\)}
-    \end{enumerate} }
+      
+    \end{enumerate} 
+    }
   \item{Are the following statements true or false: 
     \begin{enumerate}
       \item{The subtraction of two vectors \textit{always} results in a vector.}
