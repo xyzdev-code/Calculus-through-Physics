@@ -15,16 +15,28 @@
 }
 \pgfplotsset{compat=1.14}
 \usetikzlibrary{positioning}
+\usepackage{background}
+
 \begin{document}
   \begin{titlepage}
-  \newgeometry{centering, margin=4cm}
-  \thispagestyle{empty}
+  \backgroundsetup{scale = 0.8, angle = 0, opacity = 0.2,
+   contents = {\includegraphics[width = \paperwidth,
+   height = \paperheight, keepaspectratio]
+   {coverplot.pdf}}}
+  \thispagestyle{empty} 
+  \newgeometry{centering}
   \centering
-  \fontsize{80}{96}\selectfont Practical\\ Calculus\\
-  \scshape \Huge first edition \\
-  \Large \textnormal{Xiao Yaozi}
-  \newpage
+  \fontsize{80}{96}\selectfont Practical \\
+  \centering
+  \fontsize{80}{96}\selectfont Calculus \\
+  \centering
+  \scshape \Huge \, \, \, \, \, first edition
+  \newline
+  \foreach \n in {0,...,10} {\newline}
+  Xiao Yaozi
   \end{titlepage}
+  \backgroundsetup{contents={}}
+  \newpage
   \maketitle
   \flushbottom
   \newpage

@@ -1,0 +1,9 @@
+\documentclass{standalone}
+\usepackage{tikz, pgfplots}
+\begin{document}
+\begin{tikzpicture}[scale=8]
+    \begin{axis}[hide axis, trig format plots=rad, colormap/cool]
+      \addplot3[mesh, samples=60, domain=0:6]{(1+sin(x/2))*sin(x)*cos(y)}; 
+    \end{axis} 
+  \end{tikzpicture}
+\end{document}
