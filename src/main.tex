@@ -1,5 +1,5 @@
 \documentclass[10pt]{article} 
-\usepackage{NotesTeXV3, amsmath, pgfplots, tikz, caption, fancyhdr, cleveref, amsthm}
+\usepackage{NotesTeXV3, amsmath, pgfplots, tikz, caption, fancyhdr, cleveref, amsthm, lipsum}
 \usepackage[T1]{fontenc}
 \renewcommand\qedsymbol{QED}
 \counterwithin{figure}{section}
@@ -16,9 +16,9 @@
 \pgfplotsset{compat=1.14}
 \usetikzlibrary{positioning}
 \usepackage{background}
-
 \begin{document}
   \begin{titlepage}
+  
   \backgroundsetup{scale = 0.8, angle = 0, opacity = 0.2,
    contents = {\includegraphics[width = \paperwidth,
    height = \paperheight, keepaspectratio]
@@ -35,11 +35,14 @@
   \foreach \n in {0,...,10} {\newline}
   Xiao Yaozi
   \end{titlepage}
+  \pagestyle{empty}
   \backgroundsetup{contents={}}
+  \section*{\scshape {Preface to the first edition}}
+  \lipsum[75]
   \newpage
-  \maketitle
+  \tableofcontents
+  \newpage
   \flushbottom
-  \newpage
   \pagestyle{fancynotes}
   \part{Precalculus}
   \section{Functions}
@@ -58,4 +61,7 @@
   \section{Linear Algebra}
   \subsection{Vector Basics}
   \input{chapters/chapter2_1.tex}
+  \newpage
+  \subsection{Scaling, dot and cross product}
+  \input{chapters/chapter2_2.tex}
  \end{document}

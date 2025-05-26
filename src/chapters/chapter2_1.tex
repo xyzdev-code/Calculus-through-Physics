@@ -1,4 +1,4 @@
-\quad \quad Firstly, good job on finishing chapter 1, it is not an easy feat. Stepping into this chapter, you may feel overwhelmed by the name, \textit{Linear Algebra}. What is that? Is that algebra but somehow in a linear way? We will discuss both the theoretical and practical aspects of Linear Algebra. Please take note though, the knowledge in this chapter will not be used until Calculus III to IV in part IV of the book. If you are just willing to learn Calc I and II, you do not need the knowledge here. With that said, let's delve into Vectors. A concept that is very ubiquitous in this world is a coordinate, like the GPS coordinate in the maps app. A coordinate simply describes the position of a point in space. Generally, it is denoted \((x,y)\) in 2 dimensions and \((x,y,z)\) in 3 dimensions. Likewise, vectors are also behaves like coordinates and are written down in a \textit{similar} fashion. Think of a vector as a coordinate.
+\quad \quad Firstly, good job on finishing chapter 1, it is not an easy feat. Stepping into this chapter, you may feel overwhelmed by the name, \textit{Linear Algebra}. What is that? Please take note though, the knowledge in this chapter will not be used until Calculus III to IV in part IV of the book. If you are just willing to learn Calc I and II, you do not need the knowledge here. With that said, let's delve into Vectors. A concept that is very ubiquitous in this world is a coordinate, like the GPS coordinate in the maps app. A coordinate simply describes the position of a point in space. Generally, it is denoted \((x,y)\) in 2 dimensions and \((x,y,z)\) in 3 dimensions. Likewise, vectors are also behaves like coordinates and are written down in a \textit{similar} fashion. Think of a vector as a coordinate.
 \begin{definition}
   A vector is a mathematical object with a magnitude, or length, and a direction. A vector, \(\vec{a}\) is a point \((x,y)\) in space drawn with an arrow. It is denoted as:
   \begin{equation*}
@@ -42,11 +42,22 @@ Of course, vectors by themselves are not very useful. Hence, we shall define the
 \end{figure}
 
 
-You may have noticed that the coordinate axes in \Cref{vecab} are unusual. Instead of the usual \(xy\) axes, you have the \(\ihat\) and \(\jhat\) axes. \marginnote{\footnotesize \textit{Some authors use \(\hat{\textbf{x}}, \hat{\textbf{y}}, \hat{\textbf{z}}\) instead of the usual \(\ihat , \jhat , \khat\). We shall use the former.}} This is a convention in linear algebra. \(\ihat\) translates to the \(x\) axis and \(\jhat\) translates to the \(y\) axis. Likewise, in the third dimension, \(\khat\) represents the \(z\) axis. With this in mind, another way of writing a vector \(\vec{a}=
+You may have noticed that the coordinate axes in \Cref{vecab} are unusual. Instead of the usual \(xy\) axes, you have the \(\ihat\) and \(\jhat\) axes. \marginnote{\footnotesize \textit{Some authors use \(\hat{\textbf{x}}, \hat{\textbf{y}}, \hat{\textbf{z}}\) instead of the usual \(\ihat , \jhat , \khat\). We shall use the former.}} This is a convention in linear algebra. \(\ihat\) translates to the \(x\) axis and \(\jhat\) translates to the \(y\) axis. Likewise, in the third dimension, \(\khat\) represents the \(z\) axis. Another thing to note are the \textit{basis vectors}:
+\begin{definition}
+  The set of vectors in a vector space are called \textit{basis} if every vector in the vector space can be written uniquely written as a finite \textit{linear combination} \marginnote{\footnotesize \textit{A linear combination of \(x\) and \(y\) is \(ax+by\) where \(a, b\) are constants.}} of the basis vectors. An example would be these vectors \(\begin{bsmallmatrix}
+   0 \\
+   1
+  \end{bsmallmatrix} \) and \(\begin{bsmallmatrix}
+   1 \\
+   0
+  \end{bsmallmatrix} \) in the 2 dimensional euclidean space.
+  \label{basis}
+\end{definition}
+With this in mind, another way of writing a vector \(\vec{a}=
 \begin{bsmallmatrix}
   x \\
   y 
-\end{bsmallmatrix} \) is \(\vec{a}=x \ihat + y \jhat \). Of course, vectors by themselves might not be that useful. Hence, we shall look at the \textit{addition} of vectors. A vector \(\vec{a}=
+\end{bsmallmatrix} \) is \(\vec{a}=x \ihat + y \jhat \). Notice that like in \Cref{basis}, \(\ihat\) and \(\jhat\) are written in a linear combination of \(x\) and \(y\). Of course, these are not the only basis vectors in 2d, if you have learned polar coordinates before, there is the equivalent \(\boldsymbol\hat{\textbf{r}}\) and \(\boldsymbol\hat{\boldsymbol\theta}\), but this is a topic for a later chapter. Next, we shall look at the \textit{addition} of vectors. A vector \(\vec{a}=
     \begin{bsmallmatrix}
       x_a \\ 
       y_a
@@ -169,10 +180,22 @@ You may have seen this in your physics class before. Similarly, the subtraction 
 \end{example}
 
 
-Easy stuff, right? Before we move on, there is one last thing. Given a vector \(\vec{a}\), \(-\vec{a}\) can be thought of the same vector with the same magnitude but pointing in the \textit{opposite} direction. To find it, simply flip the signs of all the components in \(\vec{a}\). If you add \(\vec{a}\) to \(-\vec{a}\), you get what is called the \textit{zero vector}, or the vector \(\begin{bsmallmatrix}
+Given a vector \(\vec{a}\), \(-\vec{a}\) can be thought of the same vector with the same magnitude but pointing in the \textit{opposite} direction. To find it, simply flip the signs of all the components in \(\vec{a}\). If you add \(\vec{a}\) to \(-\vec{a}\), you get what is called the \textit{zero vector}, or the vector \(\begin{bsmallmatrix}
  0 \\
  0
 \end{bsmallmatrix}\). This is a vector without direction has zero magnitude. We shall denote it \(\vec{0}\).
+
+
+Lastly, I want to briefly touch on the idea of \textit{magnitude} which is basically the length of a vector. The derivation of the following formula is simply the Pythagorean theorem.
+\begin{definition}
+  The magnitude of a vector \(\vec{v}\) in n-dimensional space is as such:
+  \begin{equation*}
+    ||\vec{v}|| = \sqrt{v_{1}^{2}+v_{2}^{2}+...+v_{n}^{2}} 
+  \end{equation*}
+  A \textit{unit} vector is a vector with magnitude 0.
+  \label{vecmagnitude}
+\end{definition}
+\newpage
 \begin{marginfigure}
         \centering
         \begin{tikzpicture}[scale=0.525]
@@ -182,6 +205,7 @@ Easy stuff, right? Before we move on, there is one last thing. Given a vector \(
         \caption{Visualisation of "head to tail" addition of \(\vec{a}\) and \(\vec{b}\).}
     \end{marginfigure}
 \begin{Exercise}
+
   \begin{enumerate}
     \item{Given that \(\vec{a}=\begin{bsmallmatrix}
       3 \\
@@ -204,6 +228,14 @@ Easy stuff, right? Before we move on, there is one last thing. Given a vector \(
       \item{The subtraction of two vectors \textit{always} results in a vector.}
       \item{When any vector is added to the zero vector, the result \textit{always} is not a zero vector.}
     \end{enumerate}
+  \item{Find the magnitude of \(\begin{bmatrix}
+    3 \\
+    4
+  \end{bmatrix}\)  and \(\begin{bmatrix}
+    3 \\
+    4 \\
+    5
+  \end{bmatrix}\).}
   \item{\textbf{(Difficult)} Prove that the addition of vectors is \textit{associative} given that the addition in \(\mathbb{R}\) is associative. \marginnote{\footnotesize \textit{An operation \(\circ\) is associative if order in which it is applied does not matter, in this case \((\vec{x} + \vec{y}) + \vec{z} = \vec{x} + (\vec{y} + \vec{z})\) .}} }
     }
   \end{enumerate} 
@@ -228,6 +260,7 @@ Easy stuff, right? Before we move on, there is one last thing. Given a vector \(
     \item{True since subtraction can be viewed as \(\vec{a} + (-\vec{b})\) and \(-\vec{b}\) is a vector.}
     \item{False since \(\vec{0}+\vec{0}=\vec{0}\).}
   \end{enumerate}}
+\item{5 and \(\sqrt{50}\).}
 \item{Let \(\vec{x}, \vec{y}, \vec{z}\) be vectors in \(\mathbb{R}^{n}\) (N-dimensional euclidean space). Notice that:
     \begin{align*}
       (\vec{x} + \vec{y}) + \vec{z} &= \left( \begin{bmatrix}
