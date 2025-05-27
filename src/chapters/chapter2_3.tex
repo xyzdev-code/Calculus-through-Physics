@@ -1,0 +1,28 @@
+\quad \quad In this chapter, we will introduce a new mathematical object that you have probably heard before but not sure what it is. To be honest, many mathematics students only know how to \textit{compute} matrix operations but does not know the meaning behind them. I will try to do my best to explain them in a clear manner and I hope that you would appreciate matrices more for their beautiful geometric meaning than their mind-numbing calculations. A great place to start is the \textit{basis vectors} introduced back in \Cref{basis}. All vectors can be written as a unique linear combination of the basis vectors. But \(\ihat\) and \(\jhat\) are not the only basis vectors out there, what if I wanted to describe vectors using another set of basis vectors? Perhaps that would be more convenient for my special use case. Well, it is actually pretty easy to do so. For the sake of this argument, let us try to rotate all of the vectors in a normal 2d vector field anti-clockwise by \(90\degree\). \begin{marginfigure}
+  \centering
+  \begin{tikzpicture}[scale=0.525]
+    \draw[thin, gray!40] (-4,-4) grid (4,4);
+    \draw[line width=2pt, blue, -stealth] (0,0) -- (1,2) node[anchor=south west]{\(\vec{a}\)};
+    \draw[line width=2pt, red, -stealth] (0,0) -- (-2,1) node[anchor=south east]{\(\vec{b}\)};
+    \draw[<->] (-4,0) -- (4,0) node[right]{\(\ihat\)};
+    \draw[<->] (0,-4) -- (0,4) node[above]{\(\jhat\)};
+  \end{tikzpicture}
+  \caption{Two vectors, one rotated anti-clockwise by \(90\degree\).}
+  \label{rotate90}
+\end{marginfigure}
+Notice how we could not describe \(\vec{b}\) as some constant multiplied to \(\vec{a}\) in \Cref{rotate90}. We need some other tool to help us. If we change the basis vectors of \(\vec{a}\) to another pair of basis vectors, can we somehow get \(\vec{b}\)? Here is a thought: replace the \(\ihat\) with \(\begin{bsmallmatrix}
+  0 \\
+  1
+\end{bsmallmatrix}\) and \(\jhat\) with \(\begin{bsmallmatrix}
+  -1 \\
+  0
+\end{bsmallmatrix} \). So, \(\vec{a}=1\ihat+2\jhat\) will become \(\vec{a}=\begin{bsmallmatrix}
+  0 \\
+  1
+\end{bsmallmatrix} + 2\begin{bsmallmatrix}
+  -1 \\
+  0
+\end{bsmallmatrix} = \begin{bsmallmatrix}
+  -2 \\
+  1
+\end{bsmallmatrix} \). This is pretty intriguing, by changing the basis vectors, we have basically "morphed" \(\vec{a}\) into \(\vec{b}\). This "morphing" is called a \textit{linear transformation} or \textit{linear map}.
