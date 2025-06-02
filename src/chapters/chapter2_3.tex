@@ -79,3 +79,71 @@ To describe these transformations, we actually only need to describe where the b
     d
   \end{bsmallmatrix} \).
 \end{definition}
+
+
+It should go without saying that any vector in the original vector space will get moved after a transformation. To calculate where a vector ends up after a transformation, we multiply the matrix by the vector. This is where many textbooks make linear algebra feel laborious. In order to make the process more intuitive, recall that a vector has a \(\ihat\) and \(\jhat\) component. Now, we swap the basis vectors for the new basis vectors described in our matrix. This is just multiplying a vector by a constant, which you have done before.
+\begin{example}
+  Take the transformation in \Cref{shearfig} which is represented by the matrix \(\begin{bsmallmatrix}
+    1 & 1 \\
+    0 & 1
+  \end{bsmallmatrix}\). Let us say in the original vector space, there is a vector \(\vec{a}=\begin{bsmallmatrix}
+    1 \\
+    2
+  \end{bsmallmatrix} \). Then, the vector's representation after the transformation:
+  \begin{align*}
+    \begin{bmatrix}
+      1 \\
+      2
+    \end{bmatrix} \begin{bmatrix}
+    1 & 1 \\
+    0 & 1
+    \end{bmatrix} &= 1 \begin{bmatrix}
+      1 \\
+      0
+    \end{bmatrix} + 2 \begin{bmatrix}
+      1 \\
+      1
+    \end{bmatrix} \\
+    &= \begin{bmatrix}
+      3 \\
+      2
+    \end{bmatrix}
+  \end{align*}
+\end{example}
+\begin{marginfigure}
+  \centering
+  \begin{tikzpicture}[scale=0.33]
+    \draw[gray!40, thin] (-4, -4) grid (4,4); 
+    \draw[blue!40, thin, xslant=tan 45] (-4, -4) grid (4,4);
+    \draw[line width=2pt, -stealth, blue] (0,0) -- (1,2) node[anchor=south west]{\(\vec{a}_{\text{before}}\)};
+    \draw[line width=2pt, -stealth, red] (0,0) -- (3,2) node[anchor=north west]{\(\vec{a}_{\text{after}}\)};
+  \end{tikzpicture}
+  \caption{Figure of a vector before and after a shear transformation like in \Cref{shearfig}.}
+  \label{shearveca}
+\end{marginfigure}
+
+If you have come from a linear algebra course, this may feel very refreshing. Instead of memorising what needs to be multiplied, you just swap the basis vectors for some other basis vectors. While we get the representation of \(\vec{a}\) from \Cref{shearveca}, it also important to take note that in the new vector space after the transformation, \(\vec{a}\) has one unit of direction in the horizontal direction and two units of direction in the "vertical" direction. This is just like the original representation of \(\vec{a}\), just that the vector space has been sheared. This change of basis vector is important enough to have its own name, \textit{change of basis}.
+
+
+With this knowledge, let us proceed to one of the most hated parts of linear algebra, \textit{matrix multiplication}. These few words can bring out so much frustration out of so many students. It is quite a laborious and boring process if you do not grasp the meaning and motivation behind it. In actuality, the idea is simple. When you multiply two matrices together, you are effectively applying two linear transformations, one after another. The result is also a matrix, which is a linear transformation, hence the operation is \textit{closed}. \marginnote{\footnotesize \textit{This is only true if the matrix is \(n\times n\), which are the ones we are dealing with.}}
+\begin{example}
+  Say you have two matrices, a 90\degree anti-clockwise rotation \(x=\begin{bsmallmatrix}
+    0 & -1 \\
+    1 & 0
+  \end{bsmallmatrix} \) and a horizontal shear \(y=\begin{bsmallmatrix}
+    1 & 1 \\
+    0 & 1
+  \end{bsmallmatrix} \). \(xy\) is simply applying the shear first before the rotation. (The right to left reading is similar to that of function composition)
+  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=0.8]
+    \draw[line width=2pt, -stealth, blue] (0,0) -- (0,1) node[anchor=south west]{\(\jhat_{\text{before}}\)};
+    \draw[line width=2pt, -stealth, blue] (0,0) -- (1,1) node[anchor=south west]{\(\jhat_{\text{intermediate}}\)};
+    \draw[line width=2pt, -stealth, blue] (0,0) -- (-1,1) node[anchor=south west]{\(\jhat_{\text{after}}\)};
+    \draw[gray!60, thin] (-4, -4) grid (4,4); 
+    \draw[blue!40, thin, xslant=tan 45] (-4, -4) grid (4,4);
+    \draw[red!40, thin, rotate=90, xslant=tan 45] (-4, -4) grid (4,4);
+    \end{tikzpicture}
+    \caption{Figure of applying two linear transformations.}
+  \end{figure}
+\end{example}
