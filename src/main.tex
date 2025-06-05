@@ -1,5 +1,5 @@
 \documentclass[10pt]{article} 
-\usepackage{NotesTeXV3, amsmath, pgfplots, tikz, caption, fancyhdr, cleveref, amsthm, lipsum, gensymb}
+\usepackage{NotesTeXV3, amsmath, pgfplots, tikz, caption, fancyhdr, cleveref, amsthm, lipsum, gensymb, newtxtext, newtxmath}
 \usepackage[T1]{fontenc}
 \renewcommand\qedsymbol{QED}
 \counterwithin{figure}{section}
@@ -29,10 +29,11 @@
   \centering
   \fontsize{80}{96}\selectfont Calculus \\
   \centering
-  \scshape \Huge \, \, \, \, \, first edition
-  \newline
+  \scshape \Huge \, \, \, \, \, \, \, \, first edition
   \foreach \n in {0,...,10} {\newline}
-  Xiao Yaozi
+
+
+  \hspace{1cm} Xiao Yaozi
   \end{titlepage}
   \pagestyle{empty}
   \restoregeometry
@@ -67,4 +68,7 @@
   \newpage
   \subsection{Matrices}
   \input{chapters/chapter2_3.tex}
+  \newpage
+  \subsection{Determinants and cross products}
+  \input{chapters/chapter2_4.tex}
  \end{document}
