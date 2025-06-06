@@ -1,0 +1,87 @@
+At this juncture, you should be familiar with the concept that a matrix represents a linear transformation and it morphs the vector space. Also, if you imagine the basis vectors of any vector space as lengths of a parallelogram, then you might want to find the area of that parallelogram. For example, the identity matrix's basis vectors forms a square with area 1. Likewise, given a matrix \(x=\begin{bsmallmatrix}
+  a & b \\
+  c & d
+\end{bsmallmatrix} \), we can display it as:
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+  \draw[thin, gray!40] (-6,-6) grid (6,6);
+  \draw[<->] (-6,0) -- (6,0) node[right]{\(x\)};
+  \draw[<->] (0,-6) -- (0,6) node[above]{\(y\)}; 
+  \draw[line width=2pt, -stealth, red, name path=A] (0,0) -- (2,1) node[anchor= south west]{\(\begin{bsmallmatrix}
+    a \\
+    c
+  \end{bsmallmatrix} \)};
+  \draw[dotted, name path=B] (2,1) -- (3,5);
+  \draw[dotted, name path=C] (1,4) -- (3,5);
+  \node[] at (1.5,2.5) {\(A\)};
+  \draw[line width=2pt, -stealth, blue, name path=D] (0,0) -- (1,4) node[anchor= south]{\(\begin{bsmallmatrix}
+    b \\
+    d
+  \end{bsmallmatrix} \)};
+  \tikzfillbetween[of= A and C]{blue, opacity=0.4}
+  \end{tikzpicture}
+  \caption{Figure of area \(A\) formed by a pair of basis vectors.}
+  \label{detarea}
+\end{figure}
+
+
+To find the area of \(A\) in \Cref{detarea}, we may use the sine rule (let \(\vec{u}=\begin{bsmallmatrix}
+  a \\
+  c
+\end{bsmallmatrix} \) and \(\vec{v}=\begin{bsmallmatrix}
+  b \\
+  d
+\end{bsmallmatrix} \)):
+\begin{align}
+  A &= (||\vec{u}||)(||\vec{v}||)\sin(\theta) \text{\quad where \(\theta\) is the angle between the vectors} \nonumber \\
+    &= (||\vec{u'}||)(||\vec{v}||)\cos(\theta') \text{\quad where \(\vec{u'}\) is \(\begin{bsmallmatrix}
+      a \\
+      -c
+  \end{bsmallmatrix} \), perpendicular to \(\vec{v}\) and \(\theta'\) is \(90\degree \)} \nonumber \\
+    &= \begin{bmatrix}
+      -c \\
+      a
+    \end{bmatrix} \begin{bmatrix}
+      b \\
+      d
+    \end{bmatrix} \text{\quad by \Cref{dotproduct}, definition of dot product} \nonumber \\
+    &= ad - bc
+\end{align}
+
+
+The resultant area is also known as the \textit{determinant} of a matrix.
+\begin{definition}
+  The determinant of a \(2\times2\) matrix \(A=\begin{bsmallmatrix}
+    a & b \\
+    c & d
+  \end{bsmallmatrix} \) is represented as:
+  \begin{equation*}
+    \det(A) = \begin{vmatrix}
+      a & b \\
+      c & d
+    \end{vmatrix} = ad - bc
+  \end{equation*}
+  and it represents the signed area of a parallelogram with sides of the basis vectors described in \(A\). Meanwhile, a \(3\times3\) matrix \(B=\begin{bsmallmatrix}
+    a & b & c \\
+    d & e & f \\
+    g & h & i
+  \end{bsmallmatrix} \) has a determinant of:
+  \begin{align*}
+    \det(B) &= \begin{vmatrix}
+    a & b & c \\
+    d & e & f \\
+    g & h & i
+  \end{vmatrix} \\
+            &= a\begin{vmatrix}
+              e & f \\
+              h & i
+            \end{vmatrix}  - b\begin{vmatrix}
+              d & f \\
+              g & i
+            \end{vmatrix}  + c\begin{vmatrix}
+              d & e \\
+              g & h
+            \end{vmatrix} 
+  \end{align*}
+\end{definition}

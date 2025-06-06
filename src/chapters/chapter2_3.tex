@@ -1,4 +1,4 @@
-\quad \quad In this chapter, we will introduce a new mathematical object that you have probably heard before but not sure what it is. To be honest, many mathematics students only know how to \textit{compute} matrix operations but does not know the meaning behind them. I will try to do my best to explain them in a clear manner and I hope that you would appreciate matrices more for their beautiful geometric meaning than their mind-numbing calculations. A great place to start is the \textit{basis vectors} introduced back in \Cref{basis}. All vectors can be written as a unique linear combination of the basis vectors. But \(\ihat\) and \(\jhat\) are not the only basis vectors out there, what if I wanted to describe vectors using another set of basis vectors? Perhaps that would be more convenient for my special use case. Well, it is actually pretty easy to do so. For the sake of this argument, let us try to rotate all of the vectors in a normal 2d vector field anti-clockwise by \(90\degree\). \begin{marginfigure}
+In this chapter, we will introduce a new mathematical object that you have probably heard before but not sure what it is. To be honest, many mathematics students only know how to \textit{compute} matrix operations but does not know the meaning behind them. I will try to do my best to explain them in a clear manner and I hope that you would appreciate matrices more for their beautiful geometric meaning than their mind-numbing calculations. A great place to start is the \textit{basis vectors} introduced back in \Cref{basis}. All vectors can be written as a unique linear combination of the basis vectors. But \(\ihat\) and \(\jhat\) are not the only basis vectors out there, what if I wanted to describe vectors using another set of basis vectors? Perhaps that would be more convenient for my special use case. Well, it is actually pretty easy to do so. For the sake of this argument, let us try to rotate all of the vectors in a normal 2d vector field anti-clockwise by \(90\degree\). \begin{marginfigure}
   \centering
   \begin{tikzpicture}[scale=0.525]
     \draw[thin, gray!40] (-4,-4) grid (4,4);
@@ -32,7 +32,7 @@ Notice how we could not describe \(\vec{b}\) as some constant multiplied to \(\v
   Here are some examples of linear transformations, the blue grid is the vector space after the transformation. Take note where the basis vectors are after the transformations.
   \begin{figure}[H]
   \centering
-  \begin{tikzpicture}[scale=0.9]
+  \begin{tikzpicture}[scale=1.0]
     \draw[gray!40, thin] (-4, -4) grid (4,4); 
     \draw[line width=2pt, red, -stealth] (0,0) -- (1,0) node[anchor=west]{\(\ihat_{\textit{before}}\)};
     \draw[line width=2pt, blue, -stealth] (0,0) -- (0,1) node[anchor=south]{\(\jhat_{\textit{before}}\)};
