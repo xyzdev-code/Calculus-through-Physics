@@ -87,7 +87,7 @@ Next, we will move on to triple products which happens to also be a three dimens
 
 \Cref{figtripvec} is the example of triple vector multiplication. You would represent it as \(\vec{a} \cdot (\vec{b} \times \vec{c})\). The result here is simply the volume of the parallelepiped formed in \Cref{figtripvec}.
 \begin{definition}
-  The triple vector product is a product of three 3 dimensional vectors. The most common of which, is the scalar triple product which is \Cref{figtripvec}. The formula for which is \(\vec{a}\cdot(\vec{b}\times\vec{c})\), which yields the volume of the parallelepiped with the sides being the three vectors. Another type of triple vector multiplication is vector triple product. It is simply \(\vec{a}\times(\vec{b}\times\vec{c})\). We can use \textit{Lagrange's formula} to compute it easily: \(\vec{a}\times(\vec{b}\times\vec{c}) = (\vec{b}\cdot\vec{a})\vec{c} - (\vec{c}\cdot\vec{a})\vec{b}\).
+  The \textit{triple vector product} is a product of three 3 dimensional vectors. The most common of which, is the scalar triple product which is \Cref{figtripvec}. The formula for which is \(\vec{a}\cdot(\vec{b}\times\vec{c})\), which yields the volume of the parallelepiped with the sides being the three vectors. Another type of triple vector multiplication is vector triple product. It is simply \(\vec{a}\times(\vec{b}\times\vec{c})\). We can use \textit{Lagrange's formula} to compute it easily: \(\vec{a}\times(\vec{b}\times\vec{c}) = \vec{b}(\vec{a}\cdot\vec{c}) - \vec{c}(\vec{a}\cdot\vec{b})\).
 \end{definition}
 \begin{example}
   We shall derive the formula for the volume of a parallelepiped given its height, breadth and length. We shall denote them \(h\), \(b\) and \(l\) respectively. Notice that we define the sides of the parallelepiped like this:
@@ -129,3 +129,63 @@ Next, we will move on to triple products which happens to also be a three dimens
   \end{align}
   The result in \Cref{volofpara} is trivial and should come as no surprise to the reader.
 \end{example}
+
+
+As for vector triple product, the process of computation is very similar. We first evaluate the cross product of the two vectors in parenthesis, then take the cross product of the first and resultant vector from the previous computation. We shall give a simple proof for Lagrange's formula.
+\begin{theorem}
+  (\textit{Lagrange's formula}) Given \(\vec{a}, \vec{b}, \vec{c}\), show that \(\vec{a}\times(\vec{b}\times\vec{c}) = \vec{b}(\vec{a}\cdot\vec{c})-\vec{c}(\vec{a}\cdot\vec{b})\).
+\marginnote{\footnotesize\textit{A sidenote here, when it is written \(\vec{a}\vec{b}\), this is not the cross or dot product, instead it is equal to \(\begin{bsmallmatrix}
+  a_x b_x \\
+  a_y b_y \\
+  \dots
+\end{bsmallmatrix} \).}}
+\end{theorem}
+
+\begin{proof}
+  We will start by evaluating \(\vec{a}\times(\vec{b}\times\vec{c})\):
+  \begin{align}
+    \vec{a}\times(\vec{b}\times\vec{c}) &= \vec{a}\times\begin{vmatrix}
+      \ihat & \jhat & \khat \\
+      b_x & b_y & b_z \\
+      c_x & c_y & c_z
+    \end{vmatrix} \nonumber \\
+                                        &= \vec{a}\times\begin{bmatrix}
+                                          b_yc_z - b_zc_y \\
+                                          b_zc_x - b_xc_z \\
+                                          b_xc_y - b_yc_x
+                                        \end{bmatrix}  \nonumber \\
+                                        &= \begin{vmatrix}
+                                          \ihat & \jhat & \khat \\
+                                          a_x & a_y & a_z \\
+                                          b_yc_z - b_zc_y & b_zc_x - b_xc_z &  b_xc_y - b_yc_x
+                                        \end{vmatrix} \nonumber \\
+                                        &= \begin{bmatrix}
+                                          a_y(b_xc_y - b_yc_x) - a_z(b_zc_x - b_xc_z) \\
+                                          \dots
+                                        \end{bmatrix} \nonumber \\
+                                        &= \begin{bmatrix}
+                                          a_yb_xc_y + a_zb_xc_z - a_yb_yc_x - a_zb_zc_x \\
+                                          \dots
+                                        \end{bmatrix}
+                                        \label{lagrangeformtrip}
+  \end{align}
+  We will examine the \(\ihat\) component of \ref{lagrangeformtrip}, the other two components are similar. Then, notice that:
+  \begin{align}
+    \vec{b}(\vec{a}\cdot\vec{c}) - \vec{c}(\vec{a}\cdot\vec{b}) &= \vec{b}(a_xc_x+a_yc_y+a_zc_z) - \vec{c}(a_xb_x+ a_yb_y+ a_zb_z) \nonumber \\
+                                                                &= \begin{bmatrix}
+                                                                  b_x(a_xc_x+a_yc_y+a_zc_z) \\
+                                                                  b_y(a_xc_x+a_yc_y+a_zc_z) \\
+                                                                  b_z(a_xc_x+a_yc_y+a_zc_z)
+                                                                \end{bmatrix} - \begin{bmatrix}
+                                                                  c_x(a_xb_x+ a_yb_y+ a_zb_z) \\
+                                                                  c_y(a_xb_x+ a_yb_y+ a_zb_z) \\
+                                                                  c_z(a_xb_x+ a_yb_y+ a_zb_z)
+                                                                \end{bmatrix} \nonumber \\
+                                                                &= \begin{bmatrix}
+                                                                  a_yb_xc_y + a_zb_xc_z - a_yb_yc_x - a_zb_zc_x \\
+                                                                  \dots
+                                                                \end{bmatrix}
+                                                                \label{lagrangeformtripscalar}
+  \end{align}
+  As you can see, the \(\ihat\) components of \ref{lagrangeformtrip} and \ref{lagrangeformtripscalar} are identical. Hence, we have shown \\ Lagrange's formula.
+\end{proof}

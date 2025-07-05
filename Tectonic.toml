@@ -1,7 +1,7 @@
 [doc]
-name = "Practical_Calculus"
+name = "The Calculus Method"
 bundle = "https://data1.fullyjustified.net/tlextras-2022.0r0.tar"
 
 [[output]]
-name = "Practical_Calculus"
+name = "The Calculus Method"
 type = "pdf"

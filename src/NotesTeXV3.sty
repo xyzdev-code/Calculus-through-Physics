@@ -230,7 +230,10 @@
   right=5pt,
   breakable,
 }
-
+\newcommand{\R}{\mathbb{R}}
+% \newcommand{\deftitle}[1]{
+%   \text{\color{RoyalBlue}\textbf{Definition \color{black}\thesection.\arabic{section}}\,\color{black} \normalfont #1} \\
+% }
 \theoremstyle{lemma}
 \newtheorem{lemma}{Lemma}[section]
 \tcolorboxenvironment{lemma}{
@@ -530,7 +533,7 @@
 {\footnotesize\textsc{Chapter \thesection}}
 {0pt}
 {\Large\bfseries}
-[\vspace{-10pt}\color{Maroon}\rule{\textwidth}{.6pt}]
+[\vspace{-10pt}\color{Black}\rule{\textwidth}{.6pt}]
 
 \titleformat{name=\section,numberless}[hang]
 {\normalfont}
@@ -543,7 +546,7 @@
 {\footnotesize\textsc{Section \thesubsection}}
 {0pt}
 {\large\bfseries}
-[\vspace{-5pt}\color{Maroon}\rule{\textwidth}{.6pt}]
+[\vspace{-5pt}\color{Black}\rule{\textwidth}{.6pt}]
 
 % \titleformat{name=\part}[hang]
 % {{\thispagestyle{fancypart}}\Huge\bfseries}
@@ -552,13 +555,13 @@
 %   {\color{black}\thepart}
 %   \end{center}}[-.95in]}{0pt}{\Huge\bfseries\itshape}
 
-\titleformat{\part}[hang]{{\thispagestyle{fancypart}}\Huge\bfseries}{\marginnote{
-\begin{tcolorbox}[width=\marginparwidth,height=\marginparwidth/2,colback=black!50!white,colframe=black!50!white,center title,fonttitle=\bfseries\normalsize,title=PART,text fill]
-  \begin{center}
-  {\color{white}\thepart}
-  \end{center}
-\end{tcolorbox}
-}[-1.25in]}{0pt}{\Huge\bfseries\itshape}
+ \titleformat{\part}[hang]{{\thispagestyle{fancypart}}\Huge\bfseries\scshape}{\marginnote{
+ \begin{tcolorbox}[width=\marginparwidth,height=\marginparwidth/2,colback=black!50!white,colframe=black!50!white,center title,fonttitle=\bfseries\normalsize,title=PART,text fill]
+   \begin{center}
+   {\color{white}\thepart}
+   \end{center}
+ \end{tcolorbox}
+}[-1.25in]}{0pt}{\Huge\bfseries\fontfamily{lmr}\selectfont}
 \renewcommand{\thefigure}{\thesection.\arabic{figure}}
 %Caption of figure and table
 \def\fnum@figure{\textbf{\figurename\nobreakspace\thefigure}}
