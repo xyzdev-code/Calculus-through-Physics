@@ -189,3 +189,60 @@ As for vector triple product, the process of computation is very similar. We fir
   \end{align}
   As you can see, the \(\ihat\) components of \ref{lagrangeformtrip} and \ref{lagrangeformtripscalar} are identical. Hence, we have shown \\ Lagrange's formula.
 \end{proof}
+\begin{remark}
+  The above proof is a tedious pedagogical exercise mainly created to drill in the concepts of the cross products.
+\end{remark}
+\begin{Exercise}
+  \begin{enumerate}
+    \item{
+        Find the cross products of the following vectors:
+        \begin{enumerate}
+          \item{\(\begin{bmatrix}
+            1 \\
+            2 \\
+            5
+          \end{bmatrix} \times \begin{bmatrix}
+            1 \\ 
+            2 \\ 
+            7
+          \end{bmatrix} \)}
+        \item{\(\begin{bmatrix}
+          0 \\
+          2 \\
+          4 
+        \end{bmatrix} \times \begin{bmatrix}
+          1 \\
+          3 \\ 
+          5
+        \end{bmatrix} \)}
+
+        \end{enumerate}
+
+      }
+    \item{Prove or disprove: 
+      \begin{enumerate}
+        \item{\(\vec{a}\times\vec{b}=\vec{b}\times\vec{a}\)}
+        \item{\(\vec{a}\times\vec{a}=0\)}
+      \end{enumerate}
+      }
+    \item{Prove Lagrange's formula for the other two components not shown in the previous proof.}
+  \end{enumerate}
+\end{Exercise}
+\begin{Solution}
+  \begin{enumerate}
+    \item{\begin{enumerate}
+          \item{\(4\ihat-2\jhat\)}
+          \item{\(-2\ihat+4\jhat-2\khat\)}
+    \end{enumerate} }
+  \item{\begin{enumerate}
+        \item{
+            \textit{Disprove}. Notice that while in question 1(a), the answer is \(4\ihat-2\jhat\), if you swap the two vectors, you instead get \(-4\ihat+2\jhat\), which is the anti-commutative property of cross products. 
+          }
+        \item{\textit{Prove}. This is a trivial result by using the formula for cross products.}
+  \end{enumerate} }
+  \item{This is also a trivial and tedious result that can be shown just by some evaluation of the cross products.}
+  \end{enumerate}
+\end{Solution}
+\begin{remark}
+  While the linear algebra chapter in this book is ending, this is a very small subset of a standard linear algebra course. Many concepts, such as eigenvalues, are not covered due to their not so important nature. Readers are still highly encouraged to read up some of the other concepts.
+\end{remark}
