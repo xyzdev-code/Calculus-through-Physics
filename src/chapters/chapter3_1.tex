@@ -1,0 +1,50 @@
+Onto the calculus portion that is very much anticipated. No more the quick skimping over precalculus topics. We shall enter this discussion with a very simple question that will yield many interesting results. Take a look at the graph below:
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[xlabel=\(x\), ylabel=\(y\), axis lines=left, domain=-2.5:2.5]
+    \addplot[mark=none, color=blue]{x^3 -2*x +1};
+  \end{axis}
+  \end{tikzpicture}
+  \caption{Graph of \(f(x)=x^3-2x+1\).}
+  \label{cubgraph}
+\end{figure}
+
+
+From \Cref{cubgraph}, we see that this is a cubic graph. It should not to be hard to see that the graph is always changing value. Also, it should not be difficult to see that the rate of change of the graph is not constant. We can use the gradient formula to verify this:
+\begin{definition}
+  The gradient between two points \((x,f(x))\) and \((x+a, f(x+a))\) is:
+  \begin{equation}
+    \textit{Gradient} = \frac{\Delta y}{\Delta x} = \frac{f(x+a)-f(x)}{a}
+  \end{equation}
+  \label{gradient}
+\end{definition}
+
+
+Using \Cref{gradient}, we can pick some points on the graph. You would notice that if you plug in different points then the gradient is different. This is where the gradient formula fails. We want something that gives us the gradient of the graph at every single point along the graph. The forefathers of calculus were all brilliant and they noticed a special fact that applies to many functions. Let us zoom in to the graph where \(x=2\), we want to zoom in as closely as we can.
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[xlabel=\(x\), ylabel=\(y\), axis lines=left, xticklabels={2, \(2+h\)}, xtick={1,2}, yticklabels={\(f(2)\), \(f(2+h)\)}, ytick={1,2}]
+    \addplot[mark=none, color=blue]{x};
+  \end{axis}
+  \end{tikzpicture}
+  \caption{Zoomed in graph of \Cref{cubgraph}.}
+  \label{zoomin}
+\end{figure}
+
+
+In \Cref{zoomin}, we realise that the graph, when zoomed in sufficiently, essentially is a straight line. This is exciting, we can use our gradient formula which works on straight lines. In addition, on the x axis, we mark a \(2+h\), a small distance away from 2. We can infer that \(h\) is a really small number, almost going to 0 as we keep zooming in. We use the limit notation to denote this. Hence, we can denote it as \(\lim_{h\to0}\). \marginnote{\footnotesize \textit{The limit notation and its concepts will be discussed in a later chapter, for now, just keep in mind that this means \(h\) is a really tiny number, almost 0.}} You may be itching to use the gradient formula now. We can substitute in the values:
+\begin{align*}
+  \lim_{h\to0}\frac{f(2+h)-f(2)}{h}
+\end{align*}
+
+
+However, notice that we have to divide throughout by \(h\), and \(h\) is very small, infinitesimally small. Some careless manipulation and you would say the expression blows up to infinity. What the formula does tell us, though, is the gradient practically at 2. This gives us an idea. Can we just replace 2 with any value of \(x\)? This brings us to the definition of the \textit{derivative}.
+\begin{definition}
+  The \textit{derivative} of a function \(f(x)\) is the instantaneous rate of change of that function. It can be written as \(f'(x)\), \(\frac{df(x)}{dx}\) or \(\dot f\). \marginnote{\footnotesize \textit{Sometimes, to save writing a few letters, the inputs to the functions may be omitted, such as \(f\) instead of \(f(x)\). This is more common when the function takes in multiple inputs.} }
+  \begin{equation}
+    f'(x) = \lim_{h\to0}\frac{f(x+h)-f(x)}{h}
+  \end{equation}
+\end{definition}
