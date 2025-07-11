@@ -21,7 +21,7 @@ From \Cref{cubgraph}, we see that this is a cubic graph. It should not to be har
 \end{definition}
 
 
-Using \Cref{gradient}, we can pick some points on the graph. You would notice that if you plug in different points then the gradient is different. This is where the gradient formula fails. We want something that gives us the gradient of the graph at every single point along the graph. The forefathers of calculus were all brilliant and they noticed a special fact that applies to many functions. Let us zoom in to the graph where \(x=2\), we want to zoom in as closely as we can.
+Using \Cref{gradient}, we can pick some points on the graph. You would notice that if you plug in different points then the gradient is different. The main, central question is: if the rate of change is not constant, then what is the rate of change at a single point along the function? This is where the gradient formula fails. We want something that gives us the gradient of the graph at every single point along the graph. The forefathers of calculus were all brilliant and they noticed a special fact that applies to many functions. Let us zoom in to the graph where \(x=2\), we want to zoom in as closely as we can.
 
 \begin{figure}[H]
   \centering
@@ -48,3 +48,55 @@ However, notice that we have to divide throughout by \(h\), and \(h\) is very sm
     f'(x) = \lim_{h\to0}\frac{f(x+h)-f(x)}{h}
   \end{equation}
 \end{definition}
+
+
+In the definition of the derivative, we can see that the derivative is also a function. Also, the definition states that it is the "instantaneous rate of change". This simply means that we are looking at the rate of change of the function over a very, very tiny range of \(x\). Of course, the definition may feel contradictory. How can some value change "instantaneously"? Well, this is resolved by not exactly by substituting \(\Delta y=0\), instead we let it "approach" 0. As a result, using this clever little mathematical trick, we avoided this problem. However, some of you may have noticed we have not evaluated any derivatives, we just defined them. It is no good to not answer our original question. To illustrate a derivation of a derivative, we shall use a much simpler graph, \(f(x)=x^2\).
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+  \begin{axis}[xlabel=\(x\), ylabel=\(y\), axis lines=left, domain=-2.5:2.5]
+    \addplot[mark=none, color=blue]{x^2};
+  \end{axis}
+  \end{tikzpicture}
+  \caption{Figure of \(y=x^2\).}
+  \label{quadgraph}
+\end{figure}
+
+
+From \Cref{quadgraph}, we can consider what happens at \(x=2\). We shall use the definition of the derivatives, which is also more commonly referred to as "first principles".
+\begin{example}
+  To find the derivative at \(x=2\), we use the first principles as such:
+  \begin{align*}
+    f'(2) &= \lim_{h\to0}\frac{f(2+h)-f(2)}{h} \\
+          &= \lim_{h\to0}\frac{(2+h)^2-4}{h} \\
+          &= \lim_{h\to0}\frac{4+4h+h^2-4}{h} \\
+          &= \lim_{h\to0} 4+h \\
+          &= 4
+  \end{align*}
+  \marginnote{\footnotesize \textit{We can ignore \(h\) in the second last step because as a general rule of thumb, as long as substituting \(h=0\) does not create an expression of \(\frac{a}{0}\), we can let \(h=0\). Of course, this is very not rigorous and there are other exceptions that will be very evident after the reader has read the later chapter of limits. }}
+  To find the derivative of \(f\), we use a similar manipulation:
+  \begin{align*}
+    f'(x) &= \lim_{h\to0}\frac{f(x+h)-f(x)}{h} \\
+          &= \lim_{h\to0}\frac{x^2+2xh+h^2-x^2}{h} \\
+          &= \lim_{h\to0} 2x + h \\
+          &= 2x
+  \end{align*}
+\end{example}
+
+
+In other words, we have also found a function of the gradient of the tangent line for any point along \(f(x)=x^2\). Lastly, I would like to comment that normally, if not explicitly stated in the question to use "first principles", you can use the derivative rules you will learn in the next chapter to solve derivatives much more quickly and efficiently. In all honesty, using the "first principles" is very tedious and generally would not be used.
+
+
+\begin{Exercise}
+  \begin{enumerate}
+    \item{ Using first principles, find the derivatives of the following functions:
+        \begin{enumerate}
+          \item{\(f(x)=x^2+1\)}
+          \item{\(g(x)=x^3+x\)}
+          \item{\(h(x)=\frac{1}{x}\)}
+        \end{enumerate}
+      }
+    \item{Find the derivative of \(\sin(x)\). (Hint: \(sin(a+b)=sin(a)cos(b)+cos(a)sin(b)\)).}
+    \item{\textbf{(Difficult)} Let \(f(x)=(x-1)(x-2)\cdots(x-1729)\), find \(f'(1729)\). \textit{(Adapted from SMO 2025 Senior Section Round 1).}}
+  \end{enumerate}
+\end{Exercise}
