@@ -96,7 +96,27 @@ In other words, we have also found a function of the gradient of the tangent lin
           \item{\(h(x)=\frac{1}{x}\)}
         \end{enumerate}
       }
-    \item{Find the derivative of \(\sin(x)\). (Hint: \(sin(a+b)=sin(a)cos(b)+cos(a)sin(b)\)).}
-    \item{\textbf{(Difficult)} Let \(f(x)=(x-1)(x-2)\cdots(x-1729)\), find \(f'(1729)\). \textit{(Adapted from SMO 2025 Senior Section Round 1).}}
+    \item{Let \(f(x)=(x-1)(x-2)\cdots(x-1729)\), find \(f'(1729)\). \textit{(Adapted from SMO 2025 Senior Section Round 1).}}
+    \item{Prove the power rule for an natural number \(n\), or: \(\frac{d}{dx}x^n=nx^{n-1}\).}
   \end{enumerate}
 \end{Exercise}
+\begin{Solution}
+ \begin{enumerate}
+   \item{
+       \begin{enumerate}
+          \item{\(2x\)}
+          \item{\(2x^2+1\)}
+          \item{\(-\frac{1}{x^2}\)}
+       \end{enumerate}
+     }
+    \item{
+        We shall use the definition of derivatives:
+        \begin{align*}
+          f'(1729) &= \lim_{h\to0}\frac{f(1729+h)-f(1729)}{h} \\ 
+                   &= \lim_{h\to0}\frac{(1729+h-1)(1729+h-2)\cdots(1729+h-1729)-(1729-1)\cdots(1729-1729)}{h} \\
+                   &= \lim_{h\to0}\frac{1728!h}{h} \\
+                   &= 1728!
+        \end{align*}
+      }
+ \end{enumerate} 
+\end{Solution}
