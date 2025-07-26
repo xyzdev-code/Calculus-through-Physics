@@ -101,6 +101,20 @@ Before we start on the calculus topics, this part of the book will acquaint you 
         \item{\(f(x)=\sin(x)\)}
       \end{enumerate}
     }
+  \item{A \textit{recursive} function is one where the function uses itself in its definition. For example, the Fibonacci sequence can be defined like this for any Fibonacci number \(n\): \begin{equation*}
+    f(n) = \begin{cases}
+      f(n-1) + f(n-2) & n>1 \\
+      1 & n=1 \\
+      0 & n=0 
+    \end{cases}
+  \end{equation*}
+    \begin{enumerate}
+      \item{Compute \(f(3)\) explicitly using the definition of \(f\).}
+      \item{Define the factorial of a positive integer in a similar way using recursion, define it as \(g(a)\).}
+      \item{Sketch the graph of \(g(a)\).}
+    \end{enumerate}
+}
+  \item{Let \(f(x)\) be a polynomial. If \(f(a)=0\), prove that \(x-a\) is a factor of \(f\).}
   \end{enumerate}
   \end{Exercise}
   \begin{Solution}
@@ -128,5 +142,36 @@ Before we start on the calculus topics, this part of the book will acquaint you 
           \end{enumerate}
         }
         }
+      \item{
+          \begin{enumerate}
+      \item{
+        \(
+        f(3) = f(2) + f(1) 
+             = f(1) + f(0) + 1
+             = 2
+    \)}
+      \item{\(g(a)=\begin{cases}
+            ag(a-1) & a>0 \\
+            1 & a=0
+      \end{cases} \)}
+    \item{
+        Because our definition of \(g(a)\) is discontinuous (the function have "gaps"), we shall only plot the points where the function is defined.
+        \begin{figure}[H]
+          \centering
+      \begin{tikzpicture}
+        \begin{axis}[axis lines=left, xmin=0, xmax=5, xlabel=\(a\), ylabel=\(g(a)\)]
+          \addplot[color=blue, only marks, mark=*] coordinates{
+              (0,1)
+              (1,1)
+              (2,2)
+              (3,6)
+              (4,24)
+              (5,120)
+            }; 
+        \end{axis}
+      \end{tikzpicture}
+      \caption{Graph of \(g(a)\).}
+    \end{figure} }
+\end{enumerate}}
     \end{enumerate}
   \end{Solution}
