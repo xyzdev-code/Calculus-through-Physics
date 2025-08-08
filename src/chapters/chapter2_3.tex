@@ -28,7 +28,7 @@ Notice how we could not describe \(\vec{b}\) as some constant multiplied to \(\v
 \end{bsmallmatrix} \). This is pretty intriguing, by changing the basis vectors, we have basically "morphed" \(\vec{a}\) into \(\vec{b}\). This "morphing" is called a \textit{linear transformation} or \textit{linear map}. In some of the visualisations of the linear transformations I might keep the original grid in the background in a lighter color.
 
 
-\begin{example}
+\begin{example}{Linear transformations}{}
   Here are some examples of linear transformations, the blue grid is the vector space after the transformation. Take note where the basis vectors are after the transformations.
   \begin{figure}[H]
   \centering
@@ -56,14 +56,13 @@ Notice how we could not describe \(\vec{b}\) as some constant multiplied to \(\v
   \end{tikzpicture}
   \caption{A transformation in the form of a \textit{shear}.}
   \label{shearfig}
-
-  \marginnote{\footnotesize \textit{In \Cref{shearfig}, the \(\ihat\) vector remains at the same location.}}
+  \sidenotemark
   \end{figure}
 \end{example}
-
+  \sidenotetext{\footnotesize \textit{In \Cref{shearfig}, the \(\ihat\) vector remains at the same location.}}
 
 To describe these transformations, we actually only need to describe where the basis vectors land after the transformation. No other information required. We present the location of the new basis vectors in the form of a \textit{matrix}:
-\begin{definition}
+\begin{definition}{Matrices}{}{}
   In linear algebra, matrices generally represent linear transformations. A \(n \times m\) matrix is one with \(n\) rows and \(m\) columns. The nth column of the matrix denotes the representation of the corresponding basis vector after the  linear transformation.
   \begin{equation*}
     \begin{bmatrix}
@@ -79,12 +78,12 @@ To describe these transformations, we actually only need to describe where the b
     d
   \end{bsmallmatrix} \).
 \end{definition}
-\begin{remark}
+\begin{remark}{}{}
   Matrices can also represent a variety of things apart from linear transformations. It is just a mathematical object representing a bunch of things arranged in rows and columns.
 \end{remark}
 
 It should go without saying that any vector in the original vector space will get moved after a transformation. To calculate where a vector ends up after a transformation, we multiply the matrix by the vector. This is where many textbooks make linear algebra feel laborious. In order to make the process more intuitive, recall that a vector has a \(\ihat\) and \(\jhat\) component. Now, we swap the basis vectors for the new basis vectors described in our matrix. This is just multiplying a vector by a constant, which you have done before.
-\begin{example}
+\begin{example}{Deriving a linearly transformed vector}{}
   Take the transformation in \Cref{shearfig} which is represented by the matrix \(\begin{bsmallmatrix}
     1 & 1 \\
     0 & 1
@@ -128,7 +127,7 @@ If you have come from a linear algebra course, this may feel very refreshing. In
 
 
 With this knowledge, let us proceed to one of the most hated parts of linear algebra, \textit{matrix multiplication}. These few words can bring out so much frustration out of so many students. It is quite a laborious and boring process if you do not grasp the meaning and motivation behind it. In actuality, the idea is simple. When you multiply two matrices together, you are effectively applying two linear transformations, one after another. The result is also a matrix, which is a linear transformation, hence the operation is \textit{closed}. \marginnote{\footnotesize \textit{This is only true if the matrix is \(n\times n\), which are the ones we are dealing with.}}
-\begin{example}
+\begin{example}{Deriving matrix multiplication}{}
   Say you have two matrices, a 90\degree anti-clockwise rotation \(x=\begin{bsmallmatrix}
     0 & -1 \\
     1 & 0
@@ -183,7 +182,7 @@ It should not be difficult to see that the end result of applying the two linear
 
 This is the reason many students find linear algebra tedious. Most courses make students memorise the formula which is extremely rote. I wish that you understand what is going on behind the scenes on this formula. With that said, it is best to get some experience with these multiplications:
 
-\begin{example}
+\begin{example}{Matrix multiplication}{}
   Given that \(x=\begin{bsmallmatrix}
     1 & 2 \\
     3 & 4
@@ -249,12 +248,11 @@ This is the reason many students find linear algebra tedious. Most courses make 
       \end{bmatrix} \)}
     \end{enumerate}
     }
-  \nopagebreak
   \item{Let \(x=\begin{bsmallmatrix}
         x_1 & x_2 \\
         x_3 & x_4
-  \end{bsmallmatrix} \) and define \(y\) and \(z\) likewise, notice that:
-\marginnote{\footnotesize\textit{The derivation for \((xy)z\) will be left as an exercise for the reader. Both should evaluate to the same expression.}}}
+  \end{bsmallmatrix} \) and define \(y\) and \(z\) likewise, notice that: \sidenotemark
+
   \begin{align*}
     x(yz) &= \begin{bmatrix}
       x_1 & x_2 \\
@@ -275,5 +273,6 @@ This is the reason many students find linear algebra tedious. Most courses make 
     a_1 x_3 + a_3 x_4 &  a_2 x_3 + a_4 x_4
           \end{bmatrix} \\
           &= (xy)z
-  \end{align*}
-  \end{enumerate}
+  \end{align*}}
+\end{enumerate}
+\sidenotetext{\footnotesize\textit{The derivation for \((xy)z\) will be left as an exercise for the reader. Both should evaluate to the same expression.}}

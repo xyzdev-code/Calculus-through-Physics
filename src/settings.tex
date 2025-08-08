@@ -420,7 +420,7 @@
 \fancyhf{}% Clear header/footer
 \renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter:\ #1}{}}
 \fancyhead[RO,LE]{\leftmark}% Chapter details in book
-\fancyfoot[RO,LE]{\thepage}
+\fancyfoot[C]{\thepage}
 \makeatother
 \def\MakeNoNewlines#1{\begingroup\def\\{ }#1\endgroup}
 \renewcommand{\chaptermark}[1]{\markboth{Chapter \thechapter:\ \MakeNoNewlines{#1}}{}}
@@ -495,7 +495,7 @@
 		common={gray}{\textbf{"}},
 	},
   exercisestyle/.style={
-  common={white}{\textit{Solutions \(\downarrow\)}},
+    common={xblue}{\(\bigtriangleup\)},
   }
 }
 
@@ -508,7 +508,7 @@
 \newtcbtheorem[auto counter, number within=chapter]{challenge}{Challenge}{challengestyle}{challenge}
 \newtcbtheorem[]{nquote}{Quote}{quotestyle}{quote}
 
-\newtcbtheorem[auto counter, number within=chapter]{remark}{Exercise}{exercisestyle}{def}
+\newtcbtheorem[auto counter, number within=chapter]{remark}{Remark}{exercisestyle}{remark}
 %---------%
 % FIGURES %
 %---------%

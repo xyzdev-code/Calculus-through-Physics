@@ -15,7 +15,6 @@ What is more interesting, perhaps, is taking the \textit{output} of a function a
 
   \begin{figure}[h]
   \centering
-  \marginnote{\footnotesize \textit{Note that the rectangles are \\ functions and circles are values.}}
 
   \begin{tikzpicture}[
 roundnode/.style={circle, draw=black!60, fill=white!5, very thick, minimum size=10mm},
@@ -34,6 +33,7 @@ squarednode/.style={rectangle, draw=black!60, fill=white!5, very thick, minimum 
 
   \caption{Visual representation of function composition.}
 \end{figure} 
+  \marginnote{\footnotesize \textit{Note that the rectangles are \\ functions and circles are values.}}
 
 Another notation for composing functions together(which we will not really use except for this chapter) is as such:
 \begin{equation*}
@@ -43,8 +43,8 @@ Another notation for composing functions together(which we will not really use e
 When you compose the same function \(n\)-times, the notation for it is:
 \begin{equation*}
 f^n(x)=\underbrace{f(f(\ldots f(x)))}_{n-times} 
-\marginnote{\footnotesize \textit{However, this does not apply to trigonometric functions. \(\sin^2(x)\) is \(\sin(x) \times \sin(x)\) instead of \(\sin(\sin(x))\). Annoying mathematical notation strikes again. What is even better, is that \(f^{-1}(x)\) denotes the inverse of \(f\).}}
 \end{equation*}
+\marginnote{\footnotesize \textit{However, this does not apply to trigonometric functions. \(\sin^2(x)\) is \(\sin(x) \times \sin(x)\) instead of \(\sin(\sin(x))\). Annoying mathematical notation strikes again. What is even better, is that \(f^{-1}(x)\) denotes the inverse of \(f\).}}
 \begin{example}{Composing functions}{}
   Here are some examples of composing functions together:
   If \(x=3\) and \(f(x)=\pi x\), \(g(x)=\sin(x)+1\):

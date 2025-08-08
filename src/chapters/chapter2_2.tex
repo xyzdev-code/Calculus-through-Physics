@@ -9,7 +9,6 @@ In this chapter we will deal two kinds of multiplication with vectors. By far th
     \draw[<->] (0,-4) -- (0,4) node[above]{\(y\)}; 
  \end{tikzpicture}
  \caption{Two vectors, one twice as long as the other.}
-
  \label{scalevector}
 \end{figure}
 
@@ -24,7 +23,7 @@ Take a look at \Cref{scalevector}, \(\vec{b}\) is twice as long as \(\vec{a}\). 
   2 \\
   4
 \end{bsmallmatrix}\) which is equal to \(\vec{b}\). You may extrapolate this to higher dimensions.
-\begin{definition}
+\begin{definition}{Scaling a vector}{}
   Scaling a n-dimensional vector \(\vec{v}\) by a constant \(n\) is defined as such:
   \begin{equation*}
     n\vec{v} = n \begin{bsmallmatrix}
@@ -50,10 +49,12 @@ Let us try something fun, what if we multiplied the vector by a negative number?
     \draw[<->] (0,-4) -- (0,4) node[above]{\(y\)}; 
  \end{tikzpicture}
  \caption{Two vectors, one is scaled by -0.5.}
-
  \label{scalevectorneg}
 \end{marginfigure} 
-As you can see from \Cref{scalevectorneg}, \(\vec{a}=(-0.5)\vec{b}\). You may wish to compute this yourself to verify. One thing to note here is that the vector gets flipped across the origin when the constant the vector is multiplied to is negative. Also, when scaling a vector by some constant, the reader may want to verify using \Cref{vecmagnitude} that the magnitude of the vector is also scaled by that constant. This should be a trivial proof.
+As you can see from \Cref{scalevectorneg}, \(\vec{a}=(-0.5)\vec{b}\). You may wish to compute this yourself to verify. One thing to note here is that the vector gets flipped across the origin when the constant the vector is multiplied to is negative. 
+\begin{challenge}{Scaled vector magnitude}{}
+Also, when scaling a vector by some constant, the reader may want to verify using \Cref{vecmagnitude} that the magnitude of the vector is also scaled by that constant. This should be a trivial proof.
+\end{challenge}
 
 
 You may have noticed that I have abstained from using either the \(\cdot \) or \(\times \) operators. The reason is bad notation which is sprinkled throughout mathematics. These two operators have special meanings in the realm of linear algebra. We shall first explore the easier one, the \textit{dot product}.
@@ -61,7 +62,7 @@ You may have noticed that I have abstained from using either the \(\cdot \) or \
 
 Dot products use the \(\cdot\) operator and only acts on vectors, do not abuse notation by using the \(\cdot\) operator in the context of scaling a vector. Dot products are actually fairly straightforward to compute:
 
-\begin{definition}
+\begin{definition}{Dot product}{}
   The dot product of two vectors in n-dimensional space \(\vec{a}\) and \(\vec{b}\) is:
   \begin{equation*}
     \vec{a} \cdot \vec{b} = a_1 b_1 + a_2 b_2 + \dots + a_n b_n = (||\vec{a}||)(||\vec{b}||)\cos{\theta} 
@@ -88,7 +89,7 @@ From \Cref{dotproduct}, we can tell that the dot product tells us something abou
 \end{figure}
 
 Firstly, note down the components of each vector in \Cref{dotproductfig}. Then, let us compute \(\vec{a}\cdot \vec{b}\). By \Cref{dotproduct}, it is \(1(-2)+2(1)=0\). Also, it is important to take note that these two vectors are orthogonal(at right angles with each other). This brings us to an important property of dot products, if two vectors are orthogonal, then their dot product is 0. This can be seen from the fact that \(\cos(\frac{\pi}{2})=0\) and from the second definition of dot products in \Cref{dotproduct}. In a sense, the dot product tells you how aligned are the directions of two vectors. Another example would be taking the dot product of two identical vectors, such as \(\vec{a}\cdot\vec{a}\). The dot product there is \(1(1)+2(2)=5\). In addition, we know \(\cos{0}=1\) so according to the second definition, \(\vec{a}\cdot\vec{a}=(||\vec{a}||)(||\vec{a}||)=(||\vec{a}||)^{2}\). If we take the square root on both sides, \(||\vec{a}||=\sqrt{\vec{a}\cdot\vec{a}}\) which can be rewritten as \(||\vec{a}||=\sqrt{a_{1}^{2}+\dots+a_{n}^{n}}\). Drum roll please. This is exactly the formula we got in \Cref{vecmagnitude} for the magnitude of a vector. This is a pretty nice result.
-\begin{example}
+\begin{example}{Calculating dot products}{}
   From \Cref{dotproductfig}, we can see that:
   \begin{equation*}
     \vec{a} \cdot \vec{c} = \begin{bmatrix}
@@ -109,7 +110,7 @@ Firstly, note down the components of each vector in \Cref{dotproductfig}. Then, 
     \end{bmatrix} = 1(-1) + 2(-2) = -5
   \end{equation*}
 \end{example}
-\begin{remark}
+\begin{remark}{}{}
   Generally, when finding the dot product, we use the first form in \Cref{dotproduct} as it is typically easier to compute. It is also important to know that the dot product of two vectors results in a number, not a vector like in scaling.
 \end{remark}
   \begin{marginfigure}
@@ -135,12 +136,13 @@ Firstly, note down the components of each vector in \Cref{dotproductfig}. Then, 
       \item{\(\vec{x}\cdot\vec{y}\)}
       \item{\(\vec{y}\cdot\vec{x}\)}
     \end{enumerate} }
-  \item{Prove or disprove that the dot product \textit{commutes}. }
-\marginnote{\footnotesize \textit{An operation \(\circ\) is commutative if \(x\circ y = y \circ x\).}}
-\item{Given two vectors \(\vec{a}\) and \(\vec{b}\) separated by an angle \(\theta\), they form a triangle with a third side \(\vec{c}=\vec{a}-\vec{b}\) (See \Cref{exvecdotfig}).By taking the dot product of \(\vec{c}\) and itself, derive the law of cosines. (Hint: \((\vec{x}\cdot\vec{y})\cdot(\vec{z}\cdot\vec{w})=\vec{x}\cdot\vec{z}+\vec{x}\cdot\vec{w}+\vec{y}\cdot\vec{z}+\vec{y}\cdot\vec{w}\))}
-  \end{enumerate}  
+  \item{Prove or disprove that the dot product \textit{commutes}. \sidenotemark }
 
-  \begin{enumerate}
+  \end{enumerate}  
+\sidenotetext{\footnotesize \textit{An operation \(\circ\) is commutative if \(x\circ y = y \circ x\).}}
+\begin{enumerate}
+  
+\item{Given two vectors \(\vec{a}\) and \(\vec{b}\) separated by an angle \(\theta\), they form a triangle with a third side \(\vec{c}=\vec{a}-\vec{b}\) (See \Cref{exvecdotfig}).By taking the dot product of \(\vec{c}\) and itself, derive the law of cosines. (Hint: \((\vec{x}\cdot\vec{y})\cdot(\vec{z}\cdot\vec{w})=\vec{x}\cdot\vec{z}+\vec{x}\cdot\vec{w}+\vec{y}\cdot\vec{z}+\vec{y}\cdot\vec{w}\))}
     \item{\begin{enumerate}
           \item{\(\begin{bmatrix}
             2 \\
@@ -151,7 +153,7 @@ Firstly, note down the components of each vector in \Cref{dotproductfig}. Then, 
     \end{enumerate} }
   \item{The dot product commutes. From the second definition of the dot product from \Cref{dotproduct}, we can see that \(\vec{a}\cdot\vec{b}=(||\vec{a}||)(||\vec{b}||)\cos(\theta)=(||\vec{b}||)(||\vec{a}||)\cos(\theta)=\vec{b}\cdot\vec{a}\). Therefore, the dot product commutes. }
   \item{Let \(a,b,c\) be the magnitudes of the respective vectors. Just take the dot product of \(\vec{c}\) and itself. 
-  \marginnote{\footnotesize \textit{Note that \(\vec{a}\cdot\vec{a}=(||\vec{a}||)^2\) as evident from the second definition of \Cref{dotproduct}.}}
+\sidenotemark
     \begin{align*}
       \vec{c}\cdot\vec{c} &= \left(\vec{a}-\vec{b}\right)\cdot \left(\vec{a}-\vec{b}\right) \\
                           &= a^2 - 2\vec{a}\cdot\vec{b} + b^2 \\
@@ -160,3 +162,4 @@ Firstly, note down the components of each vector in \Cref{dotproductfig}. Then, 
     Which is exactly the law of cosines. 
     }
   \end{enumerate} 
+  \sidenotetext{\footnotesize \textit{Note that \(\vec{a}\cdot\vec{a}=(||\vec{a}||)^2\) as evident from the second definition of \Cref{dotproduct}.}}

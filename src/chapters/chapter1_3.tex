@@ -5,7 +5,7 @@ You may have noticed in the previous exercise that question 2 is particularly \\
     f(x_1) = f(x_2) \text{\, implies \,} x_1 = x_2 
   \end{equation*}
 \end{definition}
-  \marginnote{\footnotesize \textit{By contraposition, \(x_1 \neq x_2\) \\ implies \(f(x_1) \neq f(x_2)\). The contraposition of a statement "p then q" is "not q then p".}}
+  \marginnote{\footnotesize \textit{By contraposition, \(x_1 \neq x_2\) implies \(f(x_1) \neq f(x_2)\). The contraposition of a statement "p then q" is "not q then p".}}
 Of course, this explanation might not have been very clear. Here is a visualisation:
 
 \begin{figure}[h]
@@ -100,7 +100,6 @@ However, bijective functions have a superpower. A function is only bijective \te
 \end{proof}
 \begin{lemma}{Bijective function has inverses}{}
   If a function, \(f: A \to B\), is a bijection, then it has an inverse.
-
   \label{bijectinverse}
 \end{lemma}
 \begin{proof}{Bijective function has inverses}{}
@@ -111,14 +110,13 @@ However, bijective functions have a superpower. A function is only bijective \te
 \end{remark}
 \begin{marginfigure}
     \centering
-    \begin{tikzpicture}[scale=0.525]
+    \begin{tikzpicture}[scale=0.3, samples=50]
       \begin{axis}[xlabel=\(x\), ylabel=\(y\), axis lines=left, domain=0:20]
         \addplot[mark=none, color=blue]{(x - 7)^2}; 
       \end{axis} 
     \end{tikzpicture}
-    \caption{Plot of \((x-7)^2\)}
-  \end{marginfigure}
-
+    \caption{Plot of \((x-7)^2\).}
+\end{marginfigure}
 \subsection{Exercise}
 \subsubsection{Problems}
   \begin{enumerate}
@@ -152,7 +150,5 @@ However, bijective functions have a superpower. A function is only bijective \te
             \item{Similarly, define \(f\) and \(f^{-1}\). Let \(y \in A\) and \(f^{-1}(x)=y\). Notice that \(x=f(y)\) and because \(f\) is surjective(by \Cref{inversebiject}), \(x \in B\), thus proving that \(f^{-1}\) is surjective.}
           \end{enumerate}
         }
-    \end{enumerate} 
-  
-
+    \end{enumerate}  
   And this concludes the chapter on functions. Readers are encouraged to do more similar practices to strengthen their knowledge on functions. Also, this chapter is more on the "pure mathematics" side, such proofs are only presented as a good exercise to the reader. In actuality, the book does not focus that much on this kind of mathematics(i.e. analysis) but more on the practical aspects of Calculus.

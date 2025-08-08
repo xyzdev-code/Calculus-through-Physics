@@ -1,13 +1,10 @@
-\documentclass[10pt, b5book]{book} 
-\usepackage[
-		b5paper,
-		right=5cm,
-    left=1cm,
-	]{geometry}
+\documentclass[10pt, b5book, twoside]{book} 
+\usepackage[b5paper, marginparwidth=1in]{geometry}
 \usepackage[none]{hyphenat}
 \input{settings}
 \usepackage{pgfplots, caption, fancyhdr, cleveref, lipsum, gensymb, newtxtext, newtxmath, indentfirst, marginnote, sidenotes, amsmath, enumitem}
 \usepackage{csquotes}
+\newcount\XeTeXtracingfonts
 \MakeOuterQuote{"}
 \usepackage[T1]{fontenc}
 \newcommand{\ihat}{\boldsymbol{\hat{\textbf{\i}}}}
@@ -23,9 +20,11 @@
 \pgfplotsset{compat=1.14}
 \usetikzlibrary{positioning}
 \begin{document}
+  \pagenumbering{gobble}
   \tableofcontents
-  \newpage
-  \part{Precalculus}
+    \part{Precalculus}
+
+  \pagenumbering{arabic}
   \chapter{Functions}
   \section{Function basics}
   \input{chapters/chapter1_1.tex}

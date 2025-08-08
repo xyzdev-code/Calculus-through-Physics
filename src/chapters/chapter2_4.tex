@@ -51,7 +51,7 @@ To find the area of \(A\) in \Cref{detarea}, we may use the sine rule (let \(\ve
 
 
 The resultant area is also known as the \textit{determinant} of a matrix.
-\begin{definition}
+\begin{definition}{Determinant of \(2\times2\) matrix}{}
   The determinant of a \(2\times2\) matrix \(A=\begin{bsmallmatrix}
     a & b \\
     c & d
@@ -86,7 +86,7 @@ The resultant area is also known as the \textit{determinant} of a matrix.
   \end{align*}
   and it represents the volume of the parallelepiped formed by the three basis vectors in \(B\).
 \end{definition}
-\begin{example}
+\begin{example}{Finding determinants}{}
   Given that \(A=\begin{bsmallmatrix}
     1 & 2 \\
     3 & 4
@@ -106,10 +106,7 @@ The resultant area is also known as the \textit{determinant} of a matrix.
     \det(B) = 0
     \label{exdetzero}
   \end{equation}
-  \marginnote{\footnotesize \textit{\Cref{exdetzero} shows a more general property, given that \(X=\begin{bsmallmatrix}
-        a & b \\
-        a & b
-  \end{bsmallmatrix} \), \(\det(X)=0\). The proof is trivial and shall be left as a verification to the reader.}}
+\sidenotemark
   \begin{align*}
     \det(C) &= 1 \begin{vmatrix}
       5 & 6 \\
@@ -125,13 +122,16 @@ The resultant area is also known as the \textit{determinant} of a matrix.
             &= 0
   \end{align*}
 \end{example}
-
+  \sidenotetext{\footnotesize \textit{\Cref{exdetzero} shows a more general property, given that \(X=\begin{bsmallmatrix}
+        a & b \\
+        a & b
+  \end{bsmallmatrix} \), \(\det(X)=0\). The proof is trivial and shall be left as a verification to the reader.}}
 
 Next, we would move onto the \textit{inverse} of a matrix. Think of a number \(x\), \(x^{-1}\times x=1\), 1 is also called the multiplicative identity. Likewise, given a matrix \(Y\), \(YY^{-1}=\begin{bsmallmatrix}
   1 & 0 \\
   0 & 1
 \end{bsmallmatrix} \) which is the identity matrix. If you think of \(Y\) as a transformation, then \(Y^{-1}\) "undo" the transformation of \(Y\). 
-\begin{definition}
+\begin{definition}{Inverse of a matrix}{}
   The (multiplicative) inverse of a matrix \(X\) is denoted \(X^{-1}\) where:
   \begin{equation*}
     X X^{-1} = I
@@ -147,8 +147,9 @@ Next, we would move onto the \textit{inverse} of a matrix. Think of a number \(x
     \end{bmatrix}
     \label{formulamatrixinv}
   \end{align}
-  \marginnote{\footnotesize \textit{When multiplying a matrix by a constant, you multiply each entry in matrix by the constant.}}
+  \sidenotemark
 \end{definition}
+  \sidenotetext{\footnotesize \textit{When multiplying a matrix by a constant, you multiply each entry in matrix by the constant.}}
 \begin{example}
   Given \(A=\begin{bsmallmatrix}
     1 & 2 \\
@@ -221,7 +222,7 @@ This is also the solution for \Cref{simulmatrix}, \(x\) is indeed 8 and \(y\) is
 
 Where \(x_i\) is the \(i\)-th solution and \(A_i\) is the matrix formed by replacing the \(i\)-th column of A by \(B\).
 
-\begin{example}
+\begin{example}{Solving linear equations with Cramer's rule}{}
   Given the following system of linear equations of three unknowns:
   \begin{equation*}
     \begin{array}{l}
@@ -293,8 +294,8 @@ Where \(x_i\) is the \(i\)-th solution and \(A_i\) is the matrix formed by repla
 
 
 As you can tell, Cramer's rule is very powerful. In the real world, however, \textit{gaussian elimination} is a much faster alternative than Cramer's rule. It is also unlikely for the reader to be computing large matrices determinants by hand, we have computers for that. This also applies to matrix multiplication. This book, and more generally calculus courses only need knowledge on computing determinants of up to \(3\times3\) matrices.
-
-
+\subsection{Exercise}
+\subsubsection{Problems}
   \begin{enumerate}
     \item{Find the determinants and inverses, if any, for the following matrices: \begin{enumerate}
           \item{\(\begin{bmatrix}
@@ -327,6 +328,8 @@ As you can tell, Cramer's rule is very powerful. In the real world, however, \te
       \end{equation*}
     }
   \end{enumerate}
+
+  \subsubsection{Solutions}
   \begin{enumerate}
     \item{\begin{enumerate}
           \item{\(-8\) and \(\begin{bsmallmatrix}
