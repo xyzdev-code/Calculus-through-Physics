@@ -1,4 +1,6 @@
 Onto the calculus portion that is very much anticipated. No more the quick skimping over precalculus topics. We shall enter this discussion with a very simple question that will yield many interesting results. Take a look at the graph below:
+
+
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}
@@ -87,7 +89,6 @@ From \Cref{quadgraph}, we can consider what happens at \(x=2\). We shall use the
 In other words, we have also found a function of the gradient of the tangent line for any point along \(f(x)=x^2\). Lastly, I would like to comment that normally, if not explicitly stated in the question to use "first principles", you can use the derivative rules you will learn in the next chapter to solve derivatives much more quickly and efficiently. In all honesty, using the "first principles" is very tedious and generally would not be used.
 
 
-\begin{Exercise}
   \begin{enumerate}
     \item{ Using first principles, find the derivatives of the following functions:
         \begin{enumerate}
@@ -99,8 +100,6 @@ In other words, we have also found a function of the gradient of the tangent lin
     \item{Let \(f(x)=(x-1)(x-2)\cdots(x-1729)\), find \(f'(1729)\). \textit{(Adapted from SMO 2025 Senior Section Round 1).}}
     \item{Given a differentiable function \(f(x)\), find the equation of the tangent line at \(x=a\).}
   \end{enumerate}
-\end{Exercise}
-\begin{Solution}
  \begin{enumerate}
    \item{
        \begin{enumerate}
@@ -120,7 +119,6 @@ In other words, we have also found a function of the gradient of the tangent lin
       }
     \item{
         We know that the gradient at \(f(a)\) is \(f'(a)\), which must be the gradient of our tangent line. Next, we notice that the line \(y=f'(a)x\) might not be tangent to \(f\), hence, we must vertically shift the line. The \(y\) value of the line at \(x=a\) is simply \(af'(a)\). As a result, the difference in height between \(f(a)\) and the line at \(a\) is simply \(f(a)-af'(a)\). Lastly, we just account for this difference by slapping the height difference term onto our line. Therefore, the equation of the tangent line is \(y=f'(a)x+f(a)-af'(a)=f'(a)(x-a)+f(a).\)
-      }
-      \marginnote{\footnotesize \textit{The equation for the tangent line to a curve is very important, it is good to memorise it or at least remember its derivation.}}
+      
+      \marginnote{\footnotesize \textit{The equation for the tangent line to a curve is very important, it is good to memorise it or at least remember its derivation.}}}
  \end{enumerate} 
-\end{Solution}

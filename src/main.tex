@@ -1,13 +1,15 @@
-\documentclass[10pt]{article} 
-\newcount\XeTeXtracingfonts
+\documentclass[10pt, b5book]{book} 
+\usepackage[
+		b5paper,
+		right=5cm,
+    left=1cm,
+	]{geometry}
 \usepackage[none]{hyphenat}
-\usepackage{NotesTeXV3, amsmath, pgfplots, tikz, caption, fancyhdr, cleveref, amsthm, lipsum, gensymb, newtxtext, newtxmath, indentfirst}
-\usepackage[english]{babel}
-\usepackage[autostyle, english = american]{csquotes}
+\input{settings}
+\usepackage{pgfplots, caption, fancyhdr, cleveref, lipsum, gensymb, newtxtext, newtxmath, indentfirst, marginnote, sidenotes, amsmath, enumitem}
+\usepackage{csquotes}
 \MakeOuterQuote{"}
 \usepackage[T1]{fontenc}
-\renewcommand\qedsymbol{QED}
-\counterwithin{figure}{section}
 \newcommand{\ihat}{\boldsymbol{\hat{\textbf{\i}}}}
 \newcommand{\jhat}{\boldsymbol{\hat{\textbf{\j}}}}
 \newcommand{\khat}{\boldsymbol{\hat{\textbf{k}}}}
@@ -20,71 +22,37 @@
 }
 \pgfplotsset{compat=1.14}
 \usetikzlibrary{positioning}
-\usepackage{background}
 \begin{document}
-  \begin{titlepage}
-  \backgroundsetup{scale = 0.8, angle = 0, opacity = 0.2,
-   contents = {\includegraphics[width = \paperwidth,
-   height = \paperheight, keepaspectratio]
-   {coverplot.pdf}}}
-  \thispagestyle{empty} 
-  \newgeometry{centering}
-  \centering
-  \hspace{1cm}\fontsize{80}{96}\selectfont The \\
-  \centering
-  \hspace{1cm}\fontsize{80}{96}\selectfont Calculus \\
-  \hspace{1cm}\fontsize{80}{96}\selectfont Method \\
-  \scshape \Huge \, \, \, \, \, \, \, \, \, \, first edition
-  \foreach \n in {0,...,6} {\newline}
-
-
-  \hspace{1cm} Xiao Yaozi
-  \end{titlepage}
-  \pagestyle{empty}
-  \restoregeometry
-  \backgroundsetup{contents={}}
-  \section*{\scshape {Preface to the first edition}}
-  \lipsum[75]
-  \newpage
   \tableofcontents
   \newpage
-  \flushbottom
-  \pagestyle{fancynotes}
   \part{Precalculus}
-  \section{Functions}
-  \subsection{Function basics}
+  \chapter{Functions}
+  \section{Function basics}
   \input{chapters/chapter1_1.tex}
   \newpage
-  \subsection{Function composition and inverses}
+  \section{Function composition and inverses}
   \input{chapters/chapter1_2.tex}
   \newpage
-  \subsection{Injection, surjection and bijection}
+  \section{Injection, surjection and bijection}
   \input{chapters/chapter1_3.tex}
   \newpage
-  \subsection{An aside: A more rigorous definition of a function}
+  \section{An aside: A more rigorous definition of a function}
   TBD
   \newpage
-  \section{Linear Algebra}
-  \subsection{Vector Basics}
+  \chapter{Linear Algebra}
+  \section{Vector Basics}
   \input{chapters/chapter2_1.tex}
   \newpage
-  \subsection{Scaling and dot product}
+  \section{Scaling and dot product}
   \input{chapters/chapter2_2.tex}
   \newpage
-  \subsection{Matrices}
+  \section{Matrices}
   \input{chapters/chapter2_3.tex}
   \newpage
-  \subsection{Determinants, inverses and Cramer's rule}
+  \section{Determinants, inverses and Cramer's rule}
   \input{chapters/chapter2_4.tex}
   \newpage
-  \subsection{Cross products and triple products}
-  \input{chapters/chapter2_5.tex}
+  \section{Cross products and triple products}
+  %\input{chapters/chapter2_5.tex}
   \newpage
-  \subsection{An aside: Duality}
-  TBD
-  \newpage
-  \part{Calculus I}
-  \section{Derivatives}
-  \subsection{The definition of derivatives}
-  \input{chapters/chapter3_1.tex}
  \end{document}

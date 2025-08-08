@@ -1,6 +1,6 @@
 In this chapter, we will look at composition of functions and inverse functions. You can use the normal arithmetic operations on functions like how you would to numbers:
 
-\begin{example}
+\begin{example}{Arithmetic operations on functions}{}
   If \(x=2\) and \(f(x)=x^2+4\):
   \begin{equation*}
     f(x)+f(x) = 2^2+4+2^2+4=16 
@@ -45,7 +45,7 @@ When you compose the same function \(n\)-times, the notation for it is:
 f^n(x)=\underbrace{f(f(\ldots f(x)))}_{n-times} 
 \marginnote{\footnotesize \textit{However, this does not apply to trigonometric functions. \(\sin^2(x)\) is \(\sin(x) \times \sin(x)\) instead of \(\sin(\sin(x))\). Annoying mathematical notation strikes again. What is even better, is that \(f^{-1}(x)\) denotes the inverse of \(f\).}}
 \end{equation*}
-\begin{example}
+\begin{example}{Composing functions}{}
   Here are some examples of composing functions together:
   If \(x=3\) and \(f(x)=\pi x\), \(g(x)=\sin(x)+1\):
   \begin{equation}
@@ -56,20 +56,20 @@ f^n(x)=\underbrace{f(f(\ldots f(x)))}_{n-times}
   \end{equation}
   There is nothing much here, really, just evaluate the function from the innermost function to the outermost.
 \end{example}
-\begin{theorem}
+\begin{theorem}{Composition of functions is associative}{}
   Given functions \(f:X \to Y\), \(g: Y \to Z\) and \(h: Z \to W\), prove that the composition of the three functions is \textit{associative}, in other words:
   \begin{equation*}
     h \circ (g \circ f(x)) = (h \circ g) \circ f(x)
   \end{equation*}
 \end{theorem}
-\begin{proof}
+\begin{proof}{Composition of functions is associative}{}
   Let \(x \in X\), we have: 
   \begin{equation*}
     h \circ (g \circ f(x)) = h(g \circ f(x)) = h(g(f(x))) = h \circ g(f(x)) = (h \circ g)f(x)
   \end{equation*}
   This proves the associativity of function composition.
 \end{proof}
-\begin{remark}
+\begin{remark}{}{}
   This is just a fun little exercise for the reader and ultimately is not that important to the entire book, just a good identity to keep in the back of your mind. 
 \end{remark}
 
@@ -95,16 +95,16 @@ If I ask you what is \(\arcsin(B)\), you may say it is \(\frac{b}{c}\). But, wha
   f \circ f^{-1}(y) = y, y \in Y \text{\, and \,} f^{-1} \circ f(x) = x, x \in X
 \end{equation}
 
-One common misconception is that \(f(f^{-1}(x))=f^{-1}(f(x))\). While this is true for many functions like \(f(x)=x+1\), it is \textit{not} always true. For example, take the following function:
+\begin{note}{Cancelling functions and their "inverse"}{}
+One common misconception is that \(f(f^{-1}(x))=f^{-1}(f(x))\). While this is true, you may apply this fact wrongly. For example, take the following function:
 \begin{equation*}
   f(x)=\sin(x), f: \mathbb{R} \to \{y: -1 \leq y \leq 1 \} 
 \end{equation*}
-
 This looks deceptively simple, when asked to evaluate \(f^{-1}(f(\pi))\), it is \(\pi\) (You may want to verify it yourself). But what is \(f(f^{-1}(\pi))\)? Well, according to our definition of \(f\), \(f^{-1}(\pi)\) is simply not defined. In actuality, to find \(f^{-1}(\pi)\), we need complex numbers, which is not allowed in the definition. Hence, you must be extra careful when you are dealing with function inverses and pay attention to the domain and range.
-
+\end{note}
 
 To find the inverse function of a function \(f\), we have to find the function that maps the outputs of the \(f\) back to its inputs. To solve algebraically, we set \(f(x)\) for some arbitrary \(x\) to \(y\), and make \(x\) the subject of the equation.
-\begin{example}
+\begin{example}{Finding the inverse of a function}{}
   Given that \(f(x)=\frac{x+7}{3}\):
   \begin{align*}
     f(x)&=y \\
@@ -114,7 +114,7 @@ To find the inverse function of a function \(f\), we have to find the function t
   \end{align*}
   Hence, the inverse function is \(f^{-1}(y)=3y-7\).
 \end{example}
-\begin{example}
+\begin{example}{Common inverse functions}{}
   Some common examples of inverse functions:
   \begin{enumerate}
     \item{Trigonometry: \begin{align*}
@@ -125,8 +125,9 @@ To find the inverse function of a function \(f\), we have to find the function t
     \end{align*} }
   \end{enumerate}
 \end{example}
-\begin{Exercise}
-  \enumerate{
+\subsection{Exercise}
+\subsubsection{Problems}
+\begin{enumerate}
     \item{Given \(f(x)=\frac{x^2+3}{2}\) and \(g(x)=\tan(x)+1\), evaluate:
         \begin{enumerate}
           \item{\(f(g(\frac{\pi}{4}))\)}
@@ -141,9 +142,9 @@ To find the inverse function of a function \(f\), we have to find the function t
           \item{\(h(h^{-1}(69))\) \textit{As Peter Lorre would have said it, "Do it ze kveek vay, Johnny".}}
         \end{enumerate}
       }
-  } 
-\end{Exercise}
-\begin{Solution}
+    \end{enumerate}
+
+\subsubsection{Solutions}
   \begin{enumerate}
     \item{
         \begin{enumerate}
@@ -160,4 +161,3 @@ To find the inverse function of a function \(f\), we have to find the function t
         \end{enumerate}
       }
   \end{enumerate} 
-\end{Solution}
