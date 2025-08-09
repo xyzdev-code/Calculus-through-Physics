@@ -45,11 +45,12 @@ In \Cref{zoomin}, we realise that the graph, when zoomed in sufficiently, essent
 
 However, notice that we have to divide throughout by \(h\), and \(h\) is very small, infinitesimally small. Some careless manipulation and you would say the expression blows up to infinity. What the formula does tell us, though, is the gradient practically at 2. This gives us an idea. Can we just replace 2 with any value of \(x\)? This brings us to the definition of the \textit{derivative}.
 \begin{definition}
-  The \textit{derivative} of a function \(f(x)\) is the instantaneous rate of change of that function. It can be written as \(f'(x)\), \(\frac{df(x)}{dx}\) or \(\dot f\). \marginnote{\footnotesize \textit{Sometimes, to save writing a few letters, the inputs to the functions may be omitted, such as \(f\) instead of \(f(x)\). This is more common when the function takes in multiple inputs.} }
+  The \textit{derivative} of a function \(f(x)\) is the instantaneous rate of change of that function. It can be written as \(f'(x)\), \(\frac{df(x)}{dx}\) or \(\dot f\).\sidenotemark  
   \begin{equation}
     f'(x) = \lim_{h\to0}\frac{f(x+h)-f(x)}{h}
   \end{equation}
 \end{definition}
+\sidenotetext{\footnotesize \textit{Sometimes, to save writing a few letters, the inputs to the functions may be omitted, such as \(f\) instead of \(f(x)\). This is more common when the function takes in multiple inputs.} }
 
 
 In the definition of the derivative, we can see that the derivative is also a function. Also, the definition states that it is the "instantaneous rate of change". This simply means that we are looking at the rate of change of the function over a very, very tiny range of \(x\). Of course, the definition may feel contradictory. How can some value change "instantaneously"? Well, this is resolved by not exactly by substituting \(\Delta y=0\), instead we let it "approach" 0. As a result, using this clever little mathematical trick, we avoided this problem. However, some of you may have noticed we have not evaluated any derivatives, we just defined them. It is no good to not answer our original question. To illustrate a derivation of a derivative, we shall use a much simpler graph, \(f(x)=x^2\).
@@ -67,7 +68,7 @@ In the definition of the derivative, we can see that the derivative is also a fu
 
 From \Cref{quadgraph}, we can consider what happens at \(x=2\). We shall use the definition of the derivatives, which is also more commonly referred to as "first principles".
 \begin{example}
-  To find the derivative at \(x=2\), we use the first principles as such:
+  To find the derivative at \(x=2\), we use the first principles as such \sidenotemark:
   \begin{align*}
     f'(2) &= \lim_{h\to0}\frac{f(2+h)-f(2)}{h} \\
           &= \lim_{h\to0}\frac{(2+h)^2-4}{h} \\
@@ -75,7 +76,7 @@ From \Cref{quadgraph}, we can consider what happens at \(x=2\). We shall use the
           &= \lim_{h\to0} 4+h \\
           &= 4
   \end{align*}
-  \marginnote{\footnotesize \textit{We can ignore \(h\) in the second last step because as a general rule of thumb, as long as substituting \(h=0\) does not create an expression of \(\frac{a}{0}\), we can let \(h=0\). Of course, this is very not rigorous and there are other exceptions that will be very evident after the reader has read the later chapter of limits. }}
+
   To find the derivative of \(f\), we use a similar manipulation:
   \begin{align*}
     f'(x) &= \lim_{h\to0}\frac{f(x+h)-f(x)}{h} \\
@@ -84,11 +85,11 @@ From \Cref{quadgraph}, we can consider what happens at \(x=2\). We shall use the
           &= 2x
   \end{align*}
 \end{example}
-
+  \sidenotetext{\footnotesize \textit{We can ignore \(h\) in the second last step because as a general rule of thumb, as long as substituting \(h=0\) does not create an expression of \(\frac{a}{0}\), we can let \(h=0\). Of course, this is very not rigorous and there are other exceptions that will be very evident after the reader has read the later chapter of limits. }}
 
 In other words, we have also found a function of the gradient of the tangent line for any point along \(f(x)=x^2\). Lastly, I would like to comment that normally, if not explicitly stated in the question to use "first principles", you can use the derivative rules you will learn in the next chapter to solve derivatives much more quickly and efficiently. In all honesty, using the "first principles" is very tedious and generally would not be used.
-
-
+\subsection{Exercise}
+\subsubsection{Problems}
   \begin{enumerate}
     \item{ Using first principles, find the derivatives of the following functions:
         \begin{enumerate}
@@ -100,6 +101,7 @@ In other words, we have also found a function of the gradient of the tangent lin
     \item{Let \(f(x)=(x-1)(x-2)\cdots(x-1729)\), find \(f'(1729)\). \textit{(Adapted from SMO 2025 Senior Section Round 1).}}
     \item{Given a differentiable function \(f(x)\), find the equation of the tangent line at \(x=a\).}
   \end{enumerate}
+  \subsubsection{Solutions}
  \begin{enumerate}
    \item{
        \begin{enumerate}

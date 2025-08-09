@@ -1,4 +1,3 @@
-\subsection{Understanding functions}
 Before we start on the calculus topics, this part of the book will acquaint you with the mathematics you would need to understand in order to read this book. If you are familiar with the these topics, you may skip to the Part II on Calculus I. For the rest of you, the pace of this part will be very fast, it is recommended that you read up on the concepts you do not understand very well. We will start with the idea of a \textit{function}. By now, I am sure that many of you may have seen equations like these:
   \begin{equation}
     x^2-5x+6=0
@@ -23,9 +22,9 @@ Before we start on the calculus topics, this part of the book will acquaint you 
 
   Out of the three equations, notice that \Cref{line} is special. There is not some fixed \(x\) values that you must plug in. Instead, the \(y\) value varies with the \(x\) value. Given a \(x\) value, the equation "produces" a \(y\) value. This brings us to the idea of a function. A function is simply something that takes in a value, and "produces" another value based on the input. You may have came across functions before, such as the trigonometric functions like \(\sin\) and \(\cos\). The value of \(\sin(x)\) varies with different values of \(x\). Of course, it is time for me to give you the definition of a function. 
   \begin{definition}{Function}{}
-    A \textbf{function} \(f\) is a mathematical object that assigns its inputs, or \textit{domain}, to its outputs, or \textit{range}. The notation \(f:A \to B\) means that the function has a domain \(A\) and range \(B\). The notation \(f(a)\) where \(a \in A\) denotes the element of \(B\) to which \(a\) is assigned to.    
+    A \textbf{function} \(f\) is a mathematical object that assigns its inputs, or \textit{domain}, to its outputs, or \textit{range}. The notation \(f:A \to B\) means that the function has a domain \(A\) and range \(B\) \sidenotemark. The notation \(f(a)\) where \(a \in A\) denotes the element of \(B\) to which \(a\) is assigned to.    
   \end{definition}
-\marginnote{\footnotesize \textit{Note that A and B are sets.}} 
+\sidenotetext{\footnotesize \textit{Note that A and B are sets.}} 
 \begin{example}{Evaluating functions}{}
     Here are some examples of functions:
     \begin{equation}
@@ -43,7 +42,6 @@ Before we start on the calculus topics, this part of the book will acquaint you 
    Lastly, the quadratic in \Cref{quadratic} is another real function(i.e. it has a real domain and range). Think about what happens when \(h(x)=0\), what value of \(x\) must you plug in to make \(h(x)=0\). Well, isn't it just the roots of the quadratic. Hence, the roots of a function are just the values \(x\) such that \(h(x)=0\). In this case, it would be 2 and 3. Thus, \(h(2)=h(3)=0\).
 \end{example}
 
-\subsection{More examples of functions}
    Actually, functions can be more than the usual \(f(x)=\text{something}\). Let's say you want to have a function that outputs "1" if the input is rational and "0" if it is not, you can define it as such:
    \marginnote{\footnotesize \textit{This is actually the famous Dirichlet function that shatters certain intuitions on functions and will be discussed in later chapters.}}
     \begin{equation}

@@ -31,20 +31,20 @@ squarednode/.style={rectangle, draw=black!60, fill=white!5, very thick, minimum 
     \draw[->] (gtopic.east) -- (final.west);
   \end{tikzpicture}
 
-  \caption{Visual representation of function composition.}
+  \caption{Visual representation of function composition. \sidenotemark}
 \end{figure} 
-  \marginnote{\footnotesize \textit{Note that the rectangles are \\ functions and circles are values.}}
+  \sidenotetext{\footnotesize \textit{Note that the rectangles are \\ functions and circles are values.}}
 
 Another notation for composing functions together(which we will not really use except for this chapter) is as such:
 \begin{equation*}
   f(g(x))=(f \circ g)(x) 
 \end{equation*}
 
-When you compose the same function \(n\)-times, the notation for it is:
+When you compose the same function \(n\)-times, the notation for it is\marginnote{\footnotesize \textit{However, this does not apply to trigonometric functions. \(\sin^2(x)\) is \(\sin(x) \times \sin(x)\) instead of \(\sin(\sin(x))\). Annoying mathematical notation strikes again. What is even better, is that \(f^{-1}(x)\) denotes the inverse of \(f\).}}:
 \begin{equation*}
 f^n(x)=\underbrace{f(f(\ldots f(x)))}_{n-times} 
 \end{equation*}
-\marginnote{\footnotesize \textit{However, this does not apply to trigonometric functions. \(\sin^2(x)\) is \(\sin(x) \times \sin(x)\) instead of \(\sin(\sin(x))\). Annoying mathematical notation strikes again. What is even better, is that \(f^{-1}(x)\) denotes the inverse of \(f\).}}
+
 \begin{example}{Composing functions}{}
   Here are some examples of composing functions together:
   If \(x=3\) and \(f(x)=\pi x\), \(g(x)=\sin(x)+1\):
@@ -90,13 +90,13 @@ Next, we will delve into inverse functions. Let us start with one I believe you 
 \caption{Figure of right triangle ABC.}
 \end{figure}
 
-If I ask you what is \(\arcsin(B)\), you may say it is \(\frac{b}{c}\). But, what is \(\arcsin(\sin(B))\), well, that is just \(B\), isn't it. Hence, the \(\arcsin\) sort of "cancels" the \(\sin\). We call \(\arcsin\) the \textit{inverse function} or just inverse of \(\sin\). \marginnote{\footnotesize \textit{We will use \(\arcsin\) as the inverse of \(\sin\) instead of \(\sin^{-1}\) as it is clearer.}} Generally, given a function \(f: X \to Y\), \(f^{-1}\) denotes the inverse function that satisfies:
+If I ask you what is \(\arcsin(B)\), you may say it is \(\frac{b}{c}\). But, what is \(\arcsin(\sin(B))\), well, that is just \(B\), isn't it. Hence, the \(\arcsin\) sort of "cancels" the \(\sin\). We call \(\arcsin\) the \textit{inverse function} or just inverse of \(\sin\).\marginnote{\footnotesize \textit{We will use \(\arcsin\) as the inverse of \(\sin\) instead of \(\sin^{-1}\) as it is clearer.}} Generally, given a function \(f: X \to Y\), \(f^{-1}\) denotes the inverse function that satisfies:
 \begin{equation}
   f \circ f^{-1}(y) = y, y \in Y \text{\, and \,} f^{-1} \circ f(x) = x, x \in X
 \end{equation}
 
 \begin{note}{Cancelling functions and their "inverse"}{}
-One common misconception is that \(f(f^{-1}(x))=f^{-1}(f(x))\). While this is true, you may apply this fact wrongly. For example, take the following function:
+One common misconception is that \(f(f^{-1}(x))=f^{-1}(f(x))\) for any function. While this is technically true, you may apply this fact wrongly. For example, take the following function:
 \begin{equation*}
   f(x)=\sin(x), f: \mathbb{R} \to \{y: -1 \leq y \leq 1 \} 
 \end{equation*}

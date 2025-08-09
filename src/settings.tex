@@ -72,32 +72,32 @@
 
 % Legendre polynomials
 % Shamelessly stolen from https://tex.stackexchange.com/questions/595780/recursive-function-in-pgfplots
-\tikzset{
-	evaluate={
-		function legendre(\x,\p) {
-			if \p == 0 then {
-				return 1;
-			} else {
-				return legendre2(\x, \p);
-			};
-		};
-		function legendre2(\x, \p) {
-			if \p == 1 then {
-				return \x;
-			} else {
-				return (1/\p)*((2*\p-1)*\x*legendre(\x, \p-1) + (1-\p)*legendre(\x, \p-2));
-			};
-		};
-		function legendre3(\n, \x){
-			\S = 0;
-			int \A; \A = 3;
-			for \k in {1,...,\A}{
-				\S=\A;
-			};
-			return \S;
-		};
-	},
-}
+% \tikzset{
+% 	evaluate={
+% 		function legendre(\x,\p) {
+% 			if \p == 0 then {
+% 				return 1;
+% 			} else {
+% 				return legendre2(\x, \p);
+% 			};
+% 		};
+% 		function legendre2(\x, \p) {
+% 			if \p == 1 then {
+% 				return \x;
+% 			} else {
+% 				return (1/\p)*((2*\p-1)*\x*legendre(\x, \p-1) + (1-\p)*legendre(\x, \p-2));
+% 			};
+% 		};
+% 		function legendre3(\n, \x){
+% 			\S = 0;
+% 			int \A; \A = 3;
+% 			for \k in {1,...,\A}{
+% 				\S=\A;
+% 			};
+% 			return \S;
+% 		};
+% 	},
+% }
 
 \newcommand{\draworigin}{\fill (0,0) circle (0.075);}
 \newcommand{\tikzinline}[1]{\tikz[baseline=-0.5ex]{#1}}
@@ -472,12 +472,14 @@
 	},
 	defstyle/.style={
     common={xpurple}{\(\bigstar\)},
+    label={Definition \thetcbcounter}
 	},
 	theoremstyle/.style={
     common={xgraycyan}{\textbf{QED}},
 	},
 	lemmastyle/.style={
     common={xgrayblue}{\textbf{QED}},
+    label=Lemma \thetcbcounter
 	},
 	proofstyle/.style={
 		common={xgreen}{\textbf{QED}},

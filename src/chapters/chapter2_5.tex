@@ -14,7 +14,7 @@ The cross product is a vector, whose magnitude is the area of a parallelogram fo
   \begin{equation*}
     \vec{a}\times\vec{b} = (||\vec{a}||)(||\vec{b}||)\sin(\theta)\vec{n}
   \end{equation*}
-  where \(\theta\) is the angle between \(\vec{a}\) and \(\vec{b}\) and \(\vec{n}\) is the unit vector perpendicular to both of the operands such that all three vectors obey the "right hand rule". \marginnote{\footnotesize \textit{The right hand rule states that if you use your right hand and point the index finger in the direction of \(\vec{a}\), your middle finger in the direction of \(\vec{b}\)}, your thumb should be pointing in the direction of \(\vec{n}\).} The common way to compute the cross product is using the following formula:
+  where \(\theta\) is the angle between \(\vec{a}\) and \(\vec{b}\) and \(\vec{n}\) is the unit vector perpendicular to both of the operands such that all three vectors obey the "right hand rule"\sidenotemark. The common way to compute the cross product is using the following formula:
   \begin{equation}
     \vec{a}\times\vec{b} = \begin{vmatrix}
       \ihat & \jhat & \khat \\
@@ -25,7 +25,7 @@ The cross product is a vector, whose magnitude is the area of a parallelogram fo
   Lastly, do not confuse \(\vec{n}\) with \(\khat\) as both vectors are sometimes not the same.
   \label{defcrossproduct}
 \end{definition}
-
+\sidenotetext{\footnotesize \textit{The right hand rule states that if you use your right hand and point the index finger in the direction of \(\vec{a}\), your middle finger in the direction of \(\vec{b}\)}, your thumb should be pointing in the direction of \(\vec{n}\).} 
 
 The cross product is very ubiquitous in physics and vector calculus alike. 
 \begin{example}{Calculating cross products}
@@ -47,7 +47,7 @@ The cross product is very ubiquitous in physics and vector calculus alike.
                          &= 0\ihat - 0\jhat + 5\khat \\
                          &= 5\khat
   \end{align*}
-  \begin{figure}[h]
+  \begin{figure}[H]
     \centering
     \begin{tikzpicture}[scale=0.9]
       \draw[line width=2pt, -stealth, red] (0,0,0) -- (1,0,-2) node[pos=1.3]{\(\vec{a}\)};
@@ -87,7 +87,7 @@ Next, we will move on to triple products which happens to also be a three dimens
 
 \Cref{figtripvec} is the example of triple vector multiplication. You would represent it as \(\vec{a} \cdot (\vec{b} \times \vec{c})\). The result here is simply the volume of the parallelepiped formed in \Cref{figtripvec}.
 \begin{definition}{Triple vector product}{}
-  The \textbf{triple vector product} is a product of three 3 dimensional vectors. The most common of which, is the scalar triple product which is \Cref{figtripvec}. The formula for which is \(\vec{a}\cdot(\vec{b}\times\vec{c})\), which yields the volume of the parallelepiped with the sides being the three vectors. Another type of triple vector multiplication is vector triple product. It is simply \(\vec{a}\times(\vec{b}\times\vec{c})\). We can use \textit{Lagrange's formula} to compute it easily: \(\vec{a}\times(\vec{b}\times\vec{c}) = \vec{b}(\vec{a}\cdot\vec{c}) - \vec{c}(\vec{a}\cdot\vec{b})\).
+  The \textbf{triple vector product} is a product of three 3 dimensional vectors. The most common of which, is the scalar triple product which is \Cref{figtripvec}. The formula for which is \(\vec{a}\cdot(\vec{b}\times\vec{c})\), which yields the volume of the parallelepiped with the sides being the three vectors. Another type of triple vector multiplication is vector triple product. It is simply \(\vec{a}\times(\vec{b}\times\vec{c})\). We can use \textbf{Lagrange's formula} to compute it easily: \(\vec{a}\times(\vec{b}\times\vec{c}) = \vec{b}(\vec{a}\cdot\vec{c}) - \vec{c}(\vec{a}\cdot\vec{b})\).
 \end{definition}
 \begin{example}{Volume of parallelepiped}{}
   We shall derive the formula for the volume of a parallelepiped given its height, breadth and length. We shall denote them \(h\), \(b\) and \(l\) respectively. Notice that we define the sides of the parallelepiped like this:
@@ -240,6 +240,6 @@ As for vector triple product, the process of computation is very similar. We fir
   \end{enumerate} }
   \item{This is also a trivial and tedious result that can be shown just by some evaluation of the cross products.}
   \end{enumerate}
-\begin{remark}
+  \begin{remark}{}{}
   While the linear algebra chapter in this book is ending, this is a very small subset of a standard linear algebra course. Many concepts, such as eigenvalues, are not covered due to their not so important nature. Readers are still highly encouraged to read up some of the other concepts.
 \end{remark}

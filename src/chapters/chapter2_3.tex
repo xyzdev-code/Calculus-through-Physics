@@ -1,6 +1,6 @@
-In this chapter, we will introduce a new mathematical object that you have probably heard before but not sure what it is. To be honest, many mathematics students only know how to \textit{compute} matrix operations but does not know the meaning behind them. I will try to do my best to explain them in a clear manner and I hope that you would appreciate matrices more for their beautiful geometric meaning than their mind-numbing calculations. A great place to start is the \textit{basis vectors} introduced back in \Cref{basis}. All vectors can be written as a unique linear combination of the basis vectors. But \(\ihat\) and \(\jhat\) are not the only basis vectors out there, what if I wanted to describe vectors using another set of basis vectors? Perhaps that would be more convenient for my special use case. Well, it is actually pretty easy to do so. For the sake of this argument, let us try to rotate all of the vectors in a normal 2d vector field anti-clockwise by \(90\degree\). \begin{marginfigure}
+In this chapter, we will introduce a new mathematical object that you have probably heard before but not sure what it is,\textit{linear transformation}. A great place to start is the \textit{basis vectors}. All vectors can be written as a unique linear combination of the basis vectors. But \(\ihat\) and \(\jhat\) are not the only basis vectors out there, what if I wanted to describe vectors using another set of basis vectors? Perhaps that would be more convenient for my special use case. Well, it is actually pretty easy to do so. For the sake of this argument, let us try to rotate all of the vectors in a normal 2d vector field anti-clockwise by \(90\degree\). \begin{marginfigure}
   \centering
-  \begin{tikzpicture}[scale=0.525]
+  \begin{tikzpicture}[scale=0.3]
     \draw[thin, gray!40] (-4,-4) grid (4,4);
     \draw[line width=2pt, blue, -stealth] (0,0) -- (1,2) node[anchor=south west]{\(\vec{a}\)};
     \draw[line width=2pt, red, -stealth] (0,0) -- (-2,1) node[anchor=south east]{\(\vec{b}\)};
@@ -32,7 +32,7 @@ Notice how we could not describe \(\vec{b}\) as some constant multiplied to \(\v
   Here are some examples of linear transformations, the blue grid is the vector space after the transformation. Take note where the basis vectors are after the transformations.
   \begin{figure}[H]
   \centering
-  \begin{tikzpicture}[scale=1.0]
+  \begin{tikzpicture}[scale=0.4]
     \draw[gray!40, thin] (-4, -4) grid (4,4); 
     \draw[line width=2pt, red, -stealth] (0,0) -- (1,0) node[anchor=west]{\(\ihat_{\textit{before}}\)};
     \draw[line width=2pt, blue, -stealth] (0,0) -- (0,1) node[anchor=south]{\(\jhat_{\textit{before}}\)};
@@ -46,7 +46,7 @@ Notice how we could not describe \(\vec{b}\) as some constant multiplied to \(\v
 
   \centering
 
-  \begin{tikzpicture}[scale=0.8]
+  \begin{tikzpicture}[scale=0.4]
     \draw[gray!40, thin] (-4, -4) grid (4,4); 
     \draw[blue!40, thin, xslant=tan 45] (-4, -4) grid (4,4);
     \draw[line width=2pt, red, -stealth] (0,0) -- (1,0) node[anchor=west]{\(\ihat_{\textit{before}}\)};
@@ -113,7 +113,7 @@ It should go without saying that any vector in the original vector space will ge
 \end{example}
 \begin{marginfigure}
   \centering
-  \begin{tikzpicture}[scale=0.33]
+  \begin{tikzpicture}[scale=0.17]
     \draw[gray!40, thin] (-4, -4) grid (4,4); 
     \draw[blue!40, thin, xslant=tan 45] (-4, -4) grid (4,4);
     \draw[line width=2pt, -stealth, blue] (0,0) -- (1,2) node[anchor=south west]{\(\vec{a}_{\text{before}}\)};
@@ -137,7 +137,7 @@ With this knowledge, let us proceed to one of the most hated parts of linear alg
   \end{bsmallmatrix} \). \(xy\) is simply applying the shear first before the rotation. (The right to left reading is similar to that of function composition)
   \begin{figure}[H]
     \centering
-    \begin{tikzpicture}[scale=0.8]
+    \begin{tikzpicture}[scale=0.5]
     \draw[line width=2pt, -stealth, blue] (0,0) -- (0,1) node[anchor=south west]{\(\jhat_{\text{before}}\)};
     \draw[line width=2pt, -stealth, blue] (0,0) -- (1,1) node[anchor=north west]{\(\jhat_{\text{intermediate}}\)};
     \draw[line width=2pt, -stealth, blue] (0,0) -- (-1,1) node[anchor=south west]{\(\jhat_{\text{after}}\)};

@@ -2,11 +2,14 @@
 \usepackage[b5paper, marginparwidth=1in]{geometry}
 \usepackage[none]{hyphenat}
 \input{settings}
-\usepackage{pgfplots, caption, fancyhdr, cleveref, lipsum, gensymb, newtxtext, newtxmath, indentfirst, marginnote, sidenotes, amsmath, enumitem}
+\usepackage{pgfplots, caption, fancyhdr, cleveref, lipsum, gensymb, newtxtext, newtxmath, indentfirst, marginnote, amsmath, enumitem}
 \usepackage{csquotes}
 \newcount\XeTeXtracingfonts
 \MakeOuterQuote{"}
+\usepackage{perpage}
 \usepackage[T1]{fontenc}
+\usepackage{sidenotes}
+
 \newcommand{\ihat}{\boldsymbol{\hat{\textbf{\i}}}}
 \newcommand{\jhat}{\boldsymbol{\hat{\textbf{\j}}}}
 \newcommand{\khat}{\boldsymbol{\hat{\textbf{k}}}}
@@ -19,6 +22,8 @@
 }
 \pgfplotsset{compat=1.14}
 \usetikzlibrary{positioning}
+\renewcommand{\marginnote}{\sidenote}
+
 \begin{document}
   \pagenumbering{gobble}
   \tableofcontents
@@ -52,6 +57,13 @@
   \input{chapters/chapter2_4.tex}
   \newpage
   \section{Cross products and triple products}
-  %\input{chapters/chapter2_5.tex}
+  \input{chapters/chapter2_5.tex}
   \newpage
+  \section{An aside: Duality}
+  TBD
+  \newpage
+  \part{Calculus I}
+  \chapter{Derivatives}
+  \section{Differentiation basics}
+  \input{chapters/chapter3_1.tex}
  \end{document}

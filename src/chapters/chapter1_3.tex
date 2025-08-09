@@ -1,11 +1,11 @@
 You may have noticed in the previous exercise that question 2 is particularly \\ interesting. There is a restriction on the domain of \(h(x)\). Why is that? This is what this chapter is all about. However, before we explain that, I will go over some definitions of properties of functions. Firstly, we have \textit{injection}. 
 \begin{definition}{Injective functions}{}
-  An injective function, \(f\), or a \textit{one-to-one} function, is a function such that every distinct output of the function corresponds to only \textit{one} distinct input, that is:  
+  An \textbf{injective function}, \(f\), or a \textit{one-to-one} function, is a function such that every distinct output of the function corresponds to only \textit{one} distinct input, that is \sidenotemark:  
   \begin{equation*}
     f(x_1) = f(x_2) \text{\, implies \,} x_1 = x_2 
   \end{equation*}
 \end{definition}
-  \marginnote{\footnotesize \textit{By contraposition, \(x_1 \neq x_2\) implies \(f(x_1) \neq f(x_2)\). The contraposition of a statement "p then q" is "not q then p".}}
+  \sidenotetext{\footnotesize \textit{By contraposition, \(x_1 \neq x_2\) implies \(f(x_1) \neq f(x_2)\). The contraposition of a statement "p then q" is "not q then p".}}
 Of course, this explanation might not have been very clear. Here is a visualisation:
 
 \begin{figure}[h]
@@ -52,7 +52,7 @@ As you can see in \Cref{inj}, every output in \(Y\) of the function is associate
 
 Here, the function is \textit{not} injective. As you can see in \Cref{non_inj}, the output \(y\) is associated with more than one input in \(X\). With this in mind, it is time to talk about \textit{surjection}. 
 \begin{definition}{Surjective function}{}
-  A surjective function \(f\) is a function such that for every output \(y\), there exists at least one input \(x\) such that \(f(x)=y\). 
+  A \textbf{surjective} function \(f\) is a function such that for every output \(y\), there exists at least one input \(x\) such that \(f(x)=y\). 
 \end{definition}
 
 
@@ -80,7 +80,7 @@ From \Cref{inj} and \Cref{non_inj}, both functions are surjective as every outpu
 
 From \Cref{nsurj}, we can see that \(y\) has no input associated with it. As a result, the function here is not surjective. Lastly, \textit{bijective} functions can't be any easier.
 \begin{definition}{Bijective function}{}
-  A bijective function is a function that is both injective and surjective. 
+  A \textbf{bijective} function is a function that is both injective and surjective. 
 \end{definition}
 
 
@@ -89,7 +89,7 @@ However, bijective functions have a superpower. A function is only bijective \te
   A function, \(f:A \to B\), has an inverse if and only if it is bijection.
 \end{theorem}
 \begin{proof}{Bijection and inverses}{}
-  To begin such proofs where there is a "if and only if" clause, we will prove both cases separately. First, we claim that if the function has an inverse, then it is bijective. To prove this, we simply prove that \(f\) is injective and surjective (See \Cref{inversebiject}). Then, we claim that if a function is bijective, then it has an inverse (See \Cref{bijectinverse}). With both proofs, we show that \(f\) has an inverse if and only if it is a bijection.
+  To begin such proofs where there is a "if and only if" clause, we will prove both cases separately. First, we claim that if the function has an inverse, then it is bijective. To prove this, we simply prove that \(f\) is injective and surjective. Then, we claim that if a function is bijective, then it has an inverse. With both proofs below, we show that \(f\) has an inverse if and only if it is a bijection.
 \end{proof}
 \begin{lemma}{Inverse function has bijections}{}
   If a function, \(f: A \to B\), has an inverse, then it is bijective. 
