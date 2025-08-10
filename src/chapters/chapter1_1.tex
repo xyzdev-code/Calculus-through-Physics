@@ -63,25 +63,45 @@ Before we start on the calculus topics, this part of the book will acquaint you 
       g(t)=(\cos(t), \sin(t))
     \end{equation}
 
-    \marginnote{\footnotesize \textit{As you will see in Part IV of the book, this is the \textit{parametric} equation of a circle.}}
-      \Cref{circle} is an example of a \textit{multivariate} function, in other words, it takes in multiple inputs. If \(x=2\) and \(y=2\), then \(f(2,2)=8\). On the other hand, \Cref{paramcircle} does not have a single output. Instead, it has a tuple \marginnote{ \\ \footnotesize \textit{A tuple is basically a set where order matters. You can treat it as if it is a coordinate.}} as its output. Evaluating it at \(t=\pi\), notice that the output is \((-1, 0)\). What is interesting is that if you trace out its outputs on a plane for all \(t \in \mathbb{R}\), you will get:
-
+    \Cref{circle}\marginnote{\footnotesize \textit{As you will see in Part IV of the book, this is the \textit{parametric} equation of a circle.}}
+    is an example of a \textit{multivariate} function, in other words, it takes in multiple inputs. If \(x=2\) and \(y=2\), then \(f(2,2)=8\). On the other hand, \Cref{paramcircle} does not have a single output. Instead, it has a tuple \marginnote{ \\ \footnotesize \textit{A tuple is basically a set where order matters. You can treat it as if it is a coordinate.}} as its output. Evaluating it at \(t=\pi\), notice that the output is \((-1, 0)\). What is interesting is that if you trace out its outputs on a plane for all \(t \in \mathbb{R}\), you will get \Cref{param}.
   \begin{figure}[h]
   \centering
-  \begin{tikzpicture}
+  \begin{tikzpicture}[scale=0.7]
     \begin{axis}[trig format=rad, axis equal, axis lines=left, ymax=1.5, ymin=-1.5]
       \addplot[color=blue, samples=100]({cos(x)}, {sin(x)});
     \end{axis}
   \end{tikzpicture}
     \tiny\caption{Plot of \Cref{paramcircle} for all \(t \in \mathbb{R}\)}.
+    \label{param}
+  \end{figure}
+    \subsection{Applications of functions: simple harmonic motion}
+    In physics, we often deal with functions which enables us to describe many things whose behaviour is dependent on certain inputs. Take simple harmonic motion for example. We can describe the angle of the pendulum to the normal line using the following formula\sidenote{\footnotesize\textit{While not completely accurate, this formula is good enough for an example.}}:
+  \begin{equation}
+    \theta(t) = \theta_0\cos(\sqrt{\frac{g}{l}}t)
+  \end{equation}
+  Here, \(\Theta_0\) is the initial angle of the pendulum, \(T\) is the period of the pendulum, \(l\) is the length of the rod. While this function may look sightly complicated, we can deduce a lot about it without computing much. Firstly, at \(t=0\), \(\theta(0)=\theta_0\), which makes sense because at the start, the pendulum is at its initial angle.
+  \begin{figure}[h]
+    \centering
+    \includegraphics[height=6cm, width=6cm]{Simple_gravity_pendulum.png}
+    \caption{Figure of pendulum.}
   \end{figure}
 
 
+  The periodic nature of the pendulum is also expressed in the cosine part of the function. Moreover, since \(\cos\) can only attain values between -1 and 1, the pendulum is guaranteed to be oscillating between \(-\theta_0\) and \(\theta_0\). This satisfies the conservation of energy because if this was not guaranteed and no energy is introduced into the system, energy must have been created or destroyed. 
+  \begin{challenge}{A real world pendulum}{}
+    This being said, in the real world, is energy lost to the surroundings? How could energy be lost to the surroundings? How would this affect the motion of the pendulum?
+  \end{challenge}
 
+
+  Let us calculate the period of the pendulum.
+  \begin{example}{Period of a pendulum}{}
+    We know the formula for the angle of the pendulum for any time \(t\). The period of a function \(\cos(ax)\) is simply \(\frac{2\pi}{a}\), hence the period of the pendulum is \(2\pi\sqrt{\frac{l}{g}}\). This results shows us that the period of the pendulum is \emph{independent} of the initial angle. This property is called "isochronism" that Galileo discovered.
+  \end{example}
   Functions are the building blocks of mathematics, and this book will deal extensively with it. Therefore, it is paramount that you get the basics right. Try the following exercise:
   \subsection{Exercise}
   \subsubsection{Problems}
-    \begin{enumerate}[]
+    \begin{enumerate}
       \item Given that \(x=2\) and \(y=\pi\), evaluate \(f(x)\) for:
     \begin{enumerate}
       \item{\(f(x)=x^3+1\)}
