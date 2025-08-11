@@ -1,7 +1,0 @@
-[doc]
-name = "Calculus through physics"
-bundle = "https://data1.fullyjustified.net/tlextras-2022.0r0.tar"
-
-[[output]]
-name = "Calculus through physics"
-type = "pdf"
