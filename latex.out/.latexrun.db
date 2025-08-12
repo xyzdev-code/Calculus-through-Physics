@@ -1,0 +1,110 @@
+{
+  "version": "latexrun-db-v2",
+  "tasks": {
+    "latex::main.tex": {
+      "deps": [
+        [
+          "args",
+          [],
+          [
+            "xelatex",
+            "-interaction",
+            "nonstopmode",
+            "-recorder",
+            "-output-directory",
+            "latex.out",
+            "main.tex"
+          ]
+        ],
+        [
+          "env",
+          [
+            "TEXMFOUTPUT"
+          ],
+          null
+        ],
+        [
+          "env",
+          [
+            "TEXINPUTS"
+          ],
+          null
+        ],
+        [
+          "env",
+          [
+            "TEXFORMATS"
+          ],
+          null
+        ],
+        [
+          "env",
+          [
+            "TEXPOOL"
+          ],
+          null
+        ],
+        [
+          "env",
+          [
+            "TFMFONTS"
+          ],
+          null
+        ],
+        [
+          "env",
+          [
+            "PATH"
+          ],
+          "/home/xiaoyaozi/.bun/bin:/home/xiaoyaozi/.deno/bin:/home/xiaoyaozi/.bun/bin:/home/xiaoyaozi/.cargo/bin:/usr/local/bin:/usr/bin:/home/xiaoyaozi/bin:/home/xiaoyaozi/bin"
+        ],
+        [
+          "file",
+          [
+            "/usr/share/texlive/texmf-dist/web2c/texmf.cnf"
+          ],
+          "a64ac8f34ec8041d26a4985fe730d49c53f0a2f8a6a549d454077d21bc6fb8db"
+        ],
+        [
+          "file",
+          [
+            "/var/lib/texmf/web2c/xetex/xelatex.fmt"
+          ],
+          "50a6bf98dd98b37d22712d409633c4d31266545ba3c493dfa659db02e96faf9f"
+        ],
+        [
+          "unknown_input",
+          [],
+          1754919081.518462
+        ],
+        [
+          "file",
+          [
+            "latex.out/texput.log"
+          ],
+          "b298649786070249eccb6766c798f92924a80151640a1c0e9e30b4893e0b2f3f"
+        ],
+        [
+          "file",
+          [
+            "latex.out/texput.fls"
+          ],
+          "eee13a7a33cf525e15658250f793c7c471854acb9ccb91c1d009a7aae94b2338"
+        ]
+      ],
+      "output_files": {
+        "latex.out/texput.log": "b298649786070249eccb6766c798f92924a80151640a1c0e9e30b4893e0b2f3f",
+        "latex.out/texput.fls": "eee13a7a33cf525e15658250f793c7c471854acb9ccb91c1d009a7aae94b2338"
+      },
+      "extra": {
+        "jobname": "latex.out/texput",
+        "outname": null,
+        "status": 1
+      }
+    }
+  },
+  "clean": {
+    "latex.out/texput.log": "b298649786070249eccb6766c798f92924a80151640a1c0e9e30b4893e0b2f3f",
+    "latex.out/texput.fls": "eee13a7a33cf525e15658250f793c7c471854acb9ccb91c1d009a7aae94b2338"
+  }
+}

@@ -1,3 +1,8 @@
+ 
+  \part{Precalculus}
+ \chapter{Functions}
+  \section{Function basics}
+
 Before we start on the calculus topics, this part of the book will acquaint you with the mathematics you would need to understand in order to read this book. If you are familiar with the these topics, you may skip to the Part II on Calculus I. For the rest of you, the pace of this part will be very fast, it is recommended that you read up on the concepts you do not understand very well. We will start with the idea of a \textit{function}. By now, I am sure that many of you may have seen equations like these:
   \begin{equation}
     x^2-5x+6=0
@@ -80,10 +85,10 @@ Before we start on the calculus topics, this part of the book will acquaint you 
   \begin{equation}
     \theta(t) = \theta_0\cos(\sqrt{\frac{g}{l}}t)
   \end{equation}
-  Here, \(\Theta_0\) is the initial angle of the pendulum, \(T\) is the period of the pendulum, \(l\) is the length of the rod. While this function may look sightly complicated, we can deduce a lot about it without computing much. Firstly, at \(t=0\), \(\theta(0)=\theta_0\), which makes sense because at the start, the pendulum is at its initial angle.
+  Here, \(\theta(t)\) is the angle of the pendulum at time \(t\), \(\theta_0\) is the initial angle of the pendulum, \(T\) is the period of the pendulum, \(l\) is the length of the rod. (\(g\) is the gravitational field strength.) While this function may look sightly complicated, we can deduce a lot about it without computing much. Firstly, at \(t=0\), \(\theta(0)=\theta_0\), which makes sense because at the start, the pendulum is at its initial angle.
   \begin{figure}[h]
     \centering
-    \includegraphics[height=6cm, width=6cm]{Simple_gravity_pendulum.png}
+    \includegraphics[height=8cm, width=8cm]{Simple_gravity_pendulum.png}
     \caption{Figure of pendulum.}
   \end{figure}
 
@@ -96,9 +101,20 @@ Before we start on the calculus topics, this part of the book will acquaint you 
 
   Let us calculate the period of the pendulum.
   \begin{example}{Period of a pendulum}{}
-    We know the formula for the angle of the pendulum for any time \(t\). The period of a function \(\cos(ax)\) is simply \(\frac{2\pi}{a}\), hence the period of the pendulum is \(2\pi\sqrt{\frac{l}{g}}\). This results shows us that the period of the pendulum is \emph{independent} of the initial angle. This property is called "isochronism" that Galileo discovered.
+    We know the formula for the angle of the pendulum for any time \(t\). The period of a function \(\cos(ax)\) is simply \(\frac{2\pi}{a}\), hence the period of the pendulum is \(2\pi\sqrt{\frac{l}{g}}\). This results shows us that the period of the pendulum is \textbf{independent} of the initial angle. This property is called "isochronism" that Galileo discovered.
   \end{example}
-  Functions are the building blocks of mathematics, and this book will deal extensively with it. Therefore, it is paramount that you get the basics right. Try the following exercise:
+  
+
+  In the real world, we often add a \textit{damping factor} \(d(t)\) to \(\theta(t)\). A damped pendulum has the function describing its angle as \(\theta_d(t)=\theta(t)d(t)\). The damping factor is to reduce the amplitude of the pendulum as time passes, mainly because air resistance opposes the motion of the pendulum. 
+  \begin{challenge}{A suitable damping factor}{}
+    From the following damping factor \(d(t)\), choose the most suitable one (you may want to use a graphing calculator to assist you):
+    \begin{align*}
+      e^t && e^{-t} && -x
+    \end{align*}
+  \end{challenge}
+
+
+
   \subsection{Exercise}
   \subsubsection{Problems}
     \begin{enumerate}

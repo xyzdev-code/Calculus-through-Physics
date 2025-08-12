@@ -3,12 +3,13 @@
 \usepackage[none]{hyphenat}
 \input{settings}
 \usepackage{pgfplots, caption, newtxmath, newtxtext, fancyhdr, cleveref, lipsum, gensymb, indentfirst, marginnote, amsmath, enumitem, graphicx}
-\usepackage{csquotes}
-\usepackage{babel}
-\MakeOuterQuote{"}
+\usepackage[english]{babel}
 \usepackage{perpage}
 \usepackage[T1]{fontenc}
 \usepackage{sidenotes}
+\usepackage[autostyle]{csquotes}
+
+\MakeOuterQuote{"}
 \graphicspath{{./assets/images}}
 \newcommand{\ihat}{\boldsymbol{\hat{\textbf{\i}}}}
 \newcommand{\jhat}{\boldsymbol{\hat{\textbf{\j}}}}
@@ -27,43 +28,23 @@
 \begin{document}
   \pagenumbering{gobble}
   \tableofcontents
-    \part{Precalculus}
-
+  \cleardoublepage
   \pagenumbering{arabic}
-  \chapter{Functions}
-  \section{Function basics}
-  \input{chapters/chapter1_1.tex}
-  \newpage
-  \section{Function composition and inverses}
-  \input{chapters/chapter1_2.tex}
-  \newpage
-  \section{Injection, surjection and bijection}
-  \input{chapters/chapter1_3.tex}
-  \newpage
+ 
+  \include{chapters/chapter1_1.tex}
+  \include{chapters/chapter1_2.tex}
+  \include{chapters/chapter1_3.tex}
   \section{An aside: A more rigorous definition of a function}
   TBD
   \newpage
-  \chapter{Linear Algebra}
-  \section{Vector Basics}
-  \input{chapters/chapter2_1.tex}
-  \newpage
-  \section{Scaling and dot product}
-  \input{chapters/chapter2_2.tex}
-  \newpage
-  \section{Matrices}
-  \input{chapters/chapter2_3.tex}
-  \newpage
-  \section{Determinants, inverses and Cramer's rule}
-  \input{chapters/chapter2_4.tex}
-  \newpage
-  \section{Cross products and triple products}
-  \input{chapters/chapter2_5.tex}
-  \newpage
+
+  \include{chapters/chapter2_1.tex}
+  \include{chapters/chapter2_2.tex}
+  \include{chapters/chapter2_3.tex}
+  \include{chapters/chapter2_4.tex}
+  \include{chapters/chapter2_5.tex}
   \section{An aside: Duality}
   TBD
   \newpage
-  \part{Calculus I}
-  \chapter{Derivatives}
-  \section{Differentiation basics}
-  \input{chapters/chapter3_1.tex}
+    \include{chapters/chapter3_1.tex}
  \end{document}
