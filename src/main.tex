@@ -2,7 +2,7 @@
 \usepackage[b5paper, marginparwidth=1in]{geometry}
 \usepackage[none]{hyphenat}
 \input{settings}
-\usepackage{pgfplots, caption, newtxmath, newtxtext, fancyhdr, cleveref, lipsum, gensymb, indentfirst, marginnote, amsmath, enumitem, graphicx}
+\usepackage{pgfplots, caption, newtxmath, newtxtext, fancyhdr, cleveref, lipsum, gensymb, indentfirst, marginnote, amsmath, enumitem, graphicx, esdiff}
 \usepackage[english]{babel}
 \usepackage{perpage}
 \usepackage[T1]{fontenc}
@@ -14,17 +14,17 @@
 \newcommand{\ihat}{\boldsymbol{\hat{\textbf{\i}}}}
 \newcommand{\jhat}{\boldsymbol{\hat{\textbf{\j}}}}
 \newcommand{\khat}{\boldsymbol{\hat{\textbf{k}}}}
-\usetikzlibrary{calc, pgfplots.fillbetween}
+\usetikzlibrary{calc, pgfplots.fillbetween, angles, quotes, babel}
 \newcommand{\MarkRightAngle}[4][.2cm]% #1=size (optional), #2-#4 three points: \angle #2#3#4
 {\coordinate (tempa) at ($(#3)!#1!(#2)$);
  \coordinate (tempb) at ($(#3)!#1!(#4)$);
  \coordinate (tempc) at ($(tempa)!0.5!(tempb)$);%midpoint
  \draw (tempa) -- ($(#3)!2!(tempc)$) -- (tempb);
 }
-\pgfplotsset{compat=1.14}
+\pgfplotsset{compat=1.18}
 \usetikzlibrary{positioning}
 \renewcommand{\marginnote}{\sidenote}
-
+\renewcommand{\thesidenote}{\roman{sidenote}}
 \begin{document}
   \pagenumbering{gobble}
   \tableofcontents

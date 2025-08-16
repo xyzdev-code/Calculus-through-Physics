@@ -80,7 +80,7 @@ Before we start on the calculus topics, this part of the book will acquaint you 
     \tiny\caption{Plot of \Cref{paramcircle} for all \(t \in \mathbb{R}\)}.
     \label{param}
   \end{figure}
-    \subsection{Applications of functions: simple harmonic motion}
+    \subsection{Application: simple harmonic motion}
     In physics, we often deal with functions which enables us to describe many things whose behaviour is dependent on certain inputs. Take simple harmonic motion for example. We can describe the angle of the pendulum to the normal line using the following formula\sidenote{\footnotesize\textit{While not completely accurate, this formula is good enough for an example.}}:
   \begin{equation}
     \theta(t) = \theta_0\cos(\sqrt{\frac{g}{l}}t)
@@ -90,6 +90,7 @@ Before we start on the calculus topics, this part of the book will acquaint you 
     \centering
     \includegraphics[height=8cm, width=8cm]{Simple_gravity_pendulum.png}
     \caption{Figure of pendulum.}
+    \label{pendulum}
   \end{figure}
 
 
@@ -109,12 +110,52 @@ Before we start on the calculus topics, this part of the book will acquaint you 
   \begin{challenge}{A suitable damping factor}{}
     From the following damping factor \(d(t)\), choose the most suitable one (you may want to use a graphing calculator to assist you):
     \begin{align*}
-      e^t && e^{-t} && -x
+      \boldsymbol e^t && \boldsymbol e^{-t} && \boldsymbol -t && \boldsymbol a, \boldsymbol a\in \mathbb{R}
     \end{align*}
   \end{challenge}
 
 
+  Previously, I mentioned that this system is not gaining or losing any energy, in other words this is a \textit{closed} system. We can actually prove this fact through some simple derivations.
+  \begin{example}{Total energy of a pendulum}{}
+    The total energy of the pendulum comprises of the kinetic \(K\) and potential \(V\) energy, which is the gravitational potential energy in this case.
+    \begin{align}
+      K &= \frac{1}{2}mv^2 
+    \end{align}
+    \begin{align}
+      V &= mgh 
+    \end{align}
+    Of course, we need to derive \(v\) and \(h\). Before we do that, let us find the \(x\) and \(y\) position of the pendulum as a function of time. We shall first derive the former. In \Cref{pendulum},  draw a perpendicular line that lies the dotted line to the position of the massive bob.
+    \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+      \coordinate (origin) at (0,0);
+      \coordinate (equi) at (0,-4);
+      \coordinate (bob) at (3,-4);
+      \draw[dotted] (0,0) -- (0,-4) node[midway, anchor=east]{\(y\)};
+      \draw (0,0) -- (3,-4) node[midway, anchor=west]{\(l\)};
+      \draw (0,-4) -- (3,-4) node[midway, below]{\(x\)};
+      \pic[draw, "\(\theta\)", angle eccentricity=1.5] {angle = equi--origin--bob};
+    \end{tikzpicture}
+    \caption{\(x\) and \(y\) components of the pendulum.}
+    \end{figure}
 
+
+  Notice that \(y=l\cos(\theta)\) and \(x=l\sin(\theta)\). If we take the height of the pivot to be \(h_0\)(we take the height to be positive), then \(h=h_0-y=h_0-l\cos(\theta)\). Then, we will tackle the problem of finding the velocity of the bob. However, sadly, we have to assume some formulas to derive \(v\).
+  \begin{align}
+    v_x = \diff{x}{t}
+  \end{align}
+  \begin{align}
+    v_y = \diff{y}{t}
+  \end{align}
+
+
+  The above two equations are finding the (instantaneous) rate of change of the positions of the bob with respect to time. This is because velocity is just the rate of change of position with respect to time. You will learn how to derive these using calculus in due time, but even such a simple physics problem like the pendulum already highlights the importance of calculus in physics. Anyways, we can write
+  \begin{align*}
+    v_x &= j
+  \end{align*}
+
+
+  \end{example}
   \subsection{Exercise}
   \subsubsection{Problems}
     \begin{enumerate}
