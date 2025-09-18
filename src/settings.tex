@@ -452,35 +452,23 @@
 %-------%
 \newcounter{problem}
 \counterwithin{problem}{chapter}
-\newenvironment{essproblem}{
-  \refstepcounter{problem}
-  \hrule 
-  \textbf{* Problem \thechapter.\arabic{problem}}
-}{\vspace{2pt}\hrule}
-\newenvironment{midproblem}{
-  \refstepcounter{problem}
-  \hrule 
-  \textbf{** Problem \thechapter.\arabic{problem}}
-}{\vspace{2pt}\hrule}
-\newenvironment{hardproblem}{
-  \refstepcounter{problem}
-  \hrule 
-  \textbf{*** Problem \thechapter.\arabic{problem}}
-}{\vspace{2pt}\hrule}
-\newenvironment{normproblem}{
-  \refstepcounter{problem}
-  \hrule 
-  \textbf{Problem \thechapter.\arabic{problem}}
-}{\vspace{2pt}\hrule}
-\tikzset{
-	second box/.style={
-		anchor=east,
-		text=white,
-		rounded corners,
-		fill=#1,
-		xshift=-4mm,
-	},
+\makeatletter
+\newcount\my@repeat@count
+\newcommand{\myrepeat}[2]{%
+  \begingroup
+  \my@repeat@count=\z@
+  \@whilenum\my@repeat@count<#1\do{#2\advance\my@repeat@count\@ne}%
+  \endgroup
 }
+\makeatother
+\newenvironment{problem}[1][0]{
+  \refstepcounter{problem}
+  \ifnum\value{problem}=1 
+  \hrule 
+  \fi
+  \vspace{2pt}
+  \textbf{\myrepeat{#1}{*} Problem \thechapter.\arabic{problem}} \\ \par
+}{\vspace{2pt}\hrule}
 
 \tcbset{
 	common/.style n args={2}{
