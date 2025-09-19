@@ -158,7 +158,7 @@ Before we start on the calculus topics, this part of the book will acquaint you 
   \end{example}
   \begin{problem}
      Given that \(x=2\) and \(y=\pi\), evaluate \(f(x)\) for:
-    \begin{enumerate}
+    \begin{enumerate}[label=\alph*)]
       \item{\(f(x)=x^3+1\)}
       \item{\(f(x)=2^x\)}
       \item{\(f(x)= \begin{cases}
@@ -171,7 +171,7 @@ Before we start on the calculus topics, this part of the book will acquaint you 
   \end{problem}
   \begin{problem}
      Given the following functions, write down \(f:A \to B\) where \(A\) is the domain and \(B\) is the range(do not consider complex inputs and outputs, we shall be ignorant to it for the time being to simplify things):
-      \begin{enumerate}
+      \begin{enumerate}[label=\alph*)]
         \item{\(f(x)=x\) \marginnote{\footnotesize \textit{This function has a special name, the \textbf{identity} function. Notice how its input and output are the same.}}}
         \item{\(f(x)=\frac{1}{x}\)}
         \item{\(f(x)=\sqrt{x}\)}
@@ -180,7 +180,7 @@ Before we start on the calculus topics, this part of the book will acquaint you 
   \end{problem}
   \begin{problem}
      Find the root(s) of the following functions:
-      \begin{enumerate}
+      \begin{enumerate}[label=\alph*)]
         \item{\(f(x)=x^2\)} 
         \item{\(f(x)=2^x-1\)}
         \item{\(f(x)=\sin(x)\)}
@@ -196,7 +196,7 @@ Before we start on the calculus topics, this part of the book will acquaint you 
       0 & n=0 
     \end{cases}
   \end{equation*}
-    \begin{enumerate}
+     \begin{enumerate}[label=\alph*)]
       \item{Compute \(f(3)\) explicitly using the definition of \(f\).}
       \item{Define the factorial of a positive integer in a similar way using recursion, define it as \(g(a)\).}
       \item{Sketch the graph of \(g(a)\).}
@@ -204,60 +204,80 @@ Before we start on the calculus topics, this part of the book will acquaint you 
 
    \end{problem} 
    \begin{problem}[1]
-    Let \(f(x)\) be a polynomial. If \(f(a)=0\), prove that \(x-a\) is a factor of \(f\).
+     \textit{(Polynomial remainder theorem)} Let \(f(x)\) be a polynomial. If \(f(a)=0\), prove that \(x-a\) is a factor of \(f(x)\).
    \end{problem}
-    \begin{enumerate}
-      \item{
-          \begin{enumerate}
-            \item{9}
-            \item{4}
-            \item{9}
-            \item{0}
-          \end{enumerate}
-        }
-      \item{
-          \begin{enumerate}
-            \item{\(f: \mathbb{R} \to \mathbb{R}\)}
-            \item{\(f: \mathbb{R} \setminus \{0\} \to \mathbb{R} \setminus \{0\}\) (Note the function is not defined at \(x=0\))}
-            \item{\(f: \mathbb{R}^{+}_{0} \to \mathbb{R}^{+}_{0}\) (Square root not defined for negative numbers)}
-          \end{enumerate}
-      \item{
-          \begin{enumerate}
-            \item{0}
-            \item{1}
-            \item{\(n\pi, \, \forall n \in \mathbb{Z}\)}
-          \end{enumerate}
-        }
-        }
-      \item{
-          \begin{enumerate}
-      \item{
-        \(
-        f(3) = f(2) + f(1) 
-             = f(1) + f(0) + 1
-             = 2
-    \)}
-      \item{\(g(a)=\begin{cases}
-            ag(a-1) & a>0 \\
-            1 & a=0
-      \end{cases} \)}
-    \item{
-        Because our definition of \(g(a)\) is discontinuous (the function have "gaps"), we shall only plot the points where the function is defined.
-        \begin{figure}[H]
-          \centering
-      \begin{tikzpicture}
-        \begin{axis}[axis lines=left, xmin=0, xmax=5, xlabel=\(a\), ylabel=\(g(a)\)]
-          \addplot[color=blue, only marks, mark=*] coordinates{
-              (0,1)
-              (1,1)
-              (2,2)
-              (3,6)
-              (4,24)
-              (5,120)
-            }; 
-        \end{axis}
-      \end{tikzpicture}
-      \caption{Graph of \(g(a)\).}
-    \end{figure} }
-\end{enumerate}}
-    \end{enumerate}
+   \begin{problem}[2]
+     Find \(f:\mathbb{R}\setminus\{0,1\} \to  \mathbb{R}\) such that \(f(x)+f(\frac{x-1}{x})=1+x\) for any \(x\in\mathbb{R}\setminus\{0,1\}\).
+   \end{problem}
+   \begin{problem}[1]
+     The \textit{wavefunction} \(\Psi\) of a particle can be thought of as the quantum state of a particle. In this problem, you will solve for the wavefunction of an one-dimensional particle (that lies on the x-axis) in an infinite square well. It is given that \(|\psi(x)|^2\) gives the probability of the particle existing at \(x\) and \(|\Psi(x,t)|^2\) is the probability of a particle existing at \(x\) at time \(t\). (Hence, note that \(\Psi(x)\neq 0\) and \(\psi(x)\neq 0\). That would imply that the particle cannot be found anywhere.) The potential function of the infinite square well is
+     \begin{equation}
+       V(x) = \begin{cases}
+         0 & 0\leq x\leq a \\
+         \infty & \textit{otherwise}
+       \end{cases}
+     \end{equation}
+     \begin{enumerate}[label=\alph*)]
+       \item{Can the particle exist outside of \(0<x<a\), or more specifically, what is \(|\psi(x)|^2\) (and therefore \(\psi(x)\)) for \(x<0\) or \(x>a\)?}
+       \item{To ensure that \(\psi\) is continuous, \(\psi(0)\) and \(\psi(a)\) are equal to your answer in (a). Also, it is known that the form of general solution to \(\psi\) is \(\psi(x)=A\sin(kx)+B\cos(kx)\). Show that \(\psi(x)=A\sin(kx)\).}
+        \item{Using your answer in (b), solve for \(k\). (Hint: k has multiple solutions, generalize all the solutions by writing down \(k_n\).)}
+        \item{Show that we can discard all negative solutions of \(k_n\). (Hint: \(\sin(-x)=-\sin(x)\).)}
+        \item{If \(E(n)=\frac{\hbar^2 k_n^2}{2m}\), find \(E(1)\) or the energy of the \textit{ground state} of the particle. \(\hbar\) is the reduced plank's constant.}
+        \item{The relation between \(\Psi\) and \(\psi\) is \(\Psi(x,t)=\psi(x)e^{-\frac{iE(n)t}{\hbar}}\). Find \(|\Psi(0,0)|^2\) for \(n=1\). This is also the probability density of a particle in its ground state at \(t=0\).}
+     \end{enumerate}
+   \end{problem}
+%     \begin{enumerate}
+%       \item{
+%           \begin{enumerate}
+%             \item{9}
+%             \item{4}
+%             \item{9}
+%             \item{0}
+%           \end{enumerate}
+%         }
+%       \item{
+%           \begin{enumerate}
+%             \item{\(f: \mathbb{R} \to \mathbb{R}\)}
+%             \item{\(f: \mathbb{R} \setminus \{0\} \to \mathbb{R} \setminus \{0\}\) (Note the function is not defined at \(x=0\))}
+%             \item{\(f: \mathbb{R}^{+}_{0} \to \mathbb{R}^{+}_{0}\) (Square root not defined for negative numbers)}
+%           \end{enumerate}
+%       \item{
+%           \begin{enumerate}
+%             \item{0}
+%             \item{1}
+%             \item{\(n\pi, \, \forall n \in \mathbb{Z}\)}
+%           \end{enumerate}
+%         }
+%         }
+%       \item{
+%           \begin{enumerate}
+%       \item{
+%         \(
+%         f(3) = f(2) + f(1) 
+%              = f(1) + f(0) + 1
+%              = 2
+%     \)}
+%       \item{\(g(a)=\begin{cases}
+%             ag(a-1) & a>0 \\
+%             1 & a=0
+%       \end{cases} \)}
+%     \item{
+%         Because our definition of \(g(a)\) is discontinuous (the function have "gaps"), we shall only plot the points where the function is defined.
+%         \begin{figure}[H]
+%           \centering
+%       \begin{tikzpicture}
+%         \begin{axis}[axis lines=left, xmin=0, xmax=5, xlabel=\(a\), ylabel=\(g(a)\)]
+%           \addplot[color=blue, only marks, mark=*] coordinates{
+%               (0,1)
+%               (1,1)
+%               (2,2)
+%               (3,6)
+%               (4,24)
+%               (5,120)
+%             }; 
+%         \end{axis}
+%       \end{tikzpicture}
+%       \caption{Graph of \(g(a)\).}
+%     \end{figure} }
+% \end{enumerate}}
+%     \end{enumerate}
