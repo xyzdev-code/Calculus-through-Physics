@@ -38,12 +38,12 @@ Take a look at \Cref{scalevector}, \(\vec{b}\) is twice as long as \(\vec{a}\). 
       n \times v_n
     \end{bsmallmatrix}
   \end{equation*}
-  Never ever write \(n\times\vec{v}\) or \(n\dot\vec{v}\) or you will be cursed into the thundering depths of careless \textit{misteaks} everywhere.
+  Never ever write \(n\times\vec{v}\) or \(n\dot\vec{v}\) or you will be cursed into the thundering depths of careless \textit{mistakes} everywhere.
 \end{definition}
 Let us try something fun, what if we multiplied the vector by a negative number? Well, the computation remains the same.
 \begin{marginfigure}
   \centering
-  \begin{tikzpicture}[scale=0.525]
+  \begin{tikzpicture}[scale=0.3]
     \draw[thin, gray!40] (-4,-4) grid (4,4);
     \draw[line width=2pt, blue, -stealth] (0,0) -- (2,4) node[anchor=south west]{\(\vec{b}\)};
     \draw[line width=2pt, red, -stealth] (0,0) -- (-1,-2) node[anchor=north east]{\(\vec{a}\)};
@@ -125,43 +125,49 @@ Firstly, note down the components of each vector in \Cref{dotproductfig}. Then, 
     \caption{Figure of a triangle formed by three vectors.}
     \label{exvecdotfig}
   \end{marginfigure} 
+\hrule
 
-  \begin{enumerate}
-    \item{If \(\vec{x}=\begin{bsmallmatrix}
+
+\begin{problem}
+    If \(\vec{x}=\begin{bsmallmatrix}
       1 \\
       2
       \end{bsmallmatrix} \) and \(\vec{b}=\begin{bsmallmatrix}
        3 \\
        4
-      \end{bsmallmatrix} \), compute the following: \begin{enumerate}
+    \end{bsmallmatrix} \), compute the following: \begin{enumerate}[label=\alph*)]
       \item{\(2\vec{x}\)}
       \item{\(\vec{x}\cdot\vec{y}\)}
       \item{\(\vec{y}\cdot\vec{x}\)}
-    \end{enumerate} }
-  \item{Prove or disprove that the dot product \textit{commutes}. \sidenotemark }
+    \end{enumerate} 
+\end{problem}
 
-  \end{enumerate}  
+
+\begin{problem}[1]
+  Prove or disprove that the dot product \textit{commutes}. \sidenotemark 
+\end{problem}
+
 \sidenotetext{\footnotesize \textit{An operation \(\circ\) is commutative if \(x\circ y = y \circ x\).}}
-\begin{enumerate}
-  
-\item{Given two vectors \(\vec{a}\) and \(\vec{b}\) separated by an angle \(\theta\), they form a triangle with a third side \(\vec{c}=\vec{a}-\vec{b}\) (See \Cref{exvecdotfig}).By taking the dot product of \(\vec{c}\) and itself, derive the law of cosines. (Hint: \((\vec{x}\cdot\vec{y})\cdot(\vec{z}\cdot\vec{w})=\vec{x}\cdot\vec{z}+\vec{x}\cdot\vec{w}+\vec{y}\cdot\vec{z}+\vec{y}\cdot\vec{w}\))}
-    \item{\begin{enumerate}
-          \item{\(\begin{bmatrix}
-            2 \\
-            4
-          \end{bmatrix} \)} 
-      \item{11}
-      \item{11}
-    \end{enumerate} }
-  \item{The dot product commutes. From the second definition of the dot product from \Cref{dotproduct}, we can see that \(\vec{a}\cdot\vec{b}=(||\vec{a}||)(||\vec{b}||)\cos(\theta)=(||\vec{b}||)(||\vec{a}||)\cos(\theta)=\vec{b}\cdot\vec{a}\). Therefore, the dot product commutes. }
-  \item{Let \(a,b,c\) be the magnitudes of the respective vectors. Just take the dot product of \(\vec{c}\) and itself. 
-\sidenotemark
-    \begin{align*}
-      \vec{c}\cdot\vec{c} &= \left(\vec{a}-\vec{b}\right)\cdot \left(\vec{a}-\vec{b}\right) \\
-                          &= a^2 - 2\vec{a}\cdot\vec{b} + b^2 \\
-                          &= a^2 + b^2 - 2ab\cos(\theta)
-    \end{align*}
-    Which is exactly the law of cosines. 
-    }
-  \end{enumerate} 
-  \sidenotetext{\footnotesize \textit{Note that \(\vec{a}\cdot\vec{a}=(||\vec{a}||)^2\) as evident from the second definition of \Cref{dotproduct}.}}
+% \begin{enumerate}
+%
+% \item{Given two vectors \(\vec{a}\) and \(\vec{b}\) separated by an angle \(\theta\), they form a triangle with a third side \(\vec{c}=\vec{a}-\vec{b}\) (See \Cref{exvecdotfig}).By taking the dot product of \(\vec{c}\) and itself, derive the law of cosines. (Hint: \((\vec{x}\cdot\vec{y})\cdot(\vec{z}\cdot\vec{w})=\vec{x}\cdot\vec{z}+\vec{x}\cdot\vec{w}+\vec{y}\cdot\vec{z}+\vec{y}\cdot\vec{w}\))}
+%     \item{\begin{enumerate}
+%           \item{\(\begin{bmatrix}
+%             2 \\
+%             4
+%           \end{bmatrix} \)} 
+%       \item{11}
+%       \item{11}
+%     \end{enumerate} }
+%   \item{The dot product commutes. From the second definition of the dot product from \Cref{dotproduct}, we can see that \(\vec{a}\cdot\vec{b}=(||\vec{a}||)(||\vec{b}||)\cos(\theta)=(||\vec{b}||)(||\vec{a}||)\cos(\theta)=\vec{b}\cdot\vec{a}\). Therefore, the dot product commutes. }
+%   \item{Let \(a,b,c\) be the magnitudes of the respective vectors. Just take the dot product of \(\vec{c}\) and itself. 
+% \sidenotemark
+%     \begin{align*}
+%       \vec{c}\cdot\vec{c} &= \left(\vec{a}-\vec{b}\right)\cdot \left(\vec{a}-\vec{b}\right) \\
+%                           &= a^2 - 2\vec{a}\cdot\vec{b} + b^2 \\
+%                           &= a^2 + b^2 - 2ab\cos(\theta)
+%     \end{align*}
+%     Which is exactly the law of cosines. 
+%     }
+%   \end{enumerate} 
+%   \sidenotetext{\footnotesize \textit{Note that \(\vec{a}\cdot\vec{a}=(||\vec{a}||)^2\) as evident from the second definition of \Cref{dotproduct}.}}

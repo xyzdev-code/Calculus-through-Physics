@@ -217,8 +217,8 @@ Try to attempt the following exercise:
         \end{tikzpicture}
         \caption{Visualisation of "head to tail" addition of \(\vec{a}\) and \(\vec{b}\).}
 \end{marginfigure}
-  \begin{enumerate}
-    \item{Given that \(\vec{a}=\begin{bsmallmatrix}
+\begin{problem}
+  Given that \(\vec{a}=\begin{bsmallmatrix}
       3 \\
       4
       \end{bsmallmatrix} \) and \(\vec{b}=\begin{bsmallmatrix}
@@ -227,84 +227,99 @@ Try to attempt the following exercise:
       \end{bsmallmatrix} \) and \(\vec{c}=\begin{bsmallmatrix}
        -3 \\
        -2
-      \end{bsmallmatrix} \), calculate: \begin{enumerate}
+  \end{bsmallmatrix} \), calculate: \begin{enumerate}[label=\alph*)]
       \item{\(\vec{a}+\vec{b}\)}
       \item{\(\vec{a} - \vec{c}\)}
       \item{\(\vec{a} - \vec{b} - \vec{c}\)}
       
     \end{enumerate} 
-    }
-  \item{Are the following statements true or false: 
-    \begin{enumerate}
+    
+
+\end{problem}
+\begin{problem}
+    Are the following statements true or false: 
+    \begin{enumerate}[label=\alph*)]
       \item{The subtraction of two vectors \textit{always} results in a vector.}
       \item{When any vector is added to the zero vector, the result \textit{always} is not a zero vector.}
     \end{enumerate}
-  \item{Find the magnitude of \(\begin{bmatrix}
+\end{problem}
+\begin{problem}
+    Find the magnitude of \(\begin{bmatrix}
     3 \\
     4
   \end{bmatrix}\)  and \(\begin{bmatrix}
     3 \\
     4 \\
     5
-  \end{bmatrix}\).}
-  \item{Prove that the addition of vectors is \textit{associative} given that the addition in \(\mathbb{R}\) is associative.\sidenotemark }
-    }
-  \end{enumerate} 
+  \end{bmatrix}\).
+\end{problem}
+\begin{problem}[1]
+  Prove that the addition of vectors is \textit{associative} given that the addition in \(\mathbb{R}\) is associative.\sidenotemark
+\end{problem} 
 \sidenotetext{\footnotesize \textit{An operation \(\circ\) is associative if order in which it is applied does not matter, in this case \((\vec{x} + \vec{y}) + \vec{z} = \vec{x} + (\vec{y} + \vec{z})\) .}} 
-  \begin{enumerate}
-    \item{\begin{enumerate}
-      \item{\(\begin{bmatrix}
-        1 \\ 
-        5
-      \end{bmatrix}\)} 
-    \item{\(\begin{bmatrix}
-      6 \\
-      6
-    \end{bmatrix}\)}
-  \item{\(\begin{bmatrix}
-    8 \\
-    7
-  \end{bmatrix} \)}
-    \end{enumerate} } 
-  \item{\begin{enumerate}
-    \item{True since subtraction can be viewed as \(\vec{a} + (-\vec{b})\) and \(-\vec{b}\) is a vector.}
-    \item{False since \(\vec{0}+\vec{0}=\vec{0}\).}
-  \end{enumerate}}
-\item{5 and \(\sqrt{50}\).}
-\item{Let \(\vec{x}, \vec{y}, \vec{z}\) be vectors in \(\mathbb{R}^{n}\) (N-dimensional euclidean space). Notice that:
-    \begin{align*}
-      (\vec{x} + \vec{y}) + \vec{z} &= \left( \begin{bmatrix}
-        x_1 \\
-        \dots \\
-        x_n
-      \end{bmatrix} + \begin{bmatrix}
-        y_1 \\
-        \dots \\
-        y_n
-      \end{bmatrix} \right) + \begin{bmatrix}
-        z_1 \\
-        \dots \\
-        z_n
-        \end{bmatrix} \\ &= \begin{bmatrix}
-        x_1 + y_1 + z_1 \\ 
-        \dots \\
-        x_n + y_n + z_n
-        \end{bmatrix} \\ &= \begin{bmatrix}
-      x_1 + (y_1 + z_1) \\ 
-        \dots \\
-      x_n + (y_n + z_n) \end{bmatrix} \\ &= \begin{bmatrix}
-        x_1 \\
-        \dots \\
-        x_n
-      \end{bmatrix} + \left( \begin{bmatrix}
-        y_1 \\
-        \dots \\
-        y_n
-      \end{bmatrix}  + \begin{bmatrix}
-        z_1 \\
-        \dots \\
-        z_n
-      \end{bmatrix} \right) \\ &= \vec{x} + (\vec{y} + \vec{z}) 
-    \end{align*}
-  }
-  \end{enumerate} 
+
+
+\begin{problem}[1]
+  Consider the 3 dimensional vector space where all vectors are described by \(a_x\ihat+a_y\jhat+a_z\khat\).
+  \begin{enumerate}[label=\alph*)]
+    \item{Consider the vector space which is the subset of vectors where \(a_z=0\). What is the dimension of this vector space?}
+    \item{Prove that the components of a vector with respect to this basis (\(\ihat,\jhat,\khat\)) are unique.}
+  \end{enumerate}
+\end{problem}
+%   \begin{enumerate}
+%     \item{\begin{enumerate}
+%       \item{\(\begin{bmatrix}
+%         1 \\ 
+%         5
+%       \end{bmatrix}\)} 
+%     \item{\(\begin{bmatrix}
+%       6 \\
+%       6
+%     \end{bmatrix}\)}
+%   \item{\(\begin{bmatrix}
+%     8 \\
+%     7
+%   \end{bmatrix} \)}
+%     \end{enumerate} } 
+%   \item{\begin{enumerate}
+%     \item{True since subtraction can be viewed as \(\vec{a} + (-\vec{b})\) and \(-\vec{b}\) is a vector.}
+%     \item{False since \(\vec{0}+\vec{0}=\vec{0}\).}
+%   \end{enumerate}}
+% \item{5 and \(\sqrt{50}\).}
+% \item{Let \(\vec{x}, \vec{y}, \vec{z}\) be vectors in \(\mathbb{R}^{n}\) (N-dimensional euclidean space). Notice that:
+%     \begin{align*}
+%       (\vec{x} + \vec{y}) + \vec{z} &= \left( \begin{bmatrix}
+%         x_1 \\
+%         \dots \\
+%         x_n
+%       \end{bmatrix} + \begin{bmatrix}
+%         y_1 \\
+%         \dots \\
+%         y_n
+%       \end{bmatrix} \right) + \begin{bmatrix}
+%         z_1 \\
+%         \dots \\
+%         z_n
+%         \end{bmatrix} \\ &= \begin{bmatrix}
+%         x_1 + y_1 + z_1 \\ 
+%         \dots \\
+%         x_n + y_n + z_n
+%         \end{bmatrix} \\ &= \begin{bmatrix}
+%       x_1 + (y_1 + z_1) \\ 
+%         \dots \\
+%       x_n + (y_n + z_n) \end{bmatrix} \\ &= \begin{bmatrix}
+%         x_1 \\
+%         \dots \\
+%         x_n
+%       \end{bmatrix} + \left( \begin{bmatrix}
+%         y_1 \\
+%         \dots \\
+%         y_n
+%       \end{bmatrix}  + \begin{bmatrix}
+%         z_1 \\
+%         \dots \\
+%         z_n
+%       \end{bmatrix} \right) \\ &= \vec{x} + (\vec{y} + \vec{z}) 
+%     \end{align*}
+%   }
+%   \end{enumerate} 
