@@ -17,7 +17,6 @@
 \RequirePackage{marginnote} % Provides an offset option for the marginals instead of a float
 \RequirePackage{caption} % Handles the captions (in the margin)
 \RequirePackage{xparse} % New LaTeX3 syntax to define macros and environments
-\RequirePackage[strict]{changepage} % Changepage package for symmetric twoside handling
 \ExplSyntaxOn
 \keys_define:nn { sidenotes }
   {
@@ -85,51 +84,6 @@
   \refstepcounter{sidenote}
 }
     {\@sidenotes@placemarginal{#2}{\textsuperscript{#1}~#3}}
-}
-\DeclareCaptionStyle{sidecaption}{font=footnotesize}
-\NewDocumentCommand \sidecaption {s o o m}
-{
-  \captionsetup{style=sidecaption}
-  \IfBooleanTF{#1}
-  { % starred
-    \IfNoValueOrEmptyTF{#2}
-    {\marginnote{\caption*{#4}}}
-    {\marginnote{\caption*{#4}}[#2]}
-  }
-  { % unstarred
-  \IfNoValueOrEmptyTF{#2}
-    {\def\@sidenotes@sidecaption@tof{#4}}
-    {\def\@sidenotes@sidecaption@tof{#2}}
-  \IfNoValueOrEmptyTF{#3}
-    {\marginnote{\caption[\@sidenotes@sidecaption@tof]{#4}}}
-    {\marginnote{\caption[\@sidenotes@sidecaption@tof]{#4}}[#3]}
-  }
-}
-\newsavebox{\@sidenotes@marginfigurebox}
-\DeclareCaptionStyle{marginfigure}{font=footnotesize}
-\NewDocumentEnvironment{marginfigure} { o }
-{
-  \begin{lrbox}{\@sidenotes@marginfigurebox}
-    \begin{minipage}{\marginparwidth}
-      \captionsetup{type=figure,style=marginfigure}
-}
-{
-    \end{minipage}%
-  \end{lrbox}%
-  \@sidenotes@placemarginal{#1}{\usebox{\@sidenotes@marginfigurebox}}
-}
-\newsavebox{\@sidenotes@margintablebox}
-\DeclareCaptionStyle{margintable}{font=footnotesize}
-\NewDocumentEnvironment{margintable} { o }
-{
-  \begin{lrbox}{\@sidenotes@margintablebox}
-    \begin{minipage}{\marginparwidth}
-      \captionsetup{type=table,style=margintable}
-}
-{
-    \end{minipage}
-  \end{lrbox}
-  \@sidenotes@placemarginal{#1}{\usebox{\@sidenotes@margintablebox}}
 }
 \AtBeginDocument{%
 \newlength{\@sidenotes@extrawidth}

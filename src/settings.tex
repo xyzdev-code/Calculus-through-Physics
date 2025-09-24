@@ -378,37 +378,37 @@
     before=\hfill
 }
 
-\usepackage[explicit]{titlesec}
-\titleformat{\chapter}[display]
-  {\Huge}
-  {}
-  {0pt}
-  {\begin{titlecolorbox}{}
-  {\large\MakeUppercase{\chaptername}}
-  \end{titlecolorbox}
-  \vspace*{-4.19ex}\noindent\rule{\textwidth}{0.4pt}
-  \parbox[b]{\dimexpr\textwidth-4.8em\relax}{\raggedright\MakeUppercase{#1}}{\hfill\fontsize{70}{60}\thechapter}
-  }
-  []
-
-\titleformat{name=\chapter,numberless}[display]
-  {\Huge}
-  {}
-  {0pt}
-  {\begin{titlecolorbox}{}
-  {\large\MakeUppercase{\chaptername}}
-  \end{titlecolorbox}
-  \vspace*{-4.19ex}\noindent\rule{\textwidth}{0.4pt}
-  \parbox[b]{\dimexpr\textwidth-4.8em\relax}{\raggedright\MakeUppercase{#1}}
-  }
-  []
-
-\titleformat{\section}[display]
-  {\large}
-  {}
-  {0pt}
-  {\hrule\vspace*{0.25ex}\parbox[b]{\dimexpr\textwidth\relax}{\textcolor{darkgray}{\thesection}\quad\raggedright\bfseries\MakeUppercase{#1}}}
-  [\hrule]
+% \usepackage[explicit]{titlesec}
+% \titleformat{\chapter}[display]
+%   {\Huge}
+%   {}
+%   {0pt}
+%   {\begin{titlecolorbox}{}
+%   {\large\MakeUppercase{\chaptername}}
+%   \end{titlecolorbox}
+%   \vspace*{-4.19ex}\noindent\rule{\textwidth}{0.4pt}
+%   \parbox[b]{\dimexpr\textwidth-4.8em\relax}{\raggedright\MakeUppercase{#1}}{\hfill\fontsize{70}{60}\thechapter}
+%   }
+%   []
+%
+% \titleformat{name=\chapter,numberless}[display]
+%   {\Huge}
+%   {}
+%   {0pt}
+%   {\begin{titlecolorbox}{}
+%   {\large\MakeUppercase{\chaptername}}
+%   \end{titlecolorbox}
+%   \vspace*{-4.19ex}\noindent\rule{\textwidth}{0.4pt}
+%   \parbox[b]{\dimexpr\textwidth-4.8em\relax}{\raggedright\MakeUppercase{#1}}
+%   }
+%   []
+%
+% \titleformat{\section}[display]
+%   {\large}
+%   {}
+%   {0pt}
+%   {\hrule\vspace*{0.25ex}\parbox[b]{\dimexpr\textwidth\relax}{\textcolor{darkgray}{\thesection}\quad\raggedright\bfseries\MakeUppercase{#1}}}
+%   [\hrule]
 %--------%
 % TABLES %
 %--------%
@@ -423,7 +423,6 @@
 %------------%
 % REFERENCES %
 %------------%
-\usepackage{chngcntr}
 \counterwithin{table}{chapter}
 \counterwithin{figure}{chapter}
 \def\chapterautorefname{Chapter}

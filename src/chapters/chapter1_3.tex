@@ -154,7 +154,24 @@ However, bijective functions have a superpower. A function is only bijective \te
     \item{If \(\delta\) is the dirac delta function,}
   \end{enumerate}
 \end{problem}
-    
+\subsubsection*{Further problems}
+   \begin{problem}[2]
+     The \textit{wavefunction} \(\Psi\) of a particle can be thought of as the quantum state of a particle. In this problem, you will solve for the wavefunction of an one-dimensional particle (that lies on the x-axis) in an infinite square well. It is given that \(|\psi(x)|^2\) gives the probability of the particle existing at \(x\) and \(|\Psi(x,t)|^2\) is the probability of a particle existing at \(x\) at time \(t\). (Hence, note that \(\Psi(x)\neq 0\) and \(\psi(x)\neq 0\). That would imply that the particle cannot be found anywhere.) The potential function of the infinite square well is
+     \begin{equation}
+       V(x) = \begin{cases}
+         0 & 0\leq x\leq a \\
+         \infty & \textit{otherwise}
+       \end{cases}
+     \end{equation}
+     \begin{enumerate}[label=\alph*)]
+       \item{Can the particle exist outside of \(0\leq x\leq a\), or more specifically, what is \(|\psi(x)|^2\) (and therefore \(\psi(x)\)) for \(x<0\) or \(x>a\)?}
+       \item{To ensure that \(\psi\) is continuous, \(\psi(0)\) and \(\psi(a)\) are equal to your answer of \(\psi(x)\) in (a). Also, it is known that the form of general solution inside the well (to wit: \(0\leq x\leq a\)) to \(\psi\) is \(\psi(x)=A\sin(kx)+B\cos(kx)\). Show that \(\psi(x)=A\sin(kx)\).}
+       \item{Using your answer in (b), solve for \(k\). (Hint: k has multiple solutions, generalize all the solutions by writing down \(k_n\) for \(n\in \mathbb{Z}\setminus\{0\}\).)}
+       \item{Show that we can discard all negative solutions of \(k_n\), hence \(n\in \mathbb{N}\).}
+       \item{If \(E(n)=\frac{\hbar^2 k_n^2}{2m}\), find \(E(1)\) or the energy of the \textit{ground state} of the particle. \(\hbar\) is the reduced plank's constant. What happens as \(n\) increases?}
+       \item{The relation between \(\Psi\) and \(\psi\) is \(\Psi(x,t)=\psi(x)e^{-\frac{iE(n)t}{\hbar}}\). Find \(|\Psi|^2\) for \(t=1\) and \(t=2\), what happens to the graph of \(|\Psi|^2\) as time passes? Take \(A, m, a\) as positive real numbers and choose some natural \(n\).}
+     \end{enumerate}
+   \end{problem}
     % \begin{enumerate}
     %   \item{
     %       \begin{enumerate}

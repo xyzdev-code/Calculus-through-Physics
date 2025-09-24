@@ -1,4 +1,4 @@
-\documentclass[10pt, b5book, twoside]{book} 
+\documentclass[10pt, b5book, twoside]{memoir} 
 \usepackage[a4paper, marginparwidth=1.2in]{geometry}
 \usepackage[none]{hyphenat}
 \input{settings}
@@ -21,10 +21,69 @@
  \coordinate (tempc) at ($(tempa)!0.5!(tempb)$);%midpoint
  \draw (tempa) -- ($(#3)!2!(tempc)$) -- (tempb);
 }
+\usepackage{mparhack}
+\renewcommand*{\marginfont}{\scriptsize}
+\let\note\sidenote
+\renewcommand{\sidenote}[1]{%
+  \note{%
+    \scriptsize
+    \checkoddpage%
+    \ifoddpage%
+      \raggedright%
+    \else
+      \raggedleft%
+    \fi
+    {#1}%
+  }%
+}
 \pgfplotsset{compat=1.18}
 \usetikzlibrary{positioning}
 \renewcommand{\marginnote}{\sidenote}
 \renewcommand{\thesidenote}{\textbf{\arabic{sidenote}}}
+\newsavebox{\ChpNumBox}
+\definecolor{ChapBlue}{rgb}{0.00,0.65,0.65}
+\makeatletter
+\newcommand
+*
+{\thickhrulefill}{%
+\leavevmode\leaders\hrule height 1\p@ \hfill \kern \z@}
+\newcommand
+*
+\BuildChpNum[2]{%
+  \llap{\begin{tabular}[t]{@{}c@{}}
+  \makebox[0pt][c]{#1\strut} \\[.5ex]
+  \colorbox{ChapBlue}{%
+\rule[-10em]{0pt}{0pt}%
+\rule{2ex}{0pt}\color{black}\makebox[7ex]{#2}\strut
+\rule{2ex}{0pt}}%
+  \end{tabular}\hspace{2cm}%
+}}
+\makechapterstyle{BlueBox}{%
+  \renewcommand{\chapnamefont}{\large\scshape}
+  \renewcommand{\chapnumfont}{\Huge\bfseries}
+  \renewcommand{\chaptitlefont}{\raggedright\Huge\bfseries}
+  \setlength{\beforechapskip}{20pt}
+  \setlength{\midchapskip}{26pt}
+  \setlength{\afterchapskip}{40pt}
+  \renewcommand{\printchaptername}{}
+  \renewcommand{\chapternamenum}{}
+  \renewcommand{\printchapternum}{%
+\sbox{\ChpNumBox}{%
+\BuildChpNum{\chapnamefont\@chapapp}%
+{\chapnumfont\thechapter}} }
+  \renewcommand{\printchapternonum}{%
+\sbox{\ChpNumBox}{%
+\BuildChpNum{\chapnamefont\vphantom{\@chapapp}}%
+{\chapnumfont\hphantom{\thechapter}}}}
+  \renewcommand{\afterchapternum}{}
+  \renewcommand{\printchaptertitle}[1]{%
+\usebox{\ChpNumBox}\hfill
+\parbox[t]{\hsize-\wd\ChpNumBox}{%
+  \vspace{\midchapskip}%
+  \thickhrulefill\par
+  \chaptitlefont ##1\par}}%
+}
+\chapterstyle{bluebox}
 \begin{document}
   \pagenumbering{gobble}
   \tableofcontents
