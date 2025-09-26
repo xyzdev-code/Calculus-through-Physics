@@ -1,14 +1,18 @@
 \documentclass[10pt, b5book, twoside]{memoir} 
 \usepackage[a4paper, marginparwidth=1.2in]{geometry}
 \usepackage[none]{hyphenat}
+
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
 \input{settings}
 \usepackage{pgfplots, caption, newtxmath, newtxtext, fancyhdr, cleveref, lipsum, gensymb, indentfirst, marginnote, amsmath, enumitem, graphicx, esdiff}
-\usepackage[english]{babel}
 \usepackage{perpage}
-\usepackage[T1]{fontenc}
 \usepackage{sidenotes}
 \usepackage[autostyle]{csquotes}
-
+\newcounter{entryc}[subsection]
+\makeatletter
+\renewcommand{\p@entryc}{\thesubsection.} % "prefix" for cross-referencing
+\makeatother
 \MakeOuterQuote{"}
 \graphicspath{{./assets/images}}
 \newcommand{\ihat}{\boldsymbol{\hat{\textbf{\i}}}}
@@ -23,9 +27,9 @@
 }
 \usepackage{mparhack}
 \renewcommand*{\marginfont}{\scriptsize}
-\let\note\sidenote
+\let\notess\sidenote
 \renewcommand{\sidenote}[1]{%
-  \note{%
+  \notess{%
     \scriptsize
     \checkoddpage%
     \ifoddpage%
@@ -36,54 +40,50 @@
     {#1}%
   }%
 }
+\newsavebox{\ChpNumBox}
+\definecolor{ChapBlue}{rgb}{0.00,0.65,0.65}
+\makeatletter
+\newcommand*{\thickhrulefill}{%
+\leavevmode\leaders\hrule height 1\p@ \hfill \kern \z@}
+\newcommand*\BuildChpNum[2]{%
+\begin{tabular}[t]{@{}c@{}}
+\makebox[0pt][c]{#1\strut} \\[.5ex]
+\colorbox{ChapBlue}{%
+\rule[-10em]{0pt}{0pt}%
+\rule{1ex}{0pt}\color{black}#2\strut
+\rule{1ex}{0pt}}%
+\end{tabular}}
+\makechapterstyle{BlueBox}{%
+\renewcommand{\chapnamefont}{\large\scshape}
+\renewcommand{\chapnumfont}{\Huge\bfseries}
+\renewcommand{\chaptitlefont}{\raggedright\Huge\bfseries}
+\setlength{\beforechapskip}{20pt}
+\setlength{\midchapskip}{26pt}
+\setlength{\afterchapskip}{40pt}
+\renewcommand{\printchaptername}{}
+\renewcommand{\chapternamenum}{}
+\renewcommand{\printchapternum}{%
+\sbox{\ChpNumBox}{%
+\BuildChpNum{\chapnamefont\@chapapp}%
+{\chapnumfont\thechapter}}}
+\renewcommand{\printchapternonum}{%
+\sbox{\ChpNumBox}{%
+\BuildChpNum{\chapnamefont\vphantom{\@chapapp}}%
+{\chapnumfont\hphantom{\thechapter}}}}
+\renewcommand{\afterchapternum}{}
+\renewcommand{\printchaptertitle}[1]{%
+\usebox{\ChpNumBox}\hfill
+\parbox[t]{\hsize-\wd\ChpNumBox-1em}{%
+\vspace{\midchapskip}%
+\thickhrulefill\par
+\chaptitlefont ##1\par}}%
+}
+\chapterstyle{BlueBox}
 \pgfplotsset{compat=1.18}
 \usetikzlibrary{positioning}
 \renewcommand{\marginnote}{\sidenote}
 \renewcommand{\thesidenote}{\textbf{\arabic{sidenote}}}
-\newsavebox{\ChpNumBox}
-\definecolor{ChapBlue}{rgb}{0.00,0.65,0.65}
-\makeatletter
-\newcommand
-*
-{\thickhrulefill}{%
-\leavevmode\leaders\hrule height 1\p@ \hfill \kern \z@}
-\newcommand
-*
-\BuildChpNum[2]{%
-  \llap{\begin{tabular}[t]{@{}c@{}}
-  \makebox[0pt][c]{#1\strut} \\[.5ex]
-  \colorbox{ChapBlue}{%
-\rule[-10em]{0pt}{0pt}%
-\rule{2ex}{0pt}\color{black}\makebox[7ex]{#2}\strut
-\rule{2ex}{0pt}}%
-  \end{tabular}\hspace{2cm}%
-}}
-\makechapterstyle{BlueBox}{%
-  \renewcommand{\chapnamefont}{\large\scshape}
-  \renewcommand{\chapnumfont}{\Huge\bfseries}
-  \renewcommand{\chaptitlefont}{\raggedright\Huge\bfseries}
-  \setlength{\beforechapskip}{20pt}
-  \setlength{\midchapskip}{26pt}
-  \setlength{\afterchapskip}{40pt}
-  \renewcommand{\printchaptername}{}
-  \renewcommand{\chapternamenum}{}
-  \renewcommand{\printchapternum}{%
-\sbox{\ChpNumBox}{%
-\BuildChpNum{\chapnamefont\@chapapp}%
-{\chapnumfont\thechapter}} }
-  \renewcommand{\printchapternonum}{%
-\sbox{\ChpNumBox}{%
-\BuildChpNum{\chapnamefont\vphantom{\@chapapp}}%
-{\chapnumfont\hphantom{\thechapter}}}}
-  \renewcommand{\afterchapternum}{}
-  \renewcommand{\printchaptertitle}[1]{%
-\usebox{\ChpNumBox}\hfill
-\parbox[t]{\hsize-\wd\ChpNumBox}{%
-  \vspace{\midchapskip}%
-  \thickhrulefill\par
-  \chaptitlefont ##1\par}}%
-}
-\chapterstyle{bluebox}
+
 \begin{document}
   \pagenumbering{gobble}
   \tableofcontents

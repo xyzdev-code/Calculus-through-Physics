@@ -38,7 +38,6 @@ Take a look at \Cref{scalevector}, \(\vec{b}\) is twice as long as \(\vec{a}\). 
       n \times v_n
     \end{bsmallmatrix}
   \end{equation*}
-  Never ever write \(n\times\vec{v}\) or \(n\dot\vec{v}\) or you will be cursed into the thundering depths of careless \textit{mistakes} everywhere.
 \end{definition}
 Let us try something fun, what if we multiplied the vector by a negative number? Well, the computation remains the same.
 \begin{marginfigure}
@@ -55,7 +54,7 @@ Let us try something fun, what if we multiplied the vector by a negative number?
 \end{marginfigure} 
 As you can see from \Cref{scalevectorneg}, \(\vec{a}=(-0.5)\vec{b}\). You may wish to compute this yourself to verify. One thing to note here is that the vector gets flipped across the origin when the constant the vector is multiplied to is negative. 
 \begin{challenge}{Scaled vector magnitude}{}
-Also, when scaling a vector by some constant, the reader may want to verify using \Cref{vecmagnitude} that the magnitude of the vector is also scaled by that constant. This should be a trivial proof.
+Also, when scaling a vector by some constant, the reader may want to verify that the magnitude of the vector is also scaled by that constant. This should be a trivial proof.
 \end{challenge}
 
 
@@ -66,11 +65,11 @@ Dot products use the \(\cdot\) operator and only acts on vectors, do not abuse n
 
 \begin{definition}{Dot product}{}
   The dot product of two vectors in n-dimensional space \(\vec{a}\) and \(\vec{b}\) is:
-  \begin{equation*}
+  \begin{equation}
     \vec{a} \cdot \vec{b} = a_1 b_1 + a_2 b_2 + \dots + a_n b_n = (||\vec{a}||)(||\vec{b}||)\cos{\theta} 
-  \end{equation*}
-  where \(\theta\) is the angle between the two vectors. We shall refer to the formula between the first and second equal signs the "first definition of dot products" and the formula after the second equal sign the "second definition of dot products".
   \label{dotproduct}
+  \end{equation}
+  where \(\theta\) is the angle between the two vectors. We shall refer to the formula between the first and second equal signs the "first definition of dot products" and the formula after the second equal sign the "second definition of dot products".
 \end{definition}
 
 From \Cref{dotproduct}, we can tell that the dot product tells us something about the relationship between the two vectors. In essence, if the dot product between two vectors is large and positive, then the vectors are pointing in roughly the same direction. Else, if the product is very negative, then the dot product is very negative.
@@ -90,7 +89,7 @@ From \Cref{dotproduct}, we can tell that the dot product tells us something abou
   \label{dotproductfig}
 \end{figure}
 
-Firstly, note down the components of each vector in \Cref{dotproductfig}. Then, let us compute \(\vec{a}\cdot \vec{b}\). By \Cref{dotproduct}, it is \(1(-2)+2(1)=0\). Also, it is important to take note that these two vectors are orthogonal(at right angles with each other). This brings us to an important property of dot products, if two vectors are orthogonal, then their dot product is 0. This can be seen from the fact that \(\cos(\frac{\pi}{2})=0\) and from the second definition of dot products in \Cref{dotproduct}. In a sense, the dot product tells you how aligned are the directions of two vectors. Another example would be taking the dot product of two identical vectors, such as \(\vec{a}\cdot\vec{a}\). The dot product there is \(1(1)+2(2)=5\). In addition, we know \(\cos{0}=1\) so according to the second definition, \(\vec{a}\cdot\vec{a}=(||\vec{a}||)(||\vec{a}||)=(||\vec{a}||)^{2}\). If we take the square root on both sides, \(||\vec{a}||=\sqrt{\vec{a}\cdot\vec{a}}\) which can be rewritten as \(||\vec{a}||=\sqrt{a_{1}^{2}+\dots+a_{n}^{n}}\). Drum roll please. This is exactly the formula we got in \Cref{vecmagnitude} for the magnitude of a vector. This is a pretty nice result.
+Firstly, note down the components of each vector in \Cref{dotproductfig}. Then, let us compute \(\vec{a}\cdot \vec{b}\). By \Cref{dotproduct}, it is \(1(-2)+2(1)=0\). Also, it is important to take note that these two vectors are orthogonal(at right angles with each other). This brings us to an important property of dot products, if two vectors are orthogonal, then their dot product is 0. This can be seen from the fact that \(\cos(\frac{\pi}{2})=0\) and from the second definition of dot products in \Cref{dotproduct}. In a sense, the dot product tells you how aligned are the directions of two vectors. Another example would be taking the dot product of two identical vectors, such as \(\vec{a}\cdot\vec{a}\). The dot product there is \(1(1)+2(2)=5\). In addition, we know \(\cos{0}=1\) so according to the second definition, \(\vec{a}\cdot\vec{a}=(||\vec{a}||)(||\vec{a}||)=(||\vec{a}||)^{2}\). If we take the square root on both sides, \(||\vec{a}||=\sqrt{\vec{a}\cdot\vec{a}}\) which can be rewritten as \(||\vec{a}||=\sqrt{a_{1}^{2}+\dots+a_{n}^{n}}\). Drum roll please. This is exactly the formula we got for the magnitude of a vector. This is a pretty nice result.
 \begin{example}{Calculating dot products}{}
   From \Cref{dotproductfig}, we can see that:
   \begin{equation*}
@@ -145,6 +144,13 @@ Firstly, note down the components of each vector in \Cref{dotproductfig}. Then, 
   Prove or disprove that the dot product \textit{commutes}. \sidenotemark 
 \end{problem}
 \sidenotetext{\footnotesize \textit{An operation \(\circ\) is commutative if \(x\circ y = y \circ x\).}}
+\begin{problem}[1]
+  Newton's second law states that \(\vec{F}=m\vec{a}\). Consider an object with a mass \(10\si{\kilogram}\) in the 2d plane.
+  \begin{enumerate}[label=\alph*)]
+    \item{If the object is accelerating in the x-axis with a magnitude of \(3\si{\meter\per\second^2}\) and accelerating in the y-axis with a magnitude of \(4\si{\meter\per\second^2}\), what is the x component of the force?}
+    \item{What is the y-component of the force in (a). Hence, what is the magnitude of the force.}
+  \end{enumerate}
+\end{problem}
 % \begin{enumerate}
 %
 % \item{Given two vectors \(\vec{a}\) and \(\vec{b}\) separated by an angle \(\theta\), they form a triangle with a third side \(\vec{c}=\vec{a}-\vec{b}\) (See \Cref{exvecdotfig}).By taking the dot product of \(\vec{c}\) and itself, derive the law of cosines. (Hint: \((\vec{x}\cdot\vec{y})\cdot(\vec{z}\cdot\vec{w})=\vec{x}\cdot\vec{z}+\vec{x}\cdot\vec{w}+\vec{y}\cdot\vec{z}+\vec{y}\cdot\vec{w}\))}

@@ -1,0 +1,26 @@
+\documentclass[,margin=30cm]{standalone}
+ \usepackage {tikz} \usepackage {pgfplots, caption, marginnote, sidenotes, newtxtext, newtxmath, tcolorbox} \pgfplotsset {compat=newest}
+% most packages must be loaded before hyperref
+% so we typically want to load hyperref here
+
+% some packages must be loaded after hyperref
+
+\begin{document}%
+%% We save the height/depth of the content by using a savebox:
+\newwrite\writeRobExt%
+\immediate\openout\writeRobExt=\jobname-out.tex%
+%
+\newsavebox\boxRobExt%
+\begin{lrbox}{\boxRobExt}%
+  \begin {tikzpicture}[]\tcb@tikz@begin@hook \tcb@bbdraw \tcb@apply@graph@patches \pgfsetbaseline {\the \dimexpr \kvtcb@baseline -\kvtcb@bbbottom \relax }\tcb@extensions@preframe \tcb@adraw@frame \tcb@adraw@interior \iftcb@lowerseparated \iftcb@lowerspace \tcb@segmentation@code \else \iftcb@sidebyside \tcb@segmentation@code \fi \fi \fi \tcb@adraw@title \tcb@extensions@postframe \tcb@tdraw@title \tcb@tdraw@upper \iftcb@hasLower \tcb@tdraw@lower \fi \tcb@extensions@final \tcb@drawing@env@end \tcb@layer@dec \endgroup \color@endbox \tcbdimto \tcboxedtitleheight {\ht \tcb@titlebox +\dp \tcb@titlebox }\tcbdimto \tcboxedtitlewidth {\wd \tcb@titlebox }\tcbset {boxtitle/.cd,xshift=0pt,yshift=0pt,yshifttext=0pt,yshift*@top,yshift=-0.25cm, xshift=0.38cm,,adapt@top}\let \tcb@specialgeonodes@first \relax \let \tcb@specialgeonodes@middle \relax \let \tcb@specialgeonodes@last \relax \ifcase 0 \tcbdimto \tcb@xshift@boxedtitle {\kvtcb@xshift@boxedtitle }\or \tcbdimto \tcb@xshift@boxedtitle {\kvtcb@left@rule +\kvtcb@boxsep +\kvtcb@leftupper -\tcb@xshift@boxedtitle@delta }\else \tcbdimto \tcb@xshift@boxedtitle {\tcb@xshift@boxedtitle@delta -(\kvtcb@right@rule +\kvtcb@boxsep +\kvtcb@rightupper )}\fi \def \tcb@specialgeonodes@unbroken {\node [above right,name=title,at={([xshift=\tcb@xshift@boxedtitle ,yshift=\kvtcb@yshift@boxedtitle ]frame.north west)}, line width=0mm,inner sep=0mm,outer sep=0mm,draw=none,fill=none,rectangle, minimum width=\tcboxedtitlewidth ,minimum height=\tcboxedtitleheight ]{};}\cslet {tcb@specialgeonodes@first}{\tcb@specialgeonodes@unbroken }\def \tcb@specialgeonodes@hook {\csname tcb@specialgeonodes@\tcb@split@state \endcsname }\preto \tcb@underlay@unbroken {\tcb@underlay@boxedtitle \pgftext [at={\pgfpointanchor {title}{center}}]{\box \tcb@titlebox }}\cspreto {tcb@underlay@first}{\tcb@underlay@boxedtitle \pgftext [at={\pgfpointanchor {title}{center}}]{\box \tcb@titlebox }}\fi \else \tcb@hasTitletrue \tcbdimto \tcb@w@title {\kvtcb@width -(\kvtcb@left@rule +\kvtcb@right@rule +(\kvtcb@boxsep )*2+\kvtcb@lefttitle +\kvtcb@righttitle )}\begin {tcb@savebox}{\tcb@titlebox }{\tcb@w@title }{tcbcoltitle}\kvtcb@fonttitle \kvtcb@haligntitle \tcb@insert@before@title \kvtcb@title \tcb@insert@after@title \end {tcb@savebox}\fi \tcb@set@@dimensions \tcb@set@@sidebyside \tcb@set@@upper@and@lower  A \textbf {function} \(f\) is a mathematical object that assigns its inputs, or \textit {domain}, to its outputs, or \textit {range}. The notation \(f:A \to B\) means that the function has a domain \(A\) and range \(B\) \sidenotemark . The notation \(f(a)\) where \(a \in A\) denotes the element of \(B\) to which \(a\) is assigned to.\end {tikzpicture}%
+\end{lrbox}%
+\usebox{\boxRobExt}%
+\immediate\write\writeRobExt{%
+  \string\def\string\robExtWidth{\the\wd\boxRobExt}%
+  \string\def\string\robExtHeight{\the\ht\boxRobExt}%
+  \string\def\string\robExtDepth{\the\dp\boxRobExt}%
+}%
+%
+
+\end{document}
+
