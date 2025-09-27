@@ -1,6 +1,6 @@
 
   \section{Matrices}
-In this chapter, we will introduce a new mathematical object that you have probably heard before but not sure what it is,\textit{linear transformation}. A great place to start is the \textit{basis vectors}. All vectors can be written as a unique linear combination of the basis vectors. But \(\ihat\) and \(\jhat\) are not the only basis vectors out there, what if I wanted to describe vectors using another set of basis vectors? Perhaps that would be more convenient for my special use case. Well, it is actually pretty easy to do so. For the sake of this argument, let us try to rotate all of the vectors in a normal 2d vector field anti-clockwise by \(90\degree\). \begin{marginfigure}
+In this chapter, we will introduce a new mathematical object that you have probably heard before but not sure what it is, \textit{linear transformation}. A great place to start is the \textit{basis vectors}. All vectors can be written as a unique linear combination of the basis vectors. But \(\ihat\) and \(\jhat\) are not the only basis vectors out there, what if I wanted to describe vectors using another set of basis vectors? Perhaps that would be more convenient for my special use case. Well, it is actually pretty easy to do so. For the sake of this argument, let us try to rotate all of the vectors in a normal 2d vector field anti-clockwise by \(90\degree\). \begin{marginfigure}
   \centering
   \begin{tikzpicture}[scale=0.3]
     \draw[thin, gray!40] (-4,-4) grid (4,4);
@@ -215,10 +215,9 @@ This is the reason many students find linear algebra tedious. Most courses make 
   \end{align*}
   This examples shows that matrix multiplication does not commute but it is associative.
 \end{example}
-
-
-  \begin{enumerate}
-    \item{If \(\vec{x}=\begin{bsmallmatrix}
+\hrule
+\begin{problem}
+    If \(\vec{x}=\begin{bsmallmatrix}
       1 \\
       2
     \end{bsmallmatrix} \), \(a=\begin{bsmallmatrix}
@@ -227,54 +226,78 @@ This is the reason many students find linear algebra tedious. Most courses make 
     \end{bsmallmatrix} \) and \(b=\begin{bsmallmatrix}
       6 & 7 \\
       8 & 9
-    \end{bsmallmatrix} \), compute: \begin{enumerate}
+    \end{bsmallmatrix} \), compute: \begin{enumerate}[label=\alph*)]
     \item{\(a\vec{x}\)}
     \item{\(ab\)}
     \item{\(ab\vec{x}\)}
-    \end{enumerate} }
-  \item{\textbf{(Difficult)} Show that matrix multiplication is \textit{associative} for all \(2\times 2\) matrices.}
-  \end{enumerate}
-  \begin{enumerate}
-    \item{\begin{enumerate}
-      \item{\(\begin{bmatrix}
-        8 \\
-        14
-      \end{bmatrix} \)}
-      \item{\(\begin{bmatrix}
-            36 & 41 \\
-            64 & 37
-      \end{bmatrix} \)}
-      \item{\(\begin{bmatrix}
-        118 \\
-        210
-      \end{bmatrix} \)}
-    \end{enumerate}
-    }
-  \item{Let \(x=\begin{bsmallmatrix}
-        x_1 & x_2 \\
-        x_3 & x_4
-  \end{bsmallmatrix} \) and define \(y\) and \(z\) likewise, notice that: \sidenotemark
+    \end{enumerate} 
+\end{problem}
+\begin{problem}[1]
+Prove that matrix multiplication is \textit{associative} for all \(2\times 2\) matrices.
+\end{problem}
+\begin{problem}[1]
+  The \textit{trace} of an \(n\times n\) matrix \(A\) is defined as 
+  \begin{equation}
+    \trace(A)=\sum_{i=1}^{n} a_{ii}
+  \end{equation}
 
-  \begin{align*}
-    x(yz) &= \begin{bmatrix}
-      x_1 & x_2 \\
-      x_3 & x_4
-    \end{bmatrix} \begin{bmatrix}
-    z_1 y_1 + z_3 y_2 &  z_2 y_1 + z_4 y_2 \\
-    z_1 y_3 + z_3 y_4 &  z_2 y_3 + z_4 y_4
-    \end{bmatrix} \\ 
-          &= \begin{bmatrix}
-            x_1 & x_2 \\
-            x_3 & x_4
-          \end{bmatrix} \begin{bmatrix}
-            a_1 & a_2 \\
-            a_3 & a_4
-          \end{bmatrix} \text{\quad let a=\(yz\)} \\
-          &= \begin{bmatrix}
-    a_1 x_1 + a_3 x_2 &  a_2 x_1 + a_4 x_2 \\
-    a_1 x_3 + a_3 x_4 &  a_2 x_3 + a_4 x_4
-          \end{bmatrix} \\
-          &= (xy)z
-  \end{align*}}
-\end{enumerate}
-\sidenotetext{\footnotesize\textit{The derivation for \((xy)z\) will be left as an exercise for the reader. Both should evaluate to the same expression.}}
+
+  where \(a_{ii}\) denotes the entry for the i-th column and i-th row of \(A\).
+  \begin{enumerate}[label=\alph*)]
+    \item{Let \(A=\begin{bsmallmatrix}
+        1 & 2 & 3 \\
+        4 & 5 & 6 \\
+        7 & 8 & 9
+    \end{bsmallmatrix} \), what is the trace of \(A\).}
+  \item{Prove that, for square matrices \(A\) and \(B\), \(\trace(A+B)=\trace(A)+\trace(B)\).}
+  \item{Hence, if \(B=\begin{bsmallmatrix}
+      3 & 1 & 4 \\
+      1 & 5 & 9 \\
+      2 & 6 & 5
+  \end{bsmallmatrix}\), verify that \(\trace(A+B)=\trace(A)+\trace(B)\).}
+  \end{enumerate}
+\end{problem}
+%   \begin{enumerate}
+%     \item{\begin{enumerate}
+%       \item{\(\begin{bmatrix}
+%         8 \\
+%         14
+%       \end{bmatrix} \)}
+%       \item{\(\begin{bmatrix}
+%             36 & 41 \\
+%             64 & 37
+%       \end{bmatrix} \)}
+%       \item{\(\begin{bmatrix}
+%         118 \\
+%         210
+%       \end{bmatrix} \)}
+%     \end{enumerate}
+%     }
+%   \item{Let \(x=\begin{bsmallmatrix}
+%         x_1 & x_2 \\
+%         x_3 & x_4
+%   \end{bsmallmatrix} \) and define \(y\) and \(z\) likewise, notice that: \sidenotemark
+%
+%   \begin{align*}
+%     x(yz) &= \begin{bmatrix}
+%       x_1 & x_2 \\
+%       x_3 & x_4
+%     \end{bmatrix} \begin{bmatrix}
+%     z_1 y_1 + z_3 y_2 &  z_2 y_1 + z_4 y_2 \\
+%     z_1 y_3 + z_3 y_4 &  z_2 y_3 + z_4 y_4
+%     \end{bmatrix} \\ 
+%           &= \begin{bmatrix}
+%             x_1 & x_2 \\
+%             x_3 & x_4
+%           \end{bmatrix} \begin{bmatrix}
+%             a_1 & a_2 \\
+%             a_3 & a_4
+%           \end{bmatrix} \text{\quad let a=\(yz\)} \\
+%           &= \begin{bmatrix}
+%     a_1 x_1 + a_3 x_2 &  a_2 x_1 + a_4 x_2 \\
+%     a_1 x_3 + a_3 x_4 &  a_2 x_3 + a_4 x_4
+%           \end{bmatrix} \\
+%           &= (xy)z
+%   \end{align*}}
+% \end{enumerate}
+% \sidenotetext{\footnotesize\textit{The derivation for \((xy)z\) will be left as an exercise for the reader. Both should evaluate to the same expression.}}

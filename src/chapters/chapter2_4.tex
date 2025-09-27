@@ -296,8 +296,9 @@ Where \(x_i\) is the \(i\)-th solution and \(A_i\) is the matrix formed by repla
 
 
 As you can tell, Cramer's rule is very powerful. In the real world, however, \textit{gaussian elimination} is a much faster alternative than Cramer's rule. It is also unlikely for the reader to be computing large matrices determinants by hand, we have computers for that. This also applies to matrix multiplication. This book, and more generally calculus courses only need knowledge on computing determinants of up to \(3\times3\) matrices.
-  \begin{enumerate}
-    \item{Find the determinants and inverses, if any, for the following matrices: \begin{enumerate}
+\hrule
+\begin{problem}
+  Find the determinants and inverses, if any, for the following matrices: \begin{enumerate}[label=\alph*)]
           \item{\(\begin{bmatrix}
                 1 & 9 \\
                 2 & 10
@@ -310,15 +311,19 @@ As you can tell, Cramer's rule is very powerful. In the real world, however, \te
             3 & 4 \\
             7 & 9
       \end{bmatrix}\)}
-    \end{enumerate} }
-  \item{Find the determinant of the following matrix: \(
+    \end{enumerate} 
+\end{problem}
+\begin{problem}[1]
+  Find the determinant of the following matrix: \(
     \begin{bmatrix}
       1 & 1 & 1 \\
       1 & 2 & 4 \\
       2 & 3 & 6
     \end{bmatrix}
-  \)}
-  \item{Solve the following simultaneous equations using matrices: 
+  \)
+\end{problem}
+\begin{problem}[1]
+  Solve the following simultaneous equations using matrices: 
       \begin{equation*}
         \begin{array}{l}
           x_1 + x_2 + x_3 = 3 \\
@@ -326,52 +331,51 @@ As you can tell, Cramer's rule is very powerful. In the real world, however, \te
           x_1 + 2x_2 + 2x_3 = 6
         \end{array}
       \end{equation*}
-    }
-  \end{enumerate}
-
-  \begin{enumerate}
-    \item{\begin{enumerate}
-          \item{\(-8\) and \(\begin{bsmallmatrix}
-                -\frac{10}{8} & \frac{9}{8} \\
-                \frac{1}{4} & -\frac{1}{8}
-          \end{bsmallmatrix} \)}
-        \item{0 and no inverse}
-        \item{\(-1\) and \(\begin{bsmallmatrix}
-              -9 & 4 \\
-              7 & -3
-        \end{bsmallmatrix} \)}
-    \end{enumerate} }
-  \item{1}
-  \item{Use Cramer's rule and \(x_1=0\), \(x_2=1\), \(x_3=2\). Example for \(x_1\): 
-    \begin{align*}
-      x_1 &= \frac{\det(A_1)}{\det(A)} \\
-          &= \frac{\begin{vmatrix}
-              3 & 1 & 1 \\
-              4 & 2 & 1 \\
-              6 & 2 & 2
-          \end{vmatrix} }{\begin{vmatrix}
-              1 & 1 & 1 \\
-              1 & 2 & 1 \\
-              1 & 2 & 2
-          \end{vmatrix} } \\
-          &= \frac{0}{1} \\
-          &= 0
-    \end{align*}
-    
-    Example for \(x_2\): 
-    \begin{align*}
-      x_2 &= \frac{\det(A_2)}{\det(A)} \\
-          &= \frac{\begin{vmatrix}
-              1 & 3 & 1 \\
-              1 & 4 & 1 \\
-              1 & 6 & 2
-          \end{vmatrix} }{\begin{vmatrix}
-              1 & 1 & 1 \\
-              1 & 2 & 1 \\
-              1 & 2 & 2
-          \end{vmatrix} } \\
-          &= \frac{1}{1} \\
-          &= 1
-    \end{align*}
-    }
-  \end{enumerate}
+\end{problem}
+  %
+  % \begin{enumerate}
+  %   \item{\begin{enumerate}
+  %         \item{\(-8\) and \(\begin{bsmallmatrix}
+  %               -\frac{10}{8} & \frac{9}{8} \\
+  %               \frac{1}{4} & -\frac{1}{8}
+  %         \end{bsmallmatrix} \)}
+  %       \item{0 and no inverse}
+  %       \item{\(-1\) and \(\begin{bsmallmatrix}
+  %             -9 & 4 \\
+  %             7 & -3
+  %       \end{bsmallmatrix} \)}
+  %   \end{enumerate} }
+  % \item{1}
+  % \item{Use Cramer's rule and \(x_1=0\), \(x_2=1\), \(x_3=2\). Example for \(x_1\): 
+  %   \begin{align*}
+  %     x_1 &= \frac{\det(A_1)}{\det(A)} \\
+  %         &= \frac{\begin{vmatrix}
+  %             3 & 1 & 1 \\
+  %             4 & 2 & 1 \\
+  %             6 & 2 & 2
+  %         \end{vmatrix} }{\begin{vmatrix}
+  %             1 & 1 & 1 \\
+  %             1 & 2 & 1 \\
+  %             1 & 2 & 2
+  %         \end{vmatrix} } \\
+  %         &= \frac{0}{1} \\
+  %         &= 0
+  %   \end{align*}
+  %
+  %   Example for \(x_2\): 
+  %   \begin{align*}
+  %     x_2 &= \frac{\det(A_2)}{\det(A)} \\
+  %         &= \frac{\begin{vmatrix}
+  %             1 & 3 & 1 \\
+  %             1 & 4 & 1 \\
+  %             1 & 6 & 2
+  %         \end{vmatrix} }{\begin{vmatrix}
+  %             1 & 1 & 1 \\
+  %             1 & 2 & 1 \\
+  %             1 & 2 & 2
+  %         \end{vmatrix} } \\
+  %         &= \frac{1}{1} \\
+  %         &= 1
+  %   \end{align*}
+  %   }
+  % \end{enumerate}
