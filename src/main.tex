@@ -1,11 +1,11 @@
 \documentclass[10pt, b5book, twoside]{memoir} 
-\usepackage[a4paper, marginparwidth=1.2in]{geometry}
+\usepackage[marginparwidth=1.2in]{geometry}
 \usepackage[none]{hyphenat}
 
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 \input{settings}
-\usepackage{pgfplots, caption, newtxmath, newtxtext, fancyhdr, cleveref, lipsum, gensymb, indentfirst, marginnote, amsmath, enumitem, graphicx, esdiff}
+\usepackage{pgfplots, caption, newtxmath, newtxtext, fancyhdr, cleveref, lipsum, gensymb, indentfirst, marginnote, amsmath, enumitem, graphicx, esdiff, pdfpages}
 \usepackage{perpage}
 \usepackage{sidenotes}
 \usepackage[autostyle]{csquotes}
@@ -81,16 +81,16 @@
 \chapterstyle{BlueBox}
 \pgfplotsset{compat=1.18}
 \usetikzlibrary{positioning}
+
 \renewcommand{\marginnote}{\sidenote}
 \renewcommand{\thesidenote}{\textbf{\arabic{sidenote}}}
-
 \begin{document}
   \pagenumbering{gobble}
+  \includepdf[pages={1,{}}, fitpaper=true]{cover.pdf}
   \tableofcontents
   \cleardoublepage
   \pagenumbering{arabic}
   \addcontentsline{toc}{chapter}{Preface I: Calculus, the language of the universe}
-  \addcontentsline{toc}{chapter}{Preface II: How to read this book}
   \chapter*{Preface I: Calculus, the language of the universe}
 
 
@@ -122,6 +122,7 @@
 
   \chapter*{Preface II: How to read this book}
 
+  \addcontentsline{toc}{chapter}{Preface II: How to read this book}
 
   This book is structured into four parts. The first part deals with precalculus or the content that is needed for the later calculus chapters. Be warned, however, that the first part is rather short and sweeps over the content very quickly. The second part corresponds to the standard curriculum of Calculus I and is the beginning of the actual calculus portion. Similarly, the third and fourth part corresponds to Calculus II and multivariable calculus respectively. As with any textbook, problems are included at the end of each chapter for the reader to practice and familiarise with the topic. To aid the reader, we have included the following notation for denoting the type of problem:
   \begin{enumerate}
