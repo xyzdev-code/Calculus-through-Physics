@@ -64,8 +64,27 @@ The cross product is very ubiquitous in physics and vector calculus alike.
 An important fact to note is that the operation is not commutative. In fact, the operation is called \textit{anti-commutative}. This means that \(\vec{a}\times\vec{b}=-\vec{b}\times\vec{a}\). In addition, if the angle between the operands is any integer multiple of \(\pi\), then the result is \(\vec{0}\). This should be trivially seen from the formula for the cross product. The derivation for the cross product is also easy, given two vectors \(\vec{a}\) and \(\vec{b}\) and a angle \(\theta\) between them, simply use the sine rule and the result should be obvious. The cross product has many real world applications.
 \section*{Application: angular momentum}
 \begin{example}{Angular momentum}{}
-  In physics, the angular momentum \(\vec{L}\) of a particle is defined as \(\vec{L} = \vec{r}\times\vec{p}\), where \(\vec{r}\) is the position vector of the particle relative to a chosen origin and \(\vec{p}\) is the linear momentum of the particle. The linear momentum \(\vec{p}\) is given by \(\vec{p} = m\vec{v}\), where \(m\) is the mass of the particle and \(\vec{v}\) is its velocity vector. The angular momentum vector \(\vec{L}\) points in a direction perpendicular to the plane formed by \(\vec{r}\) and \(\vec{p}\), following the right-hand rule. The magnitude of the angular momentum is given by \(||\vec{L}|| = (||\vec{r}||)(||\vec{p}||)\sin(\theta)\), where \(\theta\) is the angle between \(\vec{r}\) and \(\vec{p}\). This means that if the position vector and linear momentum are parallel (i.e., \(\theta = 0\) or \(\pi\)), the angular momentum will be zero, indicating no rotational effect about the chosen origin. To demonstrate this, consider a meteor that has a position vector of \(\vec{r}=100\si{\kilo\meter} \ihat+100 \si{\kilo\meter}\jhat\) and at the instant we see it, it has a linear momentum of \(\vec{p}=50\si{\kilo\gram\kilo\meter\per\second}\jhat\). The meteor also has an acceleration in the positive y direction of \(5\si{\meter\per\second^2}\).
-  
+  In physics, the angular momentum \(\vec{L}\) of a particle is defined as \(\vec{L} = \vec{r}\times\vec{p}\), where \(\vec{r}\) is the position vector (i.e. a coordinate) of the particle relative to a chosen origin and \(\vec{p}\) is the linear momentum of the particle. The linear momentum \(\vec{p}\) is given by \(\vec{p} = m\vec{v}\), where \(m\) is the mass of the particle and \(\vec{v}\) is its velocity vector. The angular momentum vector \(\vec{L}\) points in a direction perpendicular to the plane formed by \(\vec{r}\) and \(\vec{p}\), following the right-hand rule. The magnitude of the angular momentum is given by \(||\vec{L}|| = (||\vec{r}||)(||\vec{p}||)\sin(\theta)\), where \(\theta\) is the angle between \(\vec{r}\) and \(\vec{p}\). This means that if the position vector and linear momentum are parallel (i.e., \(\theta = 0\) or \(\pi\)), the angular momentum will be zero, indicating no rotational effect about the chosen origin. To demonstrate this, at the instant we see it, consider a meteor that has a position vector of \(\vec{r}=100\si{\kilo\meter} \ihat+100 \si{\kilo\meter}\jhat\) and  it has a linear momentum of \(\vec{p}=50\si{\kilo\gram\kilo\meter\per\second}\jhat\). The meteor also has an acceleration in the positive y direction of \(5\si{\meter\per\second^2}\). 
+  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+      \draw[line width=2pt, -stealth, red] (0,0,0) -- (5,0,5) node[pos=1.1]{\(\vec{r}\)};
+      \draw[line width=2pt, -stealth, blue] (0,0,0) -- (0,0,-2.5) node[pos=1.1]{\(\vec{p}\)};
+      \draw[line width=2pt, -stealth, purple] (0,0,0) -- (0,5,0) node[pos=1.1]{\(\vec{L}\)};
+    \end{tikzpicture}
+    \caption{Figure of the meteor's position and momentum vectors.}
+  \end{figure}
+  To calculate the angular momentum, we simply find the cross product of \(\vec{r}\) and \(\vec{p}\)
+  \begin{align*}
+    \vec{L} &= \vec{r}\times\vec{p} \\
+            &= \begin{vmatrix}
+              \ihat & \jhat & \khat \\
+              100 & 100 & 0 \\
+              0 & 50 & 0
+            \end{vmatrix} \\
+            &= 5000\khat
+  \end{align*}
+  Firstly, the angular momentum is in the positive z direction. This is expected because of the right hand rule; \(r\) and \(p\) are in the xy-plane, we do expect that the angular momentum to be along the z-axis. 
 \end{example}
 
 
@@ -197,10 +216,10 @@ As for vector triple product, the process of computation is very similar. We fir
 \begin{remark}{}{}
   The above proof is a tedious pedagogical exercise mainly created to drill in the concepts of the cross products.
 \end{remark}
-  \begin{enumerate}
-    \item{
-        Find the cross products of the following vectors:
-        \begin{enumerate}
+\hrule
+\begin{problem}
+    Find the cross products of the following vectors:
+        \begin{enumerate}[label=\alph*)]
           \item{\(\begin{bmatrix}
             1 \\
             2 \\
@@ -220,29 +239,34 @@ As for vector triple product, the process of computation is very similar. We fir
           5
         \end{bmatrix} \)}
         \end{enumerate}
-      }
-    \item{Prove or disprove: 
-      \begin{enumerate}
+
+\end{problem}  
+\begin{problem}[1]
+    Prove or disprove: 
+      \begin{enumerate}[label=\alph*)]
         \item{\(\vec{a}\times\vec{b}=\vec{b}\times\vec{a}\)}
         \item{\(\vec{a}\times\vec{a}=0\)}
       \end{enumerate}
-      }
-    \item{Prove Lagrange's formula for the other two components not shown in the previous proof.}
-  \end{enumerate}
+      
+\end{problem}
+\begin{problem}[1]
+    Prove Lagrange's formula for the other two components not shown in the previous proof.
+\end{problem}
 
-  \begin{enumerate}
-    \item{\begin{enumerate}
-          \item{\(4\ihat-2\jhat\)}
-          \item{\(-2\ihat+4\jhat-2\khat\)}
-    \end{enumerate} }
-  \item{\begin{enumerate}
-        \item{
-            \textit{Disprove}. Notice that while in question 1(a), the answer is \(4\ihat-2\jhat\), if you swap the two vectors, you instead get \(-4\ihat+2\jhat\), which is the anti-commutative property of cross products. 
-          }
-        \item{\textit{Prove}. This is a trivial result by using the formula for cross products.}
-  \end{enumerate} }
-  \item{This is also a trivial and tedious result that can be shown just by some evaluation of the cross products.}
-  \end{enumerate}
+  %
+  % \begin{enumerate}
+  %   \item{\begin{enumerate}
+  %         \item{\(4\ihat-2\jhat\)}
+  %         \item{\(-2\ihat+4\jhat-2\khat\)}
+  %   \end{enumerate} }
+  % \item{\begin{enumerate}
+  %       \item{
+  %           \textit{Disprove}. Notice that while in question 1(a), the answer is \(4\ihat-2\jhat\), if you swap the two vectors, you instead get \(-4\ihat+2\jhat\), which is the anti-commutative property of cross products. 
+  %         }
+  %       \item{\textit{Prove}. This is a trivial result by using the formula for cross products.}
+  % \end{enumerate} }
+  % \item{This is also a trivial and tedious result that can be shown just by some evaluation of the cross products.}
+  % \end{enumerate}
   \begin{remark}{}{}
   While the linear algebra chapter in this book is ending, this is a very small subset of a standard linear algebra course. Many concepts, such as eigenvalues, are not covered due to their not so important nature. Readers are still highly encouraged to read up some of the other concepts.
 \end{remark}

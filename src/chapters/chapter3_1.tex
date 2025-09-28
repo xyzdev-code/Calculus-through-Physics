@@ -92,36 +92,39 @@ From \Cref{quadgraph}, we can consider what happens at \(x=2\). We shall use the
   \sidenotetext{\footnotesize \textit{We can ignore \(h\) in the second last step because as a general rule of thumb, as long as substituting \(h=0\) does not create an expression of \(\frac{a}{0}\), we can let \(h=0\). Of course, this is very not rigorous and there are other exceptions that will be very evident after the reader has read the later chapter of limits. }}
 
 In other words, we have also found a function of the gradient of the tangent line for any point along \(f(x)=x^2\). Lastly, I would like to comment that normally, if not explicitly stated in the question to use "first principles", you can use the derivative rules you will learn in the next chapter to solve derivatives much more quickly and efficiently. In all honesty, using the "first principles" is very tedious and generally would not be used.
-  \begin{enumerate}
-    \item{ Using first principles, find the derivatives of the following functions:
-        \begin{enumerate}
+\begin{problem}[1]
+     Using first principles, find the derivatives of the following functions:
+        \begin{enumerate}[label=\alph*)]
           \item{\(f(x)=x^2+1\)}
           \item{\(g(x)=x^3+x\)}
           \item{\(h(x)=\frac{1}{x}\)}
         \end{enumerate}
-      }
-    \item{Let \(f(x)=(x-1)(x-2)\cdots(x-1729)\), find \(f'(1729)\). \textit{(Adapted from SMO 2025 Senior Section Round 1).}}
-    \item{Given a differentiable function \(f(x)\), find the equation of the tangent line at \(x=a\).}
-  \end{enumerate}
- \begin{enumerate}
-   \item{
-       \begin{enumerate}
-          \item{\(2x\)}
-          \item{\(2x^2+1\)}
-          \item{\(-\frac{1}{x^2}\)}
-       \end{enumerate}
-     }
-    \item{
-        We shall use the definition of derivatives:
-        \begin{align*}
-          f'(1729) &= \lim_{h\to0}\frac{f(1729+h)-f(1729)}{h} \\ 
-                   &= \lim_{h\to0}\frac{(1729+h-1)(1729+h-2)\cdots(1729+h-1729)-(1729-1)\cdots(1729-1729)}{h} \\
-                   &= \lim_{h\to0}\frac{1728!h}{h} \\
-                   &= 1728!
-        \end{align*}
-      }
-    \item{
-        We know that the gradient at \(f(a)\) is \(f'(a)\), which must be the gradient of our tangent line. Next, we notice that the line \(y=f'(a)x\) might not be tangent to \(f\), hence, we must vertically shift the line. The \(y\) value of the line at \(x=a\) is simply \(af'(a)\). As a result, the difference in height between \(f(a)\) and the line at \(a\) is simply \(f(a)-af'(a)\). Lastly, we just account for this difference by slapping the height difference term onto our line. Therefore, the equation of the tangent line is \(y=f'(a)x+f(a)-af'(a)=f'(a)(x-a)+f(a).\)
-      
-      \marginnote{\footnotesize \textit{The equation for the tangent line to a curve is very important, it is good to memorise it or at least remember its derivation.}}}
- \end{enumerate} 
+\end{problem}
+\begin{problem}[1]
+    Let \(f(x)=(x-1)(x-2)\cdots(x-1729)\), find \(f'(1729)\). \textit{(Adapted from SMO 2025 Senior Section Round 1).}
+\end{problem}
+\begin{problem}[1]
+    Given a differentiable function \(f(x)\), find the equation of the tangent line at \(x=a\).
+\end{problem}
+ % \begin{enumerate}
+ %   \item{
+ %       \begin{enumerate}
+ %          \item{\(2x\)}
+ %          \item{\(2x^2+1\)}
+ %          \item{\(-\frac{1}{x^2}\)}
+ %       \end{enumerate}
+ %     }
+ %    \item{
+ %        We shall use the definition of derivatives:
+ %        \begin{align*}
+ %          f'(1729) &= \lim_{h\to0}\frac{f(1729+h)-f(1729)}{h} \\ 
+ %                   &= \lim_{h\to0}\frac{(1729+h-1)(1729+h-2)\cdots(1729+h-1729)-(1729-1)\cdots(1729-1729)}{h} \\
+ %                   &= \lim_{h\to0}\frac{1728!h}{h} \\
+ %                   &= 1728!
+ %        \end{align*}
+ %      }
+ %    \item{
+ %        We know that the gradient at \(f(a)\) is \(f'(a)\), which must be the gradient of our tangent line. Next, we notice that the line \(y=f'(a)x\) might not be tangent to \(f\), hence, we must vertically shift the line. The \(y\) value of the line at \(x=a\) is simply \(af'(a)\). As a result, the difference in height between \(f(a)\) and the line at \(a\) is simply \(f(a)-af'(a)\). Lastly, we just account for this difference by slapping the height difference term onto our line. Therefore, the equation of the tangent line is \(y=f'(a)x+f(a)-af'(a)=f'(a)(x-a)+f(a).\)
+ %
+ %      \marginnote{\footnotesize \textit{The equation for the tangent line to a curve is very important, it is good to memorise it or at least remember its derivation.}}}
+ % \end{enumerate} 
