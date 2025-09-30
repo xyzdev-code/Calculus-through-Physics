@@ -5,11 +5,13 @@
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 \input{settings}
-\usepackage{pgfplots, caption, newtxmath, newtxtext, fancyhdr, cleveref, lipsum, gensymb, indentfirst, marginnote, amsmath, enumitem, graphicx, esdiff, pdfpages}
+\usepackage{pgfplots, caption, fancyhdr, cleveref, lipsum, gensymb, indentfirst, marginnote, enumitem, graphicx, esdiff, pdfpages, amsmath}
+\usepackage{newtx}
 \usepackage{perpage}
 \usepackage{sidenotes}
 \usepackage[autostyle]{csquotes}
 \newcounter{entryc}[subsection]
+
 \makeatletter
 \renewcommand{\p@entryc}{\thesubsection.} % "prefix" for cross-referencing
 \makeatother
@@ -108,13 +110,13 @@
 
   \begin{figure}[h]
     \centering
-    \includegraphics[height=5cm, width=5cm]{rearrangement.png}
+    \includegraphics[height=5.5cm, width=5cm]{rearrangement.png}
     \caption{Figure of the rearrangement proof.}
     \label{rearrangement}
   \end{figure}
 
 
-  Something that you notice in \Cref{rearrangement} is that if you make each slice smaller, the parallelogram will become more like a rectangle. This, right here, is a very subtle yet profound fact that makes many problems in the real world much easier. As the famous saying goes, "calculus turns one big problem into infinitely smaller ones." This little trick is the reason for developing the calculus method. Everything in calculus stems from the proposition that dividing something into infinitesimal parts reduces the complexity of a problem. So far, this has hold well. No matter if you are looking at classical mechanics or quantum mechanics, all the equations are written with calculus. While this little fact may seem very deep or even philosophical, and we will explore on the paradoxes of infinitesimals, I believe that one cannot meaningfully know what calculus means before knowing what it does. The purpose of this book is to teach you how to do calculus through the lens of physics. There are many schools of thought on the pedagogy of calculus and there are great texts on calculus such as Stewart, J. \textit{Calculus: Early Transcentals, 8th Ed.} and Strang, G. \textit{Calculus}. Furthermore, if you already know the basics of calculus, I would also recommend Arfken, G. \textit{Mathematical Methods for Physicists} and Boas, M.L. \textit{Mathematical Methods in the Physical Sciences} is also a classic. While these books are fantastic, they either already assume a decent knowledge of calculus or does not put its focus on physics. This book seeks to fill this special niche.
+  Something that you notice in \Cref{rearrangement} is that if you make each slice smaller, the parallelogram will become more like a rectangle. This, right here, is a very subtle yet profound fact that makes many problems in the real world much easier. As the famous saying goes, "calculus turns one big problem into infinitely smaller ones." This little trick is the reason for developing the calculus method. Everything in calculus stems from the proposition that dividing something into infinitesimal parts reduces the complexity of a problem. So far, this has held up well. No matter if you are looking at classical mechanics or quantum mechanics, all the equations are written with calculus. While this little fact may seem very deep or even philosophical, and we will explore on the paradoxes of infinitesimals, I believe that one cannot meaningfully know what calculus means before knowing what it does. The purpose of this book is to teach you how to do calculus through the lens of physics. There are many schools of thought on the pedagogy of calculus and there are great texts on calculus such as Stewart, J. \textit{Calculus: Early Transcentals, 8th Ed.} and Strang, G. \textit{Calculus}. Furthermore, if you already know the basics of calculus, I would also recommend Arfken, G. \textit{Mathematical Methods for Physicists} and Boas, M.L. \textit{Mathematical Methods in the Physical Sciences} is also a classic. While these books are fantastic, they either already assume a decent knowledge of calculus or does not put its focus on physics. This book seeks to fill this special niche.
 
 
   I wish every reader good luck on their journey on learning calculus. It is not trivial and rereading confusing parts of the book is highly recommended. More than just knowing how to apply calculus however, I also encourage the reader to appreciate the beauty of calculus and its unreasonable effectiveness in describing our physical world. To end off, thanks for choosing this book. Happy reading.
@@ -134,6 +136,9 @@
     \item{\textbf{***} means that the problem is very \textit{difficult} and might take the reader very long to solve.}
     \item{Nothing means that the problem is not very important and can be skipped.}
   \end{enumerate}
+
+
+  Furthermore, to prevent confusion on sidenotes\sidenote{\footnotesize \textit{This is a sidenote.}} and indices, sidenote markers are \textbf{bolded} while the latter is not.
   \flushbottom
   \include{chapters/chapter1_1}
   \include{chapters/chapter1_2}
