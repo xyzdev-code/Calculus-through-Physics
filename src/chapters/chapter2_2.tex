@@ -1,17 +1,17 @@
 
-  \section{Scaling and dot product}
+\section{Scaling and dot product}
 In this chapter we will deal two kinds of multiplication with vectors. By far the easiest would be scaling a vector. As we have previously discussed, the magnitude of a vector is the length of a vector. But what if I want to "elongate" the vector by some amount to make it longer or shorter. This is called \textit{scaling}.
 \begin{figure}[h]
- \centering
- \begin{tikzpicture}
+  \centering
+  \begin{tikzpicture}
     \draw[thin, gray!40] (-4,-4) grid (4,4);
     \draw[line width=2pt, blue, -stealth] (0,0) -- (2,4) node[anchor=south west]{\(\vec{b}\)};
     \draw[line width=2pt, red, -stealth] (0,0) -- (1,2) node[anchor=south west]{\(\vec{a}\)};
     \draw[<->] (-4,0) -- (4,0) node[right]{\(x\)};
     \draw[<->] (0,-4) -- (0,4) node[above]{\(y\)}; 
- \end{tikzpicture}
- \caption{Two vectors, one twice as long as the other.}
- \label{scalevector}
+  \end{tikzpicture}
+  \caption{Two vectors, one twice as long as the other.}
+  \label{scalevector}
 \end{figure}
 
 
@@ -48,13 +48,13 @@ Let us try something fun, what if we multiplied the vector by a negative number?
     \draw[line width=2pt, red, -stealth] (0,0) -- (-1,-2) node[anchor=north east]{\(\vec{a}\)};
     \draw[<->] (-4,0) -- (4,0) node[right]{\(x\)};
     \draw[<->] (0,-4) -- (0,4) node[above]{\(y\)}; 
- \end{tikzpicture}
- \caption{Two vectors, one is scaled by -0.5.}
- \label{scalevectorneg}
+  \end{tikzpicture}
+  \caption{Two vectors, one is scaled by -0.5.}
+  \label{scalevectorneg}
 \end{marginfigure} 
 As you can see from \Cref{scalevectorneg}, \(\vec{a}=(-0.5)\vec{b}\). You may wish to compute this yourself to verify. One thing to note here is that the vector gets flipped across the origin when the constant the vector is multiplied to is negative. 
 \begin{challenge}{Scaled vector magnitude}{}
-Also, when scaling a vector by some constant, the reader may want to verify that the magnitude of the vector is also scaled by that constant. This should be a trivial proof.
+  Also, when scaling a vector by some constant, the reader may want to verify that the magnitude of the vector is also scaled by that constant. This should be a trivial proof.
 \end{challenge}
 
 
@@ -67,7 +67,7 @@ Dot products use the \(\cdot\) operator and only acts on vectors, do not abuse n
   The dot product of two vectors in n-dimensional space \(\vec{a}\) and \(\vec{b}\) is:
   \begin{equation}
     \vec{a} \cdot \vec{b} = a_1 b_1 + a_2 b_2 + \dots + a_n b_n = (||\vec{a}||)(||\vec{b}||)\cos{\theta} 
-  \label{dotproduct}
+    \label{dotproduct}
   \end{equation}
   where \(\theta\) is the angle between the two vectors. We shall refer to the formula between the first and second equal signs the "first definition of dot products" and the formula after the second equal sign the "second definition of dot products".
 \end{definition}
@@ -103,8 +103,8 @@ Firstly, note down the components of each vector in \Cref{dotproductfig}. Then, 
   \end{equation*}
   \begin{equation*}
     \vec{a} \cdot \vec{d} = \begin{bmatrix}
-     1 \\
-     2
+      1 \\
+      2
     \end{bmatrix} \cdot \begin{bmatrix}
       -1 \\
       -2
@@ -114,31 +114,31 @@ Firstly, note down the components of each vector in \Cref{dotproductfig}. Then, 
 \begin{remark}{}{}
   Generally, when finding the dot product, we use the first form in \Cref{dotproduct} as it is typically easier to compute. It is also important to know that the dot product of two vectors results in a number, not a vector like in scaling.
 \end{remark}
-  \begin{marginfigure}
-      \centering
-      \begin{tikzpicture}
-      \draw[line width=2pt, red, -stealth] (0,0) -- (2,1) node[anchor= south west]{\(\vec{a}\)};
-      \draw[line width=2pt, blue, -stealth] (0,0) -- (1,1) node[anchor= south west]{\(\vec{b}\)};
-      \draw[line width=2pt, orange, -stealth] (1,1) -- (2,1) node[anchor= south]{\(\vec{c}\)};
-    \end{tikzpicture} 
-    \caption{Figure of a triangle formed by three vectors.}
-    \label{exvecdotfig}
-  \end{marginfigure} 
+\begin{marginfigure}
+  \centering
+  \begin{tikzpicture}
+    \draw[line width=2pt, red, -stealth] (0,0) -- (2,1) node[anchor= south west]{\(\vec{a}\)};
+    \draw[line width=2pt, blue, -stealth] (0,0) -- (1,1) node[anchor= south west]{\(\vec{b}\)};
+    \draw[line width=2pt, orange, -stealth] (1,1) -- (2,1) node[anchor= south]{\(\vec{c}\)};
+  \end{tikzpicture} 
+  \caption{Figure of a triangle formed by three vectors.}
+  \label{exvecdotfig}
+\end{marginfigure} 
 \hrule
 
 
 \begin{problem}
-    If \(\vec{x}=\begin{bsmallmatrix}
-      1 \\
-      2
-      \end{bsmallmatrix} \) and \(\vec{b}=\begin{bsmallmatrix}
-       3 \\
-       4
-    \end{bsmallmatrix} \), compute the following: \begin{enumerate}[label=\alph*)]
-      \item{\(2\vec{x}\)}
-      \item{\(\vec{x}\cdot\vec{y}\)}
-      \item{\(\vec{y}\cdot\vec{x}\)}
-    \end{enumerate} 
+  If \(\vec{x}=\begin{bsmallmatrix}
+    1 \\
+    2
+  \end{bsmallmatrix} \) and \(\vec{b}=\begin{bsmallmatrix}
+    3 \\
+    4
+  \end{bsmallmatrix} \), compute the following: \begin{enumerate}[label=\alph*)]
+    \item{\(2\vec{x}\)}
+    \item{\(\vec{x}\cdot\vec{y}\)}
+    \item{\(\vec{y}\cdot\vec{x}\)}
+  \end{enumerate} 
 \end{problem}
 \begin{problem}[1]
   Prove or disprove that the dot product \textit{commutes}. \sidenotemark 

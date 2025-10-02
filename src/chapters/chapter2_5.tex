@@ -1,5 +1,5 @@
 
-  \section{Cross products and triple products}
+\section{Cross products and triple products}
 The previous section perfectly segues into this section. \textit{Cross products} is an operation on vectors that happens solely in the third dimension. Do not confuse it with the dot product, both uses different operators and should not be used interchangeably. Firstly, we must recall that one of the basis vectors is \(\khat\) and it is one unit in the z direction.
 \begin{marginfigure}
   \centering
@@ -45,8 +45,8 @@ The cross product is very ubiquitous in physics and vector calculus alike.
       1 & 2 & 0 \\
       -2 & 1 & 0
     \end{vmatrix} \\
-                         &= 0\ihat - 0\jhat + 5\khat \\
-                         &= 5\khat
+    &= 0\ihat - 0\jhat + 5\khat \\
+    &= 5\khat
   \end{align*}
   \begin{figure}[H]
     \centering
@@ -62,9 +62,33 @@ The cross product is very ubiquitous in physics and vector calculus alike.
 
 
 An important fact to note is that the operation is not commutative. In fact, the operation is called \textit{anti-commutative}. This means that \(\vec{a}\times\vec{b}=-\vec{b}\times\vec{a}\). In addition, if the angle between the operands is any integer multiple of \(\pi\), then the result is \(\vec{0}\). This should be trivially seen from the formula for the cross product. The derivation for the cross product is also easy, given two vectors \(\vec{a}\) and \(\vec{b}\) and a angle \(\theta\) between them, simply use the sine rule and the result should be obvious. The cross product has many real world applications.
-\section*{Application: angular momentum}
+\section*{Application: Torque}
 \begin{example}{Torque}{}
-  Torque is a force that is common in our daily lives, such as the turning of a doorknob or the turning of a wrench. The formula for torque is \(\vec{\tau} = \vec{r}\times\vec{F}\), where \(\vec{\tau}\) is the torque, \(\vec{r}\) is the distance from the pivot point to the point where the force is applied and \(\vec{F}\) is the force applied. The direction of the torque can be determined by the right hand rule.
+  Torque is a force that is common in our daily lives, present in the turning of a doorknob or the turning of a wrench. The formula for torque is \(\vec{\tau} = \vec{r}\times\vec{F}\), where \(\vec{\tau}\) is the torque, \(\vec{r}\) is the distance from the pivot point to the point where the force is applied and \(\vec{F}\) is the force applied. The direction of the torque can be determined by the right hand rule. Torque is also known as the moment of force, and we actually derive the infamous moment arm formula for moment of \(\textit{moment}=(\textit{moment arm})(\textit{force})\). We shall restrict ourselves to only two dimensions and use a Cartesian coordinate system. Set the origin such that the pivot point is at the origin. Then, we can represent \(\vec{r}\) as the distance from the origin to where the force is applied. Let \(\vec{F}\) be the force vector. Since there is no more z component, all of the z components of the vectors are 0. We can write down the cross product of \(\vec{r}\) and \(\vec{F}\):
+  \begin{align*}
+    \vec{\tau} &= \vec{r}\times\vec{F} \\
+    &= \begin{vmatrix}
+      \ihat & \jhat & \khat \\
+      r_x & r_y & 0 \\
+      F_x & F_y & 0
+    \end{vmatrix} \\
+    &= (r_xF_y - r_yF_x)\khat
+  \end{align*}
+  We can consider the magnitude of the torque:
+  \begin{align}
+    ||\vec{\tau}|| = r_xF_y - r_yF_x
+  \end{align}
+  Next, we turn to the moment arm formula. 
+  \begin{align*}
+    \textit{moment} &= (\textit{moment arm})(\textit{force}) \\
+                    &= \sqrt{r_x^2+r_y^2}\sqrt{F_x^2+F_y^2}
+  \end{align*}
+  We are able to write this as I have assumed that the force and distance are perpendicular to each other (See Problem ).Then, because the force and radius are perpendicular, notice that \(\vec{r}\cdot \vec{F}=r_xF_x+r_yF_y=0\). We can utilise this fact by writing down:
+  \begin{align}
+    (r_xF_y-r_yF_x)^2 + (r_xF_x+r_yF_y)^2 &= (r_x^2+r_y^2)(F_x^2+F_y^2)
+    \label{torque}
+  \end{align}
+  Notice that the left hand side of \Cref{torque} is simply \(||\vec{\tau}||^2\) and the right hand side is simply \((\textit{moment arm})^2(\textit{force})^2\). Hence, we have shown that \(||\vec{\tau}|| = (\textit{moment arm})(\textit{force})\) which is the moment arm formula.
 \end{example}
 
 
@@ -107,11 +131,11 @@ Next, we will move on to triple products which happens to also be a three dimens
       b \\
       0
     \end{bmatrix} \\
-      \vec{c} &= \begin{bmatrix}
-        0 \\
-        0 \\
-        h
-      \end{bmatrix}
+    \vec{c} &= \begin{bmatrix}
+      0 \\
+      0 \\
+      h
+    \end{bmatrix}
   \end{align*}
   Now, we use the triple vector multiplication formula. However, take note of the brackets and the order of operations: 
   \begin{align}
@@ -120,17 +144,17 @@ Next, we will move on to triple products which happens to also be a three dimens
       0 & b & 0 \\
       0 & 0 & h
     \end{vmatrix} \nonumber \\
-                                            &= \begin{bmatrix}
-                                              l \\
-                                              0 \\
-                                              0
-                                            \end{bmatrix} \cdot \begin{bmatrix}
-                                              bh \\
-                                              0 \\
-                                              0
-                                            \end{bmatrix} \nonumber \\
-                                            &= lbh
-                                            \label{volofpara}
+    &= \begin{bmatrix}
+      l \\
+      0 \\
+      0
+    \end{bmatrix} \cdot \begin{bmatrix}
+      bh \\
+      0 \\
+      0
+    \end{bmatrix} \nonumber \\
+    &= lbh
+    \label{volofpara}
   \end{align}
   The result in \Cref{volofpara} is trivial and should come as no surprise to the reader.
 \end{example}
@@ -153,43 +177,43 @@ As for vector triple product, the process of computation is very similar. We fir
       b_x & b_y & b_z \\
       c_x & c_y & c_z
     \end{vmatrix} \nonumber \\
-                                        &= \vec{a}\times\begin{bmatrix}
-                                          b_yc_z - b_zc_y \\
-                                          b_zc_x - b_xc_z \\
-                                          b_xc_y - b_yc_x
-                                        \end{bmatrix}  \nonumber \\
-                                        &= \begin{vmatrix}
-                                          \ihat & \jhat & \khat \\
-                                          a_x & a_y & a_z \\
-                                          b_yc_z - b_zc_y & b_zc_x - b_xc_z &  b_xc_y - b_yc_x
-                                        \end{vmatrix} \nonumber \\
-                                        &= \begin{bmatrix}
-                                          a_y(b_xc_y - b_yc_x) - a_z(b_zc_x - b_xc_z) \\
-                                          \dots
-                                        \end{bmatrix} \nonumber \\
-                                        &= \begin{bmatrix}
-                                          a_yb_xc_y + a_zb_xc_z - a_yb_yc_x - a_zb_zc_x \\
-                                          \dots
-                                        \end{bmatrix}
-                                        \label{lagrangeformtrip}
+    &= \vec{a}\times\begin{bmatrix}
+      b_yc_z - b_zc_y \\
+      b_zc_x - b_xc_z \\
+      b_xc_y - b_yc_x
+    \end{bmatrix}  \nonumber \\
+    &= \begin{vmatrix}
+      \ihat & \jhat & \khat \\
+      a_x & a_y & a_z \\
+      b_yc_z - b_zc_y & b_zc_x - b_xc_z &  b_xc_y - b_yc_x
+    \end{vmatrix} \nonumber \\
+    &= \begin{bmatrix}
+      a_y(b_xc_y - b_yc_x) - a_z(b_zc_x - b_xc_z) \\
+      \dots
+    \end{bmatrix} \nonumber \\
+    &= \begin{bmatrix}
+      a_yb_xc_y + a_zb_xc_z - a_yb_yc_x - a_zb_zc_x \\
+      \dots
+    \end{bmatrix}
+    \label{lagrangeformtrip}
   \end{align}
   We will examine the \(\ihat\) component of \ref{lagrangeformtrip}, the other two components are similar. Then, notice that:
   \begin{align}
     \vec{b}(\vec{a}\cdot\vec{c}) - \vec{c}(\vec{a}\cdot\vec{b}) &= \vec{b}(a_xc_x+a_yc_y+a_zc_z) - \vec{c}(a_xb_x+ a_yb_y+ a_zb_z) \nonumber \\
-                                                                &= \begin{bmatrix}
-                                                                  b_x(a_xc_x+a_yc_y+a_zc_z) \\
-                                                                  b_y(a_xc_x+a_yc_y+a_zc_z) \\
-                                                                  b_z(a_xc_x+a_yc_y+a_zc_z)
-                                                                \end{bmatrix} - \begin{bmatrix}
-                                                                  c_x(a_xb_x+ a_yb_y+ a_zb_z) \\
-                                                                  c_y(a_xb_x+ a_yb_y+ a_zb_z) \\
-                                                                  c_z(a_xb_x+ a_yb_y+ a_zb_z)
-                                                                \end{bmatrix} \nonumber \\
-                                                                &= \begin{bmatrix}
-                                                                  a_yb_xc_y + a_zb_xc_z - a_yb_yc_x - a_zb_zc_x \\
-                                                                  \dots
-                                                                \end{bmatrix}
-                                                                \label{lagrangeformtripscalar}
+    &= \begin{bmatrix}
+      b_x(a_xc_x+a_yc_y+a_zc_z) \\
+      b_y(a_xc_x+a_yc_y+a_zc_z) \\
+      b_z(a_xc_x+a_yc_y+a_zc_z)
+    \end{bmatrix} - \begin{bmatrix}
+      c_x(a_xb_x+ a_yb_y+ a_zb_z) \\
+      c_y(a_xb_x+ a_yb_y+ a_zb_z) \\
+      c_z(a_xb_x+ a_yb_y+ a_zb_z)
+    \end{bmatrix} \nonumber \\
+    &= \begin{bmatrix}
+      a_yb_xc_y + a_zb_xc_z - a_yb_yc_x - a_zb_zc_x \\
+      \dots
+    \end{bmatrix}
+    \label{lagrangeformtripscalar}
   \end{align}
   As you can see, the \(\ihat\) components of \ref{lagrangeformtrip} and \ref{lagrangeformtripscalar} are identical. Hence, we have shown Lagrange's formula.
 \end{proof}
@@ -198,55 +222,55 @@ As for vector triple product, the process of computation is very similar. We fir
 \end{remark}
 \hrule
 \begin{problem}
-    Find the cross products of the following vectors:
-        \begin{enumerate}[label=\alph*)]
-          \item{\(\begin{bmatrix}
-            1 \\
-            2 \\
-            5
-          \end{bmatrix} \times \begin{bmatrix}
-            1 \\ 
-            2 \\ 
-            7
-          \end{bmatrix} \)}
-        \item{\(\begin{bmatrix}
-          0 \\
-          2 \\
-          4 
-        \end{bmatrix} \times \begin{bmatrix}
-          1 \\
-          3 \\ 
-          5
-        \end{bmatrix} \)}
-        \end{enumerate}
+  Find the cross products of the following vectors:
+  \begin{enumerate}[label=\alph*)]
+    \item{\(\begin{bmatrix}
+        1 \\
+        2 \\
+        5
+    \end{bmatrix} \times \begin{bmatrix}
+      1 \\ 
+      2 \\ 
+      7
+    \end{bmatrix} \)}
+  \item{\(\begin{bmatrix}
+      0 \\
+      2 \\
+      4 
+  \end{bmatrix} \times \begin{bmatrix}
+    1 \\
+    3 \\ 
+    5
+  \end{bmatrix} \)}
+  \end{enumerate}
 
 \end{problem}  
 \begin{problem}[1]
-    Prove or disprove: 
-      \begin{enumerate}[label=\alph*)]
-        \item{\(\vec{a}\times\vec{b}=\vec{b}\times\vec{a}\)}
-        \item{\(\vec{a}\times\vec{a}=0\)}
-      \end{enumerate}
-      
+  Prove or disprove: 
+  \begin{enumerate}[label=\alph*)]
+    \item{\(\vec{a}\times\vec{b}=\vec{b}\times\vec{a}\)}
+    \item{\(\vec{a}\times\vec{a}=0\)}
+  \end{enumerate}
+
 \end{problem}
 \begin{problem}[1]
-    Prove Lagrange's formula for the other two components not shown in the previous proof.
+  Prove Lagrange's formula for the other two components not shown in the previous proof.
 \end{problem}
 
-  %
-  % \begin{enumerate}
-  %   \item{\begin{enumerate}
-  %         \item{\(4\ihat-2\jhat\)}
-  %         \item{\(-2\ihat+4\jhat-2\khat\)}
-  %   \end{enumerate} }
-  % \item{\begin{enumerate}
-  %       \item{
-  %           \textit{Disprove}. Notice that while in question 1(a), the answer is \(4\ihat-2\jhat\), if you swap the two vectors, you instead get \(-4\ihat+2\jhat\), which is the anti-commutative property of cross products. 
-  %         }
-  %       \item{\textit{Prove}. This is a trivial result by using the formula for cross products.}
-  % \end{enumerate} }
-  % \item{This is also a trivial and tedious result that can be shown just by some evaluation of the cross products.}
-  % \end{enumerate}
-  \begin{remark}{}{}
+%
+% \begin{enumerate}
+%   \item{\begin{enumerate}
+%         \item{\(4\ihat-2\jhat\)}
+%         \item{\(-2\ihat+4\jhat-2\khat\)}
+%   \end{enumerate} }
+% \item{\begin{enumerate}
+%       \item{
+%           \textit{Disprove}. Notice that while in question 1(a), the answer is \(4\ihat-2\jhat\), if you swap the two vectors, you instead get \(-4\ihat+2\jhat\), which is the anti-commutative property of cross products. 
+%         }
+%       \item{\textit{Prove}. This is a trivial result by using the formula for cross products.}
+% \end{enumerate} }
+% \item{This is also a trivial and tedious result that can be shown just by some evaluation of the cross products.}
+% \end{enumerate}
+\begin{remark}{}{}
   While the linear algebra chapter in this book is ending, this is a very small subset of a standard linear algebra course. Many concepts, such as eigenvalues, are not covered due to their not so important nature. Readers are still highly encouraged to read up some of the other concepts.
 \end{remark}

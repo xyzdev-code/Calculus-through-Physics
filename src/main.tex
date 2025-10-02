@@ -11,7 +11,7 @@
 \usepackage{sidenotes}
 \usepackage[autostyle]{csquotes}
 \newcounter{entryc}[subsection]
-
+\renewcommand\vec[1]{\ifstrequal{#1}{0}{\ensuremath{\mathbf{0}}}{\ensuremath{\boldsymbol{#1}}}}
 \makeatletter
 \renewcommand{\p@entryc}{\thesubsection.} % "prefix" for cross-referencing
 \makeatother

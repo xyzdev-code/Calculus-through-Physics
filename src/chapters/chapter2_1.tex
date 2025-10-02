@@ -1,34 +1,34 @@
-  \chapter{Linear Algebra}
-  \section{Vector Basics}
+\chapter{Linear Algebra}
+\section{Vector Basics}
 Firstly, good job on finishing chapter 1, it is not an easy feat. Stepping into this chapter, you may feel overwhelmed by the name, \textit{Linear Algebra}. What is that? Please take note though, the knowledge in this chapter will not be used until Calculus III to IV in part IV of the book. If you are just willing to learn Calc I and II, you do not need the knowledge here. With that said, let's delve into Vectors. A concept that is very ubiquitous in this world is a coordinate, like the GPS coordinate in the maps app. A coordinate simply describes the position of a point in space. Generally, it is denoted \((x,y)\) in 2 dimensions and \((x,y,z)\) in 3 dimensions. Likewise, vectors are also behaves like coordinates and are written down in a \textit{similar} fashion. Think of a vector as a coordinate.
 \begin{definition}{Vector}{}
   A \textbf{vector} is a mathematical object with a magnitude, or length, and a direction. A vector, \(\vec{a}\) is a point \((x,y)\) in space drawn with an arrow. It is denoted as\sidenotemark:
   \begin{equation*}
     \vec{a} = \begin{bmatrix}
-                x \\
-                y
-              \end{bmatrix} 
+      x \\
+      y
+    \end{bmatrix} 
   \end{equation*}
 \end{definition}
- \sidenotetext{\footnotesize \textit{Likewise, a vector at \((x,y,z)\) is denoted \(
-    \begin{bsmallmatrix}
-      x \\
-      y \\
-      z
-    \end{bsmallmatrix}
+\sidenotetext{\footnotesize \textit{Likewise, a vector at \((x,y,z)\) is denoted \(
+\begin{bsmallmatrix}
+  x \\
+  y \\
+  z
+\end{bsmallmatrix}
 \)}}
 
 
 Of course, vectors by themselves are not very useful. Hence, we shall define the vector space. For the purposes of this text, you may think of vector spaces as the 2 and 3 dimensional euclidean spaces you are very familiar with. In a vector space, we can finally meaningfully manipulate them. Take a look at the vector \( \vec{a}=
-  \begin{bsmallmatrix}
-    1 \\
-    2
-  \end{bsmallmatrix}
-  \) and the vector \( \vec{b}=
-  \begin{bsmallmatrix}
-    -2 \\
-    1
-  \end{bsmallmatrix}
+\begin{bsmallmatrix}
+  1 \\
+  2
+\end{bsmallmatrix}
+\) and the vector \( \vec{b}=
+\begin{bsmallmatrix}
+  -2 \\
+  1
+\end{bsmallmatrix}
 \) in the two dimensional euclidean space:
 \begin{figure}[h]
   \centering
@@ -47,11 +47,11 @@ Of course, vectors by themselves are not very useful. Hence, we shall define the
 You may have noticed that the coordinate axes in \Cref{vecab} are the same as the ones you are familiar with. However, in linear algebra, instead of the usual \(xy\) axes to describe the components of a vector, you have \(\ihat\) and \(\jhat\) to describe the components of a vector. (So instead of saying the "x" component of a vector, you would say the "i hat" component of a vector.) \marginnote{\footnotesize \textit{Some authors use \(\hat{\textbf{x}}, \hat{\textbf{y}}, \hat{\textbf{z}}\) instead of the usual \(\ihat , \jhat , \khat\). We shall use the latter.}} This is a convention in linear algebra. \(\ihat\) translates to the \(x\) axis and \(\jhat\) translates to the \(y\) axis. Likewise, in the third dimension, \(\khat\) represents the \(z\) axis. Another thing to note are the \textit{basis vectors}:
 \begin{definition}{Basis vectors}{}
   The set of vectors in a vector space are called \textbf{basis} if every vector in the vector space can be written uniquely written as a finite \textit{linear combination} \sidenotemark of the basis vectors. An example would be these vectors \(\ihat=\begin{bsmallmatrix}
-   0 \\
-   1
+    0 \\
+    1
   \end{bsmallmatrix} \) and \(\jhat=\begin{bsmallmatrix}
-   1 \\
-   0
+    1 \\
+    0
   \end{bsmallmatrix} \) in the 2 dimensional euclidean space which can be thought of one unit of distance in the \(x\) and \(y\) direction respectively.
 \end{definition}
 \sidenotetext{\footnotesize \textit{A linear combination of \(x\) and \(y\) is \(ax+by\) where \(a, b\) are constants.}} 
@@ -60,34 +60,34 @@ With this in mind, another way of writing a vector \(\vec{a}=
   x \\
   y 
 \end{bsmallmatrix} \) is \(\vec{a}=x \ihat + y \jhat \).\marginnote{\footnotesize \textit{You can think of \(\ihat\) and \(\jhat\) as one unit of direction in the x and y axis respectively.}}Of course \(\ihat\) and \(\jhat\) are not the only basis vectors in 2d, if you have learned polar coordinates before, there is the equivalent \(\boldsymbol\hat{\boldsymbol r}\) and \(\boldsymbol\hat{\boldsymbol\theta}\), but this is a topic for a later chapter. Next, we shall look at the \textit{addition} of vectors. A vector \(\vec{a}=
-    \begin{bsmallmatrix}
-      x_a \\ 
-      y_a
-    \end{bsmallmatrix}
-  \) added to a vector \(
-    \vec{b}=
-    \begin{bsmallmatrix}
-      x_b \\
-      y_b
-    \end{bsmallmatrix}
-  \) is the vector \(
-    \begin{bsmallmatrix}
-      x_a + x_b \\
-      y_a + y_b
-    \end{bsmallmatrix}
-    \). As you can see, the addition of two vectors results in another vector. Here is a illustration to help clear up things: \marginnote{\footnotesize \textit{This can be extrapolated into any dimensions: \(\begin{bsmallmatrix}
-      a \\
-      b \\
-      c
-    \end{bsmallmatrix}+\begin{bsmallmatrix}
-      d \\
-      e \\
-      f
-    \end{bsmallmatrix} = \begin{bsmallmatrix}
-      a+d \\
-      b+e \\
-      c+f
-    \end{bsmallmatrix} \).}}
+\begin{bsmallmatrix}
+  x_a \\ 
+  y_a
+\end{bsmallmatrix}
+\) added to a vector \(
+\vec{b}=
+\begin{bsmallmatrix}
+  x_b \\
+  y_b
+\end{bsmallmatrix}
+\) is the vector \(
+\begin{bsmallmatrix}
+  x_a + x_b \\
+  y_a + y_b
+\end{bsmallmatrix}
+\). As you can see, the addition of two vectors results in another vector. Here is a illustration to help clear up things: \marginnote{\footnotesize \textit{This can be extrapolated into any dimensions: \(\begin{bsmallmatrix}
+  a \\
+  b \\
+  c
+\end{bsmallmatrix}+\begin{bsmallmatrix}
+  d \\
+  e \\
+  f
+\end{bsmallmatrix} = \begin{bsmallmatrix}
+  a+d \\
+  b+e \\
+  c+f
+\end{bsmallmatrix} \).}}
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}[scale=0.8]
@@ -125,10 +125,10 @@ You may have seen this in your physics class before. Similarly, the subtraction 
   b
 \end{bsmallmatrix}
 \) and \(\vec{y}=
-  \begin{bsmallmatrix}
-    c \\
-    d
-  \end{bsmallmatrix}
+\begin{bsmallmatrix}
+  c \\
+  d
+\end{bsmallmatrix}
 \) is \(\vec{x}-\vec{y}=
 \begin{bsmallmatrix}
   a - c \\
@@ -194,8 +194,8 @@ You may have seen this in your physics class before. Similarly, the subtraction 
 
 
 Given a vector \(\vec{a}\), \(-\vec{a}\) can be thought of the same vector with the same magnitude but pointing in the \textit{opposite} direction. To find it, simply flip the signs of all the components in \(\vec{a}\). If you add \(\vec{a}\) to \(-\vec{a}\), you get what is called the \textit{zero vector}, or the vector \(\begin{bsmallmatrix}
- 0 \\
- 0
+  0 \\
+  0
 \end{bsmallmatrix}\). This is a vector without direction has zero magnitude. We shall denote it \(\vec{0}\).
 Lastly, I want to briefly touch on the idea of \textit{magnitude} which is basically the length of a vector. The derivation of the following formula is simply the Pythagorean theorem.
 \begin{definition}{Magnitude of vector}{}
@@ -210,41 +210,41 @@ Lastly, I want to briefly touch on the idea of \textit{magnitude} which is basic
 
 Try to attempt the following exercise:
 \begin{marginfigure}
-        \centering
-        \begin{tikzpicture}[scale=0.3]
-          \draw[line width=2pt, blue, -stealth] (0,0) -- (3,4) node[anchor=west] {\(\vec{a}\)};
-          \draw[line width=2pt, blue, -stealth] (3,4) -- (1,5) node[anchor=east] {\(\vec{b}\)};
-        \end{tikzpicture}
-        \caption{Visualisation of "head to tail" addition of \(\vec{a}\) and \(\vec{b}\).}
+  \centering
+  \begin{tikzpicture}[scale=0.3]
+    \draw[line width=2pt, blue, -stealth] (0,0) -- (3,4) node[anchor=west] {\(\vec{a}\)};
+    \draw[line width=2pt, blue, -stealth] (3,4) -- (1,5) node[anchor=east] {\(\vec{b}\)};
+  \end{tikzpicture}
+  \caption{Visualisation of "head to tail" addition of \(\vec{a}\) and \(\vec{b}\).}
 \end{marginfigure}
 \begin{problem}
   Given that \(\vec{a}=\begin{bsmallmatrix}
-      3 \\
-      4
-      \end{bsmallmatrix} \) and \(\vec{b}=\begin{bsmallmatrix}
-      -2 \\
-      1
-      \end{bsmallmatrix} \) and \(\vec{c}=\begin{bsmallmatrix}
-       -3 \\
-       -2
+    3 \\
+    4
+  \end{bsmallmatrix} \) and \(\vec{b}=\begin{bsmallmatrix}
+    -2 \\
+    1
+  \end{bsmallmatrix} \) and \(\vec{c}=\begin{bsmallmatrix}
+    -3 \\
+    -2
   \end{bsmallmatrix} \), calculate: \begin{enumerate}[label=\alph*)]
-      \item{\(\vec{a}+\vec{b}\)}
-      \item{\(\vec{a} - \vec{c}\)}
-      \item{\(\vec{a} - \vec{b} - \vec{c}\)}
-      
-    \end{enumerate} 
-    
+    \item{\(\vec{a}+\vec{b}\)}
+    \item{\(\vec{a} - \vec{c}\)}
+    \item{\(\vec{a} - \vec{b} - \vec{c}\)}
+
+  \end{enumerate} 
+
 
 \end{problem}
 \begin{problem}
-    Are the following statements true or false: 
-    \begin{enumerate}[label=\alph*)]
-      \item{The subtraction of two vectors \textit{always} results in a vector.}
-      \item{When any vector is added to the zero vector, the result \textit{always} is not a zero vector.}
-    \end{enumerate}
+  Are the following statements true or false: 
+  \begin{enumerate}[label=\alph*)]
+    \item{The subtraction of two vectors \textit{always} results in a vector.}
+    \item{When any vector is added to the zero vector, the result \textit{always} is not a zero vector.}
+  \end{enumerate}
 \end{problem}
 \begin{problem}
-    Find the magnitude of \(\begin{bmatrix}
+  Find the magnitude of \(\begin{bmatrix}
     3 \\
     4
   \end{bmatrix}\)  and \(\begin{bmatrix}

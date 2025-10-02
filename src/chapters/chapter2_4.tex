@@ -1,5 +1,5 @@
 
-  \section{Determinants, inverses and Cramer's rule}
+\section{Determinants, inverses and Cramer's rule}
 At this juncture, you should be familiar with the concept that a matrix represents a linear transformation and it morphs the vector space. Also, if you imagine the basis vectors of any vector space as lengths of a parallelogram, then you might want to find the area of that parallelogram. For example, the identity matrix's basis vectors forms a square with area 1. Likewise, given a matrix \(x=\begin{bsmallmatrix}
   a & b \\
   c & d
@@ -7,21 +7,21 @@ At this juncture, you should be familiar with the concept that a matrix represen
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}[scale=0.6]
-  \draw[thin, gray!40] (-6,-6) grid (6,6);
-  \draw[<->] (-6,0) -- (6,0) node[right]{\(x\)};
-  \draw[<->] (0,-6) -- (0,6) node[above]{\(y\)}; 
-  \draw[line width=2pt, -stealth, red, name path=A] (0,0) -- (2,1) node[anchor= south west]{\(\begin{bsmallmatrix}
-    a \\
-    c
-  \end{bsmallmatrix} \)};
-  \draw[dotted, name path=B] (2,1) -- (3,5);
-  \draw[dotted, name path=C] (1,4) -- (3,5);
-  \node[] at (1.5,2.5) {\(A\)};
-  \draw[line width=2pt, -stealth, blue, name path=D] (0,0) -- (1,4) node[anchor= south]{\(\begin{bsmallmatrix}
-    b \\
-    d
-  \end{bsmallmatrix} \)};
-  \tikzfillbetween[of= A and C]{blue, opacity=0.4}
+    \draw[thin, gray!40] (-6,-6) grid (6,6);
+    \draw[<->] (-6,0) -- (6,0) node[right]{\(x\)};
+    \draw[<->] (0,-6) -- (0,6) node[above]{\(y\)}; 
+    \draw[line width=2pt, -stealth, red, name path=A] (0,0) -- (2,1) node[anchor= south west]{\(\begin{bsmallmatrix}
+      a \\
+      c
+    \end{bsmallmatrix} \)};
+    \draw[dotted, name path=B] (2,1) -- (3,5);
+    \draw[dotted, name path=C] (1,4) -- (3,5);
+    \node[] at (1.5,2.5) {\(A\)};
+    \draw[line width=2pt, -stealth, blue, name path=D] (0,0) -- (1,4) node[anchor= south]{\(\begin{bsmallmatrix}
+      b \\
+      d
+    \end{bsmallmatrix} \)};
+    \tikzfillbetween[of= A and C]{blue, opacity=0.4}
   \end{tikzpicture}
   \caption{Figure of area \(A\) formed by a pair of basis vectors.}
   \label{detarea}
@@ -37,18 +37,18 @@ To find the area of \(A\) in \Cref{detarea}, we may use the sine rule (let \(\ve
 \end{bsmallmatrix} \)):
 \begin{align}
   A &= (||\vec{u}||)(||\vec{v}||)\sin(\theta) \text{\quad where \(\theta\) is the angle between the vectors} \nonumber \\
-    &= (||\vec{u'}||)(||\vec{v}||)\cos(\theta') \text{\quad where \(\vec{u'}\) is \(\begin{bsmallmatrix}
-      a \\
-      -c
+  &= (||\vec{u'}||)(||\vec{v}||)\cos(\theta') \text{\quad where \(\vec{u'}\) is \(\begin{bsmallmatrix}
+    a \\
+    -c
   \end{bsmallmatrix} \), perpendicular to \(\vec{v}\) and \(\theta'\) is \(90\degree \)} \nonumber \\
-    &= \begin{bmatrix}
-      -c \\
-      a
-    \end{bmatrix} \begin{bmatrix}
-      b \\
-      d
-    \end{bmatrix} \text{\quad by \Cref{dotproduct}, definition of dot product} \nonumber \\
-    &= ad - bc
+  &= \begin{bmatrix}
+    -c \\
+    a
+  \end{bmatrix} \begin{bmatrix}
+    b \\
+    d
+  \end{bmatrix} \text{\quad by \Cref{dotproduct}, definition of dot product} \nonumber \\
+  &= ad - bc
 \end{align}
 
 
@@ -71,20 +71,20 @@ The resultant area is also known as the \textit{determinant} of a matrix.
   \end{bsmallmatrix} \) has a determinant of:
   \begin{align*}
     \det(B) &= \begin{vmatrix}
-    a & b & c \\
-    d & e & f \\
-    g & h & i
-  \end{vmatrix} \\
-            &= a\begin{vmatrix}
-              e & f \\
-              h & i
-            \end{vmatrix}  - b\begin{vmatrix}
-              d & f \\
-              g & i
-            \end{vmatrix}  + c\begin{vmatrix}
-              d & e \\
-              g & h
-            \end{vmatrix} 
+      a & b & c \\
+      d & e & f \\
+      g & h & i
+    \end{vmatrix} \\
+    &= a\begin{vmatrix}
+      e & f \\
+      h & i
+    \end{vmatrix}  - b\begin{vmatrix}
+      d & f \\
+      g & i
+    \end{vmatrix}  + c\begin{vmatrix}
+      d & e \\
+      g & h
+    \end{vmatrix} 
   \end{align*}
   and it represents the volume of the parallelepiped formed by the three basis vectors in \(B\).
 \end{definition}
@@ -102,13 +102,13 @@ The resultant area is also known as the \textit{determinant} of a matrix.
   \end{bsmallmatrix} \):
   \begin{align*}
     \det(A) &= 1\times 4- 2 \times 3 \\
-            &= -2
+    &= -2
   \end{align*}
   \begin{equation}
     \det(B) = 0
     \label{exdetzero}
   \end{equation}
-\sidenotemark
+  \sidenotemark
   \begin{align*}
     \det(C) &= 1 \begin{vmatrix}
       5 & 6 \\
@@ -120,14 +120,14 @@ The resultant area is also known as the \textit{determinant} of a matrix.
       4 & 5 \\
       7 & 8
     \end{vmatrix} \\
-            &= (5\times 9 - 8 \times 6) -2(4 \times 9 - 6 \times 7) + 3(4 \times 8 - 7 \times 5) \\
-            &= 0
+    &= (5\times 9 - 8 \times 6) -2(4 \times 9 - 6 \times 7) + 3(4 \times 8 - 7 \times 5) \\
+    &= 0
   \end{align*}
 \end{example}
-  \sidenotetext{\footnotesize \textit{\Cref{exdetzero} shows a more general property, given that \(X=\begin{bsmallmatrix}
-        a & b \\
-        a & b
-  \end{bsmallmatrix} \), \(\det(X)=0\). The proof is trivial and shall be left as a verification to the reader.}}
+\sidenotetext{\footnotesize \textit{\Cref{exdetzero} shows a more general property, given that \(X=\begin{bsmallmatrix}
+  a & b \\
+  a & b
+\end{bsmallmatrix} \), \(\det(X)=0\). The proof is trivial and shall be left as a verification to the reader.}}
 
 Next, we would move onto the \textit{inverse} of a matrix. Think of a number \(x\), \(x^{-1}\times x=1\), 1 is also called the multiplicative identity. Likewise, given a matrix \(Y\), \(YY^{-1}=\begin{bsmallmatrix}
   1 & 0 \\
@@ -151,7 +151,7 @@ Next, we would move onto the \textit{inverse} of a matrix. Think of a number \(x
   \end{align}
   \sidenotemark
 \end{definition}
-  \sidenotetext{\footnotesize \textit{When multiplying a matrix by a constant, you multiply each entry in matrix by the constant.}}
+\sidenotetext{\footnotesize \textit{When multiplying a matrix by a constant, you multiply each entry in matrix by the constant.}}
 \begin{example}
   Given \(A=\begin{bsmallmatrix}
     1 & 2 \\
@@ -165,10 +165,10 @@ Next, we would move onto the \textit{inverse} of a matrix. Think of a number \(x
       4 & -2 \\
       -3 & 1 
     \end{bmatrix} \\
-           &= \begin{bmatrix}
-             -2 & 1 \\
-             1.5 & -0.5
-           \end{bmatrix}
+    &= \begin{bmatrix}
+      -2 & 1 \\
+      1.5 & -0.5
+    \end{bmatrix}
   \end{align*}
   \(\det(B)=0\), hence \(B\) is not invertible.
 \end{example}
@@ -205,13 +205,13 @@ This is also called the "matrix form" of a simultaneous equation. It also import
     10 \\
     14
   \end{bmatrix} \begin{bmatrix}
-  \frac{1}{3} & \frac{1}{3} \\
-  \frac{2}{3} & -\frac{1}{3}
+    \frac{1}{3} & \frac{1}{3} \\
+    \frac{2}{3} & -\frac{1}{3}
   \end{bmatrix} \\
-          &= \begin{bmatrix}
-            8 \\
-            2
-          \end{bmatrix}
+  &= \begin{bmatrix}
+    8 \\
+    2
+  \end{bmatrix}
 \end{align*}
 
 
@@ -252,45 +252,45 @@ Where \(x_i\) is the \(i\)-th solution and \(A_i\) is the matrix formed by repla
   The solutions are:
   \begin{align*}
     x_1 &= \frac{\det(A_1)}{\det(A)} \\
-        &= \frac{\det(\begin{bmatrix}
-            12 & 1 & 1 \\
-            4 & -1 & 1 \\
-            -6 & -1 & -1
-        \end{bmatrix} )}{\det(\begin{bmatrix}
-            1 & 1 & 1 \\
-            1 & -1 & 1 \\
-            1 & -1 & -1
-        \end{bmatrix} )} \\
-        &= \frac{12}{4} \\
-        &= 3
+    &= \frac{\det(\begin{bmatrix}
+      12 & 1 & 1 \\
+      4 & -1 & 1 \\
+      -6 & -1 & -1
+    \end{bmatrix} )}{\det(\begin{bmatrix}
+      1 & 1 & 1 \\
+      1 & -1 & 1 \\
+      1 & -1 & -1
+    \end{bmatrix} )} \\
+    &= \frac{12}{4} \\
+    &= 3
   \end{align*}
   \begin{align*}
     x_2 &= \frac{\det(A_2)}{\det(A)} \\
-        &= \frac{\det(\begin{bmatrix}
-            1 & 12 & 1 \\
-            1 & 4 & 1 \\
-            1 & -6 & -1
-        \end{bmatrix} )}{\det(\begin{bmatrix}
-            1 & 1 & 1 \\
-            1 & -1 & 1 \\
-            1 & -1 & -1
-        \end{bmatrix} )} \\
-        &= \frac{16}{4} \\
-        &= 4
+    &= \frac{\det(\begin{bmatrix}
+      1 & 12 & 1 \\
+      1 & 4 & 1 \\
+      1 & -6 & -1
+    \end{bmatrix} )}{\det(\begin{bmatrix}
+      1 & 1 & 1 \\
+      1 & -1 & 1 \\
+      1 & -1 & -1
+    \end{bmatrix} )} \\
+    &= \frac{16}{4} \\
+    &= 4
   \end{align*}
   \begin{align*}
     x_3 &= \frac{\det(A_3)}{\det(A)} \\
-        &= \frac{\det(\begin{bmatrix}
-            1 & 1 & 12 \\
-            1 & -1 & 4 \\
-            1 & -1 & -6
-        \end{bmatrix} )}{\det(\begin{bmatrix}
-            1 & 1 & 1 \\
-            1 & -1 & 1 \\
-            1 & -1 & -1
-        \end{bmatrix} )} \\
-        &= \frac{20}{4} \\
-        &= 5
+    &= \frac{\det(\begin{bmatrix}
+      1 & 1 & 12 \\
+      1 & -1 & 4 \\
+      1 & -1 & -6
+    \end{bmatrix} )}{\det(\begin{bmatrix}
+      1 & 1 & 1 \\
+      1 & -1 & 1 \\
+      1 & -1 & -1
+    \end{bmatrix} )} \\
+    &= \frac{20}{4} \\
+    &= 5
   \end{align*}
 \end{example}
 
@@ -299,83 +299,83 @@ As you can tell, Cramer's rule is very powerful. In the real world, however, \te
 \hrule
 \begin{problem}
   Find the determinants and inverses, if any, for the following matrices: \begin{enumerate}[label=\alph*)]
-          \item{\(\begin{bmatrix}
-                1 & 9 \\
-                2 & 10
-          \end{bmatrix} \)}
-        \item{\(\begin{bmatrix}
-              3 & 2 \\
-              6 & 4
-        \end{bmatrix} \)}
-      \item{\(\begin{bmatrix}
-            3 & 4 \\
-            7 & 9
-      \end{bmatrix}\)}
-    \end{enumerate} 
+    \item{\(\begin{bmatrix}
+        1 & 9 \\
+        2 & 10
+    \end{bmatrix} \)}
+  \item{\(\begin{bmatrix}
+      3 & 2 \\
+      6 & 4
+  \end{bmatrix} \)}
+\item{\(\begin{bmatrix}
+    3 & 4 \\
+    7 & 9
+\end{bmatrix}\)}
+  \end{enumerate} 
 \end{problem}
 \begin{problem}[1]
   Find the determinant of the following matrix: \(
-    \begin{bmatrix}
-      1 & 1 & 1 \\
-      1 & 2 & 4 \\
-      2 & 3 & 6
-    \end{bmatrix}
+  \begin{bmatrix}
+    1 & 1 & 1 \\
+    1 & 2 & 4 \\
+    2 & 3 & 6
+  \end{bmatrix}
   \)
 \end{problem}
 \begin{problem}[1]
   Solve the following simultaneous equations using matrices: 
-      \begin{equation*}
-        \begin{array}{l}
-          x_1 + x_2 + x_3 = 3 \\
-          x_1 + 2x_2 + x_3 = 4 \\
-          x_1 + 2x_2 + 2x_3 = 6
-        \end{array}
-      \end{equation*}
+  \begin{equation*}
+    \begin{array}{l}
+      x_1 + x_2 + x_3 = 3 \\
+      x_1 + 2x_2 + x_3 = 4 \\
+      x_1 + 2x_2 + 2x_3 = 6
+    \end{array}
+  \end{equation*}
 \end{problem}
-  %
-  % \begin{enumerate}
-  %   \item{\begin{enumerate}
-  %         \item{\(-8\) and \(\begin{bsmallmatrix}
-  %               -\frac{10}{8} & \frac{9}{8} \\
-  %               \frac{1}{4} & -\frac{1}{8}
-  %         \end{bsmallmatrix} \)}
-  %       \item{0 and no inverse}
-  %       \item{\(-1\) and \(\begin{bsmallmatrix}
-  %             -9 & 4 \\
-  %             7 & -3
-  %       \end{bsmallmatrix} \)}
-  %   \end{enumerate} }
-  % \item{1}
-  % \item{Use Cramer's rule and \(x_1=0\), \(x_2=1\), \(x_3=2\). Example for \(x_1\): 
-  %   \begin{align*}
-  %     x_1 &= \frac{\det(A_1)}{\det(A)} \\
-  %         &= \frac{\begin{vmatrix}
-  %             3 & 1 & 1 \\
-  %             4 & 2 & 1 \\
-  %             6 & 2 & 2
-  %         \end{vmatrix} }{\begin{vmatrix}
-  %             1 & 1 & 1 \\
-  %             1 & 2 & 1 \\
-  %             1 & 2 & 2
-  %         \end{vmatrix} } \\
-  %         &= \frac{0}{1} \\
-  %         &= 0
-  %   \end{align*}
-  %
-  %   Example for \(x_2\): 
-  %   \begin{align*}
-  %     x_2 &= \frac{\det(A_2)}{\det(A)} \\
-  %         &= \frac{\begin{vmatrix}
-  %             1 & 3 & 1 \\
-  %             1 & 4 & 1 \\
-  %             1 & 6 & 2
-  %         \end{vmatrix} }{\begin{vmatrix}
-  %             1 & 1 & 1 \\
-  %             1 & 2 & 1 \\
-  %             1 & 2 & 2
-  %         \end{vmatrix} } \\
-  %         &= \frac{1}{1} \\
-  %         &= 1
-  %   \end{align*}
-  %   }
-  % \end{enumerate}
+%
+% \begin{enumerate}
+%   \item{\begin{enumerate}
+%         \item{\(-8\) and \(\begin{bsmallmatrix}
+%               -\frac{10}{8} & \frac{9}{8} \\
+%               \frac{1}{4} & -\frac{1}{8}
+%         \end{bsmallmatrix} \)}
+%       \item{0 and no inverse}
+%       \item{\(-1\) and \(\begin{bsmallmatrix}
+%             -9 & 4 \\
+%             7 & -3
+%       \end{bsmallmatrix} \)}
+%   \end{enumerate} }
+% \item{1}
+% \item{Use Cramer's rule and \(x_1=0\), \(x_2=1\), \(x_3=2\). Example for \(x_1\): 
+%   \begin{align*}
+%     x_1 &= \frac{\det(A_1)}{\det(A)} \\
+%         &= \frac{\begin{vmatrix}
+%             3 & 1 & 1 \\
+%             4 & 2 & 1 \\
+%             6 & 2 & 2
+%         \end{vmatrix} }{\begin{vmatrix}
+%             1 & 1 & 1 \\
+%             1 & 2 & 1 \\
+%             1 & 2 & 2
+%         \end{vmatrix} } \\
+%         &= \frac{0}{1} \\
+%         &= 0
+%   \end{align*}
+%
+%   Example for \(x_2\): 
+%   \begin{align*}
+%     x_2 &= \frac{\det(A_2)}{\det(A)} \\
+%         &= \frac{\begin{vmatrix}
+%             1 & 3 & 1 \\
+%             1 & 4 & 1 \\
+%             1 & 6 & 2
+%         \end{vmatrix} }{\begin{vmatrix}
+%             1 & 1 & 1 \\
+%             1 & 2 & 1 \\
+%             1 & 2 & 2
+%         \end{vmatrix} } \\
+%         &= \frac{1}{1} \\
+%         &= 1
+%   \end{align*}
+%   }
+% \end{enumerate}

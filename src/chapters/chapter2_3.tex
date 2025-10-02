@@ -1,5 +1,5 @@
 
-  \section{Matrices}
+\section{Matrices}
 In this chapter, we will introduce a new mathematical object that you have probably heard before but not sure what it is, \textit{linear transformation}. A great place to start is the \textit{basis vectors}. All vectors can be written as a unique linear combination of the basis vectors. But \(\ihat\) and \(\jhat\) are not the only basis vectors out there, what if I wanted to describe vectors using another set of basis vectors? Perhaps that would be more convenient for my special use case. Well, it is actually pretty easy to do so. For the sake of this argument, let us try to rotate all of the vectors in a normal 2d vector field anti-clockwise by \(90\degree\). \begin{marginfigure}
   \centering
   \begin{tikzpicture}[scale=0.3]
@@ -33,35 +33,35 @@ Notice how we could not describe \(\vec{b}\) as some constant multiplied to \(\v
 \begin{example}{Linear transformations}{}
   Here are some examples of linear transformations, the blue grid is the vector space after the transformation. Take note where the basis vectors are after the transformations.
   \begin{figure}[H]
-  \centering
-  \begin{tikzpicture}[scale=0.4]
-    \draw[gray!40, thin] (-4, -4) grid (4,4); 
-    \draw[line width=2pt, red, -stealth] (0,0) -- (1,0) node[anchor=west]{\(\ihat_{\textit{before}}\)};
-    \draw[line width=2pt, blue, -stealth] (0,0) -- (0,1) node[anchor=south]{\(\jhat_{\textit{before}}\)};
-    \draw[line width=2pt, red, -stealth] (0,0) -- (0.7071068,0.7071068) node[anchor=south west]{\(\ihat_{\textit{after}}\)};
-    \draw[line width=2pt, blue, -stealth] (0,0) -- (-0.7071068,0.7071068) node[anchor=north east]{\(\jhat_{\textit{after}}\)};
-    \draw[blue!40, thin, rotate= 45] (-4, -4) grid (4,4);
-  \end{tikzpicture}
-  \caption{A transformation in the form of an anti-clockwise \textit{rotation}.}
+    \centering
+    \begin{tikzpicture}[scale=0.4]
+      \draw[gray!40, thin] (-4, -4) grid (4,4); 
+      \draw[line width=2pt, red, -stealth] (0,0) -- (1,0) node[anchor=west]{\(\ihat_{\textit{before}}\)};
+      \draw[line width=2pt, blue, -stealth] (0,0) -- (0,1) node[anchor=south]{\(\jhat_{\textit{before}}\)};
+      \draw[line width=2pt, red, -stealth] (0,0) -- (0.7071068,0.7071068) node[anchor=south west]{\(\ihat_{\textit{after}}\)};
+      \draw[line width=2pt, blue, -stealth] (0,0) -- (-0.7071068,0.7071068) node[anchor=north east]{\(\jhat_{\textit{after}}\)};
+      \draw[blue!40, thin, rotate= 45] (-4, -4) grid (4,4);
+    \end{tikzpicture}
+    \caption{A transformation in the form of an anti-clockwise \textit{rotation}.}
   \end{figure}
   \begin{figure}[H]
 
-  \centering
+    \centering
 
-  \begin{tikzpicture}[scale=0.4]
-    \draw[gray!40, thin] (-4, -4) grid (4,4); 
-    \draw[blue!40, thin, xslant=tan 45] (-4, -4) grid (4,4);
-    \draw[line width=2pt, red, -stealth] (0,0) -- (1,0) node[anchor=west]{\(\ihat_{\textit{before}}\)};
-    \draw[line width=2pt, blue, -stealth] (0,0) -- (0,1) node[anchor=south]{\(\jhat_{\textit{before}}\)};
-    \draw[line width=2pt, red, -stealth] (0,0) -- (1,0) node[anchor=south west]{\(\ihat_{\textit{after}}\)};
-    \draw[line width=2pt, blue, -stealth] (0,0) -- (1,1) node[anchor=south west]{\(\jhat_{\textit{after}}\)};
-  \end{tikzpicture}
-  \caption{A transformation in the form of a \textit{shear}.}
-  \label{shearfig}
-  \sidenotemark
+    \begin{tikzpicture}[scale=0.4]
+      \draw[gray!40, thin] (-4, -4) grid (4,4); 
+      \draw[blue!40, thin, xslant=tan 45] (-4, -4) grid (4,4);
+      \draw[line width=2pt, red, -stealth] (0,0) -- (1,0) node[anchor=west]{\(\ihat_{\textit{before}}\)};
+      \draw[line width=2pt, blue, -stealth] (0,0) -- (0,1) node[anchor=south]{\(\jhat_{\textit{before}}\)};
+      \draw[line width=2pt, red, -stealth] (0,0) -- (1,0) node[anchor=south west]{\(\ihat_{\textit{after}}\)};
+      \draw[line width=2pt, blue, -stealth] (0,0) -- (1,1) node[anchor=south west]{\(\jhat_{\textit{after}}\)};
+    \end{tikzpicture}
+    \caption{A transformation in the form of a \textit{shear}.}
+    \label{shearfig}
+    \sidenotemark
   \end{figure}
 \end{example}
-  \sidenotetext{\footnotesize \textit{In \Cref{shearfig}, the \(\ihat\) vector remains at the same location.}}
+\sidenotetext{\footnotesize \textit{In \Cref{shearfig}, the \(\ihat\) vector remains at the same location.}}
 
 To describe these transformations, we actually only need to describe where the basis vectors land after the transformation. No other information required. We present the location of the new basis vectors in the form of a \textit{matrix}:
 \begin{definition}{Matrices}{}{}
@@ -98,8 +98,8 @@ It should go without saying that any vector in the original vector space will ge
       1 \\
       2
     \end{bmatrix} \begin{bmatrix}
-    1 & 1 \\
-    0 & 1
+      1 & 1 \\
+      0 & 1
     \end{bmatrix} &= 1 \begin{bmatrix}
       1 \\
       0
@@ -140,12 +140,12 @@ With this knowledge, let us proceed to one of the most hated parts of linear alg
   \begin{figure}[H]
     \centering
     \begin{tikzpicture}[scale=0.5]
-    \draw[line width=2pt, -stealth, blue] (0,0) -- (0,1) node[anchor=south west]{\(\jhat_{\text{before}}\)};
-    \draw[line width=2pt, -stealth, blue] (0,0) -- (1,1) node[anchor=north west]{\(\jhat_{\text{intermediate}}\)};
-    \draw[line width=2pt, -stealth, blue] (0,0) -- (-1,1) node[anchor=south west]{\(\jhat_{\text{after}}\)};
-    \draw[gray!60, thin] (-4, -4) grid (4,4); 
-    \draw[blue!40, thin, xslant=tan 45] (-4, -4) grid (4,4);
-    \draw[red!40, thin, rotate=90, xslant=tan 45] (-4, -4) grid (4,4);
+      \draw[line width=2pt, -stealth, blue] (0,0) -- (0,1) node[anchor=south west]{\(\jhat_{\text{before}}\)};
+      \draw[line width=2pt, -stealth, blue] (0,0) -- (1,1) node[anchor=north west]{\(\jhat_{\text{intermediate}}\)};
+      \draw[line width=2pt, -stealth, blue] (0,0) -- (-1,1) node[anchor=south west]{\(\jhat_{\text{after}}\)};
+      \draw[gray!60, thin] (-4, -4) grid (4,4); 
+      \draw[blue!40, thin, xslant=tan 45] (-4, -4) grid (4,4);
+      \draw[red!40, thin, rotate=90, xslant=tan 45] (-4, -4) grid (4,4);
     \end{tikzpicture}
     \caption{Figure of applying two linear transformations.}
   \end{figure}
@@ -200,15 +200,15 @@ This is the reason many students find linear algebra tedious. Most courses make 
       5 & 11 \\
       11 & 25
     \end{bmatrix} \\
-      yx&=\begin{bmatrix}
+    yx&=\begin{bmatrix}
       10 & 14 \\
       14 & 20
     \end{bmatrix} \\
-        x(yz)&=\begin{bmatrix}
+    x(yz)&=\begin{bmatrix}
       102 & 118 \\
       230 & 266
     \end{bmatrix} \\
-          (xy)z&=\begin{bmatrix}
+    (xy)z&=\begin{bmatrix}
       102 & 118 \\
       230 & 266
     \end{bmatrix}
@@ -217,23 +217,23 @@ This is the reason many students find linear algebra tedious. Most courses make 
 \end{example}
 \hrule
 \begin{problem}
-    If \(\vec{x}=\begin{bsmallmatrix}
-      1 \\
-      2
-    \end{bsmallmatrix} \), \(a=\begin{bsmallmatrix}
-      2 & 3 \\
-      4 & 5
-    \end{bsmallmatrix} \) and \(b=\begin{bsmallmatrix}
-      6 & 7 \\
-      8 & 9
-    \end{bsmallmatrix} \), compute: \begin{enumerate}[label=\alph*)]
+  If \(\vec{x}=\begin{bsmallmatrix}
+    1 \\
+    2
+  \end{bsmallmatrix} \), \(a=\begin{bsmallmatrix}
+    2 & 3 \\
+    4 & 5
+  \end{bsmallmatrix} \) and \(b=\begin{bsmallmatrix}
+    6 & 7 \\
+    8 & 9
+  \end{bsmallmatrix} \), compute: \begin{enumerate}[label=\alph*)]
     \item{\(a\vec{x}\)}
     \item{\(ab\)}
     \item{\(ab\vec{x}\)}
-    \end{enumerate} 
+  \end{enumerate} 
 \end{problem}
 \begin{problem}[1]
-Prove that matrix multiplication is \textit{associative} for all \(2\times 2\) matrices.
+  Prove that matrix multiplication is \textit{associative} for all \(2\times 2\) matrices.
 \end{problem}
 \begin{problem}[1]
   The \textit{trace} of an \(n\times n\) matrix \(A\) is defined as 
