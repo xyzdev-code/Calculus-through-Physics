@@ -16,7 +16,7 @@ The cross product is a vector, whose magnitude is the area of a parallelogram fo
   \begin{equation*}
     \vec{a}\times\vec{b} = (||\vec{a}||)(||\vec{b}||)\sin(\theta)\vec{n}
   \end{equation*}
-  where \(\theta\) is the angle between \(\vec{a}\) and \(\vec{b}\) and \(\vec{n}\) is the unit vector perpendicular to both of the operands such that all three vectors obey the "right hand rule"\sidenotemark. The common way to compute the cross product is using the following formula:
+  where \(\theta\) is the angle between \(\vec{a}\) and \(\vec{b}\) and \(\vec{n}\) is the unit vector perpendicular to both of the operands such that all three vectors obey the "right-hand rule"\sidenotemark. The common way to compute the cross product is using the following formula:
   \begin{equation}
     \vec{a}\times\vec{b} = \begin{vmatrix}
       \ihat & \jhat & \khat \\
@@ -61,10 +61,27 @@ The cross product is very ubiquitous in physics and vector calculus alike.
 \end{example}
 
 
-An important fact to note is that the operation is not commutative. In fact, the operation is called \textit{anti-commutative}. This means that \(\vec{a}\times\vec{b}=-\vec{b}\times\vec{a}\). In addition, if the angle between the operands is any integer multiple of \(\pi\), then the result is \(\vec{0}\). This should be trivially seen from the formula for the cross product. The derivation for the cross product is also easy, given two vectors \(\vec{a}\) and \(\vec{b}\) and a angle \(\theta\) between them, simply use the sine rule and the result should be obvious. The cross product has many real world applications.
+An important fact to note is that the operation is not commutative. In fact, the operation is called \textit{anti-commutative}. This means that \(\vec{a}\times\vec{b}=-\vec{b}\times\vec{a}\). In addition, if the angle between the operands is any integer multiple of \(\pi\), then the result is \(\vec{0}\). This should be trivially seen from the formula for the cross product. The derivation for the cross product is also easy, given two vectors \(\vec{a}\) and \(\vec{b}\) and an angle \(\theta\) between them, simply use the sine rule and the result should be obvious. The cross product has many real world applications.
 \section*{Application: Torque}
-\begin{example}{Torque}{}
-  Torque is a force that is common in our daily lives, present in the turning of a doorknob or the turning of a wrench. The formula for torque is \(\vec{\tau} = \vec{r}\times\vec{F}\), where \(\vec{\tau}\) is the torque, \(\vec{r}\) is the distance from the pivot point to the point where the force is applied and \(\vec{F}\) is the force applied. The direction of the torque can be determined by the right hand rule. Torque is also known as the moment of force, and we actually derive the infamous moment arm formula for moment of \(\textit{moment}=(\textit{moment arm})(\textit{force})\). We shall restrict ourselves to only two dimensions and use a Cartesian coordinate system. Set the origin such that the pivot point is at the origin. Then, we can represent \(\vec{r}\) as the distance from the origin to where the force is applied. Let \(\vec{F}\) be the force vector. Since there is no more z component, all of the z components of the vectors are 0. We can write down the cross product of \(\vec{r}\) and \(\vec{F}\):
+\begin{example}{Moment arm formula}{}
+  Torque is a force that is common in our daily lives, present in the turning of a doorknob or the turning of a wrench. The formula for torque is \(\vec{\tau} = \vec{r}\times\vec{F}\), where \(\vec{\tau}\) is the torque, \(\vec{r}\) is the distance from the pivot point to the point where the force is applied and \(\vec{F}\) is the force applied. The direction of the torque can be determined by the right-hand rule. Torque is also known as the moment of force, and we actually derive the infamous moment arm formula for moment of \(\textit{moment}=(\textit{moment arm})(\textit{force})\). We shall restrict ourselves to only two dimensions and use a Cartesian coordinate system. Set the origin such that the pivot point is at the origin. Then, we can represent \(\vec{r}\) as the distance from the origin to where the force is applied. Let \(\vec{F}\) be the force vector. Since there is no more z component, all of the z components of the vectors are 0. We can write down the cross product of \(\vec{r}\) and \(\vec{F}\) (we resolve each into its x and y components):
+  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+      \draw[thick, -stealth] (-3,0) -- (3,0) node[anchor=west]{\(x\)};
+      \draw[thick, -stealth] (0,-3) -- (0,3) node[anchor=south]{\(y\)};
+      \draw[line width=2pt, -stealth, red] (0,0) -- (2,1) node[pos=1.1]{\(\vec{r}\)};
+      \draw[line width=2pt, -stealth, blue] (0,0) -- (-1,2) node[pos=1.1]{\(\vec{F}\)};
+      \draw[dashed] (2,1) -- (2,0);
+      \draw[dashed] (-1,2) -- (0,2);
+      \node at (1,-0.3){\(r_x\)};
+      \node at (2.3,0.5){\(r_y\)};
+      \node at (-0.5,2.3){\(F_x\)};
+      \node at (-0.2,1.3){\(F_y\)};
+    \end{tikzpicture}
+    \caption{Figure of torque in two dimensions.}
+    \label{figtorque}
+  \end{figure}
   \begin{align*}
     \vec{\tau} &= \vec{r}\times\vec{F} \\
     &= \begin{vmatrix}
@@ -83,12 +100,12 @@ An important fact to note is that the operation is not commutative. In fact, the
     \textit{moment} &= (\textit{moment arm})(\textit{force}) \\
                     &= \sqrt{r_x^2+r_y^2}\sqrt{F_x^2+F_y^2}
   \end{align*}
-  We are able to write this as I have assumed that the force and distance are perpendicular to each other (See Problem ).Then, because the force and radius are perpendicular, notice that \(\vec{r}\cdot \vec{F}=r_xF_x+r_yF_y=0\). We can utilise this fact by writing down:
+  We are able to write this as I have assumed that the force and distance are perpendicular to each other (See Problem \ref{torqueprob}). Then, because the force and radius are perpendicular, notice that \(\vec{r}\cdot \vec{F}=r_xF_x+r_yF_y=0\). We can utilize this fact by writing down:
   \begin{align}
     (r_xF_y-r_yF_x)^2 + (r_xF_x+r_yF_y)^2 &= (r_x^2+r_y^2)(F_x^2+F_y^2)
     \label{torque}
   \end{align}
-  Notice that the left hand side of \Cref{torque} is simply \(||\vec{\tau}||^2\) and the right hand side is simply \((\textit{moment arm})^2(\textit{force})^2\). Hence, we have shown that \(||\vec{\tau}|| = (\textit{moment arm})(\textit{force})\) which is the moment arm formula.
+  Notice that the left hand side of \Cref{torque} is simply \(||\vec{\tau}||^2\) and the right hand side is simply \((\textit{moment arm})^2(\textit{force})^2\). Hence, we have shown that \(||\vec{\tau}|| = (\textit{moment arm})(\textit{force})\) which is the moment arm formula. An immediate difference between torque and moment is that moment is a scalar while torque is a vector. Another fact about torque that it has a \(\khat\) component, which means that it is perpendicular to the plane formed by \(\vec{r}\) and \(\vec{F}\). 
 \end{example}
 
 
@@ -116,7 +133,7 @@ Next, we will move on to triple products which happens to also be a three dimens
 
 \Cref{figtripvec} is the example of triple vector multiplication. You would represent it as \(\vec{a} \cdot (\vec{b} \times \vec{c})\). The result here is simply the volume of the parallelepiped formed in \Cref{figtripvec}.
 \begin{definition}{Triple vector product}{}
-  The \textbf{triple vector product} is a product of three 3 dimensional vectors. The most common of which, is the scalar triple product which is \Cref{figtripvec}. The formula for which is \(\vec{a}\cdot(\vec{b}\times\vec{c})\), which yields the volume of the parallelepiped with the sides being the three vectors. Another type of triple vector multiplication is vector triple product. It is simply \(\vec{a}\times(\vec{b}\times\vec{c})\). We can use \textbf{Lagrange's formula} to compute it easily: \(\vec{a}\times(\vec{b}\times\vec{c}) = \vec{b}(\vec{a}\cdot\vec{c}) - \vec{c}(\vec{a}\cdot\vec{b})\).
+  The \textbf{triple vector product} is a product of three 3-dimensional vectors. The most common of which, is the scalar triple product which is \Cref{figtripvec}. The formula for which is \(\vec{a}\cdot(\vec{b}\times\vec{c})\), which yields the volume of the parallelepiped with the sides being the three vectors. Another type of triple vector multiplication is vector triple product. It is simply \(\vec{a}\times(\vec{b}\times\vec{c})\). We can use \textbf{Lagrange's formula} to compute it easily: \(\vec{a}\times(\vec{b}\times\vec{c}) = \vec{b}(\vec{a}\cdot\vec{c}) - \vec{c}(\vec{a}\cdot\vec{b})\).
 \end{definition}
 \begin{example}{Volume of parallelepiped}{}
   We shall derive the formula for the volume of a parallelepiped given its height, breadth and length. We shall denote them \(h\), \(b\) and \(l\) respectively. Notice that we define the sides of the parallelepiped like this:
@@ -160,7 +177,7 @@ Next, we will move on to triple products which happens to also be a three dimens
 \end{example}
 
 
-As for vector triple product, the process of computation is very similar. We first evaluate the cross product of the two vectors in parenthesis, then take the cross product of the first and resultant vector from the previous computation. We shall give a simple proof for Lagrange's formula.
+As for vector triple product, the process of computation is very similar. We first evaluate the cross product of the two vectors in parentheses, then take the cross product of the first and resultant vector from the previous computation. We shall give a simple proof for Lagrange's formula.
 \begin{theorem}{Lagrange's formula}{}
   Given \(\vec{a}, \vec{b}, \vec{c}\), show that \(\vec{a}\times(\vec{b}\times\vec{c}) = \vec{b}(\vec{a}\cdot\vec{c})-\vec{c}(\vec{a}\cdot\vec{b})\).
 \end{theorem}
@@ -257,6 +274,16 @@ As for vector triple product, the process of computation is very similar. We fir
   Prove Lagrange's formula for the other two components not shown in the previous proof.
 \end{problem}
 
+\subsection{Further problems}
+\hrule
+\begin{problem}[1]
+  In this problem, you will derive the formula for the moment arm when the force and distance are not perpendicular. Refer to \Cref{figtorque} for when the force is perpendicular to the moment arm. Let the angle between \(\vec{r}\) and \(\vec{F}\) be \(\theta\).
+  \begin{enumerate}[label=\alph*)]
+    \item{Find the expression for the force that is perpendicular to \(\vec{r}\) in terms of \(F\) and \(\theta\).}
+    \item{Thus, find the expression for the moment arm when the force and distance are not perpendicular.}
+  \end{enumerate}
+  \label{torqueprob}
+\end{problem}
 %
 % \begin{enumerate}
 %   \item{\begin{enumerate}

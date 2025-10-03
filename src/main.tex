@@ -5,13 +5,13 @@
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 \input{settings}
-\usepackage{pgfplots, caption, fancyhdr, cleveref, lipsum, gensymb, indentfirst, marginnote, enumitem, graphicx, esdiff, pdfpages, amsmath}
+\usepackage{pgfplots, caption, fancyhdr, cleveref, lipsum, gensymb, indentfirst, marginnote, enumitem, graphicx, esdiff, pdfpages, amsmath, xltabular}
 \usepackage{newtx}
 \usepackage{perpage}
 \usepackage{sidenotes}
 \usepackage[autostyle]{csquotes}
 \newcounter{entryc}[subsection]
-\renewcommand\vec[1]{\ifstrequal{#1}{0}{\ensuremath{\mathbf{0}}}{\ensuremath{\boldsymbol{#1}}}}
+\renewcommand\vec[1]{\ifstrequal{#1}{0}{\ensuremath{\mathbf{0}}}{\ensuremath{\boldsymbol{\mathbf{#1}}}}}
 \makeatletter
 \renewcommand{\p@entryc}{\thesubsection.} % "prefix" for cross-referencing
 \makeatother
@@ -87,7 +87,7 @@
 \renewcommand{\marginnote}{\sidenote}
 \renewcommand{\thesidenote}{\textbf{\arabic{sidenote}}}
 \begin{document}
-  \pagenumbering{gobble}
+  \pagenumbering{roman}
   \includepdf[pages=1, fitpaper=true]{cover.pdf}
   \vspace*{\fill}
     Calculus through Physics  © 2025 by Xiao Yaozi is licensed under CC BY-NC-ND 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/4.0/
@@ -138,7 +138,28 @@
   \end{enumerate}
 
 
-  Furthermore, to prevent confusion on sidenotes\sidenote{\footnotesize \textit{This is a sidenote.}} and indices, sidenote markers are \textbf{bolded} while the latter is not.
+  Furthermore, to prevent confusion on sidenotes\sidenote{\footnotesize \textit{This is a sidenote. It is italicized to prevent confusion with the main text.}} and indices, sidenote markers are \textbf{bolded} while the latter is not. The notation for the mathematics is mostly standard, but a few notations are defined in the text. If you are confused about any notation, please refer to the table on the next page.
+  \begin{table}[h]
+    \begin{tabularx}{\textwidth}{|X|X|X|X|}
+    \hline
+    Description & Meaning & Example & Notes \\
+    \hline\hline
+      Letters & Scalars, constants, matrices & \(a,b,c,X,Y,Z\) & Except for \(e,\pi,c,g \). Functions may also be written as single letters, however the context would be clear. \(I\) is the identity matrix. \\
+    \hline
+    Bolded, upright letters & Vectors & \(\vec{v}, \ihat, \jhat, \khat\) & \(\vec{0}\) is the zero vector. \\
+    \hline
+    Square brackets & Matrices & \(\begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix}\) & Nil \\
+    \hline
+    Vertical bars & Determinant & \(\begin{vmatrix}1 & 2 \\ 3 & 4\end{vmatrix} = -2\) & Nil \\
+    \hline
+    Functions with dots over them & Derivatives with respect to some variable & \(\dot{x}, \ddot{x}\) & Nil \\
+    \hline
+  \end{tabularx}
+  \caption{Table of notation.}
+  \end{table}
+
+
+  Finally, if you have any questions or errata, please contact me and submit an issue on github.
   \flushbottom
   \include{chapters/chapter1_1}
   \include{chapters/chapter1_2}

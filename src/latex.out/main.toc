@@ -1,11 +1,11 @@
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{Contents}{}{section*.1}%
+\contentsline {chapter}{Contents}{iii}{section*.1}%
 \contentsline {chapter}{Preface I: Calculus, the language of the universe}{1}{section*.1}%
 \contentsline {chapter}{Preface II: How to read this book}{3}{chapter*.4}%
 \contentsline {part}{\partnumberline {I}Precalculus}{5}{part.1}%
 \contentsline {chapter}{\chapternumberline {1}Functions}{7}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Function basics}{7}{section.1.1}%
-\contentsline {subsection}{Application: Simple pendulum}{9}{section*.7}%
+\contentsline {subsection}{Application: Simple pendulum}{9}{section*.8}%
 \contentsline {section}{\numberline {1.2}Function composition and inverses}{12}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Injection, surjection and bijection}{16}{section.1.3}%
 \contentsline {section}{\numberline {1.4}An aside: A more rigorous definition of a function}{21}{section.1.4}%
@@ -15,8 +15,9 @@
 \contentsline {section}{\numberline {2.3}Matrices}{31}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Determinants, inverses and Cramer's rule}{35}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Cross products and triple products}{40}{section.2.5}%
-\contentsline {section}{\numberline {2.6}An aside: Bra-ket and Hilbert space}{45}{section.2.6}%
-\contentsline {section}{\numberline {2.7}An aside: Eigenfunctions and eigenvalues}{45}{section.2.7}%
+\contentsline {subsection}{Further problems}{45}{section*.29}%
+\contentsline {section}{\numberline {2.6}An aside: Bra-ket and Hilbert space}{46}{section.2.6}%
+\contentsline {section}{\numberline {2.7}An aside: Eigenfunctions and eigenvalues}{46}{section.2.7}%
 \contentsline {part}{\partnumberline {II}Calculus I}{47}{part.2}%
 \contentsline {chapter}{\chapternumberline {3}Derivatives}{49}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Differentiation basics}{49}{section.3.1}%
