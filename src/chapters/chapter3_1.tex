@@ -2,13 +2,13 @@
 \chapter{Derivatives}
 \section{Differentiation basics}
 
-Onto the calculus portion that is very much anticipated. No more the quick skimping over precalculus topics. We shall enter this discussion with a very simple question that will yield many interesting results. Take a look at the graph below:
+Onto the calculus portion that is very much anticipated. No more the quick skimping over precalculus topics. We shall enter this discussion with a very simple question that will yield many interesting results. Take a look at the graph below which describes the displacement of particle \(x\) over time \(t\) \sidenote{\footnotesize \textit{x starts at 0, because if I were to plot the graph with negative values of x, it does not make sense physically. Unfortunately, this makes the cubic nature of the graph less obvious.}}:
 
 
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}
-    \begin{axis}[xlabel=\(x\), ylabel=\(y\), axis lines=left, domain=-2.5:2.5]
+    \begin{axis}[xlabel=\(t\), ylabel=\(x\), axis lines=left, domain=0:4]
       \addplot[mark=none, color=blue]{x^3 -2*x +1};
     \end{axis}
   \end{tikzpicture}
@@ -17,14 +17,23 @@ Onto the calculus portion that is very much anticipated. No more the quick skimp
 \end{figure}
 
 
-From \Cref{cubgraph}, we see that this is a cubic graph. It should not to be hard to see that the graph is always changing value. Also, it should not be difficult to see that the rate of change of the graph is not constant. We can use the gradient formula to verify this:
+From \Cref{cubgraph}, we see that this is a cubic graph. It should not to be hard to see that the graph is always changing value. This corresponds to the fact that the velocity of the particle is not constant. Also, it should not be difficult to see that the rate of change of the graph is not constant. This, meanwhile, shows that the acceleration of the particle is not constant. We can use the gradient formula to verify this:
 \begin{definition}
   The gradient between two points \((x,f(x))\) and \((x+a, f(x+a))\) is:
   \begin{equation}
     \textit{Gradient} = \frac{\Delta y}{\Delta x} = \frac{f(x+a)-f(x)}{a}
-  \end{equation}
   \label{gradient}
+  \end{equation}
 \end{definition}
+ 
+
+In case you have forgotten, the rate of change of displacement with respect to time is velocity, and the rate of change of velocity with respect to time is acceleration. Hence, we can use the gradient formula to find the average velocity of the particle over a certain time interval. For example, if we want to find the average velocity between \(t=1\) and \(t=2\), we can use \Cref{gradient}:
+\begin{align*}
+  \textit{Average velocity} &= \frac{f(2)-f(1)}{2-1} \\
+  &= \frac{(2^3-2\cdot2+1)-(1^3-2\cdot1+1)}{1} \\
+  &= \frac{5}{1} \\
+  &= 5
+\end{align*}
 
 
 Using \Cref{gradient}, we can pick some points on the graph. You would notice that if you plug in different points then the gradient is different. The main, central question is: if the rate of change is not constant, then what is the rate of change at a single point along the function? This is where the gradient formula fails. We want something that gives us the gradient of the graph at every single point along the graph. The forefathers of calculus were all brilliant and they noticed a special fact that applies to many functions. Let us zoom in to the graph where \(x=2\), we want to zoom in as closely as we can.
