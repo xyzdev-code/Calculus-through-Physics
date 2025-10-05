@@ -110,8 +110,61 @@ In other words, we have also found the instantaneous rate of change of \(f(x)=x^
     &= \lim_{h\to0} 3t^2 + 3th + h^2 - 2 \\
     &= 3t^2 - 2
   \end{align*}
-  Therefore, the instantaneous velocity of the particle at any time \(t\) is \(3t^2-2\). For example, at \(t=1\), the instantaneous velocity is simply \(1\), and at \(t=2\), the instantaneous velocity is \(10\). Remember how we found the average velocity between \(t=1\) and \(t=2\) to be 5? Notice how the instantaneous velocity at \(t=1\) is less than 5, and at \(t=2\) is greater than 5. This makes sense because the graph is constantly increasing in this interval, hence the average velocity must be between the two instantaneous velocities.
+  Therefore, the instantaneous velocity of the particle at any time \(t\) is \(3t^2-2\). For example, at \(t=1\), the instantaneous velocity is simply \(1\), and at \(t=2\), the instantaneous velocity is \(10\). Remember how we found the average velocity between \(t=1\) and \(t=2\) to be 5? Notice how the instantaneous velocity at \(t=1\) is less than 5, and at \(t=2\) is greater than 5. By looking at the graph, we can see that this makes sense. The value at \(f(1)\) is smaller than the value of \(f(2)\), hence the average velocity is greater than the instantaneous velocity at \(t=1\). Similarly, the instantaneous velocity at \(t=2\) is greater than the average velocity.
 \end{example}
+
+
+Then, we shall touch on something that is very similar to the derivative, the tangent line. The tangent line is a straight line that just touches the curve at one point. The gradient of the tangent line is equal to the gradient of the curve at that point. This means that if we know the derivative of a function at some point, we can find the equation of the tangent line at that point. Remember, the derivative is the instantaneous rate of change of the function. You will find the equation of the tangent line to be very useful in many instances. The exact derivation will be left to Problem \ref{tangentlineprob}, but given a function \(f(x)\), the equation of the tangent line at \(x=a\) is:
+\begin{equation}
+  y = f'(a)(x-a) + f(a)
+\end{equation}
+
+
+\subsection{Newton's method}
+\begin{example}{Newton's method}{}
+  Newton's method is a method to approximate the roots of a function. It is based on the idea that if we have a guess \(x_0\) that is close to the root, then we can use the tangent line at \(x_0\) to find a better approximation \(x_1\). The equation of the tangent line at \(x_0\) is:
+  \begin{equation}
+    y = f'(x_0)(x-x_0) + f(x_0)
+  \end{equation}
+  To find the root of the tangent line, we set \(y=0\):
+  \begin{align*}
+    0 &= f'(x_0)(x-x_0) + f(x_0) \\
+    -f(x_0) &= f'(x_0)(x-x_0) \\
+    x-x_0 &= -\frac{f(x_0)}{f'(x_0)} \\
+    x &= x_0 - \frac{f(x_0)}{f'(x_0)}
+  \end{align*}
+  Therefore, we can use the formula:
+  \begin{equation}
+    x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
+  \end{equation}
+  We shall use the above to find a better approximation of the root. We can repeat this process until we reach a satisfactory level of accuracy. Take the function \(f(x)=x^2-x-1\) as an example. We want to find the root of this function. We can start with an initial guess of \(x_0=1\). The derivative of the function is \(f'(x)=2x-1\). We can use Newton's method to find a better approximation:
+  \begin{align*}
+    x_1 &= x_0 - \frac{f(x_0)}{f'(x_0)} \\
+    &= 1 - \frac{1^2-1-1}{2\cdot1-1} \\
+    &= 2
+  \end{align*}
+  Repeating the process:
+  \begin{align*}
+    x_2 &= x_1 - \frac{f(x_1)}{f'(x_1)} \\
+    &= 2 - \frac{2^2-2-1}{2\cdot2-1} \\
+    &= \frac{5}{3} \approx 1.6667
+  \end{align*}
+  Continuing:
+  \begin{align*}
+    x_3 &= x_2 - \frac{f(x_2)}{f'(x_2)} \\
+    &= \frac{5}{3} - \frac{\left(\frac{5}{3}\right)^2 - \frac{5}{3} - 1}{2\cdot\frac{5}{3}-1} \\
+    &= \frac{13}{8} = 1.625
+  \end{align*}
+  And again(finally):
+  \begin{align*}
+    x_4 &= x_3 - \frac{f(x_3)}{f'(x_3)} \\
+    &= \frac{13}{8} - \frac{\left(\frac{13}{8}\right)^2 - \frac{13}{8} - 1}{2\cdot\frac{13}{8}-1} \\
+    &= \frac{21}{13} \approx 1.6154
+  \end{align*}
+  If you were wondering what is the exact solution to the polynomial, it is in fact the golden ratio \(\phi\), which is about 1.618, very close to our third iteration (about \(99.8\si{\percent}\) accurate).
+\end{example}
+
+
 Lastly, I would like to comment that normally, if not explicitly stated in the question to use "first principles", you can use the derivative rules you will learn in the next chapter to solve derivatives much more quickly and efficiently. In all honesty, using the "first principles" is very tedious and generally would not be used.
 \begin{problem}[1]
   Using first principles, find the derivatives of the following functions:
@@ -126,6 +179,7 @@ Lastly, I would like to comment that normally, if not explicitly stated in the q
 \end{problem}
 \begin{problem}[1]
   Given a differentiable function \(f(x)\), find the equation of the tangent line at \(x=a\).
+  \label{tangentlineprob}
 \end{problem}
 % \begin{enumerate}
 %   \item{
