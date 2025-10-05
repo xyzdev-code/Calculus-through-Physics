@@ -1,15 +1,17 @@
-\documentclass[10pt, twoside, a4paper]{memoir} 
-\usepackage[a4paper, marginparwidth=1.2in]{geometry}
+\documentclass[10pt, twoside]{memoir} 
+\usepackage[letterpaper, marginparwidth=1.2in]{geometry}
 \usepackage[none]{hyphenat}
-
-\usepackage[T1]{fontenc}
 \usepackage[english]{babel}
+\usepackage[T1]{fontenc}
 \input{settings}
-\usepackage{pgfplots, caption, fancyhdr, cleveref, lipsum, gensymb, indentfirst, marginnote, enumitem, graphicx, esdiff, pdfpages, amsmath, xltabular}
-\usepackage{newtx}
+\usepackage{pgfplots, caption, fancyhdr, cleveref, lipsum, gensymb, indentfirst, marginnote, enumitem, graphicx, esdiff, pdfpages, xltabular}
 \usepackage{perpage}
 \usepackage{sidenotes}
 \usepackage[autostyle]{csquotes}
+\usepackage[T1]{fontenc}
+\usepackage{newtxmath}
+\usepackage[no-math]{fontspec}
+\usepackage{newtxtext}
 \newcounter{entryc}[subsection]
 \renewcommand\vec[1]{\ifstrequal{#1}{0}{\ensuremath{\mathbf{0}}}{\ensuremath{\boldsymbol{\mathbf{#1}}}}}
 \makeatletter
@@ -88,13 +90,12 @@
 \renewcommand{\thesidenote}{\textbf{\arabic{sidenote}}}
 \begin{document}
   \pagenumbering{roman}
-  \includepdf[pages=1, fitpaper=true]{cover.pdf}
+  \includepdf[pages=1, width=8.5in, height=11in, noautoscale]{cover.pdf}
   \vspace*{\fill}
     Calculus through Physics  © 2025 by Xiao Yaozi is licensed under CC BY-NC-ND 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/4.0/
   \newpage
   \tableofcontents
   \cleardoublepage
-  \pagenumbering{arabic}
   \addcontentsline{toc}{chapter}{Preface I: Calculus, the language of the universe}
   \chapter*{Preface I: Calculus, the language of the universe}
 
@@ -144,7 +145,7 @@
     \hline
     Description & Meaning & Example & Notes \\
     \hline\hline
-      Letters & Scalars, constants, matrices & \(a,b,c,X,Y,Z\) & Except for \(e,\pi,c,g \). Functions may also be written as single letters, however the context would be clear. \(I\) is the identity matrix. \\
+      Letters & Scalars, constants, matrices & \(a,b,c,X,Y,Z\) & Except for constants such as \(e,\pi,c,g \). Functions may also be written as single letters, however the context would be clear. \(I\) is the identity matrix. \\
     \hline
     Bolded, upright letters & Vectors & \(\vec{v}, \ihat, \jhat, \khat\) & \(\vec{0}\) is the zero vector. \\
     \hline
@@ -152,15 +153,17 @@
     \hline
     Vertical bars & Determinant & \(\begin{vmatrix}1 & 2 \\ 3 & 4\end{vmatrix} = -2\) & Nil \\
     \hline
-    Functions with dots over them & Derivatives with respect to some variable & \(\dot{x}, \ddot{x}\) & Nil \\
+      Functions with dots over them & Derivatives with respect to some variable (usually time) & \(\dot{x}, \ddot{x}\) & Nil \\
     \hline
   \end{tabularx}
   \caption{Table of notation.}
   \end{table}
 
 
-  Finally, if you have any questions or errata, please contact me and submit an issue on github.
-  \flushbottom
+  Finally, if you have any questions or errata, please contact me and submit an issue on GitHub. The GitHub link is https://github.com/xyzdev-code/Calculus-through-Physics.
+  \newpage
+
+  \pagenumbering{arabic}
   \include{chapters/chapter1_1}
   \include{chapters/chapter1_2}
   \include{chapters/chapter1_3}

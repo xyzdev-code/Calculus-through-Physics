@@ -1,3 +1,0 @@
-command,pdflatex -halt-on-error -interaction=nonstopmode "__ROBEXT_SOURCE_FILE__"
-4EABBAE62BA0D62DD57BA7553540C796,
-
