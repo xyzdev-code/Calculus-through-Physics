@@ -85,10 +85,12 @@
 \chapterstyle{BlueBox}
 \pgfplotsset{compat=1.18}
 \usetikzlibrary{positioning}
-
 \renewcommand{\marginnote}{\sidenote}
 \renewcommand{\thesidenote}{\textbf{\arabic{sidenote}}}
+
+\InputIfFileExists{./set.tex}{\input{set.tex}}{}
 \begin{document}
+
   \pagenumbering{roman}
   \includepdf[pages=1, width=8.5in, height=11in, noautoscale]{cover.pdf}
   \vspace*{\fill}
@@ -160,8 +162,8 @@
 
 
   Finally, if you have any questions or errata, please contact me and submit an issue on GitHub. The GitHub link is https://github.com/xyzdev-code/Calculus-through-Physics.
-  \clearpage
-
+  \newpage
+  \pagenumbering{arabic}
   \include{chapters/chapter1_1}
   \include{chapters/chapter1_2}
   \include{chapters/chapter1_3}

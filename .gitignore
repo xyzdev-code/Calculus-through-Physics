@@ -4,3 +4,4 @@
 *.gz
 *.fdb_latexmk
 src/latex.out/
+src/set.tex
