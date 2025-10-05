@@ -7,4 +7,4 @@ jobs:
       - uses: xu-cheng/texlive-action@v3
         with:
           run: |
-            cd ../../src && make
+            cd ./src && make && git add --all & git commit -m "deploy" && git push
