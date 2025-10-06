@@ -13,7 +13,7 @@
 \usepackage[no-math]{fontspec}
 \usepackage{newtxtext}
 \newcounter{entryc}[subsection]
-\usepackage{lmodern, anyfontsize}
+\usepackage{anyfontsize}
 \renewcommand\vec[1]{\ifstrequal{#1}{0}{\ensuremath{\mathbf{0}}}{\ensuremath{\boldsymbol{\mathbf{#1}}}}}
 \makeatletter
 \renewcommand{\p@entryc}{\thesubsection.} % "prefix" for cross-referencing
@@ -89,7 +89,6 @@
 \renewcommand{\marginnote}{\sidenote}
 \renewcommand{\thesidenote}{\textbf{\arabic{sidenote}}}
 
-\InputIfFileExists{./set.tex}{\input{set.tex}}{}
 \begin{document}
 
   \pagenumbering{roman}
@@ -141,47 +140,19 @@
   \end{enumerate}
 
 
-  Furthermore, to prevent confusion on sidenotes\sidenote{\footnotesize \textit{This is a sidenote. It is italicized to prevent confusion with the main text.}} and indices, sidenote markers are \textbf{bolded} while the latter is not.
-  %   \begin{tabularx}{\textwidth}{|X|X|X|X|}
-  %   \hline
-  %   Description & Meaning & Example & Notes \\
-  %   \hline\hline
-  %     Letters & Scalars, constants, matrices & \(a,b,c,X,Y,Z\) & Except for constants such as \(e,\pi,c,g \). Functions may also be written as single letters, however the context would be clear. \(I\) is the identity matrix. \\
-  %   \hline
-  %   Bolded, upright letters & Vectors & \(\vec{v}, \ihat, \jhat, \khat\) & \(\vec{0}\) is the zero vector. \\
-  %   \hline
-  %   Square brackets & Matrices & \(\begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix}\) & Nil \\
-  %   \hline
-  %   Vertical bars & Determinant & \(\begin{vmatrix}1 & 2 \\ 3 & 4\end{vmatrix} = -2\) & Nil \\
-  %   \hline
-  %     Functions with dots over them & Derivatives with respect to some variable (usually time) & \(\dot{x}, \ddot{x}\) & Nil \\
-  %   \hline
-  % \end{tabularx}
-  % \caption{Table of notation.}
-  % \end{table}
-
-
-  Finally, if you have any questions or errata, please contact me and submit an issue on GitHub. The GitHub link is https://github.com/xyzdev-code/Calculus-through-Physics.
+  Furthermore, to prevent confusion on sidenotes\sidenote{\footnotesize \textit{This is a sidenote. It is italicized to prevent confusion with the main text.}} and indices, sidenote markers are \textbf{bolded} while the latter is not. Finally, if you have any questions or errata, please contact me and submit an issue on GitHub. The GitHub link is https://github.com/xyzdev-code/Calculus-through-Physics.
   \newpage
   \pagenumbering{arabic}
   \include{chapters/chapter1_1}
   \include{chapters/chapter1_2}
   \include{chapters/chapter1_3}
-  \section{An aside: A more rigorous definition of a function}
-  TBD
-  \newpage
-
+  \include{chapters/chapter1_4}
   \include{chapters/chapter2_1}
   \include{chapters/chapter2_2}
   \include{chapters/chapter2_3}
   \include{chapters/chapter2_4}
   \include{chapters/chapter2_5}
-  \section{An aside: Bra-ket and Hilbert space}
-  TBD
-  \flushbottom
-  \section{An aside: Eigenfunctions and eigenvalues}
-  TBD
-  \flushbottom
-  \newpage
-    \include{chapters/chapter3_1}
+  \include{chapters/chapter2_6}
+  \include{chapters/chapter2_7}
+  \include{chapters/chapter3_1}
  \end{document}
