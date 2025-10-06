@@ -21,4 +21,4 @@
 \contentsline {part}{\partnumberline {II}Calculus I}{45}{part.2}%
 \contentsline {chapter}{\chapternumberline {3}Derivatives}{47}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Differentiation basics}{47}{section.3.1}%
-\contentsline {subsection}{Newton's method}{51}{section*.33}%
+\contentsline {subsection}{Newton's method}{51}{section*.9}%
