@@ -3,5 +3,5 @@
 *.log
 *.gz
 *.fdb_latexmk
-src/latex.out/
-src/set.tex
+./src/latex.out/
+./src/set.tex
