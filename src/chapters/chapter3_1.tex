@@ -161,11 +161,15 @@ Then, we shall touch on something that is very similar to the derivative, the ta
     &= \frac{13}{8} - \frac{\left(\frac{13}{8}\right)^2 - \frac{13}{8} - 1}{2\cdot\frac{13}{8}-1} \\
     &= \frac{21}{13} \approx 1.6154
   \end{align*}
-  If you were wondering what is the exact solution to the polynomial, it is in fact the golden ratio \(\phi\), which is about 1.618, very close to our fourth iteration (about \(99.8\si{\percent}\) accurate).
+  If you were wondering what is the exact solution to the polynomial, it is in fact the golden ratio \(\phi\), which is about 1.618, very close to our fourth iteration (about \(99.8\si{\percent}\) accurate). We will cover some cases where this method may not converge in Problem \ref{newtonquad}.
 \end{example}
 
 
-Lastly, I would like to comment that normally, if not explicitly stated in the question to use "first principles", you can use the derivative rules you will learn in the next chapter to solve derivatives much more quickly and efficiently. In all honesty, using the "first principles" is very tedious and generally would not be used.
+I would like to comment that normally, if not explicitly stated in the question to use "first principles", you can use the derivative rules you will learn in the next chapter to solve derivatives much more quickly and efficiently. In all honesty, using the "first principles" is very tedious and generally would not be used. There are also times where the function is not differentiable at all. Consider the Dirichlet function defined back in Chapter 1, it is not differentiable at any point. However, this is a very contrived example and you will not (usually) encounter such functions in real life. 
+
+
+
+The final elephant in the room is the notation of derivatives. There are many different notations for derivatives, and they are all used in different contexts. The most common notations are \(f'(x)\), \(\frac{df}{dx}\), and \(\dot f\). The first notation is used when we want to denote the derivative of a function. The second notation is used when we want to denote the derivative of a function with respect to a variable \(x\) explicitly. It would be a shame if I did not tell you the joke about dividing d in \(\diff{}{x}\). The third notation is used in physics to denote the derivative of a function with respect to time. It is important to note that these notations are interchangeable, and you can use any of them depending on the context.
 \begin{problem}[1]
   Using first principles, find the derivatives of the following functions:
   \begin{enumerate}[label=\alph*)]
@@ -177,9 +181,13 @@ Lastly, I would like to comment that normally, if not explicitly stated in the q
 \begin{problem}[1]
   Let \(f(x)=(x-1)(x-2)\cdots(x-1729)\), find \(f'(1729)\). \textit{(Adapted from SMO 2025 Senior Section Round 1).}
 \end{problem}
-\begin{problem}[1]
+\begin{problem}[2]
   Given a differentiable function \(f(x)\), find the equation of the tangent line at \(x=a\).
   \label{tangentlineprob}
+\end{problem}
+\begin{problem}[1]
+  Given a quadratic equation \(ax^2+bx+c=k\), provide a condition for Newton's method to converge at an answer.
+  \label{newtonquad}
 \end{problem}
 % \begin{enumerate}
 %   \item{

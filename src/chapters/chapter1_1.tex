@@ -74,7 +74,7 @@ Here, \(f(\frac{1}{2})\) would be 1 but \(f(\sqrt{2})\) would be 0. (You would p
 is an example of a \textit{multivariate} function, in other words, it takes in multiple inputs. If \(x=2\) and \(y=2\), then \(f(2,2)=8\). On the other hand, \Cref{paramcircle} does not have a single output. Instead, it has a tuple \marginnote{ \\ \footnotesize \textit{A tuple is basically a set where order matters. You can treat it as if it is a coordinate.}} as its output. Evaluating it at \(t=\pi\), notice that the output is \((-1, 0)\). What is interesting is that if you trace out its outputs on a plane for all \(t \in \mathbb{R}\), you will get \Cref{param}.
 \begin{figure}[h]
   \centering
-  \begin{tikzpicture}[scale=0.7]
+  \begin{tikzpicture}
     \begin{axis}[trig format=rad, axis equal, axis lines=left, ymax=1.5, ymin=-1.5]
       \addplot[color=blue, samples=100]({cos(x)}, {sin(x)});
     \end{axis}
@@ -163,9 +163,7 @@ In the real world, we often add a \textit{damping factor} \(d(t)\) to \(\theta(t
   \end{enumerate}
 
 \end{problem} 
-\begin{problem}[1]
-  \textit{(Polynomial remainder theorem)} Let \(f(x)\) be a polynomial. If \(f(a)=0\), prove that \(x-a\) is a factor of \(f(x)\).
-\end{problem}
+
 \begin{problem}[2]
   Find \(f:\mathbb{R}\setminus\{0,1\} \to  \mathbb{R}\) such that \(f(x)+f(\frac{x-1}{x})=1+x\) for any \(x\in\mathbb{R}\setminus\{0,1\}\).
 \end{problem}

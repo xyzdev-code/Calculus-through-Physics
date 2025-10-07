@@ -4,8 +4,9 @@
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 \input{settings}
-\usepackage{pgfplots, caption, fancyhdr, cleveref, lipsum, gensymb, indentfirst, marginnote, enumitem, graphicx, esdiff, pdfpages, xltabular}
+\usepackage{pgfplots, caption, fancyhdr, cleveref, lipsum, gensymb, indentfirst, marginnote, enumitem, graphicx, pdfpages, xltabular}
 \usepackage{perpage}
+\usepackage[italic]{esdiff}
 \usepackage{sidenotes}
 \usepackage[autostyle]{csquotes}
 \usepackage[T1]{fontenc}
@@ -14,6 +15,8 @@
 \usepackage{newtxtext}
 \newcounter{entryc}[subsection]
 \usepackage{anyfontsize}
+\creflabelformat{equation}{#2\textup{#1}#3}
+\creflabelformat{figure}{#2\textup{#1}#3}
 \renewcommand\vec[1]{\ifstrequal{#1}{0}{\ensuremath{\mathbf{0}}}{\ensuremath{\boldsymbol{\mathbf{#1}}}}}
 \makeatletter
 \renewcommand{\p@entryc}{\thesubsection.} % "prefix" for cross-referencing
@@ -90,7 +93,6 @@
 \renewcommand{\thesidenote}{\textbf{\arabic{sidenote}}}
 
 \begin{document}
-
   \pagenumbering{roman}
   \includepdf[pages=1, width=8.5in, height=11in, noautoscale]{cover.pdf}
   \vspace*{\fill}
@@ -143,6 +145,7 @@
   Furthermore, to prevent confusion on sidenotes\sidenote{\footnotesize \textit{This is a sidenote. It is italicized to prevent confusion with the main text.}} and indices, sidenote markers are \textbf{bolded} while the latter is not. Finally, if you have any questions or errata, please contact me and submit an issue on GitHub. The GitHub link is https://github.com/xyzdev-code/Calculus-through-Physics.
   \newpage
   \pagenumbering{arabic}
+  \raggedbottom
   \include{chapters/chapter1_1}
   \include{chapters/chapter1_2}
   \include{chapters/chapter1_3}

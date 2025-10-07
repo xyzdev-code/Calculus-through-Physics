@@ -34,7 +34,7 @@ Notice how we could not describe \(\vec{b}\) as some constant multiplied to \(\v
   Here are some examples of linear transformations, the blue grid is the vector space after the transformation. Take note where the basis vectors are after the transformations.
   \begin{figure}[H]
     \centering
-    \begin{tikzpicture}[scale=0.4]
+    \begin{tikzpicture}[scale=0.8]
       \draw[gray!40, thin] (-4, -4) grid (4,4); 
       \draw[line width=2pt, red, -stealth] (0,0) -- (1,0) node[anchor=west]{\(\ihat_{\textit{before}}\)};
       \draw[line width=2pt, blue, -stealth] (0,0) -- (0,1) node[anchor=south]{\(\jhat_{\textit{before}}\)};
@@ -48,7 +48,7 @@ Notice how we could not describe \(\vec{b}\) as some constant multiplied to \(\v
 
     \centering
 
-    \begin{tikzpicture}[scale=0.4]
+    \begin{tikzpicture}[scale=0.8]
       \draw[gray!40, thin] (-4, -4) grid (4,4); 
       \draw[blue!40, thin, xslant=tan 45] (-4, -4) grid (4,4);
       \draw[line width=2pt, red, -stealth] (0,0) -- (1,0) node[anchor=west]{\(\ihat_{\textit{before}}\)};
@@ -64,6 +64,17 @@ Notice how we could not describe \(\vec{b}\) as some constant multiplied to \(\v
 \sidenotetext{\footnotesize \textit{In \Cref{shearfig}, the \(\ihat\) vector remains at the same location.}}
 
 To describe these transformations, we actually only need to describe where the basis vectors land after the transformation. No other information required. We present the location of the new basis vectors in the form of a \textit{matrix}:
+\begin{marginfigure}
+  \centering
+  \begin{tikzpicture}[scale=0.17]
+    \draw[gray!40, thin] (-4, -4) grid (4,4); 
+    \draw[blue!40, thin, xslant=tan 45] (-4, -4) grid (4,4);
+    \draw[line width=2pt, -stealth, blue] (0,0) -- (1,2) node[anchor=south west]{\(\vec{a}_{\text{before}}\)};
+    \draw[line width=2pt, -stealth, red] (0,0) -- (3,2) node[anchor=north west]{\(\vec{a}_{\text{after}}\)};
+  \end{tikzpicture}
+  \caption{Figure of a vector before and after a shear transformation like in \Cref{shearfig}.}
+  \label{shearveca}
+\end{marginfigure}
 \begin{definition}{Matrices}{}{}
   In linear algebra, matrices generally represent linear transformations. A \(n \times m\) matrix is one with \(n\) rows and \(m\) columns. The nth column of the matrix denotes the representation of the corresponding basis vector after the  linear transformation.
   \begin{equation*}
@@ -113,17 +124,9 @@ It should go without saying that any vector in the original vector space will ge
     \end{bmatrix}
   \end{align*}
 \end{example}
-\begin{marginfigure}
-  \centering
-  \begin{tikzpicture}[scale=0.17]
-    \draw[gray!40, thin] (-4, -4) grid (4,4); 
-    \draw[blue!40, thin, xslant=tan 45] (-4, -4) grid (4,4);
-    \draw[line width=2pt, -stealth, blue] (0,0) -- (1,2) node[anchor=south west]{\(\vec{a}_{\text{before}}\)};
-    \draw[line width=2pt, -stealth, red] (0,0) -- (3,2) node[anchor=north west]{\(\vec{a}_{\text{after}}\)};
-  \end{tikzpicture}
-  \caption{Figure of a vector before and after a shear transformation like in \Cref{shearfig}.}
-  \label{shearveca}
-\end{marginfigure}
+
+
+
 
 If you have come from a linear algebra course, this may feel very refreshing. Instead of memorising what needs to be multiplied, you just swap the basis vectors for some other basis vectors. While we get the representation of \(\vec{a}\) from \Cref{shearveca}, it also important to take note that in the new vector space after the transformation, \(\vec{a}\) has one unit of direction in the horizontal direction and two units of direction in the "vertical" direction. This is just like the original representation of \(\vec{a}\), just that the vector space has been sheared. This change of basis vector is important enough to have its own name, \textit{change of basis}.
 
@@ -139,7 +142,7 @@ With this knowledge, let us proceed to one of the most hated parts of linear alg
   \end{bsmallmatrix} \). \(xy\) is simply applying the shear first before the rotation. (The right to left reading is similar to that of function composition)
   \begin{figure}[H]
     \centering
-    \begin{tikzpicture}[scale=0.5]
+    \begin{tikzpicture}[scale=0.8]
       \draw[line width=2pt, -stealth, blue] (0,0) -- (0,1) node[anchor=south west]{\(\jhat_{\text{before}}\)};
       \draw[line width=2pt, -stealth, blue] (0,0) -- (1,1) node[anchor=north west]{\(\jhat_{\text{intermediate}}\)};
       \draw[line width=2pt, -stealth, blue] (0,0) -- (-1,1) node[anchor=south west]{\(\jhat_{\text{after}}\)};
