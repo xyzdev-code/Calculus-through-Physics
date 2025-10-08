@@ -115,9 +115,12 @@ In other words, we have also found the instantaneous rate of change of \(f(x)=x^
 
 
 Then, we shall touch on something that is very similar to the derivative, the tangent line. The tangent line is a straight line that just touches the curve at one point. The gradient of the tangent line is equal to the gradient of the curve at that point. This means that if we know the derivative of a function at some point, we can find the equation of the tangent line at that point. Remember, the derivative is the instantaneous rate of change of the function. You will find the equation of the tangent line to be very useful in many instances. The exact derivation will be left to Problem \ref{tangentlineprob}, but given a function \(f(x)\), the equation of the tangent line at \(x=a\) is:
+\begin{definition}{Tangent line}{}
+  Given a differentiable function \(f(x)\), the tangent line to the function at \(x=a\) is:
 \begin{equation}
   y = f'(a)(x-a) + f(a)
 \end{equation}
+\end{definition}
 
 
 \subsection{Newton's method}
@@ -169,7 +172,10 @@ I would like to comment that normally, if not explicitly stated in the question 
 
 
 
-The final elephant in the room is the notation of derivatives. There are many different notations for derivatives, and they are all used in different contexts. The most common notations are \(f'(x)\), \(\frac{df}{dx}\), and \(\dot f\). The first notation is used when we want to denote the derivative of a function. The second notation is used when we want to denote the derivative of a function with respect to a variable \(x\) explicitly. It would be a shame if I did not tell you the joke about dividing d in \(\diff{}{x}\). The third notation is used in physics to denote the derivative of a function with respect to time. It is important to note that these notations are interchangeable, and you can use any of them depending on the context.
+The final elephant in the room is the notation of derivatives. There are many different notations for derivatives, and they are all used in different contexts. The most common notations are \(f'(x)\), \(\odv{f}{x}\), and \(\dot f\). The first notation is used when we want to denote the derivative of a function. The second notation is used when we want to denote the derivative of a function with respect to a variable \(x\) explicitly. It would be a shame if I did not tell you the joke about dividing d in \(\odv{}{x}\). Basically, some students might misinterpret the \(d\) in the fraction as a variable. Instead, you should consider \(\odv{}{x}\) as a whole, not a fraction (even though after you learn the chain rule you might sort of disagree). Mathematically, it is an \textit{operator}. An operator is a sort of "function" that takes a function and maps it to a different function. Unlike functions however, an operator \(\hat{Q}\) acting on a function \(f(x)\) can be written as \(\hat{Q}f(x)\).\sidenote{\footnotesize \textit{We shall denote operators as non-bolded characters with a hat to differentiate them from the unit vectors.}} Going back to the derivative, I believe now it makes sense to think that the derivative is an operator. The derivative takes in a function and returns a function. If it were not for convention, I might have used \(\hat{D}\) to denote the derivative as I believe this makes the operator nature of the derivative more apparent. With that said, the key takeaway is to treat \(\odv{}{x}\) as a whole, not as a fraction.
+
+
+The third notation is used in physics to denote the derivative of a function with respect to time. It is important to note that these notations are interchangeable, and you can use any of them depending on the context.
 \begin{problem}[1]
   Using first principles, find the derivatives of the following functions:
   \begin{enumerate}[label=\alph*)]

@@ -4,9 +4,9 @@
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 \input{settings}
-\usepackage{pgfplots, caption, fancyhdr, cleveref, lipsum, gensymb, indentfirst, marginnote, enumitem, graphicx, pdfpages, xltabular}
+\usepackage{pgfplots, caption, fancyhdr, cleveref, lipsum, gensymb, indentfirst, marginnote, enumitem, graphicx, pdfpages, xltabular, xparse}
+\usepackage[italic]{derivative}
 \usepackage{perpage}
-\usepackage[italic]{esdiff}
 \usepackage{sidenotes}
 \usepackage[autostyle]{csquotes}
 \usepackage[T1]{fontenc}
@@ -106,7 +106,7 @@
 
   As you are seated right here, on your seat, reading this book, you must realize that you are made of the same fundamental particles as everything in the universe. These fundamental particles are governed by the Schrodinger equation, which is written with notation from calculus \sidenote{\footnotesize \textit{We will assume that you are not fast enough for relativistic effects to apply.}}:
   \begin{equation}
-    i\hbar \diffp{\Psi}{t}  = -\frac{\hbar^2}{2m}\nabla\Psi +V\Psi
+    i\hbar \pdv{\Psi}{t}  = -\frac{\hbar^2}{2m}\nabla\Psi +V\Psi
   \end{equation}
 
  
