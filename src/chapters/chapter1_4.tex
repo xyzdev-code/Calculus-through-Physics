@@ -1,3 +1,48 @@
 \section{An aside: A more rigorous definition of a function}
 
 
+In the previous section, we defined a function as a rule that assigns to each element in a set (the domain) exactly one element in another set (the range). While this intuitive definition is often sufficient, we can provide a more rigorous definition using the concept of ordered pairs and Cartesian products. But first, what even is an ordered pair?
+\begin{definition}{Ordered Pair}{}
+    An \textbf{ordered pair} is a collection of two objects where the order of the objects matters. We denote an ordered pair by \((a,b)\), where \(a\) is the first element and \(b\) is the second element. Two ordered pairs \((a,b)\) and \((c,d)\) are considered equal if and only if \(a=c\) and \(b=d\).
+\end{definition}
+\begin{definition}{Cartesian Product}{}
+    Given two sets \(A\) and \(B\), the \textbf{cartesian product} of \(A\) and \(B\), denoted by \(A \times B\), is the set of all ordered pairs \((a,b)\) where \(a \in A\) and \(b \in B\). Formally,
+\begin{equation}
+        A \times B = \{(a,b) \mid a \in A, b \in B\}.
+\end{equation}
+\end{definition}
+
+
+But why are ordered pairs and Cartesian products relevant to functions? Well, we can represent a function as a set of ordered pairs, where each ordered pair consists of an element from the domain and its corresponding element in the range. This leads us to a more formal definition of a function.
+\begin{definition}{Set-theory definition of functions}{}
+  A \textbf{function} \(f\) from a set \(A\) (the domain) to a set \(B\) (the range) is a subset of the Cartesian product \(A \times B\) such that for every element \(a \in A\), there exists exactly one element \(b \in B\) such that the ordered pair \((a,b)\) is in the subset. We denote this function as \(f: A \to B\) and write \(f(a) = b\).
+\end{definition}
+
+
+\begin{example}{Functions as sets}{}
+    Consider the function \(f: \{1, 2, 3\} \to \{a, b, c\}\) defined by the rule \(f(1) = a\), \(f(2) = b\), and \(f(3) = c\). We can represent this function as the set of ordered pairs:
+    \begin{equation}
+    f = \{(1, a), (2, b), (3, c)\}.
+    \end{equation}
+    Here, the domain is \(\{1, 2, 3\}\) and the range is \(\{a, b, c\}\). Each element in the domain is paired with exactly one element in the range, satisfying the definition of a function. Then, consider the Dirichlet function defined back in Section 1.1. This function can be represented as the set of ordered pairs:
+    \begin{equation}
+      D = \{(x, 1) \mid x \in \mathbb{Q}\} \cup \{(x, 0) \mid x \in \mathbb{R} \setminus \mathbb{Q}\}.
+    \end{equation}
+
+    You would notice that the set is infinite and not very practical to write out in full, but it still adheres to the definition of a function since each real number \(x\) is paired with exactly one value (either 0 or 1) based on whether \(x\) is rational or irrational. Also, through our definitions, we can write:
+    \begin{equation*}
+      D \subseteq \mathbb{R} \times \{0, 1\}
+    \end{equation*}
+    \begin{equation*}
+      f \subseteq \{1, 2, 3\} \times \{a, b, c\}
+    \end{equation*}
+\end{example}
+
+
+I wish this is a pretty fresh way to look at functions. It is a bit more abstract, but it is also more precise. This definition allows us to work with functions in a more formal way, especially in advanced mathematics where precision is crucial. It also helps us understand the properties of functions better, such as injectivity, surjectivity, and bijectivity. The notation of functions is also slightly demystified through this lens. For instance, when we write \(f(a) = b\), we are essentially "retrieving" the second element of the ordered pair \((a,b)\) from the set that defines the function \(f\). In calculus, we usually deal with real functions, or functions where both the domain and range are subsets of the real numbers \(\mathbb{R}\). However, this set-theoretic definition of functions is general and can be applied to any sets, not just numbers. This abstraction is powerful because it allows us to study functions in a wide variety of contexts, from simple numerical functions to more complex structures in higher mathematics. For example, we can have functions between sets of matrices, or even functions between sets of functions (operators). This generality is one of the strengths of the set-theoretic approach to defining functions. 
+
+
+If you have read Chapter 2 or know linear transformations, you might be delighted to know that linear transformations are basically functions that map vectors to vectors. For instance, consider a function \(T: \mathbb{R}^2 \to \mathbb{R}^2\) defined by \(T(\vec{r}) = \begin{bsmallmatrix}
+  2\vec{r}_x \\
+  3\vec{r}_y
+\end{bsmallmatrix} \).

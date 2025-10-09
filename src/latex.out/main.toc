@@ -5,7 +5,7 @@
 \contentsline {part}{\partnumberline {I}Precalculus}{1}{part.1}%
 \contentsline {chapter}{\chapternumberline {1}Functions}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Function basics}{3}{section.1.1}%
-\contentsline {subsection}{Application: Simple pendulum}{4}{section*.7}%
+\contentsline {subsection}{Simple pendulum}{4}{section*.7}%
 \contentsline {section}{\numberline {1.2}Function composition and inverses}{8}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Injection, surjection and bijection}{12}{section.1.3}%
 \contentsline {section}{\numberline {1.4}An aside: A more rigorous definition of a function}{17}{section.1.4}%

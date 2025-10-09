@@ -19,7 +19,7 @@ Onto the calculus portion that is very much anticipated. No more the quick skimp
 
 From \Cref{cubgraph}, we see that this is a cubic graph. It should not to be hard to see that the graph is always changing value. This corresponds to the fact that the velocity of the particle is not constant. Also, it should not be difficult to see that the rate of change of the graph is not constant. This, meanwhile, shows that the acceleration of the particle is not constant. We can use the gradient formula to verify this:
 \begin{definition}{Gradient}{}
-  The gradient between two points \((x,f(x))\) and \((x+a, f(x+a))\) is:
+  The gradient of a (straight) line passing through two points \((x,f(x))\) and \((x+a, f(x+a))\) is:
   \begin{equation}
     \textit{Gradient} = \frac{\Delta y}{\Delta x} = \frac{f(x+a)-f(x)}{a}
   \label{gradient}
@@ -50,7 +50,7 @@ Using \Cref{gradient} again, we can pick some points on the graph. You would not
 \end{figure}
 
 
-In \Cref{zoomin}, we realize that the graph, when zoomed in sufficiently, essentially is a straight line. This is exciting, we can use our gradient formula which works on straight lines. In addition, on the x-axis, we mark \(2+h\), a small distance away from 2. We can infer that \(h\) is a really tiny number, almost going to 0 as we keep zooming in. We use the limit notation to denote this. Hence, we can denote it as \(\lim_{h\to0}\). \marginnote{\footnotesize \textit{The limit notation and its concepts will be discussed in a later chapter, for now, just keep in mind that this means \(h\) is a really tiny number, almost 0.}} You may be itching to use the gradient formula now. We can substitute in the values:
+In \Cref{zoomin}, we realize that the graph, when zoomed in sufficiently, essentially is a straight line. This is exciting, we can use our gradient formula which works on straight lines. In addition, on the x-axis, we mark \(2+h\), a small distance away from 2. We can infer that \(h\) is a really tiny number, almost going to 0 as we keep zooming in. We use the limit notation to denote this. Hence, we can denote it as \(\lim_{h\to0}\). \marginnote{\footnotesize \textit{The limit notation and its concepts will be discussed in a later chapter, for now, just keep in mind that this means \(h\) is a really tiny number, almost 0. A way I like to interpret this is that if some \(\epsilon \to 0\) (epsilon approaching 0), then for any \(N>0\), \(\epsilon<N\).}} You may be itching to use the gradient formula now. We can substitute in the values:
 \begin{align*}
   \lim_{h\to0}\frac{f(2+h)-f(2)}{h}
 \end{align*}
@@ -58,7 +58,7 @@ In \Cref{zoomin}, we realize that the graph, when zoomed in sufficiently, essent
 
 However, notice that we have to divide throughout by \(h\), and \(h\) is very small, infinitesimally small. Some careless manipulation and you would say the expression blows up to infinity. What the formula does tell us, though, is the gradient practically at 2. This gives us an idea. Can we just replace 2 with any value of \(x\)? This brings us to the definition of the \textit{derivative}.
 \begin{definition}{Derivative}{}
-  The \textit{derivative} of a function \(f(x)\) is the instantaneous rate of change of that function. It can be written as \(f'(x)\), \(\frac{df(x)}{dx}\) or \(\dot f\).\sidenotemark  
+  The \textbf{derivative} of a function \(f(x)\) is the instantaneous rate of change of that function. It can be written as \(f'(x)\), \(\frac{df(x)}{dx}\) or \(\dot f\).\sidenotemark  
   \begin{equation}
     f'(x) = \lim_{h\to0}\frac{f(x+h)-f(x)}{h}
   \end{equation}
@@ -66,7 +66,11 @@ However, notice that we have to divide throughout by \(h\), and \(h\) is very sm
 \sidenotetext{\footnotesize \textit{Sometimes, to save writing a few letters, the inputs to the functions may be omitted, such as \(f\) instead of \(f(x)\). This is more common when the function takes in multiple inputs.} }
 
 
-In the definition of the derivative, we can see that the derivative is also a function. Also, the definition states that it is the "instantaneous rate of change". This simply means that we are looking at the rate of change of the function over a very, very tiny range of \(x\). Of course, the definition may feel contradictory. How can some value change "instantaneously"? Well, this is resolved by not exactly by substituting \(\Delta y=0\), instead we let it "approach" 0. As a result, using this clever little mathematical trick, we avoided this problem. However, some of you may have noticed we have not evaluated any derivatives, we just defined them. It is no good to not answer our original question. To illustrate a derivation of a derivative, we shall use a much simpler graph, \(f(x)=x^2\).
+\begin{challenge}{Alternative form of the derivative}{}
+  Instead of considering the slope between \(x\) and \(x+h\), what if we consider the slope between \(x\) and \(x-h\). What would the derivative formula become?
+\end{challenge}
+
+In the definition of the derivative, we can see that the derivative is also a function. Also, the definition states that it is the "instantaneous rate of change". This simply means that we are looking at the rate of change of the function over a very, very tiny range of \(x\). Of course, the definition may feel contradictory. How can some value change "instantaneously"? Well, this is resolved by not exactly by substituting \(\Delta x=0\), instead we let it "approach" 0. As a result, using this clever little mathematical trick, we avoided this problem. However, some of you may have noticed we have not evaluated any derivatives, we just defined them. It is no good to not answer our original question. To illustrate a derivation of a derivative, we shall use a much simpler graph, \(f(x)=x^2\).
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}
@@ -124,11 +128,14 @@ Then, we shall touch on something that is very similar to the derivative, the ta
 
 
 \subsection{Newton's method}
-\begin{example}{Newton's method}{}
+
+
   Newton's method is a method to approximate the roots of a function. It is based on the idea that if we have a guess \(x_0\) that is close to the root, then we can use the tangent line at \(x_0\) to find a better approximation \(x_1\). The equation of the tangent line at \(x_0\) is:
   \begin{equation}
     y = f'(x_0)(x-x_0) + f(x_0)
   \end{equation}
+
+
   To find the root of the tangent line, we set \(y=0\):
   \begin{align*}
     0 &= f'(x_0)(x-x_0) + f(x_0) \\
@@ -136,43 +143,66 @@ Then, we shall touch on something that is very similar to the derivative, the ta
     x-x_0 &= -\frac{f(x_0)}{f'(x_0)} \\
     x &= x_0 - \frac{f(x_0)}{f'(x_0)}
   \end{align*}
+
+
   Therefore, we can use the formula:
   \begin{equation}
     x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
   \end{equation}
+
+
+
   We shall use the above to find a better approximation of the root. We can repeat this process until we reach a satisfactory level of accuracy. Take the function \(f(x)=x^2-x-1\) as an example. We want to find the root of this function. We can start with an initial guess of \(x_0=1\). The derivative of the function is \(f'(x)=2x-1\). We can use Newton's method to find a better approximation:
   \begin{align*}
     x_1 &= x_0 - \frac{f(x_0)}{f'(x_0)} \\
     &= 1 - \frac{1^2-1-1}{2\cdot1-1} \\
     &= 2
   \end{align*}
+
+
+
   Repeating the process:
   \begin{align*}
     x_2 &= x_1 - \frac{f(x_1)}{f'(x_1)} \\
     &= 2 - \frac{2^2-2-1}{2\cdot2-1} \\
     &= \frac{5}{3} \approx 1.6667
   \end{align*}
+
+
+
   Continuing:
   \begin{align*}
     x_3 &= x_2 - \frac{f(x_2)}{f'(x_2)} \\
     &= \frac{5}{3} - \frac{\left(\frac{5}{3}\right)^2 - \frac{5}{3} - 1}{2\cdot\frac{5}{3}-1} \\
     &= \frac{13}{8} = 1.625
   \end{align*}
+
+
   And again (finally):
   \begin{align*}
     x_4 &= x_3 - \frac{f(x_3)}{f'(x_3)} \\
     &= \frac{13}{8} - \frac{\left(\frac{13}{8}\right)^2 - \frac{13}{8} - 1}{2\cdot\frac{13}{8}-1} \\
     &= \frac{21}{13} \approx 1.6154
   \end{align*}
+
+
+
   If you were wondering what is the exact solution to the polynomial, it is in fact the golden ratio \(\phi\), which is about 1.618, very close to our fourth iteration (about \(99.8\si{\percent}\) accurate). We will cover some cases where this method may not converge in Problem \ref{newtonquad}.
-\end{example}
 
 
 I would like to comment that normally, if not explicitly stated in the question to use "first principles", you can use the derivative rules you will learn in the next chapter to solve derivatives much more quickly and efficiently. In all honesty, using the "first principles" is very tedious and generally would not be used. There are also times where the function is not differentiable at all. Consider the Dirichlet function defined back in Chapter 1, it is not differentiable at any point. However, this is a very contrived example and you will not (usually) encounter such functions in real life. 
 
 
 
-The final elephant in the room is the notation of derivatives. There are many different notations for derivatives, and they are all used in different contexts. The most common notations are \(f'(x)\), \(\odv{f}{x}\), and \(\dot f\). The first notation is used when we want to denote the derivative of a function. The second notation is used when we want to denote the derivative of a function with respect to a variable \(x\) explicitly. It would be a shame if I did not tell you the joke about dividing d in \(\odv{}{x}\). Basically, some students might misinterpret the \(d\) in the fraction as a variable. Instead, you should consider \(\odv{}{x}\) as a whole, not a fraction (even though after you learn the chain rule you might sort of disagree). Mathematically, it is an \textit{operator}. An operator is a sort of "function" that takes a function and maps it to a different function. Unlike functions however, an operator \(\hat{Q}\) acting on a function \(f(x)\) can be written as \(\hat{Q}f(x)\).\sidenote{\footnotesize \textit{We shall denote operators as non-bolded characters with a hat to differentiate them from the unit vectors.}} Going back to the derivative, I believe now it makes sense to think that the derivative is an operator. The derivative takes in a function and returns a function. If it were not for convention, I might have used \(\hat{D}\) to denote the derivative as I believe this makes the operator nature of the derivative more apparent. With that said, the key takeaway is to treat \(\odv{}{x}\) as a whole, not as a fraction.
+The final elephant in the room is the notation of derivatives. There are many different notations for derivatives, and they are all used in different contexts. The most common notations are \(f'(x)\), \(\odv{f}{x}\), and \(\dot f\). The first notation is used when we want to denote the derivative of a function. The second notation is used when we want to denote the derivative of a function with respect to a variable \(x\) explicitly. It would be a shame if I did not tell you the joke about dividing d in \(\odv{}{x}\). Basically, some students might misinterpret the \(d\) in the fraction as a variable. Instead, you should consider \(\odv{}{x}\) as a whole, not a fraction (even though after you learn the chain rule you might sort of disagree). Mathematically, it is an \textit{operator}. An operator is a sort of "function" that takes a function and maps it to a different function. Unlike functions however, an operator \(\hat{Q}\) acting on a function \(f(x)\) is written as \(\hat{Q}f(x)\).\sidenote{\footnotesize \textit{We shall denote operators as non-bolded characters with a hat to differentiate them from the unit vectors.}} Going back to the derivative, I believe now it makes sense to think that the derivative is an operator. The derivative takes in a function and returns a function. If it were not for convention, I might have used \(\hat{D}\) to denote the derivative as I believe this makes the operator nature of the derivative more apparent. With that said, the key takeaway is to treat \(\odv{}{x}\) as a whole, not as a fraction.
+
+
+\begin{example}{Notation for derivatives}{}
+  The following forms are equal:
+  \begin{equation*}
+    \odv{f(x)}{x}=\odv{}{x}f(x)
+  \end{equation*}
+\end{example}
 
 
 The third notation is used in physics to denote the derivative of a function with respect to time. It is important to note that these notations are interchangeable, and you can use any of them depending on the context.
@@ -194,6 +224,19 @@ The third notation is used in physics to denote the derivative of a function wit
 \begin{problem}[1]
   Given a quadratic equation \(ax^2+bx+c=k\), provide a condition for Newton's method to converge at an answer.
   \label{newtonquad}
+\end{problem}
+\begin{problem}[1]
+  A car is travelling along a straight road. The distance travelled by the car at time \(t\) is given by the function \(f(t)=t^2+t-1\). Find the instantaneous velocity of the car at \(t=1\) and \(t=2\). Also, find the average velocity of the car between \(t=1\) and \(t=2\).
+\end{problem}
+\begin{problem}[1]
+  A ball is thrown from a high place on earth. If the trajectory of the ball at time \(t\) can be modelled by the function \(f(t)=-9.81t^2+10t+6\), what is:
+  \begin{enumerate}[label=\alph*)]
+    \item{The initial height of the ball?}
+    \item{By setting \(f'(t)=0\), solve for \(t\). This is the maximum height of the ball and the time taken for it to reach it. Verify by graphing the function.}
+    \item{The time taken for the ball to hit the ground?}
+    \item{Hence, using your answer in (c), what is the instantaneous velocity of the ball when it hits the ground?}
+    \item{Find the second derivative of the function (take the derivative twice)? What does it represent physically?}
+  \end{enumerate}
 \end{problem}
 % \begin{enumerate}
 %   \item{

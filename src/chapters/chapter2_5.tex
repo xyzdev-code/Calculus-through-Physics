@@ -62,8 +62,7 @@ The cross product is very ubiquitous in physics and vector calculus alike.
 
 
 An important fact to note is that the operation is not commutative. In fact, the operation is called \textit{anti-commutative}. This means that \(\vec{a}\times\vec{b}=-\vec{b}\times\vec{a}\). In addition, if the angle between the operands is any integer multiple of \(\pi\), then the result is \(\vec{0}\). This should be trivially seen from the formula for the cross product. The derivation for the cross product is also easy, given two vectors \(\vec{a}\) and \(\vec{b}\) and an angle \(\theta\) between them, simply use the sine rule and the result should be obvious. The cross product has many real world applications.
-\section*{Application: Torque}
-\begin{example}{Moment arm formula}{}
+\section*{Toque and the moment arm formula}
   Torque is a force that is common in our daily lives, present in the turning of a doorknob or the turning of a wrench. The formula for torque is \(\vec{\tau} = \vec{r}\times\vec{F}\), where \(\vec{\tau}\) is the torque, \(\vec{r}\) is the distance from the pivot point to the point where the force is applied and \(\vec{F}\) is the force applied. The direction of the torque can be determined by the right-hand rule. Torque is also known as the moment of force, and we actually derive the infamous moment arm formula for moment of \(\textit{moment}=(\textit{moment arm})(\textit{force})\). We shall restrict ourselves to only two dimensions and use a Cartesian coordinate system. Set the origin such that the pivot point is at the origin. Then, we can represent \(\vec{r}\) as the distance from the origin to where the force is applied. Let \(\vec{F}\) be the force vector. Since there is no more z component, all of the z components of the vectors are 0. We can write down the cross product of \(\vec{r}\) and \(\vec{F}\) (we resolve each into its x and y components):
   \begin{figure}[H]
     \centering
@@ -91,22 +90,29 @@ An important fact to note is that the operation is not commutative. In fact, the
     \end{vmatrix} \\
     &= (r_xF_y - r_yF_x)\khat
   \end{align*}
+
+
   We can consider the magnitude of the torque:
   \begin{align}
     ||\vec{\tau}|| = r_xF_y - r_yF_x
   \end{align}
+
+
   Next, we turn to the moment arm formula. 
   \begin{align*}
     \textit{moment} &= (\textit{moment arm})(\textit{force}) \\
                     &= \sqrt{r_x^2+r_y^2}\sqrt{F_x^2+F_y^2}
   \end{align*}
+
+
   We are able to write this as I have assumed that the force and distance are perpendicular to each other (See Problem \ref{torqueprob}). Then, because the force and radius are perpendicular, notice that \(\vec{r}\cdot \vec{F}=r_xF_x+r_yF_y=0\). We can utilize this fact by writing down:
   \begin{align}
     (r_xF_y-r_yF_x)^2 + (r_xF_x+r_yF_y)^2 &= (r_x^2+r_y^2)(F_x^2+F_y^2)
     \label{torque}
   \end{align}
+
+
   Notice that the left hand side of \Cref{torque} is simply \(||\vec{\tau}||^2\) and the right hand side is simply \((\textit{moment arm})^2(\textit{force})^2\). Hence, we have shown that \(||\vec{\tau}|| = (\textit{moment arm})(\textit{force})\) which is the moment arm formula. An immediate difference between torque and moment is that moment is a scalar while torque is a vector. Another fact about torque that it has a \(\khat\) component, which means that it is perpendicular to the plane formed by \(\vec{r}\) and \(\vec{F}\). 
-\end{example}
 
 
 Next, we will move on to triple products which happens to also be a three-dimensional topic. Firstly, take a look at the following three vectors:
