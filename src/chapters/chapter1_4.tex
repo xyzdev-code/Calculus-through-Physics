@@ -12,6 +12,36 @@ In the previous section, we defined a function as a rule that assigns to each el
 \end{equation}
 \end{definition}
 
+\begin{example}{Ordered pairs and Cartesian products}{}
+    Consider the sets \(A = \{1, 2\}\) and \(B = \{a, b\}\). The Cartesian product \(A \times B\) is given by:
+    \begin{equation}
+        A \times B = \{(1, a), (1, b), (2, a), (2, b)\}.
+    \end{equation}
+    Here, each ordered pair consists of an element from \(A\) and an element from \(B\). Notice that the order matters: \((1, a)\) is different from \((a, 1)\). This is different from the usual sets where the order of elements does not matter. Next, consider something more complex, \(\mathbb{Z}\cross\mathbb{Z}\):
+    \begin{equation}
+      \mathbb{Z} \times \mathbb{Z} = \{(m, n) \mid m, n \in \mathbb{Z}\}.
+    \end{equation}
+    This set contains all possible ordered pairs of integers. For example, \((1, 2), (3, 4), (-1, 0), (0, -3)\) are all elements of \(\mathbb{Z} \times \mathbb{Z}\). This Cartesian product is often visualized as a grid or lattice in the coordinate plane, where each point on the grid corresponds to an ordered pair of integers.
+    \begin{figure}[H]
+      \centering
+      \begin{tikzpicture}
+        \draw[step=1cm,gray,very thin] (-3.9,-3.9) grid (3.9,3.9);
+        \draw[thick,->] (-4,0) -- (4,0) node[anchor=north west] {x};
+        \draw[thick,->] (0,-4) -- (0,4) node[anchor=south east] {y};
+        \foreach \x in {-3,-2,-1,1,2,3} % vertical lines
+          \draw (\x,1pt) -- (\x,-3pt) node[anchor=north] {\x};
+        \foreach \y in {-3,-2,-1,1,2,3} % horizontal lines
+          \draw (1pt,\y) -- (-3pt,\y) node[anchor=east] {\y};
+        \foreach \x in {-3,-2,-1,0,1,2,3} {
+          \foreach \y in {-3,-2,-1,0,1,2,3} {
+            \fill (\x,\y) circle (2pt);
+          }
+        }
+      \end{tikzpicture}
+      \caption{A visualization of the Cartesian product \(\mathbb{Z} \times \mathbb{Z}\). Each dot represents an ordered pair of integers.}
+      \label{cartesianproduct}
+    \end{figure}
+\end{example}
 
 But why are ordered pairs and Cartesian products relevant to functions? Well, we can represent a function as a set of ordered pairs, where each ordered pair consists of an element from the domain and its corresponding element in the range. This leads us to a more formal definition of a function.
 \begin{definition}{Set-theory definition of functions}{}
@@ -45,4 +75,37 @@ I wish this is a pretty fresh way to look at functions. It is a bit more abstrac
 If you have read Chapter 2 or know linear transformations, you might be delighted to know that linear transformations are basically functions that map vectors to vectors. For instance, consider a function \(T: \mathbb{R}^2 \to \mathbb{R}^2\) defined by \(T(\vec{r}) = \begin{bsmallmatrix}
   2\vec{r}_x \\
   3\vec{r}_y
-\end{bsmallmatrix} \).
+\end{bsmallmatrix} \). But why is it a linear transformation? Because it satisfies the properties of additivity and homogeneity \sidenote{\footnotesize \textit{Please do verify these properties for yourself.}}.
+\begin{definition}{Linearity}{}
+  A linear transformation (or actually any function) \(T\) is a function such that
+  \begin{align*}
+    T(\vec{u} + \vec{v}) &= T(\vec{u}) + T(\vec{v}) \quad \textit{(Additivity)} \\
+    T(c\vec{u}) &= cT(\vec{u}) \quad \textit{(Homogeneity)}
+  \end{align*}
+\end{definition}
+
+I hope you see the connection between functions and linear transformations now. Linear transformations are just a special type of function that preserves vector space operations. It also explains why linear transformations are \textit{linear}. This is a beautiful example of how abstract mathematical concepts can be applied in various contexts, from simple functions to complex transformations in vector spaces. I also hope you see this definition of functions more than just a novelty, but a powerful tool that can enhance your understanding of mathematics as you progress in your studies.
+\hrule
+\begin{problem}[1]
+  Let \(A = \{1, 2, 7, 9\}\) and \(B = \{x, y, z\}\). List all the elements of the Cartesian product \(A \times B\). Then, define a function \(f: A \to B\) by specifying its set of ordered pairs such that \(f(1)=x\), \(f(2)=y\), \(f(7)=z\), and \(f(9)=x\). Write out the set that represents this function.
+\end{problem}
+\begin{problem}[1]
+  Are the following linear transformations? Justify your answer.
+  \begin{enumerate}[label=\alph*)]
+    \item \(T: \mathbb{R}^2 \to \mathbb{R}^2\) defined by \(T(\vec{r}) = \begin{bsmallmatrix}
+      2\vec{r}_x + 1 \\
+      3\vec{r}_y
+    \end{bsmallmatrix}\)
+    \item \(S: \mathbb{R}^2 \to \mathbb{R}^2\) defined by \(S(\vec{r}) = \begin{bsmallmatrix}
+      -\vec{r}_y \\
+      \vec{r}_x
+    \end{bsmallmatrix}\)
+    \item \(U: \mathbb{R}^2 \to \mathbb{R}^2\) defined by \(U(\vec{r}) = \begin{bsmallmatrix}
+      0 \\
+      0
+    \end{bsmallmatrix}\)
+  \end{enumerate}
+\end{problem}
+\begin{problem}[2]
+  Prove that any linear transformation must map the zero vector to the zero vector. That is, show that if \(T: \mathbb{R}^n \to \mathbb{R}^n\) \sidenote{\footnotesize \textit{Technically, linear transformations can map vectors to spaces of different dimensions as long as the properties of linearity are satisfied.}} is a linear transformation, then \(T(\vec{0}) = \vec{0}\). (Hint: \(\vec{0}+\vec{0}=\vec{0}\).)
+\end{problem}

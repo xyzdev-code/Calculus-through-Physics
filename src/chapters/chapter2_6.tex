@@ -1,1 +1,14 @@
 \section{An aside: Bra-ket and Hilbert space}
+
+
+\textit{Bra-ket} notation, also known as Dirac notation, is a standard mathematical notation used in quantum mechanics to describe quantum states. It was introduced by physicist Paul Dirac in the 1930s and has since become a fundamental tool in the field. The notation consists of two main components: bras and kets. It is indispensable in quantum mechanics, as it provides a concise and elegant way to represent quantum states, operators, and inner products. It is particularly useful in the context of \textit{Hilbert spaces}, which are complete inner product spaces that serve as the mathematical framework for quantum mechanics. We will build up some intuition for bra-ket notation here because it is a very integral part of (quantum) physics, but a more rigorous treatment can be found in advanced quantum mechanics or linear algebra texts. To start off, the vector \(\vec{\psi}\) in the traditional sense is represented as a \textit{ket}, denoted by \(|\psi\rangle\). 
+\begin{example}{Ket notation}{}
+  For example, a vector in a two-dimensional complex space can be represented as: 
+  \begin{equation*}
+    |\psi\rangle = \begin{bsmallmatrix}
+      \psi_1 \\
+      \psi_2
+    \end{bsmallmatrix}
+  \end{equation*}
+  where \(\psi_1\) and \(\psi_2\) are complex numbers. The ket represents a column vector in a complex vector space, which is often used to describe the state of a quantum system. Notice that I refrained from using \(\psi_x\) and \(\psi_y\) because in quantum mechanics, the components of a (state) vector do not necessarily correspond to spatial dimensions. We might use different bases in different scenarios (see next section). I want you to divorce the idea of vectors from spatial dimensions because in quantum mechanics, vectors can represent states that are not directly tied to physical space.
+\end{example}
