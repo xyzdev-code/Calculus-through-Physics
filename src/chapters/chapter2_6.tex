@@ -1,4 +1,4 @@
-\section{An aside: Bra-ket and Hilbert space}
+\section{An aside: Bra-ket and functions as vectors}
 
 
 \textit{Bra-ket} notation, also known as Dirac notation, is a standard mathematical notation used in quantum mechanics to describe quantum states. It was introduced by physicist Paul Dirac in the 1930s and has since become a fundamental tool in the field. The notation consists of two main components: bras and kets. It is indispensable in quantum mechanics, as it provides a concise and elegant way to represent quantum states, operators, and inner products. It is particularly useful in the context of \textit{Hilbert spaces}, which are complete inner product spaces that serve as the mathematical framework for quantum mechanics. We will build up some intuition for bra-ket notation here because it is a very integral part of (quantum) physics, but a more rigorous treatment can be found in advanced quantum mechanics or linear algebra texts. To start off, the vector \(\vec{\psi}\) in the traditional sense is represented as a \textit{ket}, denoted by \(|\psi\rangle\). 
@@ -10,5 +10,78 @@
       \psi_2
     \end{bsmallmatrix}
   \end{equation*}
-  where \(\psi_1\) and \(\psi_2\) are complex numbers. The ket represents a column vector in a complex vector space, which is often used to describe the state of a quantum system. Notice that I refrained from using \(\psi_x\) and \(\psi_y\) because in quantum mechanics, the components of a (state) vector do not necessarily correspond to spatial dimensions. We might use different bases in different scenarios (see next section). I want you to divorce the idea of vectors from spatial dimensions because in quantum mechanics, vectors can represent states that are not directly tied to physical space.
+  where \(\psi_1\) and \(\psi_2\) are complex numbers. The ket represents a column vector in a complex vector space, which is often used to describe the state of a quantum system. Notice that I refrained from using \(\psi_x\) and \(\psi_y\) because in quantum mechanics, the components of a (state) vector do not necessarily correspond to spatial dimensions. We might use different bases in different scenarios (see next section). I want you to divorce the idea of vectors from spatial dimensions because in quantum mechanics, vectors can represent states that are not directly tied to physical space. Adding vectors is done in the same way as traditional vector addition:
+  \begin{equation*}
+    |\psi\rangle + |\phi\rangle = \begin{bsmallmatrix}
+      \psi_1 + \phi_1 \\
+      \psi_2 + \phi_2
+    \end{bsmallmatrix}
+  \end{equation*}
+
+  We actually call the addition of two kets a \textit{superposition} (of states), which is a fundamental concept in quantum mechanics. A superposition represents a vector or state that is a combination of multiple possible states, and it is a key feature of quantum systems.
 \end{example}
+
+
+Dot products here are generalized to \textit{inner products}, which are represented using both bras and kets. A \textit{bra} is simply denoted by \(\langle\psi|\). But first, what is an inner product?
+\begin{definition}{Inner product}{}
+  An inner product is a mathematical operation that takes two vectors and produces a scalar (a single number). In the context of an n-dimensional complex vector spaces, the inner product of two vectors \(|\psi\rangle\) and \(|\phi\rangle\) is denoted as \(\langle\psi|\phi\rangle\), where \(\langle\psi|\) is the bra corresponding to the ket \(|\phi\rangle\).
+  \begin{equation*}
+    \langle\psi|\phi\rangle = \sum_{i=1}^{n} \psi_i^* \phi_i
+  \end{equation*}
+\end{definition}
+\begin{example}{Basic braket operations}{}
+  Let's say we have two kets:
+  \begin{equation*}
+    |\psi\rangle = \begin{bsmallmatrix}
+      1 + i \\
+      2
+    \end{bsmallmatrix}, \quad |\phi\rangle = \begin{bsmallmatrix}
+      3 \\
+      4 - i
+    \end{bsmallmatrix}
+  \end{equation*}
+
+  Now, we can compute the inner product (braket) between these two states:
+  \begin{equation*}
+    \langle\psi|\phi\rangle = (1 - i) \cdot 3 + 2 \cdot (4 - i) = 3 - 3i + 8 - 2i = 11 - 5i
+  \end{equation*}
+\end{example}
+
+
+Lastly, we have three conditions imposed on inner products \sidenote{\footnotesize \textit{You should try to prove these properties for yourself.}}:
+\begin{align}
+  \langle\psi|\psi\rangle &\geq 0 \\
+  \langle\psi|\phi\rangle &= \langle\phi|\psi\rangle^*\\
+  \langle\psi| (a|\phi\rangle + b|\phi\rangle) &= a\langle\psi|\phi\rangle + b\langle\psi|\phi\rangle
+\end{align}
+
+
+Till now, I have not really introduced a lot of new concepts, but I have just changed the notation. The real power of bra-ket notation comes when we start dealing with operators and transformations in quantum mechanics. Operators are analogous to matrices in linear algebra, and they act on kets to produce new kets. For example, if we have an operator \(\hat{A}\), we can represent its action on a ket \(|\psi\rangle\) as:
+\begin{equation}
+  \hat{A}|\psi\rangle = |\hat{A}\psi\rangle = |\phi\rangle
+\end{equation}
+
+
+where \(|\phi\rangle\) is the resulting ket after the operator \(A\) has acted on \(|\psi\rangle\). Here is the punchline: I claim that functions are just vectors. Not exactly, because some functions are not easy to work with. For the sake of this argument, consider the polynomials \sidenote{\footnotesize \textit{I bet that now the part of your brain that does geometry must be yelling: this is moonshine, how can polynomials be vectors! Polynomials do not have "direction". The truth is that the geometric interpretation of vectors can be generalized for other mathematical objects. As you will see for yourself, many of the common operations for geometric vectors can be generalized for functions.}} up to degree \(n\). The set of all polynomials up to degree \(n\) forms a vector space, or does it? Let's see. Consider two polynomials \(p(x)\) and \(q(x)\):
+\begin{equation*}
+  p(x) = a_0 + a_1 x + a_2 x^2 + \ldots + a_n x^n
+\end{equation*}
+\begin{equation*}
+  q(x) = b_0 + b_1 x + b_2 x^2 + \ldots + b_n x^n
+\end{equation*}
+
+
+We can add these two polynomials together:
+\begin{equation*}
+  p(x) + q(x) = (a_0 + b_0) +
+  (a_1 + b_1)x + (a_2 + b_2)x^2 + \ldots + (a_n + b_n)x^n
+\end{equation*}
+
+
+The resultant polynomial is still a polynomial of degree \(n\) or less. We can also multiply a polynomial by a scalar \(c\):
+\begin{equation*}
+  c \cdot p(x) = c a_0 + c a_1 x + c a_2 x^2 + \ldots + c a_n x^n
+\end{equation*}
+
+
+Again, functions behave just as if they were vectors. The zero polynomial (where all coefficients are zero) acts as the zero vector. The additive inverse of a polynomial \(p(x)\) is simply \(-p(x)\), which is also a polynomial of degree \(n\) or less. Thus, the set of all polynomials up to degree \(n\) satisfies all the properties of a vector space.
