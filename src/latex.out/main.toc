@@ -17,8 +17,8 @@
 \contentsline {section}{\numberline {2.5}Cross products and triple products}{42}{section.2.5}%
 \contentsline {subsection}{Further problems}{48}{section*.30}%
 \contentsline {section}{\numberline {2.6}An aside: Bra-ket and functions as vectors}{49}{section.2.6}%
-\contentsline {section}{\numberline {2.7}An aside: Eigenvalues and Eigenfunctions}{51}{section.2.7}%
-\contentsline {part}{\partnumberline {II}Calculus I}{53}{part.2}%
-\contentsline {chapter}{\chapternumberline {3}Derivatives}{55}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Differentiation basics}{55}{section.3.1}%
-\contentsline {subsection}{Newton's method}{59}{section*.35}%
+\contentsline {section}{\numberline {2.7}An aside: Eigenvalues and Eigenfunctions}{53}{section.2.7}%
+\contentsline {part}{\partnumberline {II}Calculus I}{55}{part.2}%
+\contentsline {chapter}{\chapternumberline {3}Derivatives}{57}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Differentiation basics}{57}{section.3.1}%
+\contentsline {subsection}{Newton's method}{61}{section*.35}%

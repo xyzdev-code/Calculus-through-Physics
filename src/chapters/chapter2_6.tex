@@ -84,4 +84,94 @@ The resultant polynomial is still a polynomial of degree \(n\) or less. We can a
 \end{equation*}
 
 
-Again, functions behave just as if they were vectors. The zero polynomial (where all coefficients are zero) acts as the zero vector. The additive inverse of a polynomial \(p(x)\) is simply \(-p(x)\), which is also a polynomial of degree \(n\) or less. Thus, the set of all polynomials up to degree \(n\) satisfies all the properties of a vector space.
+Again, functions behave just as if they were vectors. The zero polynomial (where all coefficients are zero) acts as the zero vector. The additive inverse of a polynomial \(p(x)\) is simply \(-p(x)\), which is also a polynomial of degree \(n\) or less. Thus, the set of all polynomials up to degree \(n\) satisfies all the properties of a vector space. However, the astute among you may have noticed that I have not defined an inner product for these polynomials yet. We can define an inner product for polynomials as follows (though I have to start using calculus, so feel free to skip this part until you are down with Calculus II):
+\begin{definition}{Inner product for polynomials}{}
+  The inner product of two polynomials \(p(x)\) and \(q(x)\) over the interval \([a, b]\) is defined as:
+  \begin{equation*}
+    \langle p | q \rangle = \int_a^b p(x)^* q(x) dx
+  \end{equation*}
+  where \(p(x)^*\) denotes the complex conjugate of \(p(x)\).
+\end{definition}
+
+
+Two key properties that physicists exploit are \textit{orthogonality} and \textit{normalization}. Two functions \(f(x)\) and \(g(x)\) are said to be orthogonal over an interval \([a, b]\) if their inner product is zero:
+\begin{equation}
+  \langle f | g \rangle = \int_a^b f(x)^* g(x) dx = 0
+\end{equation}
+
+
+A function \(f(x)\) is said to be normalized over an interval \([a, b]\) if its inner product with itself is equal to one:\sidenote{\footnotesize\textit{Do take note that \(|f(x)|=f(x)f(x)^*\).}}
+\begin{equation}
+  \langle f | f \rangle = \int_a^b |f(x)|^2 dx = 1
+\end{equation}
+
+
+With these two properties, a set of functions are \textit{orthonormal} if they are normalized and orthogonal to each other. \sidenote{\footnotesize\textit{The \(\delta\) is the Kronecker delta, which is 1 if the indices are equal and 0 otherwise.}} For a set of orthonormal functions \(\{f_i(x)\}\), we have:
+\begin{equation}
+  \langle f_i | f_j \rangle = \delta_{ij} = \begin{cases}
+    1 & i = j \\
+    0 & i \neq j
+  \end{cases}
+\end{equation}
+
+
+Armed with these concepts, we can revisit an old problem in Chapter 1, Problem \ref{infinitewell}. The wave function \(\psi_n(x)\) in this case is
+\begin{equation}
+  \psi_n(x) = \sqrt{\frac{2}{a}} \sin\left(\frac{n \pi x}{a}\right)
+\end{equation}
+
+
+These wave functions are actually orthogonal (over the interval \([0,a]\)) wherever \(p \neq q\) in the sense that
+\begin{align*}
+ \int_{0}^{a} \psi_p\psi_q dx &= \frac{2}{a} \int_0^a \sin\left(\frac{p\pi}{a}x\right)\sin\left(\frac{q\pi}{a}\right) dx \\
+                       &= \frac{1}{a} \int_0^a \cos\left(\frac{p-q}{a}\pi x\right) - \cos\left(\frac{p+q}{a}\pi x\right) dx \\
+                       &= \left(\frac{1}{(p-q)\pi}\sin\left(\frac{p-q}{a}\pi x\right) - \frac{1}{(p+q)\pi}\sin\left(\frac{p+q}{a}\pi x\right) \right)^{a}_{0} \\
+                       &= \frac{1}{\pi}\left(\frac{\sin((p-q)\pi)}{p-q} - \frac{\sin((p+q)\pi)}{p+q} \right) \\
+                       &= 0 
+\end{align*}
+
+
+Because of normalization \sidenote{\footnotesize\textit{Recall that \(|\psi|^2\) gives us the probability at \(x\), hence the probability must add up to 1, therefore we have the following integral.}}, we also have
+\begin{equation}
+  \int_0^a |\psi_n|^2 dx = 1
+\end{equation}
+
+
+Hence, the set of \({\psi_n}\) are actually orthonormal. Why do we care so much about orthonormality in the first place? Well, because of something known as \textit{Fourier's trick}. You see, many solutions to the infinite square well is not a simple \(\psi_n\), but rather a linear combination or superposition of many \(\psi_n\):
+\begin{equation}
+  f(x) = \sum_{n=1}^{\infty} c_n \psi_n(x)
+\end{equation}
+
+
+The question is, how do we find the coefficients \(c_n\)? This is where orthonormality comes in. We can multiply both sides by \(\psi_m(x)\) and integrate over the interval \([0,a]\):
+\begin{equation*}
+  \int_0^a f(x) \psi_m(x) dx = \int_0^a \left(\sum_{n=1}^{\infty} c_n \psi_n(x)\right) \psi_m(x) dx
+\end{equation*}
+
+
+We can interchange the sum and the integral:
+\begin{equation*}
+  \int_0^a f(x) \psi_m(x) dx = \sum_{n=1}^{\infty} c_n \int_0^a \psi_n(x) \psi_m(x) dx
+\end{equation*}
+
+
+Due to orthonormality, all terms in the sum vanish except for the term where \(n = m\):
+\begin{equation*}
+  \int_0^a f(x) \psi_m(x) dx = c_m \int_0^a |\psi_m(x)|^2 dx
+\end{equation*}
+
+
+Since \(\psi_m(x)\) is normalized, the integral on the right side equals 1:
+\begin{equation*}
+  \int_0^a f(x) \psi_m(x) dx = c_m
+\end{equation*}
+
+
+Thus, we have derived a formula for the coefficients \(c_n\):
+\begin{equation}
+  c_n = \int_0^a f(x) \psi_n(x) dx
+\end{equation}
+
+
+
+Just by the simple properties of orthonormality, we have derived a powerful method to find the coefficients of a function expressed as a linear combination of orthonormal basis functions.
