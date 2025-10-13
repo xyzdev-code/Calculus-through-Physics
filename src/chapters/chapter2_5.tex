@@ -244,7 +244,6 @@ As for vector triple product, the process of computation is very similar. We fir
 \begin{remark}{}{}
   The above proof is a tedious pedagogical exercise mainly created to drill in the concepts of the cross products.
 \end{remark}
-\hrule
 \begin{problem}
   Find the cross products of the following vectors:
   \begin{enumerate}[label=\alph*)]
@@ -314,6 +313,37 @@ As for vector triple product, the process of computation is very similar. We fir
 
 
   Therefore, if the determinant is 0, what does this imply about the three points?
+\end{problem}
+\begin{problem}[1]
+  The vector projection of \(\vec{a}\) onto \(\vec{b}\) is defined as:
+  \begin{equation}
+    \text{proj}_{\vec{b}}\vec{a} = \left(\frac{\vec{a}\cdot\vec{b}}{||\vec{b}||^2}\right)\vec{b}
+  \end{equation}
+
+
+  Hence, find the projection of \(\vec{a}=\begin{bsmallmatrix}
+    1 \\
+    2 \\
+    3
+  \end{bsmallmatrix}\) onto \(\vec{b}=\begin{bsmallmatrix}
+    4 \\
+    5 \\
+    6
+  \end{bsmallmatrix}\).
+  \label{projvec}
+\end{problem}
+\begin{problem}[1]
+  The Gram-Schmidt process is a way of finding two or more vectors that are orthogonal to each other. Given two vectors \(\vec{a}\) and \(\vec{b}\), we can find a vector \(\vec{v}\) that is orthogonal to \(\vec{a}\) by using the formula (the proj function is defined in Problem \ref{projvec}):
+  \begin{equation}
+    \vec{v} = \vec{b} - \text{proj}_{\vec{a}}\vec{b}
+  \end{equation}
+
+
+  Hence, by using the Gram-Schmidt process, find vector \(\vec{v_1}\) that is orthogonal to \(\vec{a}=\begin{bsmallmatrix}
+    1 \\
+    1 \\
+    0
+  \end{bsmallmatrix}\). Repeat this process to find a vector \(\vec{v_2}\) that is orthogonal to both \(\vec{a}\) and \(\vec{v_1}\). Do it once more to find a vector \(\vec{v_3}\) that is orthogonal to \(\vec{a}\), \(\vec{v_1}\) and \(\vec{v_2}\). Verify that all the vectors are orthogonal to each other using their dot products.
 \end{problem}
 %
 % \begin{enumerate}
