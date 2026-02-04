@@ -1,11 +1,10 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{Contents}{iv}{section*.2}%
-\contentsline {chapter}{Preface I: Calculus, the language of the universe}{v}{section*.2}%
-\contentsline {chapter}{Preface II: How to read this book}{vii}{chapter*.5}%
+\contentsline {chapter}{Preface}{v}{section*.2}%
 \contentsline {part}{\partnumberline {I}Precalculus}{1}{part.1}%
 \contentsline {chapter}{\chapternumberline {1}Functions}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Function basics}{3}{section.1.1}%
-\contentsline {subsection}{Simple pendulum}{4}{section*.8}%
+\contentsline {subsection}{Simple pendulum}{4}{section*.6}%
 \contentsline {section}{\numberline {1.2}Function composition and inverses}{9}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Injection, surjection and bijection}{13}{section.1.3}%
 \contentsline {section}{\numberline {1.4}An aside: A more rigorous definition of a function}{18}{section.1.4}%
@@ -15,10 +14,10 @@
 \contentsline {section}{\numberline {2.3}Matrices}{32}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Determinants, inverses and Cramer's rule}{38}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Cross products and triple products}{44}{section.2.5}%
-\contentsline {subsection}{Further problems}{50}{section*.30}%
+\contentsline {subsection}{Further problems}{50}{section*.28}%
 \contentsline {section}{\numberline {2.6}An aside: Bra-ket and functions as vectors}{52}{section.2.6}%
 \contentsline {section}{\numberline {2.7}An aside: Eigenvalues and Eigenfunctions}{57}{section.2.7}%
 \contentsline {part}{\partnumberline {II}Calculus I}{59}{part.2}%
 \contentsline {chapter}{\chapternumberline {3}Derivatives}{61}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Differentiation basics}{61}{section.3.1}%
-\contentsline {subsection}{Newton's method}{65}{section*.35}%
+\contentsline {subsection}{Newton's method}{65}{section*.33}%

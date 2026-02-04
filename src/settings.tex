@@ -450,7 +450,7 @@
 % BOXES %
 %-------%
 \newcounter{problem}
-\counterwithin{problem}{chapter}
+\counterwithin{problem}{section}
 \makeatletter
 \newcount\my@repeat@count
 \newcommand{\myrepeat}[2]{%
@@ -462,13 +462,10 @@
 \makeatother
 \newenvironment{problem}[1][0]{
   \needspace{3in}
+  \vspace{2pt}
   \refstepcounter{problem}
   \ifnum\value{problem}=1 
-  \vspace{2pt}
   \hrule 
-  \else
-  \vspace{2pt}
-  \hrule
   \fi
   \vspace{2pt}
   \par \myrepeat{#1}{\textbf{*}} \textbf{Problem \thechapter.\arabic{problem}} \\ \par
