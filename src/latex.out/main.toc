@@ -19,5 +19,4 @@
 \contentsline {section}{\numberline {2.7}An aside: Eigenvalues and Eigenfunctions}{57}{section.2.7}%
 \contentsline {part}{\partnumberline {II}Calculus I}{59}{part.2}%
 \contentsline {chapter}{\chapternumberline {3}Derivatives}{61}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Differentiation basics}{61}{section.3.1}%
-\contentsline {subsection}{Newton's method}{65}{section*.33}%
+\contentsline {section}{\numberline {3.1}Essence of calculus}{61}{section.3.1}%
