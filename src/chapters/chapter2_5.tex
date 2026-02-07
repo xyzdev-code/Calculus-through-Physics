@@ -1,6 +1,6 @@
 
 \section{Cross products and triple products}
-The previous section perfectly segues into this section. \textit{Cross products} is an operation on vectors that happens solely in the third dimension. Do not confuse it with the dot product, both uses different operators and should not be used interchangeably. Firstly, we must recall that one of the basis vectors is \(\khat\) and it is one unit in the z direction.
+The previous section perfectly segues into this section. \emph{Cross products} is an operation on vectors that happens solely in the third dimension. Do not confuse it with the dot product, both uses different operators and should not be used interchangeably. Firstly, we must recall that one of the basis vectors is \(\khat\) and it is one unit in the z direction.
 \begin{marginfigure}
   \centering
   \begin{tikzpicture}
@@ -142,7 +142,7 @@ Next, we will move on to triple products which happens to also be a three-dimens
   The \textbf{triple vector product} is a product of three 3-dimensional vectors. The most common of which, is the scalar triple product which is \Cref{figtripvec}. The formula for which is \(\vec{a}\cdot(\vec{b}\times\vec{c})\), which yields the volume of the parallelepiped with the sides being the three vectors. Another type of triple vector multiplication is vector triple product. It is simply \(\vec{a}\times(\vec{b}\times\vec{c})\). We can use \textbf{Lagrange's formula} to compute it easily: \(\vec{a}\times(\vec{b}\times\vec{c}) = \vec{b}(\vec{a}\cdot\vec{c}) - \vec{c}(\vec{a}\cdot\vec{b})\).
 \end{definition}
 \begin{example}{Volume of parallelepiped}{}
-  We shall derive the formula for the volume of a parallelepiped given its height, breadth and length. We shall denote them \(h\), \(b\) and \(l\) respectively. Notice that we define the sides of the parallelepiped like this:
+  We shall derive the formula for the volume of a parallelepiped given its height, breadth and length, denote them \(h\), \(b\) and \(l\) respectively. Notice that we define the sides of the parallelepiped like this:
   \begin{align*}
     \vec{a} &= \begin{bmatrix}
       l \\
@@ -333,7 +333,7 @@ As for vector triple product, the process of computation is very similar. We fir
   \label{projvec}
 \end{problem}
 \begin{problem}[1]
-  The Gram-Schmidt process is a way of finding two or more vectors that are orthogonal to each other. Given two vectors \(\vec{a}\) and \(\vec{b}\), we can find a vector \(\vec{v}\) that is orthogonal to \(\vec{a}\) by using the formula (the proj function is defined in Problem \ref{projvec}):
+  The \emph{Gram-Schmidt process} is a way of finding two or more vectors that are orthogonal to each other. Given two vectors \(\vec{a}\) and \(\vec{b}\), we can find a vector \(\vec{v}\) that is orthogonal to \(\vec{a}\) by using the formula (the proj function is defined in Problem \ref{projvec}):
   \begin{equation}
     \vec{v} = \vec{b} - \text{proj}_{\vec{a}}\vec{b}
   \end{equation}

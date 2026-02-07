@@ -3,10 +3,52 @@
 \section{Essence of calculus}
 
 
-Perhaps framing an established pedagogical subject like calculus through the unconventional lens of physics is not optimal, but I will try my best. One of the most infamous problems in physics is the Brachistochrome curve, which has a deceptively simple problem statement:
+Perhaps framing an established pedagogical subject like calculus through the unconventional lens of physics is not optimal, but I will try my best. One of the most infamous problems in physics is the Brachistochrone curve, which has a deceptively simple problem statement:
 \begin{problem}
-  \textit{(Brachistochrome curve)} Find the curve that connects a point A and a lower point B, where B is not directly below A, on which a ball slides frictionlessly under the influence of a uniform gravitational field from A to B in the shortest time.\sidenote{Uniform gravitational field means that no matter the position of the ball, the gravitational force acting on the ball is the same.}
+  \textit{(Brachistochrone curve)} Find the curve that connects a point A and a lower point B, where B is not directly below A, on which a ball slides frictionlessly under the influence of a uniform gravitational field from A to B in the shortest time.\sidenote{Uniform gravitational field means that no matter the position of the ball, the gravitational force acting on the ball is the same. Additionally, the initial velocity of the ball is taken to be 0.}
 \end{problem}
 
 
-What do you think is the fastest path? Perhaps a straight line, a quarter circle?
+What do you think is the fastest path? Perhaps a straight line, a quarter circle? Turns out, it is more complex than that. It was said that when Johann Bernoulli posed this question to the scientific journal Acta Eruditorum, Newton stayed up for an entire night and mailed in the solution. Bernoulli immediately recognized it was from Newton, exclaiming that he "recognizes a lion from his claw mark". This problem was introduced while calculus was in its infancy, so we can gather some insight on why calculus was developed the way it is. Unfortunately, the whole solution would require integration, the topic in Part II. I shall first present a sketch of what is in store. Some preliminaries out of the gate, the formulas for kinetic energy (KE) and gravitational potential energy (GPE) are as such:
+
+
+\begin{align}
+  KE &= \frac{1}{2}mv^2 \\ 
+  GPE &= mgy
+\end{align}
+
+
+where m is the mass of the ball, v is the velocity of the ball and y is the height of the ball above ground. These constitute the total energy of the ball, which by the conservation of energy, must stay constant. Thus, we have
+
+\begin{align}
+  KE_{initial} + GPE_{initial} = KE_{final} + GPE_{final}
+\end{align}
+
+or, simplifying 
+
+\begin{equation}
+  gD = \frac{1}{2}v^2
+\end{equation}
+
+
+where D is the height from B to A and v is the final velocity. Turns out, if we do some manipulation, we can show that the path follows the law of reflection for light, which then enables us to derive 
+
+\begin{equation}
+  dx = \sqrt{\frac{y}{D-y}}dy
+  \label{cycloid}
+\end{equation}
+
+
+which is known as a \emph{differential equation} whose solution is a shape called a \emph{cycloid}.
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+\draw[->] (0,0) -- (0,3);
+\draw[->] (0,0) -- (2.1*pi,0);
+\draw[blue,domain=0:2*pi,samples=50] plot ({\x - sin(\x r)},{1 - cos(\x r)});
+\end{tikzpicture}
+  \caption{Figure of a cycloid.}
+\end{figure}
+
+
+The core of deriving \Cref{cycloid} is by analyzing the small displacements of the ball as it moves down, tiny displacements, or \emph{infinitesimal} displacements. 
