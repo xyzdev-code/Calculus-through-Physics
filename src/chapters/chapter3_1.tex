@@ -5,7 +5,7 @@
 
 Perhaps framing an established pedagogical subject like calculus through the unconventional lens of physics is not optimal, but I will try my best. One of the most infamous problems in physics is the Brachistochrone curve, which has a deceptively simple problem statement:
 \begin{problem}
-  \textit{(Brachistochrone curve)} Find the curve that connects a point A and a lower point B, where B is not directly below A, on which a ball slides frictionlessly under the influence of a uniform gravitational field from A to B in the shortest time.\sidenote{Uniform gravitational field means that no matter the position of the ball, the gravitational force acting on the ball is the same. Additionally, the initial velocity of the ball is taken to be 0.}
+  \textit{(Brachistochrone curve)} Find the curve that connects a point A and a lower point B, where B is not directly below A, on which a ball slides frictionlessly under the influence of a uniform gravitational field from A to B in the shortest time.\sidenote{\footnotesize \textit{Uniform gravitational field means that no matter the position of the ball, the gravitational force acting on the ball is the same. Additionally, the initial velocity of the ball is taken to be 0.}}
 \end{problem}
 
 
@@ -51,4 +51,14 @@ which is known as a \emph{differential equation} whose solution is a shape calle
 \end{figure}
 
 
-The core of deriving \Cref{cycloid} is by analyzing the small displacements of the ball as it moves down, tiny displacements, or \emph{infinitesimal} displacements. 
+The core of deriving \Cref{cycloid} is by analyzing the small displacements of the ball as it moves down, tiny displacements, or \emph{infinitesimal} displacements. Infinitesimal refers to a quantity that is smaller than any positive real number, but not zero, which sounds weird at first. Calculus is the study of infinitesimal changes, and through analyzing small changes, we can understand a much larger picture. It turns out, a large class of problems in physics and even other sciences can be solved by the methods of calculus. It is surprisingly powerful how we can essentially utilize tiny changes to understand the whole. But enough of philosophical musings, let's get to the math. You would notice that the entirety of this chapter (and the next chapter too) is about the Brachistochrone problem, needless to say, you should get yourself familiar with the problem. As a teaser, the rigor in calculus is due to the \emph{limit}, and I shall present a crude but intuitive definition of it. 
+
+
+\begin{definition}{Limit (not rigorous)}{}
+  A limit of a function f(x) as x approaches a is the value that f(x) approaches as x gets arbitrarily close to a. In notation form, we write
+  \begin{equation}
+    \lim_{x \to a} f(x) = L
+  \end{equation}
+  where L is the limit of f(x) as x approaches a. \sidenotemark
+\end{definition}
+\sidenotetext{\footnotesize \textit{Actually, \(f(a)\) does not even have to exist, it can be undefined.}}
