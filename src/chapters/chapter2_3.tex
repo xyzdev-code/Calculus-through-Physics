@@ -1,8 +1,9 @@
 
 \section{Matrices}
-In this chapter, we will introduce a new mathematical object that you have probably heard before but not sure what it is, \emph{linear transformation}. A great place to start is the \emph{basis vectors}. All vectors can be written as a unique linear combination of the basis vectors. But \(\ihat\) and \(\jhat\) are not the only basis vectors out there, what if I wanted to describe vectors using another set of basis vectors? Perhaps that would be more convenient for my special use case. Well, it is actually pretty easy to do so. For the sake of this argument, let us try to rotate all of the vectors in a normal 2d vector field anti-clockwise by \(90\degree\). \begin{marginfigure}
+In this chapter, we will introduce a new mathematical object that you have probably heard before but not sure what it is, \emph{linear transformation}. A great place to start is the \emph{basis vectors}. All vectors can be written as a unique linear combination of the basis vectors. But \(\ihat\) and \(\jhat\) are not the only basis vectors out there, what if I wanted to describe vectors using another set of basis vectors? Perhaps that would be more convenient for my special use case. Well, it is actually pretty easy to do so. For the sake of this argument, let us try to rotate all of the vectors in a normal 2d vector field anti-clockwise by \(90\degree\). 
+\begin{figure}[h]
   \centering
-  \begin{tikzpicture}[scale=0.3]
+  \begin{tikzpicture}
     \draw[thin, gray!40] (-4,-4) grid (4,4);
     \draw[line width=2pt, blue, -stealth] (0,0) -- (1,2) node[anchor=south west]{\(\vec{a}\)};
     \draw[line width=2pt, red, -stealth] (0,0) -- (-2,1) node[anchor=south east]{\(\vec{b}\)};
@@ -11,7 +12,7 @@ In this chapter, we will introduce a new mathematical object that you have proba
   \end{tikzpicture}
   \caption{Two vectors, one rotated anti-clockwise by \(90\degree\).}
   \label{rotate90}
-\end{marginfigure}
+\end{figure}
 Notice how we could not describe \(\vec{b}\) as some constant multiplied to \(\vec{a}\) in \Cref{rotate90}. We need some other tool to help us. If we change the basis vectors of \(\vec{a}\) to another pair of basis vectors, can we somehow get \(\vec{b}\)? Here is a thought: replace the \(\ihat\) with \(\begin{bsmallmatrix}
   0 \\
   1
@@ -30,7 +31,7 @@ Notice how we could not describe \(\vec{b}\) as some constant multiplied to \(\v
 \end{bsmallmatrix} \). This is pretty intriguing, by changing the basis vectors, we have basically "morphed" \(\vec{a}\) into \(\vec{b}\). This "morphing" is called a \emph{linear transformation} or \textit{linear map}. In some of the visualisations of the linear transformations I might keep the original grid in the background in a lighter color.
 
 
-\begin{example}{Linear transformations}{}
+\begin{example}
   Here are some examples of linear transformations, the blue grid is the vector space after the transformation. Take note where the basis vectors are after the transformations.
   \begin{figure}[H]
     \centering
@@ -45,9 +46,7 @@ Notice how we could not describe \(\vec{b}\) as some constant multiplied to \(\v
     \caption{A transformation in the form of an anti-clockwise \textit{rotation}.}
   \end{figure}
   \begin{figure}[H]
-
     \centering
-
     \begin{tikzpicture}[scale=0.8]
       \draw[gray!40, thin] (-4, -4) grid (4,4); 
       \draw[blue!40, thin, xslant=tan 45] (-4, -4) grid (4,4);
@@ -56,17 +55,16 @@ Notice how we could not describe \(\vec{b}\) as some constant multiplied to \(\v
       \draw[line width=2pt, red, -stealth] (0,0) -- (1,0) node[anchor=south west]{\(\ihat_{\textit{after}}\)};
       \draw[line width=2pt, blue, -stealth] (0,0) -- (1,1) node[anchor=south west]{\(\jhat_{\textit{after}}\)};
     \end{tikzpicture}
-    \caption{A transformation in the form of a \textit{shear}.}
+    \caption{A transformation in the form of a \textit{shear}.\protect\footnotemark}
     \label{shearfig}
-    \sidenotemark
   \end{figure}
 \end{example}
-\sidenotetext{\footnotesize \textit{In \Cref{shearfig}, the \(\ihat\) vector remains at the same location.}}
+\footnotetext{In \Cref{shearfig}, the \(\ihat\) vector remains at the same location.}
 
 To describe these transformations, we actually only need to describe where the basis vectors land after the transformation. No other information required. We present the location of the new basis vectors in the form of a \emph{matrix}:
-\begin{marginfigure}
+\begin{figure}
   \centering
-  \begin{tikzpicture}[scale=0.17]
+  \begin{tikzpicture}
     \draw[gray!40, thin] (-4, -4) grid (4,4); 
     \draw[blue!40, thin, xslant=tan 45] (-4, -4) grid (4,4);
     \draw[line width=2pt, -stealth, blue] (0,0) -- (1,2) node[anchor=south west]{\(\vec{a}_{\text{before}}\)};
@@ -74,9 +72,9 @@ To describe these transformations, we actually only need to describe where the b
   \end{tikzpicture}
   \caption{Figure of a vector before and after a shear transformation like in \Cref{shearfig}.}
   \label{shearveca}
-\end{marginfigure}
-\begin{definition}{Matrices}{}{}
-  In linear algebra, matrices generally represent linear transformations. A \(n \times m\) matrix is one with \(n\) rows and \(m\) columns. The nth column of the matrix denotes the representation of the corresponding basis vector after the  linear transformation.
+\end{figure}
+\begin{definition}
+  In linear algebra, \textbf{matrices} generally represent linear transformations. An \(n \times m\) matrix is one with \(n\) rows and \(m\) columns. The nth column of the matrix denotes the representation of the corresponding basis vector after the  linear transformation.
   \begin{equation*}
     \begin{bmatrix}
       a & b \\
@@ -91,12 +89,12 @@ To describe these transformations, we actually only need to describe where the b
     d
   \end{bsmallmatrix} \).
 \end{definition}
-\begin{remark}{}{}
+\begin{remark}
   Matrices can also represent a variety of things apart from linear transformations. It is just a mathematical object representing a bunch of things arranged in rows and columns.
 \end{remark}
 
 It should go without saying that any vector in the original vector space will get moved after a transformation. To calculate where a vector ends up after a transformation, we multiply the matrix by the vector. This is where many textbooks make linear algebra feel laborious. In order to make the process more intuitive, recall that a vector has a \(\ihat\) and \(\jhat\) component. Now, we swap the basis vectors for the new basis vectors described in our matrix. This is just multiplying a vector by a constant, which you have done before.
-\begin{example}{Deriving a linearly transformed vector}{}
+\begin{example}
   Take the transformation in \Cref{shearfig} which is represented by the matrix \(\begin{bsmallmatrix}
     1 & 1 \\
     0 & 1
@@ -128,11 +126,11 @@ It should go without saying that any vector in the original vector space will ge
 
 
 
-If you have come from a linear algebra course, this may feel very refreshing. Instead of memorising what needs to be multiplied, you just swap the basis vectors for some other basis vectors. While we get the representation of \(\vec{a}\) from \Cref{shearveca}, it also important to take note that in the new vector space after the transformation, \(\vec{a}\) has one unit of direction in the horizontal direction and two units of direction in the "vertical" direction. This is just like the original representation of \(\vec{a}\), just that the vector space has been sheared. This change of basis vector is important enough to have its own name, \textit{change of basis}.
+If you have come from a linear algebra course, this may feel very refreshing. Instead of memorizing what needs to be multiplied, you just swap the basis vectors for some other basis vectors. While we get the representation of \(\vec{a}\) from \Cref{shearveca}, it is also important to take note that in the new vector space after the transformation, \(\vec{a}\) has one unit of direction in the horizontal direction and two units of direction in the "vertical" direction. This is just like the original representation of \(\vec{a}\), just that the vector space has been sheared. This change of basis vector is important enough to have its own name, \textit{change of basis}.
 
 
-With this knowledge, let us proceed to one of the most hated parts of linear algebra, \emph{matrix multiplication}. These few words can bring out so much frustration out of so many students. It is quite a laborious and boring process if you do not grasp the meaning and motivation behind it. In actuality, the idea is simple. When you multiply two matrices together, you are effectively applying two linear transformations, one after another. The result is also a matrix, which is a linear transformation, hence the operation is \textit{closed}. \marginnote{\footnotesize \textit{This is only true if the matrix is \(n\times n\), which are the ones we are dealing with.}}
-\begin{example}{Deriving matrix multiplication}{}
+With this knowledge, let us proceed to one of the most hated parts of linear algebra, \emph{matrix multiplication}. These few words can bring out so much frustration out of so many students. It is quite a laborious and boring process if you do not grasp the meaning and motivation behind it. In actuality, the idea is simple. When you multiply two matrices together, you are effectively applying two linear transformations, one after another. The result is also a matrix, which is a linear transformation, hence the operation is \textit{closed}. \footnote{This is only true if the matrix is \(n\times n\), which are the ones we are dealing with.}
+\begin{example}
   Say you have two matrices, a 90\degree anti-clockwise rotation \(x=\begin{bsmallmatrix}
     0 & -1 \\
     1 & 0
@@ -150,12 +148,12 @@ With this knowledge, let us proceed to one of the most hated parts of linear alg
       \draw[blue!40, thin, xslant=tan 45] (-4, -4) grid (4,4);
       \draw[red!40, thin, rotate=90, xslant=tan 45] (-4, -4) grid (4,4);
     \end{tikzpicture}
-    \caption{Figure of applying two linear transformations.}
+    \caption{Two linear transformations.}
   \end{figure}
 \end{example}
 
 
-It should not be difficult to see that the end result of applying the two linear transformations in the previous examples resulted in another linear transformation (the red grid). We wish to find the representation of this linear transformation as a matrix. Let us go through this step by step. First of all, the basis vectors of the \emph{identity matrix} \marginnote{\footnotesize \textit{The identity matrix is simply the transformation that leaves the vector space unchanged.}}, gets moved to some new location. In other words, given a matrix \(a=\begin{bsmallmatrix}
+It should not be difficult to see that the end result of applying the two linear transformations in the previous examples resulted in another linear transformation (the red grid). We wish to find the representation of this linear transformation as a matrix. Let us go through this step by step. First of all, the basis vectors of the \emph{identity matrix} \footnote{The identity matrix is simply the transformation that leaves the vector space unchanged.}, gets moved to some new location. In other words, given a matrix \(a=\begin{bsmallmatrix}
   a_1 & a_2 \\
   a_3 & a_4
 \end{bsmallmatrix} \), we know that the basis vectors gets moved to \(\begin{bsmallmatrix}
@@ -187,7 +185,7 @@ It should not be difficult to see that the end result of applying the two linear
 
 This is the reason many students find linear algebra tedious. Most courses make students memorize the formula which is extremely rote. I wish that you understand what is going on behind the scenes on this formula. With that said, it is best to get some experience with these multiplications:
 
-\begin{example}{Matrix multiplication}{}
+\begin{example}
   Given that \(x=\begin{bsmallmatrix}
     1 & 2 \\
     3 & 4
@@ -244,7 +242,7 @@ This is the reason many students find linear algebra tedious. Most courses make 
   \end{equation}
 
 
-  where \(a_{ii}\) denotes the entry for the i-th column and i-th row of \(A\).
+  where \(a_{ii}\) denotes the entry for the ith column and ith row of \(A\).
   \begin{enumerate}[label=\alph*)]
     \item{Let \(A=\begin{bsmallmatrix}
         1 & 2 & 3 \\

@@ -1,22 +1,26 @@
 
 \section{Cross products and triple products}
-The previous section perfectly segues into this section. \emph{Cross products} is an operation on vectors that happens solely in the third dimension. Do not confuse it with the dot product, both uses different operators and should not be used interchangeably. Firstly, we must recall that one of the basis vectors is \(\khat\) and it is one unit in the z direction.
-\begin{marginfigure}
+The previous section perfectly segues into this section. \emph{Cross products} is an operation on vectors that happens solely in the third dimension. Do not confuse it with the dot product, both uses different operators and should not be used interchangeably. Firstly, we must recall that one of the basis vectors is \(\khat\), and it is one unit in the z direction.
+\begin{figure}
   \centering
   \begin{tikzpicture}
-    \draw[line width=2pt, -stealth, red] (0,0,0) -- (1,0,0) node[pos=1.1]{\(\ihat\)};
-    \draw[line width=2pt, -stealth, blue] (0,0,0) -- (0,0,-1) node[pos=1.4]{\(\jhat\)};
+    \draw[line width=2pt, -stealth, red] (0,0,0) -- (1,0,0) node[pos=1.1]{\(\jhat\)};
+    \draw[line width=2pt, -stealth, blue] (0,0,0) -- (0,0,1) node[pos=1.4]{\(\ihat\)};
     \draw[line width=2pt, -stealth, purple] (0,0,0) -- (0,1,0) node[pos=1.3]{\(\khat\)};
   \end{tikzpicture}
   \caption{Figure of the three basis vectors.}
-\end{marginfigure}
-The cross product is a vector, whose magnitude is the area of a parallelogram formed by the two operands (which are vectors). \marginnote{\footnotesize \textit{The operands of \(\vec{a}\times\vec{b}\) are \(\vec{a}\) and \(\vec{b}\)}.} More formally, the cross product is defined as:
-\begin{definition}{Cross product}{}
+\end{figure}
+
+
+The cross product is a vector, whose magnitude is the area of a parallelogram formed by the two operands (which are vectors). \footnote{The operands of \(\vec{a}\times\vec{b}\) are \(\vec{a}\) and \(\vec{b}\).} More formally, the cross product is defined as:
+\begin{definition}
   The \textbf{cross product} is an operation on two vectors and the result is another vector which is perpendicular to both vectors. It is defined by the formula:
   \begin{equation*}
     \vec{a}\times\vec{b} = (||\vec{a}||)(||\vec{b}||)\sin(\theta)\vec{n}
   \end{equation*}
-  where \(\theta\) is the angle between \(\vec{a}\) and \(\vec{b}\) and \(\vec{n}\) is the unit vector perpendicular to both of the operands such that all three vectors obey the "right-hand rule"\sidenotemark. The common way to compute the cross product is using the following formula:
+
+
+  where \(\theta\) is the angle between \(\vec{a}\) and \(\vec{b}\) and \(\vec{n}\) is the unit vector perpendicular to both of the operands such that all three vectors obey the "right-hand rule"\footnotemark. The common way to compute the cross product is using the following formula:
   \begin{equation}
     \vec{a}\times\vec{b} = \begin{vmatrix}
       \ihat & \jhat & \khat \\
@@ -24,12 +28,13 @@ The cross product is a vector, whose magnitude is the area of a parallelogram fo
       \vec{b}_x & \vec{b}_y & \vec{b}_z \\
     \end{vmatrix}
   \end{equation}
+
+
   Lastly, do not confuse \(\vec{n}\) with \(\khat\) as both vectors are sometimes not the same.
 \end{definition}
-\sidenotetext{\footnotesize \textit{The right hand rule states that if you use your right hand and point the index finger in the direction of \(\vec{a}\), your middle finger in the direction of \(\vec{b}\)}, your thumb should be pointing in the direction of \(\vec{n}\).} 
+\footnotetext{The right hand rule states that if you use your right hand and point the index finger in the direction of \(\vec{a}\), your middle finger in the direction of \(\vec{b}\), your thumb should be pointing in the direction of \(\vec{n}\).}
 
-The cross product is very ubiquitous in physics and vector calculus alike. 
-\begin{example}{Calculating cross products}
+\begin{example}
   Given that \(\vec{a}=\begin{bsmallmatrix}
     1 \\
     2 \\
@@ -51,8 +56,8 @@ The cross product is very ubiquitous in physics and vector calculus alike.
   \begin{figure}[H]
     \centering
     \begin{tikzpicture}
-      \draw[line width=2pt, -stealth, red] (0,0,0) -- (1,0,-2) node[pos=1.3]{\(\vec{a}\)};
-      \draw[line width=2pt, -stealth, blue] (0,0,0) -- (-2,0,-1) node[pos=1.3]{\(\vec{b}\)};
+      \draw[line width=2pt, -stealth, red] (0,0,0) -- (2,0,1) node[pos=1.3]{\(\vec{a}\)};
+      \draw[line width=2pt, -stealth, blue] (0,0,0) -- (1,0,-2) node[pos=1.3]{\(\vec{b}\)};
       \draw[line width=2pt, -stealth, purple] (0,0,0) -- (0,5,0) node[pos=1.05]{\(\vec{a}\times\vec{b}\)};
       \draw[line width=2pt, -stealth, gray] (0,0,0) -- (0,1,0) node[anchor=west]{\(\vec{n}\)};
     \end{tikzpicture}
@@ -63,7 +68,7 @@ The cross product is very ubiquitous in physics and vector calculus alike.
 
 An important fact to note is that the operation is not commutative. In fact, the operation is called \textit{anti-commutative}. This means that \(\vec{a}\times\vec{b}=-\vec{b}\times\vec{a}\). In addition, if the angle between the operands is any integer multiple of \(\pi\), then the result is \(\vec{0}\). This should be trivially seen from the formula for the cross product. The derivation for the cross product is also easy, given two vectors \(\vec{a}\) and \(\vec{b}\) and an angle \(\theta\) between them, simply use the sine rule and the result should be obvious. The cross product has many real world applications.
 \section*{Toque and the moment arm formula}
-  Torque is a force that is common in our daily lives, present in the turning of a doorknob or the turning of a wrench. The formula for torque is \(\vec{\tau} = \vec{r}\times\vec{F}\), where \(\vec{\tau}\) is the torque, \(\vec{r}\) is the distance from the pivot point to the point where the force is applied and \(\vec{F}\) is the force applied. The direction of the torque can be determined by the right-hand rule. Torque is also known as the moment of force, and we actually derive the infamous moment arm formula for moment of \(\textit{moment}=(\textit{moment arm})(\textit{force})\). We shall restrict ourselves to only two dimensions and use a Cartesian coordinate system. Set the origin such that the pivot point is at the origin. Then, we can represent \(\vec{r}\) as the distance from the origin to where the force is applied. Let \(\vec{F}\) be the force vector. Since there is no more z component, all of the z components of the vectors are 0. We can write down the cross product of \(\vec{r}\) and \(\vec{F}\) (we resolve each into its x and y components):
+  Torque is a force that is common in our daily lives, present in the turning of a doorknob or the turning of a wrench. The formula for torque is \(\vec{\tau} = \vec{r}\times\vec{F}\), where \(\vec{\tau}\) is the torque, \(\vec{r}\) is the distance from the pivot point to the point where the force is applied and \(\vec{F}\) is the force applied. The direction of the torque can be determined by the right-hand rule. Torque is also known as the moment of force, and we actually derive the infamous moment arm formula for moment \(\textit{moment}=(\textit{moment arm})(\textit{force})\). We shall restrict ourselves to only two dimensions and use a Cartesian coordinate system. Set the origin such that the pivot point is at the origin. Then, we can represent \(\vec{r}\) as the distance from the origin to where the force is applied. Let \(\vec{F}\) be the force vector. Since there is no more z component, all the z components of the vectors are 0. We can write down the cross product of \(\vec{r}\) and \(\vec{F}\) (we resolve each into its x and y components):
   \begin{figure}[H]
     \centering
     \begin{tikzpicture}
@@ -112,7 +117,7 @@ An important fact to note is that the operation is not commutative. In fact, the
   \end{align}
 
 
-  Notice that the left hand side of \Cref{torque} is simply \(||\vec{\tau}||^2\) and the right hand side is simply \((\textit{moment arm})^2(\textit{force})^2\). Hence, we have shown that \(||\vec{\tau}|| = (\textit{moment arm})(\textit{force})\) which is the moment arm formula. An immediate difference between torque and moment is that moment is a scalar while torque is a vector. Another fact about torque that it has a \(\khat\) component, which means that it is perpendicular to the plane formed by \(\vec{r}\) and \(\vec{F}\). 
+  Notice that the left-hand side of \Cref{torque} is simply \(||\vec{\tau}||^2\) and the right-hand side is simply \((\textit{moment arm})^2(\textit{force})^2\). Hence, we have shown that \(||\vec{\tau}|| = (\textit{moment arm})(\textit{force})\) which is the moment arm formula. An immediate difference between torque and moment is that moment is a scalar while torque is a vector. Another fact about torque that it has a \(\khat\) component, which means that it is perpendicular to the plane formed by \(\vec{r}\) and \(\vec{F}\). 
 
 
 Next, we will move on to triple products which happens to also be a three-dimensional topic. Firstly, take a look at the following three vectors:
@@ -138,10 +143,10 @@ Next, we will move on to triple products which happens to also be a three-dimens
 
 
 \Cref{figtripvec} is the example of triple vector multiplication. You would represent it as \(\vec{a} \cdot (\vec{b} \times \vec{c})\). The result here is simply the volume of the parallelepiped formed in \Cref{figtripvec}.
-\begin{definition}{Triple vector product}{}
+\begin{definition}
   The \textbf{triple vector product} is a product of three 3-dimensional vectors. The most common of which, is the scalar triple product which is \Cref{figtripvec}. The formula for which is \(\vec{a}\cdot(\vec{b}\times\vec{c})\), which yields the volume of the parallelepiped with the sides being the three vectors. Another type of triple vector multiplication is vector triple product. It is simply \(\vec{a}\times(\vec{b}\times\vec{c})\). We can use \textbf{Lagrange's formula} to compute it easily: \(\vec{a}\times(\vec{b}\times\vec{c}) = \vec{b}(\vec{a}\cdot\vec{c}) - \vec{c}(\vec{a}\cdot\vec{b})\).
 \end{definition}
-\begin{example}{Volume of parallelepiped}{}
+\begin{example}
   We shall derive the formula for the volume of a parallelepiped given its height, breadth and length, denote them \(h\), \(b\) and \(l\) respectively. Notice that we define the sides of the parallelepiped like this:
   \begin{align*}
     \vec{a} &= \begin{bmatrix}
@@ -160,6 +165,8 @@ Next, we will move on to triple products which happens to also be a three-dimens
       h
     \end{bmatrix}
   \end{align*}
+
+
   Now, we use the triple vector multiplication formula. However, take note of the brackets and the order of operations: 
   \begin{align}
     \vec{a} \cdot (\vec{b} \times \vec{c} ) &= \vec{a} \cdot \begin{vmatrix}
@@ -179,21 +186,23 @@ Next, we will move on to triple products which happens to also be a three-dimens
     &= lbh
     \label{volofpara}
   \end{align}
+
+
   The result in \Cref{volofpara} is trivial and should come as no surprise to the reader.
 \end{example}
 
 
 As for vector triple product, the process of computation is very similar. We first evaluate the cross product of the two vectors in parentheses, then take the cross product of the first and resultant vector from the previous computation. We shall give a simple proof for Lagrange's formula.
-\begin{theorem}{Lagrange's formula}{}
-  Given \(\vec{a}, \vec{b}, \vec{c}\), show that \(\vec{a}\times(\vec{b}\times\vec{c}) = \vec{b}(\vec{a}\cdot\vec{c})-\vec{c}(\vec{a}\cdot\vec{b})\). \sidenotemark
+\begin{theorem}
+  \textit{(Lagrange's formula)} Given \(\vec{a}, \vec{b}, \vec{c}\), show that \(\vec{a}\times(\vec{b}\times\vec{c}) = \vec{b}(\vec{a}\cdot\vec{c})-\vec{c}(\vec{a}\cdot\vec{b})\). \footnotemark
 \end{theorem}
-\sidenotetext{\footnotesize\textit{A sidenote here, when it is written \(\vec{a}\vec{b}\), this is not the cross or dot product, instead it is equal to \(\begin{bsmallmatrix}
+\footnotetext{A sidenote here, when it is written \(\vec{a}\vec{b}\), this is not the cross or dot product, instead it is equal to \(\begin{bsmallmatrix}
   a_x b_x \\
   a_y b_y \\
   \dots
-\end{bsmallmatrix} \).}}
+\end{bsmallmatrix} \).}
 
-\begin{proof}{Lagrange's formula}{}
+\begin{proof}
   We will start by evaluating \(\vec{a}\times(\vec{b}\times\vec{c})\):
   \begin{align}
     \vec{a}\times(\vec{b}\times\vec{c}) &= \vec{a}\times\begin{vmatrix}
@@ -239,9 +248,11 @@ As for vector triple product, the process of computation is very similar. We fir
     \end{bmatrix}
     \label{lagrangeformtripscalar}
   \end{align}
+
+
   As you can see, the \(\ihat\) components of \ref{lagrangeformtrip} and \ref{lagrangeformtripscalar} are identical. Hence, we have shown Lagrange's formula.
 \end{proof}
-\begin{remark}{}{}
+\begin{remark}
   The above proof is a tedious pedagogical exercise mainly created to drill in the concepts of the cross products.
 \end{remark}
 \begin{problem}
@@ -281,7 +292,6 @@ As for vector triple product, the process of computation is very similar. We fir
 \end{problem}
 
 \subsection{Further problems}
-\hrule
 \begin{problem}[1]
   In this problem, you will derive the formula for the moment arm when the force and distance are not perpendicular. Refer to \Cref{figtorque} for when the force is perpendicular to the moment arm. Let the angle between \(\vec{r}\) and \(\vec{F}\) be \(\theta\).
   \begin{enumerate}[label=\alph*)]
@@ -359,6 +369,6 @@ As for vector triple product, the process of computation is very similar. We fir
 % \end{enumerate} }
 % \item{This is also a trivial and tedious result that can be shown just by some evaluation of the cross products.}
 % \end{enumerate}
-\begin{remark}{}{}
+\begin{remark}
   While the linear algebra chapter in this book is ending, this is a very small subset of a standard linear algebra course. Many concepts, such as eigenvalues, are not covered due to their not so important nature. Readers are still highly encouraged to read up some of the other concepts.
 \end{remark}

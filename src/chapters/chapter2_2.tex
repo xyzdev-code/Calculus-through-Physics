@@ -25,8 +25,8 @@ Take a look at \Cref{scalevector}, \(\vec{b}\) is twice as long as \(\vec{a}\). 
   2 \\
   4
 \end{bsmallmatrix}\) which is equal to \(\vec{b}\). You may extrapolate this to higher dimensions.
-\begin{definition}{Scaling a vector}{}
-  Scaling a n-dimensional vector \(\vec{v}\) by a constant \(n\) is defined as such:
+\begin{definition}
+  \textbf{Scaling} an n-dimensional vector \(\vec{v}\) by a constant \(n\) is defined as such:
   \begin{equation*}
     n\vec{v} = n \begin{bsmallmatrix}
       v_1 \\
@@ -40,9 +40,9 @@ Take a look at \Cref{scalevector}, \(\vec{b}\) is twice as long as \(\vec{a}\). 
   \end{equation*}
 \end{definition}
 Let us try something fun, what if we multiplied the vector by a negative number? Well, the computation remains the same.
-\begin{marginfigure}
+\begin{figure}
   \centering
-  \begin{tikzpicture}[scale=0.3]
+  \begin{tikzpicture}
     \draw[thin, gray!40] (-4,-4) grid (4,4);
     \draw[line width=2pt, blue, -stealth] (0,0) -- (2,4) node[anchor=south west]{\(\vec{b}\)};
     \draw[line width=2pt, red, -stealth] (0,0) -- (-1,-2) node[anchor=north east]{\(\vec{a}\)};
@@ -51,9 +51,9 @@ Let us try something fun, what if we multiplied the vector by a negative number?
   \end{tikzpicture}
   \caption{Two vectors, one is scaled by -0.5.}
   \label{scalevectorneg}
-\end{marginfigure} 
+\end{figure} 
 As you can see from \Cref{scalevectorneg}, \(\vec{a}=(-0.5)\vec{b}\). You may wish to compute this yourself to verify. One thing to note here is that the vector gets flipped across the origin when the constant the vector is multiplied to is negative. 
-\begin{challenge}{Scaled vector magnitude}{}
+\begin{challenge}
   Also, when scaling a vector by some constant, the reader may want to verify that the magnitude of the vector is also scaled by that constant. This should be a trivial proof.
 \end{challenge}
 
@@ -63,8 +63,8 @@ You may have noticed that I have abstained from using either the \(\cdot \) or \
 
 Dot products use the \(\cdot\) operator and only acts on vectors, do not abuse notation by using the \(\cdot\) operator in the context of scaling a vector. Dot products are actually fairly straightforward to compute:
 
-\begin{definition}{Dot product}{}
-  The dot product of two vectors in n-dimensional space \(\vec{a}\) and \(\vec{b}\) is:
+\begin{definition}
+  The \textbf{dot product} of two vectors \(\vec{a}\) and \(\vec{b}\) in n-dimensional space is:
   \begin{equation}
     \vec{a} \cdot \vec{b} = a_1 b_1 + a_2 b_2 + \dots + a_n b_n = (||\vec{a}||)(||\vec{b}||)\cos{\theta} 
     \label{dotproduct}
@@ -90,7 +90,7 @@ From \Cref{dotproduct}, we can tell that the dot product tells us something abou
 \end{figure}
 
 Firstly, note down the components of each vector in \Cref{dotproductfig}. Then, let us compute \(\vec{a}\cdot \vec{b}\). By \Cref{dotproduct}, it is \(1(-2)+2(1)=0\). Also, it is important to take note that these two vectors are orthogonal(at right angles with each other). This brings us to an important property of dot products, if two vectors are orthogonal, then their dot product is 0. This can be seen from the fact that \(\cos(\frac{\pi}{2})=0\) and from the second definition of dot products in \Cref{dotproduct}. In a sense, the dot product tells you how aligned are the directions of two vectors. Another example would be taking the dot product of two identical vectors, such as \(\vec{a}\cdot\vec{a}\). The dot product there is \(1(1)+2(2)=5\). In addition, we know \(\cos{0}=1\) so according to the second definition, \(\vec{a}\cdot\vec{a}=(||\vec{a}||)(||\vec{a}||)=(||\vec{a}||)^{2}\). If we take the square root on both sides, \(||\vec{a}||=\sqrt{\vec{a}\cdot\vec{a}}\) which can be rewritten as \(||\vec{a}||=\sqrt{a_{1}^{2}+\dots+a_{n}^{n}}\). Drum roll please. This is exactly the formula we got for the magnitude of a vector. This is a pretty nice result.
-\begin{example}{Calculating dot products}{}
+\begin{example}
   From \Cref{dotproductfig}, we can see that:
   \begin{equation*}
     \vec{a} \cdot \vec{c} = \begin{bmatrix}
@@ -111,19 +111,19 @@ Firstly, note down the components of each vector in \Cref{dotproductfig}. Then, 
     \end{bmatrix} = 1(-1) + 2(-2) = -5
   \end{equation*}
 \end{example}
-\begin{remark}{}{}
+\begin{remark}
   Generally, when finding the dot product, we use the first form in \Cref{dotproduct} as it is typically easier to compute. It is also important to know that the dot product of two vectors results in a number, not a vector like in scaling.
 \end{remark}
-\begin{marginfigure}
+\begin{figure}[h]
   \centering
   \begin{tikzpicture}
     \draw[line width=2pt, red, -stealth] (0,0) -- (2,1) node[anchor= south west]{\(\vec{a}\)};
     \draw[line width=2pt, blue, -stealth] (0,0) -- (1,1) node[anchor= south west]{\(\vec{b}\)};
     \draw[line width=2pt, orange, -stealth] (1,1) -- (2,1) node[anchor= south]{\(\vec{c}\)};
   \end{tikzpicture} 
-  \caption{Figure of a triangle formed by three vectors.}
+  \caption{A triangle formed by three vectors.}
   \label{exvecdotfig}
-\end{marginfigure} 
+\end{figure} 
 
 
 \begin{problem}
@@ -140,9 +140,9 @@ Firstly, note down the components of each vector in \Cref{dotproductfig}. Then, 
   \end{enumerate} 
 \end{problem}
 \begin{problem}[1]
-  Prove or disprove that the dot product \textit{commutes}. \sidenotemark 
+  Prove or disprove that the dot product \textit{commutes}. \footnotemark 
 \end{problem}
-\sidenotetext{\footnotesize \textit{An operation \(\circ\) is commutative if \(x\circ y = y \circ x\).}}
+\footnotetext{\footnotesize \textit{An operation \(\circ\) is commutative if \(x\circ y = y \circ x\).}}
 \begin{problem}[1]
   Newton's second law states that \(\vec{F}=m\vec{a}\). Consider an object with a mass \(10\si{\kilogram}\) in the 2d plane.
   \begin{enumerate}[label=\alph*)]

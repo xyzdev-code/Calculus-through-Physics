@@ -1,27 +1,19 @@
-\documentclass[10pt, twoside]{memoir} 
-\usepackage[letterpaper, marginparwidth=1.2in]{geometry}
+\documentclass[envcountchap]{SNmono} 
+\usepackage{geometry}
 \usepackage[none]{hyphenat}
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
-\input{settings}
-\usepackage{pgfplots, caption, fancyhdr, cleveref, lipsum, gensymb, indentfirst, marginnote, enumitem, graphicx, pdfpages, xltabular, xparse, needspace, sagetex}
+\usepackage{pgfplots, fancyhdr, lipsum, gensymb, indentfirst, enumitem, graphicx, pdfpages, xltabular, xparse, needspace, sagetex, amssymb, float, mathtools, siunitx}
 \usepackage[italic]{derivative}
-\usepackage{perpage}
-\usepackage{sidenotes}
-\usepackage[autostyle]{csquotes}
 \usepackage[T1]{fontenc}
+\usepackage{perpage}
+\MakePerPage{footnote}
+\usepackage[autostyle]{csquotes}
 \usepackage{newtxmath}
-\usepackage[no-math]{fontspec}
 \usepackage{newtxtext}
-\newcounter{entryc}[subsection]
 \DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\trace}{Tr}
 \usepackage{anyfontsize}
-\creflabelformat{equation}{#2\textup{#1}#3}
-\creflabelformat{figure}{#2\textup{#1}#3}
-\renewcommand\vec[1]{\ifstrequal{#1}{0}{\ensuremath{\mathbf{0}}}{\ensuremath{\boldsymbol{\mathbf{#1}}}}}
-\makeatletter
-\renewcommand{\p@entryc}{\thesubsection.} % "prefix" for cross-referencing
-\makeatother
 \MakeOuterQuote{"}
 \graphicspath{{./assets/images}}
 \newcommand{\ihat}{\boldsymbol{\hat{\textbf{\i}}}}
@@ -35,66 +27,28 @@
  \draw (tempa) -- ($(#3)!2!(tempc)$) -- (tempb);
 }
 \usepackage{mparhack}
-\renewcommand*{\marginfont}{\scriptsize}
-\let\notess\sidenote
-\renewcommand{\sidenote}[1]{%
-  \notess{%
-    \scriptsize
-    \checkoddpage%
-    \ifoddpage%
-      \raggedright%
-    \else
-      \raggedleft%
-    \fi
-    {#1}%
-  }%
-}
-\newsavebox{\ChpNumBox}
-\definecolor{ChapBlue}{rgb}{0.00,0.65,0.65}
-\makeatletter
-\newcommand*{\thickhrulefill}{%
-\leavevmode\leaders\hrule height 1\p@ \hfill \kern \z@}
-\newcommand*\BuildChpNum[2]{%
-\begin{tabular}[t]{@{}c@{}}
-\makebox[0pt][c]{#1\strut} \\[.5ex]
-\colorbox{ChapBlue}{%
-\rule[-10em]{0pt}{0pt}%
-\rule{1ex}{0pt}\color{black}#2\strut
-\rule{1ex}{0pt}}%
-\end{tabular}}
-\makechapterstyle{BlueBox}{%
-\renewcommand{\chapnamefont}{\large\scshape}
-\renewcommand{\chapnumfont}{\Huge\bfseries}
-\renewcommand{\chaptitlefont}{\raggedright\Huge\bfseries}
-\setlength{\beforechapskip}{20pt}
-\setlength{\midchapskip}{26pt}
-\setlength{\afterchapskip}{40pt}
-\renewcommand{\printchaptername}{}
-\renewcommand{\chapternamenum}{}
-\renewcommand{\printchapternum}{%
-\sbox{\ChpNumBox}{%
-\BuildChpNum{\chapnamefont\@chapapp}%
-{\chapnumfont\thechapter}}}
-\renewcommand{\printchapternonum}{%
-\sbox{\ChpNumBox}{%
-\BuildChpNum{\chapnamefont\vphantom{\@chapapp}}%
-{\chapnumfont\hphantom{\thechapter}}}}
-\renewcommand{\afterchapternum}{}
-\renewcommand{\printchaptertitle}[1]{%
-\usebox{\ChpNumBox}\hfill
-\parbox[t]{\hsize-\wd\ChpNumBox-1em}{%
-\vspace{\midchapskip}%
-\thickhrulefill\par
-\chaptitlefont ##1\par}}%
-}
-\chapterstyle{BlueBox}
+\usepackage{hyperref}
 \pgfplotsset{compat=1.18}
+\makeatletter
+\@removefromreset{footnote}{chapter}
+\makeatother
 \usetikzlibrary{positioning}
-\renewcommand{\marginnote}{\sidenote}
-\renewcommand{\thesidenote}{\textbf{\arabic{sidenote}}}
+\usepackage{zref-clever}
+\zcsetup{cap, abbrev}
+\zcRefTypeSetup{problem}{
+  Name-sg = Problem,
+  name-sg = problem,
+  Name-pl = Problems,
+  name-pl = problems
+}
+\makeatother
+\newcommand{\cref}[1]{\zcref{#1}}
+\newcommand{\Cref}[1]{\zcref[S]{#1}}
+\newcommand{\cpageref}[1]{\zcpageref{#1}}
+\newtheorem{challenge}{Challenge}
 
 \begin{document}
-  \pagenumbering{roman}
+  \frontmatter
   \includepdf[pages=1, width=8.5in, height=11in, noautoscale]{cover.pdf}
   \chapter*{Copyright notice}
   \vspace*{\fill}
@@ -111,11 +65,11 @@
   What is unfortunate is that calculus has gained a "notorious" reputation among high school students as being a hard to learn, esoteric subject. Those who have learned calculus seemed to have entered a sort of cult. While it is true that calculus is quite a big departure from precalculus, it is by no means impossible to learn and if the reader puts in the work, I can almost assure you that it is worth it (that is if you are pursuing any STEM subject). Another way to emphasize the importance of calculus, is by stating the seemingly sad fact that one cannot hope to run away from calculus, be it physics, chemistry or even biology. However, this is because calculus naturally arises from the problems in these subjects, not because scientists are evil and want to gatekeep. 
 
 
-  I must make it absolutely clear, though, that the reader must have a basic knowledge of physics (forces, velocity etc.) to understand this book. In addition, the first part on precalculus does not use classical mechanics to frame the subject matter and are very brief. I expect the reader to ensure that the have a solid understanding of the subject matter. Problems in the text are sometimes accompanied by asterisks (\textbf{*}) which indicate the difficulty of a problem:
+  I must make it absolutely clear, though, that the reader must have a basic knowledge of physics (forces, velocity etc.) to understand this book. In addition, the first part on precalculus does not use classical mechanics to frame the subject matter and are very brief. I expect the reader to ensure that the have a solid understanding of the subject matter. Problems in the text are sometimes accompanied by numbers which indicate the difficulty of a problem:
   \begin{enumerate}
-    \item{\textbf{*} represents an essential problem the reader should attempt, it should not be very difficult.}
-    \item{\textbf{**} represents a slightly difficult problem that is good for the reader to attempt, and with some careful thinking, it should be doable.}
-    \item{\textbf{***} represents a very difficult problem, usually requiring some extra knowledge to attempt.}
+    \item{\textbf{(1)} represents an essential problem the reader should attempt, it should not be very difficult.}
+    \item{\textbf{(2)} represents a slightly difficult problem that is good for the reader to attempt, and with some careful thinking, it should be doable.}
+    \item{\textbf{(3)} represents a very difficult problem, usually requiring some extra knowledge to attempt.}
   \end{enumerate}
 
 
@@ -123,9 +77,8 @@
 
 
   Another point to note about the book is that for mathematical programming, I shall be using SageMath, a free and open source mathematics software system. Please download it from its official website to follow along certain parts of the book. 
-  \cleardoublepage
-  \pagenumbering{arabic}
   \raggedbottom
+  \mainmatter
   \include{chapters/chapter1_1}
   \include{chapters/chapter1_2}
   \include{chapters/chapter1_3}

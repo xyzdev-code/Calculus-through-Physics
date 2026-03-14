@@ -2,22 +2,22 @@
 
 
 In the previous section, we defined a function as a rule that assigns to each element in a set (the domain) exactly one element in another set (the range). While this intuitive definition is often sufficient, we can provide a more rigorous definition using the concept of ordered pairs and Cartesian products. But first, what even is an ordered pair?
-\begin{definition}{Ordered Pair}{}
+\begin{definition}
     An \textbf{ordered pair} is a collection of two objects where the order of the objects matters. We denote an ordered pair by \((a,b)\), where \(a\) is the first element and \(b\) is the second element. Two ordered pairs \((a,b)\) and \((c,d)\) are considered equal if and only if \(a=c\) and \(b=d\).
 \end{definition}
-\begin{definition}{Cartesian Product}{}
+\begin{definition}
     Given two sets \(A\) and \(B\), the \textbf{cartesian product} of \(A\) and \(B\), denoted by \(A \times B\), is the set of all ordered pairs \((a,b)\) where \(a \in A\) and \(b \in B\). Formally,
 \begin{equation}
         A \times B = \{(a,b) \mid a \in A, b \in B\}.
 \end{equation}
 \end{definition}
 
-\begin{example}{Ordered pairs and Cartesian products}{}
+\begin{example}
     Consider the sets \(A = \{1, 2\}\) and \(B = \{a, b\}\). The Cartesian product \(A \times B\) is given by:
     \begin{equation}
         A \times B = \{(1, a), (1, b), (2, a), (2, b)\}.
     \end{equation}
-    Here, each ordered pair consists of an element from \(A\) and an element from \(B\). Notice that the order matters: \((1, a)\) is different from \((a, 1)\). This is different from the usual sets where the order of elements does not matter. Next, consider something more complex, \(\mathbb{Z}\cross\mathbb{Z}\):
+    Here, each ordered pair consists of an element from \(A\) and an element from \(B\). Notice that the order matters: \((1, a)\) is different from \((a, 1)\). This is different from the usual sets where the order of elements does not matter. Next, consider something more complex, \(\mathbb{Z}\times\mathbb{Z}\):
     \begin{equation}
       \mathbb{Z} \times \mathbb{Z} = \{(m, n) \mid m, n \in \mathbb{Z}\}.
     \end{equation}
@@ -44,12 +44,12 @@ In the previous section, we defined a function as a rule that assigns to each el
 \end{example}
 
 But why are ordered pairs and Cartesian products relevant to functions? Well, we can represent a function as a set of ordered pairs, where each ordered pair consists of an element from the domain and its corresponding element in the range. This leads us to a more formal definition of a function.
-\begin{definition}{Set-theory definition of functions}{}
+\begin{definition}
   A \textbf{function} \(f\) from a set \(A\) (the domain) to a set \(B\) (the range) is a subset of the Cartesian product \(A \times B\) such that for every element \(a \in A\), there exists exactly one element \(b \in B\) such that the ordered pair \((a,b)\) is in the subset. We denote this function as \(f: A \to B\) and write \(f(a) = b\).
 \end{definition}
 
 
-\begin{example}{Functions as sets}{}
+\begin{example}
     Consider the function \(f: \{1, 2, 3\} \to \{a, b, c\}\) defined by the rule \(f(1) = a\), \(f(2) = b\), and \(f(3) = c\). We can represent this function as the set of ordered pairs:
     \begin{equation}
     f = \{(1, a), (2, b), (3, c)\}.
@@ -75,8 +75,8 @@ I wish this is a pretty fresh way to look at functions. It is a bit more abstrac
 If you have read Chapter 2 or know linear transformations, you might be delighted to know that linear transformations are basically functions that map vectors to vectors. For instance, consider a function \(T: \mathbb{R}^2 \to \mathbb{R}^2\) defined by \(T(\vec{r}) = \begin{bsmallmatrix}
   2\vec{r}_x \\
   3\vec{r}_y
-\end{bsmallmatrix} \). But why is it a linear transformation? Because it satisfies the properties of additivity and homogeneity \sidenote{\footnotesize \textit{Please do verify these properties for yourself.}}.
-\begin{definition}{Linearity}{}
+\end{bsmallmatrix} \). But why is it a linear transformation? Because it satisfies the properties of additivity and homogeneity.\footnote{Please do verify these properties for yourself.}
+\begin{definition}
   A linear transformation (or actually any function) \(T\) is a function such that
   \begin{align*}
     T(\vec{u} + \vec{v}) &= T(\vec{u}) + T(\vec{v}) \\
@@ -85,7 +85,6 @@ If you have read Chapter 2 or know linear transformations, you might be delighte
 \end{definition}
 
 I hope you see the connection between functions and linear transformations now. Linear transformations are just a special type of function that preserves vector space operations. It also explains why linear transformations are \textit{linear}. This is a beautiful example of how abstract mathematical concepts can be applied in various contexts, from simple functions to complex transformations in vector spaces. I also hope you see this definition of functions more than just a novelty, but a powerful tool that can enhance your understanding of mathematics as you progress in your studies.
-\hrule
 \begin{problem}[1]
   Let \(A = \{1, 2, 7, 9\}\) and \(B = \{x, y, z\}\). List all the elements of the Cartesian product \(A \times B\). Then, define a function \(f: A \to B\) by specifying its set of ordered pairs such that \(f(1)=x\), \(f(2)=y\), \(f(7)=z\), and \(f(9)=x\). Write out the set that represents this function.
 \end{problem}
@@ -107,5 +106,5 @@ I hope you see the connection between functions and linear transformations now. 
   \end{enumerate}
 \end{problem}
 \begin{problem}[2]
-  Prove that any linear transformation must map the zero vector to the zero vector. That is, show that if \(T: \mathbb{R}^n \to \mathbb{R}^n\) \sidenote{\footnotesize \textit{Technically, linear transformations can map vectors to spaces of different dimensions as long as the properties of linearity are satisfied.}} is a linear transformation, then \(T(\vec{0}) = \vec{0}\). (Hint: \(\vec{0}+\vec{0}=\vec{0}\).)
+  Prove that any linear transformation must map the zero vector to the zero vector. That is, show that if \(T: \mathbb{R}^n \to \mathbb{R}^n\) \footnote{Technically, linear transformations can map vectors to spaces of different dimensions as long as the properties of linearity are satisfied.} is a linear transformation, then \(T(\vec{0}) = \vec{0}\). (Hint: \(\vec{0}+\vec{0}=\vec{0}\).)
 \end{problem}

@@ -2,7 +2,7 @@
 \section{Function composition and inverses}
 In this chapter, we will look at composition of functions and inverse functions. You can use the normal arithmetic operations on functions like how you would to numbers:
 
-\begin{example}{Arithmetic operations on functions}{}
+\begin{example}
   If \(x=2\) and \(f(x)=x^2+4\):
   \begin{equation*}
     f(x)+f(x) = 2^2+4+2^2+4=16 
@@ -17,7 +17,6 @@ What is more interesting, perhaps, is taking the \textit{output} of a function a
 
 \begin{figure}[h]
   \centering
-
   \begin{tikzpicture}[
       roundnode/.style={circle, draw=black!60, fill=white!5, very thick, minimum size=10mm},
       squarednode/.style={rectangle, draw=black!60, fill=white!5, very thick, minimum size=15mm},
@@ -32,22 +31,21 @@ What is more interesting, perhaps, is taking the \textit{output} of a function a
       \draw[->] (fx.east) -- (gtopic.west);
       \draw[->] (gtopic.east) -- (final.west);
   \end{tikzpicture}
-
-  \caption{Visual representation of function composition. \sidenotemark}
+  \caption{Visual representation of function composition.\protect\footnotemark}
 \end{figure} 
-\sidenotetext{\footnotesize \textit{Note that the rectangles are \\ functions and circles are values.}}
+ \footnotetext{Note that the rectangles are functions and circles are values.}
 
-Another notation for composing functions together(which we will not really use except for this chapter) is as such:
+Another notation for composing functions together (which we will not really use except for this chapter) is as such:
 \begin{equation*}
   f(g(x))=(f \circ g)(x) 
 \end{equation*}
 
-When you compose the same function \(n\)-times, the notation for it is\marginnote{\footnotesize \textit{However, this does not apply to trigonometric functions. \(\sin^2(x)\) is \(\sin(x) \times \sin(x)\) instead of \(\sin(\sin(x))\). Annoying mathematical notation strikes again. What is even better, is that \(f^{-1}(x)\) denotes the inverse of \(f\).}}:
+When you compose the same function \(n\)-times, the notation for it is\footnote{However, this does not apply to trigonometric functions. \(\sin^2(x)\) is \(\sin(x) \times \sin(x)\) instead of \(\sin(\sin(x))\). Annoying mathematical notation strikes again. What is even better, is that \(f^{-1}(x)\) denotes the inverse of \(f\).}:
 \begin{equation*}
   f^n(x)=\underbrace{f(f(\ldots f(x)))}_{n-times} 
 \end{equation*}
 
-\begin{example}{Composing functions}{}
+\begin{example}
   Here are some examples of composing functions together:
   If \(x=3\) and \(f(x)=\pi x\), \(g(x)=\sin(x)+1\):
   \begin{equation}
@@ -58,20 +56,20 @@ When you compose the same function \(n\)-times, the notation for it is\marginnot
   \end{equation}
   There is nothing much here, really, just evaluate the function from the innermost function to the outermost.
 \end{example}
-\begin{theorem}{Composition of functions is associative}{}
+\begin{theorem}
   Given functions \(f:X \to Y\), \(g: Y \to Z\) and \(h: Z \to W\), prove that the composition of the three functions is \textit{associative}, in other words:
   \begin{equation*}
     h \circ (g \circ f(x)) = (h \circ g) \circ f(x)
   \end{equation*}
 \end{theorem}
-\begin{proof}{Composition of functions is associative}{}
+\begin{proof}
   Let \(x \in X\), we have: 
   \begin{equation*}
     h \circ (g \circ f(x)) = h(g \circ f(x)) = h(g(f(x))) = h \circ g(f(x)) = (h \circ g)f(x)
   \end{equation*}
   This proves the associativity of function composition.
 \end{proof}
-\begin{remark}{}{}
+\begin{remark}
   This is just a fun little exercise for the reader and ultimately is not that important to the entire book, just a good identity to keep in the back of your mind. 
 \end{remark}
 
@@ -92,12 +90,12 @@ Next, we will delve into inverse functions. Let us start with one I believe you 
   \caption{Figure of right triangle ABC.}
 \end{figure}
 
-If I ask you what is \(\arcsin(B)\), you may say it is \(\frac{b}{c}\). But, what is \(\arcsin(\sin(B))\), well, that is just \(B\), isn't it. Hence, the \(\arcsin\) sort of "cancels" the \(\sin\). We call \(\arcsin\) the \emph{inverse function} or just inverse of \(\sin\).\sidenote{\footnotesize \textit{We will use \(\arcsin\) as the inverse of \(\sin\) instead of \(\sin^{-1}\) as it is clearer.}} Generally, given a function \(f: X \to Y\), \(f^{-1}\) denotes the inverse function that satisfies:
+If I ask you what is \(\arcsin(B)\), you may say it is \(\frac{b}{c}\). But, what is \(\arcsin(\sin(B))\), well, that is just \(B\), isn't it. Hence, the \(\arcsin\) sort of "cancels" the \(\sin\). We call \(\arcsin\) the \emph{inverse function} or just inverse of \(\sin\).\footnote{We will use \(\arcsin\) as the inverse of \(\sin\) instead of \(\sin^{-1}\) as it is clearer.} Generally, given a function \(f: X \to Y\), \(f^{-1}\) denotes the inverse function that satisfies:
 \begin{equation}
   f \circ f^{-1}(y) = y, y \in Y \text{\, and \,} f^{-1} \circ f(x) = x, x \in X
 \end{equation}
 
-\begin{note}{Cancelling functions and their "inverse"}{}
+\begin{note}
   One common misconception is that \(f(f^{-1}(x))=f^{-1}(f(x))\) for any function. While this is technically true, you may apply this fact wrongly. For example, take the following function:
   \begin{equation*}
     f(x)=\sin(x), f^{-1}: \{y: -1 \leq y \leq 1 \} \to \mathbb{R}
@@ -106,7 +104,7 @@ If I ask you what is \(\arcsin(B)\), you may say it is \(\frac{b}{c}\). But, wha
 \end{note}
 
 To find the inverse function of a function \(f\), we have to find the function that maps the outputs of the \(f\) back to its inputs. To solve algebraically, we set \(f(x)\) for some arbitrary \(x\) to \(y\), and make \(x\) the subject of the equation.
-\begin{example}{Finding the inverse of a function}{}
+\begin{example}
   Given that \(f(x)=\frac{x+7}{3}\):
   \begin{align*}
     f(x)&=y \\

@@ -2,7 +2,7 @@
 
 
 \textit{Bra-ket} notation, also known as Dirac notation, is a standard mathematical notation used in quantum mechanics to describe quantum states. It was introduced by physicist Paul Dirac in the 1930s and has since become a fundamental tool in the field. The notation consists of two main components: bras and kets. It is indispensable in quantum mechanics, as it provides a concise and elegant way to represent quantum states, operators, and inner products. It is particularly useful in the context of \textit{Hilbert spaces}, which are complete inner product spaces that serve as the mathematical framework for quantum mechanics. We will build up some intuition for bra-ket notation here because it is a very integral part of (quantum) physics, but a more rigorous treatment can be found in advanced quantum mechanics or linear algebra texts. To start off, the vector \(\vec{\psi}\) in the traditional sense is represented as a \textit{ket}, denoted by \(|\psi\rangle\). 
-\begin{example}{Ket notation}{}
+\begin{example}
   For example, a vector in a two-dimensional complex space can be represented as: 
   \begin{equation*}
     |\psi\rangle = \begin{bsmallmatrix}
@@ -23,8 +23,8 @@
 
 
 Dot products here are generalized to \textit{inner products}, which are represented using both bras and kets. A \textit{bra} is simply denoted by \(\langle\psi|\). But first, what is an inner product?
-\begin{definition}{Inner product}{}
-  An inner product is a mathematical operation that takes two vectors and produces a scalar (a single number). In the context of an n-dimensional complex vector spaces, the inner product of two vectors \(|\psi\rangle\) and \(|\phi\rangle\) is denoted as \(\langle\psi|\phi\rangle\), where \(\langle\psi|\) is the bra corresponding to the ket \(|\phi\rangle\).
+\begin{definition}
+  An \textbf{inner product} is a mathematical operation that takes two vectors and produces a scalar (a single number). In the context of an n-dimensional complex vector spaces, the inner product of two vectors \(|\psi\rangle\) and \(|\phi\rangle\) is denoted as \(\langle\psi|\phi\rangle\), where \(\langle\psi|\) is the bra corresponding to the ket \(|\phi\rangle\).
   \begin{equation*}
     \langle\psi|\phi\rangle = \sum_{i=1}^{n} \psi_i^* \phi_i
   \end{equation*}
@@ -48,7 +48,7 @@ Dot products here are generalized to \textit{inner products}, which are represen
 \end{example}
 
 
-Lastly, we have three conditions imposed on inner products \sidenote{\footnotesize \textit{You should try to prove these properties for yourself.}}:
+Lastly, we have three conditions imposed on inner products \footnote{You should try to prove these properties for yourself.}:
 \begin{align}
   \langle\psi|\psi\rangle &\geq 0 \\
   \langle\psi|\phi\rangle &= \langle\phi|\psi\rangle^*\\
@@ -62,7 +62,7 @@ Till now, I have not really introduced a lot of new concepts, but I have just ch
 \end{equation}
 
 
-where \(|\phi\rangle\) is the resulting ket after the operator \(A\) has acted on \(|\psi\rangle\). Here is the punchline: I claim that functions are just vectors. Not exactly, because some functions are not easy to work with. For the sake of this argument, consider the polynomials \sidenote{\footnotesize \textit{I bet that now the part of your brain that does geometry must be yelling: this is moonshine, how can polynomials be vectors! Polynomials do not have "direction". The truth is that the geometric interpretation of vectors can be generalized for other mathematical objects. As you will see for yourself, many of the common operations for geometric vectors can be generalized for functions.}} up to degree \(n\). The set of all polynomials up to degree \(n\) forms a vector space, or does it? Let's see. Consider two polynomials \(p(x)\) and \(q(x)\):
+where \(|\phi\rangle\) is the resulting ket after the operator \(A\) has acted on \(|\psi\rangle\). Here is the punchline: I claim that functions are just vectors. Not exactly, because some functions are not easy to work with. For the sake of this argument, consider the polynomials \footnote{I bet that now the part of your brain that does geometry must be yelling: this is moonshine, how can polynomials be vectors! Polynomials do not have "direction". The truth is that the geometric interpretation of vectors can be generalized for other mathematical objects. As you will see for yourself, many of the common operations for geometric vectors can be generalized for functions.} up to degree \(n\). The set of all polynomials up to degree \(n\) forms a vector space, or does it? Let's see. Consider two polynomials \(p(x)\) and \(q(x)\):
 \begin{equation*}
   p(x) = a_0 + a_1 x + a_2 x^2 + \ldots + a_n x^n
 \end{equation*}
@@ -85,8 +85,8 @@ The resultant polynomial is still a polynomial of degree \(n\) or less. We can a
 
 
 Again, functions behave just as if they were vectors. The zero polynomial (where all coefficients are zero) acts as the zero vector. The additive inverse of a polynomial \(p(x)\) is simply \(-p(x)\), which is also a polynomial of degree \(n\) or less. Thus, the set of all polynomials up to degree \(n\) satisfies all the properties of a vector space. However, the astute among you may have noticed that I have not defined an inner product for these polynomials yet. We can define an inner product for polynomials as follows (though I have to start using calculus, so feel free to skip this part until you are down with Calculus II):
-\begin{definition}{Inner product for polynomials}{}
-  The inner product of two polynomials \(p(x)\) and \(q(x)\) over the interval \([a, b]\) is defined as:
+\begin{definition}
+  The \textbf{inner product} of two polynomials \(p(x)\) and \(q(x)\) over the interval \([a, b]\) is defined as:
   \begin{equation*}
     \langle p | q \rangle = \int_a^b p(x)^* q(x) dx
   \end{equation*}
@@ -100,13 +100,13 @@ Two key properties that physicists exploit are \textit{orthogonality} and \texti
 \end{equation}
 
 
-A function \(f(x)\) is said to be normalized over an interval \([a, b]\) if its inner product with itself is equal to one:\sidenote{\footnotesize\textit{Do take note that \(|f(x)|=f(x)f(x)^*\).}}
+A function \(f(x)\) is said to be normalized over an interval \([a, b]\) if its inner product with itself is equal to one:\footnote{Do take note that \(|f(x)|=f(x)f(x)^*\).}
 \begin{equation}
   \langle f | f \rangle = \int_a^b |f(x)|^2 dx = 1
 \end{equation}
 
 
-With these two properties, a set of functions are \textit{orthonormal} if they are normalized and orthogonal to each other. \sidenote{\footnotesize\textit{The \(\delta\) is the Kronecker delta, which is 1 if the indices are equal and 0 otherwise.}} For a set of orthonormal functions \(\{f_i(x)\}\), we have:
+With these two properties, a set of functions are \textit{orthonormal} if they are normalized and orthogonal to each other. \footnote{The \(\delta\) is the Kronecker delta, which is 1 if the indices are equal and 0 otherwise.} For a set of orthonormal functions \(\{f_i(x)\}\), we have:
 \begin{equation}
   \langle f_i | f_j \rangle = \delta_{ij} = \begin{cases}
     1 & i = j \\
@@ -115,7 +115,7 @@ With these two properties, a set of functions are \textit{orthonormal} if they a
 \end{equation}
 
 
-Armed with these concepts, we can revisit an old problem in Chapter 1, Problem \ref{infinitewell}. The wave function \(\psi_n(x)\) in this case is
+Armed with these concepts, we can revisit an old problem in Chapter 1, \Cref{infinitewell}. The wave function \(\psi_n(x)\) in this case is
 \begin{equation}
   \psi_n(x) = \sqrt{\frac{2}{a}} \sin\left(\frac{n \pi x}{a}\right)
 \end{equation}
@@ -131,7 +131,7 @@ These wave functions are actually orthogonal (over the interval \([0,a]\)) where
 \end{align*}
 
 
-Because of normalization \sidenote{\footnotesize\textit{Recall that \(|\psi|^2\) gives us the probability at \(x\), hence the probability must add up to 1, therefore we have the following integral.}}, we also have
+Because of normalization \footnote{Recall that \(|\psi|^2\) gives us the probability at \(x\), hence the probability must add up to 1, therefore we have the following integral.}, we also have
 \begin{equation}
   \int_0^a |\psi_n|^2 dx = 1
 \end{equation}

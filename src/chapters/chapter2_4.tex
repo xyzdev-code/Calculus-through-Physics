@@ -53,8 +53,8 @@ To find the area of \(A\) in \Cref{detarea}, we may use the sine rule (let \(\ve
 
 
 The resultant area is also known as the \emph{determinant} of a matrix.
-\begin{definition}{Determinant of \(2\times2\) matrix}{}
-  The determinant of a \(2\times2\) matrix \(A=\begin{bsmallmatrix}
+\begin{definition}
+  The \textbf{determinant} of a \(2\times2\) matrix \(A=\begin{bsmallmatrix}
     a & b \\
     c & d
   \end{bsmallmatrix} \) is represented as:
@@ -88,8 +88,8 @@ The resultant area is also known as the \emph{determinant} of a matrix.
   \end{align*}
   and it represents the volume of the parallelepiped formed by the three basis vectors in \(B\).
 \end{definition}
-\begin{example}{Finding determinants}{}
-  Given that \(A=\begin{bsmallmatrix}
+\begin{example}
+  Given that \footnotemark \(A=\begin{bsmallmatrix}
     1 & 2 \\
     3 & 4
   \end{bsmallmatrix} \),\(B=\begin{bsmallmatrix}
@@ -108,7 +108,6 @@ The resultant area is also known as the \emph{determinant} of a matrix.
     \det(B) = 0
     \label{exdetzero}
   \end{equation}
-  \sidenotemark
   \begin{align*}
     \det(C) &= 1 \begin{vmatrix}
       5 & 6 \\
@@ -124,24 +123,24 @@ The resultant area is also known as the \emph{determinant} of a matrix.
     &= 0
   \end{align*}
 \end{example}
-\sidenotetext{\footnotesize \textit{\Cref{exdetzero} shows a more general property, given that \(X=\begin{bsmallmatrix}
+\footnotetext{\Cref{exdetzero} shows a more general property, given that \(X=\begin{bsmallmatrix}
   a & b \\
   a & b
-\end{bsmallmatrix} \), \(\det(X)=0\). The proof is trivial and shall be left as a verification to the reader.}}
+\end{bsmallmatrix} \), \(\det(X)=0\). The proof is trivial and shall be left as a verification to the reader.}
 
 Next, we would move onto the \emph{inverse} of a matrix. Think of a number \(x\), \(x^{-1}\times x=1\), 1 is also called the multiplicative identity. Likewise, given a matrix \(Y\), \(YY^{-1}=\begin{bsmallmatrix}
   1 & 0 \\
   0 & 1
 \end{bsmallmatrix} \) which is the identity matrix. If you think of \(Y\) as a transformation, then \(Y^{-1}\) "undo" the transformation of \(Y\). 
-\begin{definition}{Inverse of a matrix}{}
-  The (multiplicative) inverse of a matrix \(X\) is denoted \(X^{-1}\) where:
+\begin{definition}
+  The (multiplicative) \textbf{inverse} of a matrix \(X\) is denoted \(X^{-1}\) where:
   \begin{equation*}
     X X^{-1} = I
   \end{equation*}
   where \(I\) is the identity matrix. If \(X\) has an inverse, it is called an \emph{invertible} matrix. \(X\) has an inverse if and only if \(\det(X)\neq 0\). To find the inverse of a matrix \(Y=\begin{bsmallmatrix}
     a & b \\
     c & d
-  \end{bsmallmatrix} \), we use the following formula:
+  \end{bsmallmatrix} \), we use the following formula \footnotemark:
   \begin{align}
     Y^{-1} = \frac{1}{\det(Y)}\begin{bmatrix}
       d & -b \\
@@ -149,9 +148,8 @@ Next, we would move onto the \emph{inverse} of a matrix. Think of a number \(x\)
     \end{bmatrix}
     \label{formulamatrixinv}
   \end{align}
-  \sidenotemark
 \end{definition}
-\sidenotetext{\footnotesize \textit{When multiplying a matrix by a constant, you multiply each entry in matrix by the constant.}}
+\footnotetext{When multiplying a matrix by a constant, you multiply each entry in matrix by the constant.}
 \begin{example}
   Given \(A=\begin{bsmallmatrix}
     1 & 2 \\
@@ -224,7 +222,7 @@ This is also the solution for \Cref{simulmatrix}, \(x\) is indeed 8 and \(y\) is
 
 Where \(x_i\) is the \(i\)-th solution and \(A_i\) is the matrix formed by replacing the \(i\)-th column of A by \(B\).
 
-\begin{example}{Solving linear equations with Cramer's rule}{}
+\begin{example}
   Given the following system of linear equations of three unknowns:
   \begin{equation*}
     \begin{array}{l}
@@ -295,7 +293,7 @@ Where \(x_i\) is the \(i\)-th solution and \(A_i\) is the matrix formed by repla
 \end{example}
 
 
-As you can tell, Cramer's rule is very powerful. In the real world, however, \textit{gaussian elimination} is a much faster alternative than Cramer's rule. It is also unlikely for the reader to be computing large matrices determinants by hand, we have computers for that. This also applies to matrix multiplication. This book, and more generally calculus courses only need knowledge on computing determinants of up to \(3\times3\) matrices.
+As you can tell, Cramer's rule is very powerful. In the real world, however, \textit{gaussian elimination} is a much faster alternative than Cramer's rule. It is also unlikely for the reader to be computing large matrices determinants by hand, we have computers for that. This also applies to matrix multiplication. This book and more generally calculus courses only need knowledge on computing determinants of up to \(3\times3\) matrices.
 \begin{problem}
   Find the determinants and inverses, if any, for the following matrices: \begin{enumerate}[label=\alph*)]
     \item{\(\begin{bmatrix}

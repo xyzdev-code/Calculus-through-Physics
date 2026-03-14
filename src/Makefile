@@ -1,4 +1,4 @@
-cc = xelatex
+cc = lualatex
 dev:
 	./latexrun --latex-cmd=$(cc) main.tex
 clean:

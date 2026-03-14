@@ -1,8 +1,16 @@
 \chapter{Linear Algebra}
+
 \section{Vector Basics}
+
 Stepping into this chapter, you may feel overwhelmed by the name, \textit{Linear Algebra}. What is that? Please take note though, the knowledge in this chapter will not be used until Calculus III to IV in part IV of the book. If you are just willing to learn Calc I and II, you do not need the knowledge here. With that said, let's delve into Vectors. A concept that is very ubiquitous in this world is a coordinate, like the GPS coordinate in the maps app. A coordinate simply describes the position of a point in space. Generally, it is denoted \((x,y)\) in 2 dimensions and \((x,y,z)\) in 3 dimensions. Likewise, vectors are also behaves like coordinates and are written down in a \textit{similar} fashion. Think of a vector as a coordinate.
-\begin{definition}{Vector}{}
-  A \textbf{vector} is a mathematical object with a magnitude, or length, and a direction. A vector, \(\vec{a}\) is a point \((x,y)\) in space drawn with an arrow. It is denoted as\sidenotemark:
+\begin{definition}
+  A \textbf{vector} is a mathematical object with a magnitude, or length, and a direction. A vector, \(\vec{a}\) is a point \((x,y)\) in space drawn with an arrow. It is denoted as \footnote{Likewise, a vector at \((x,y,z)\) is denoted \(
+\begin{bsmallmatrix}
+  x \\
+  y \\
+  z
+\end{bsmallmatrix}
+\)}:
   \begin{equation*}
     \vec{a} = \begin{bmatrix}
       x \\
@@ -10,16 +18,9 @@ Stepping into this chapter, you may feel overwhelmed by the name, \textit{Linear
     \end{bmatrix} 
   \end{equation*}
 \end{definition}
-\sidenotetext{\footnotesize \textit{Likewise, a vector at \((x,y,z)\) is denoted \(
-\begin{bsmallmatrix}
-  x \\
-  y \\
-  z
-\end{bsmallmatrix}
-\)}}
 
 
-Of course, vectors by themselves are not very useful. Hence, we shall define the vector space. For the purposes of this text, you may think of vector spaces as the 2 and 3 dimensional euclidean spaces you are very familiar with. In a vector space, we can finally meaningfully manipulate them. Take a look at the vector \( \vec{a}=
+Of course, vectors by themselves are not very useful. Hence, we shall define the vector space. For the purposes of this text, you may think of vector spaces as the 2 and 3-dimensional Euclidean spaces you are very familiar with. In a vector space, we can finally meaningfully manipulate them. Take a look at the vector \( \vec{a}=
 \begin{bsmallmatrix}
   1 \\
   2
@@ -29,7 +30,7 @@ Of course, vectors by themselves are not very useful. Hence, we shall define the
   -2 \\
   1
 \end{bsmallmatrix}
-\) in the two dimensional euclidean space:
+\) in the two-dimensional Euclidean space:
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}
@@ -44,22 +45,22 @@ Of course, vectors by themselves are not very useful. Hence, we shall define the
 \end{figure}
 
 
-You may have noticed that the coordinate axes in \Cref{vecab} are the same as the ones you are familiar with. However, in linear algebra, instead of the usual \(xy\) axes to describe the components of a vector, you have \(\ihat\) and \(\jhat\) to describe the components of a vector. (So instead of saying the "x" component of a vector, you would say the "i hat" component of a vector.) \marginnote{\footnotesize \textit{Some authors use \(\hat{\textbf{x}}, \hat{\textbf{y}}, \hat{\textbf{z}}\) instead of the usual \(\ihat , \jhat , \khat\). We shall use the latter.}} This is a convention in linear algebra. \(\ihat\) translates to the \(x\) axis and \(\jhat\) translates to the \(y\) axis. Likewise, in the third dimension, \(\khat\) represents the \(z\) axis. Another thing to note are the \emph{basis vectors}:
-\begin{definition}{Basis vectors}{}
-  The set of vectors in a vector space are called \textbf{basis} if every vector in the vector space can be written uniquely written as a finite \textit{linear combination} \sidenotemark of the basis vectors. An example would be these vectors \(\ihat=\begin{bsmallmatrix}
+You may have noticed that the coordinate axes in \Cref{vecab} are the same as the ones you are familiar with. However, in linear algebra, instead of the usual \(xy\) axes to describe the components of a vector, you have \(\ihat\) and \(\jhat\) to describe the components of a vector. (So instead of saying the "x" component of a vector, you would say the "i hat" component of a vector.) \footnote{Some authors use \(\hat{\textbf{x}}, \hat{\textbf{y}}, \hat{\textbf{z}}\) instead of the usual \(\ihat , \jhat , \khat\). We shall use the latter.} This is a convention in linear algebra. \(\ihat\) translates to the \(x\) axis and \(\jhat\) translates to the \(y\) axis. Likewise, in the third dimension, \(\khat\) represents the \(z\) axis. Another thing to note are the \emph{basis vectors}:
+\begin{definition}
+  The set of vectors in a vector space are called \textbf{basis} if every vector in the vector space can be written uniquely written as a finite \textit{linear combination} \footnote{A linear combination of \(x\) and \(y\) is \(ax+by\) where \(a, b\) are constants.}
+ of the basis vectors. An example would be these vectors \(\ihat=\begin{bsmallmatrix}
     0 \\
     1
   \end{bsmallmatrix} \) and \(\jhat=\begin{bsmallmatrix}
     1 \\
     0
-  \end{bsmallmatrix} \) in the 2 dimensional euclidean space which can be thought of one unit of distance in the \(x\) and \(y\) direction respectively.
+  \end{bsmallmatrix} \) in the 2-dimensional Euclidean space which can be thought of one unit of distance in the \(x\) and \(y\) direction respectively.
 \end{definition}
-\sidenotetext{\footnotesize \textit{A linear combination of \(x\) and \(y\) is \(ax+by\) where \(a, b\) are constants.}} 
 With this in mind, another way of writing a vector \(\vec{a}=
 \begin{bsmallmatrix}
   x \\
   y 
-\end{bsmallmatrix} \) is \(\vec{a}=x \ihat + y \jhat \).\marginnote{\footnotesize \textit{You can think of \(\ihat\) and \(\jhat\) as one unit of direction in the x and y axis respectively.}}Of course \(\ihat\) and \(\jhat\) are not the only basis vectors in 2d, if you have learned polar coordinates before, there is the equivalent \(\boldsymbol\hat{\boldsymbol r}\) and \(\boldsymbol\hat{\boldsymbol\theta}\), but this is a topic for a later chapter. Next, we shall look at the \textit{addition} of vectors. A vector \(\vec{a}=
+\end{bsmallmatrix} \) is \(\vec{a}=x \ihat + y \jhat \).\footnote{You can think of \(\ihat\) and \(\jhat\) as one unit of direction in the x and y axis respectively.}Of course \(\ihat\) and \(\jhat\) are not the only basis vectors in 2d, if you have learned polar coordinates before, there is the equivalent \(\boldsymbol{\hat{r}}\) and \(\boldsymbol{\hat{\boldsymbol{\theta}}}\), but this is a topic for a later chapter. Next, we shall look at the \textit{addition} of vectors. A vector \(\vec{a}=
 \begin{bsmallmatrix}
   x_a \\ 
   y_a
@@ -75,7 +76,7 @@ With this in mind, another way of writing a vector \(\vec{a}=
   x_a + x_b \\
   y_a + y_b
 \end{bsmallmatrix}
-\). As you can see, the addition of two vectors results in another vector. Here is a illustration to help clear up things: \marginnote{\footnotesize \textit{This can be extrapolated into any dimensions: \(\begin{bsmallmatrix}
+\). As you can see, the addition of two vectors results in another vector. Here is a illustration to help clear up things: \footnote{This can be extrapolated into any dimensions: \(\begin{bsmallmatrix}
   a \\
   b \\
   c
@@ -87,7 +88,7 @@ With this in mind, another way of writing a vector \(\vec{a}=
   a+d \\
   b+e \\
   c+f
-\end{bsmallmatrix} \).}}
+\end{bsmallmatrix} \).}
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}
@@ -104,11 +105,10 @@ With this in mind, another way of writing a vector \(\vec{a}=
 
 
 
-Let us analyze \Cref{vecadd}. Firstly, notice that \(\vec{a}=1 \ihat + 2 \jhat\) and \(\vec{b}=1 \ihat + 1 \jhat\). Thus, \(\vec{a}+\vec{b}=2 \ihat + 3 \jhat\), exactly like in our figure. One way to understand this is to "attach" the vector \(\vec{a}\)'s tail to \(\vec{b}\)'s head by translating \(\vec{a}\). 
-\marginnote{\footnotesize \textit{Translation means moving something without rotation or any scaling.}}
-\begin{marginfigure}
+Let us analyze \Cref{vecadd}. Firstly, notice that \(\vec{a}=1 \ihat + 2 \jhat\) and \(\vec{b}=1 \ihat + 1 \jhat\). Thus, \(\vec{a}+\vec{b}=2 \ihat + 3 \jhat\), exactly like in our figure. One way to understand this is to "attach" the vector \(\vec{a}\)'s tail to \(\vec{b}\)'s head by translating \(\vec{a}\). \footnote{Translation means moving something without rotation or any scaling.}
+\begin{figure}[h]
   \centering
-  \begin{tikzpicture}[scale=0.3]
+  \begin{tikzpicture}
     \draw[thin, gray!40] (-4,-4) grid (4,4);
     \draw[line width=2pt, blue, -stealth] (1,1) -- (2,3) node[anchor=north west]{\(\vec{a}\)};
     \draw[line width=2pt, red, -stealth] (0,0) -- (1,1) node[anchor=west]{\(\vec{b}\)};
@@ -118,7 +118,7 @@ Let us analyze \Cref{vecadd}. Firstly, notice that \(\vec{a}=1 \ihat + 2 \jhat\)
   \end{tikzpicture}
   \caption{Illustration of vector "head to tail" addition.}
   \label{vecaddattach}
-\end{marginfigure}
+\end{figure}
 You may have seen this in your physics class before. Similarly, the subtraction of vectors \(\vec{x}=
 \begin{bsmallmatrix}
   a \\
@@ -149,7 +149,7 @@ You may have seen this in your physics class before. Similarly, the subtraction 
 \end{figure}
 
 
-\begin{example}{Addition of vectors}{}
+\begin{example}
   Here are some examples of vectors:
   \begin{eqnarray*}
     \vec{a} = \begin{bmatrix}
@@ -198,7 +198,7 @@ Given a vector \(\vec{a}\), \(-\vec{a}\) can be thought of the same vector with 
   0
 \end{bsmallmatrix}\). This is a vector without direction has zero magnitude. We shall denote it \(\vec{0}\).
 Lastly, I want to briefly touch on the idea of \textit{magnitude} which is basically the length of a vector. The derivation of the following formula is simply the Pythagorean theorem.
-\begin{definition}{Magnitude of vector}{}
+\begin{definition}
   The \textbf{magnitude} of a vector \(\vec{v}\) in n-dimensional space is as such:
   \begin{equation*}
     ||\vec{v}|| = \sqrt{v_{1}^{2}+v_{2}^{2}+...+v_{n}^{2}} 
@@ -208,15 +208,14 @@ Lastly, I want to briefly touch on the idea of \textit{magnitude} which is basic
 \end{definition}
 
 
-Try to attempt the following exercise:
-\begin{marginfigure}
+\begin{figure}[h]
   \centering
-  \begin{tikzpicture}[scale=0.3]
+  \begin{tikzpicture}
     \draw[line width=2pt, blue, -stealth] (0,0) -- (3,4) node[anchor=west] {\(\vec{a}\)};
     \draw[line width=2pt, blue, -stealth] (3,4) -- (1,5) node[anchor=east] {\(\vec{b}\)};
   \end{tikzpicture}
-  \caption{Visualisation of "head to tail" addition of \(\vec{a}\) and \(\vec{b}\).}
-\end{marginfigure}
+  \caption{Visualization of "head to tail" addition of \(\vec{a}\) and \(\vec{b}\).}
+\end{figure}
 \begin{problem}
   Given that \(\vec{a}=\begin{bsmallmatrix}
     3 \\
@@ -254,9 +253,8 @@ Try to attempt the following exercise:
   \end{bmatrix}\).
 \end{problem}
 \begin{problem}[1]
-  Prove that the addition of vectors is \textit{associative} given that the addition in \(\mathbb{R}\) is associative.\sidenotemark
+  Prove that the addition of vectors is \textit{associative} given that the addition in \(\mathbb{R}\) is associative. \footnote{An operation \(\circ\) is associative if order in which it is applied does not matter, in this case \((\vec{x} + \vec{y}) + \vec{z} = \vec{x} + (\vec{y} + \vec{z})\) .} 
 \end{problem} 
-\sidenotetext{\footnotesize \textit{An operation \(\circ\) is associative if order in which it is applied does not matter, in this case \((\vec{x} + \vec{y}) + \vec{z} = \vec{x} + (\vec{y} + \vec{z})\) .}} 
 
 
 \begin{problem}[2]

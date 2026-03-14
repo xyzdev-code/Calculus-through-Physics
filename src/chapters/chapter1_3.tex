@@ -1,13 +1,13 @@
 
 \section{Injection, surjection and bijection}
-You may have noticed in the previous exercise that question 2 is particularly \\ interesting. There is a restriction on the domain of \(h(x)\). Why is that? This is what this chapter is all about. However, before we explain that, I will go over some definitions of properties of functions. Firstly, we have \emph{injection}. 
-\begin{definition}{Injective functions}{}
-  An \textbf{injective} function, \(f\), or a \textit{one-to-one} function, is a function such that every distinct output of the function corresponds to only \textit{one} distinct input, that is \sidenotemark:  
+You may have noticed in the previous exercise that question 2 is particularly interesting. There is a restriction on the domain of \(h(x)\). Why is that? This is what this chapter is all about. However, before we explain that, I will go over some definitions of properties of functions. Firstly, we have \emph{injection}. 
+\begin{definition}
+  An \textbf{injective} function, \(f\), or a \textit{one-to-one} function, is a function such that every distinct output of the function corresponds to only \textit{one} distinct input, that is \footnotemark:  
   \begin{equation*}
     f(x_1) = f(x_2) \text{\, implies \,} x_1 = x_2 
   \end{equation*}
 \end{definition}
-\sidenotetext{\footnotesize \textit{By contraposition, \(x_1 \neq x_2\) implies \(f(x_1) \neq f(x_2)\). The contraposition of a statement "p then q" is "not q then p".}}
+\footnotetext{By contraposition, \(x_1 \neq x_2\) implies \(f(x_1) \neq f(x_2)\). The contraposition of a statement "p then q" is "not q then p".}
 Of course, this explanation might not have been very clear. Here is a visualization:
 \begin{figure}[h]
   \centering
@@ -52,12 +52,12 @@ As you can see in \Cref{inj}, every output in \(Y\) of the function is associate
 
 
 Here, the function is \textit{not} injective. As you can see in \Cref{non_inj}, the output \(y\) is associated with more than one input in \(X\). With this in mind, it is time to talk about \emph{surjection}. 
-\begin{definition}{Surjective function}{}
+\begin{definition}
   A \textbf{surjective} function \(f\) is a function such that for every output \(y\), there exists at least one input \(x\) such that \(f(x)=y\). 
 \end{definition}
 
 
-From \Cref{inj} and \Cref{non_inj}, both functions are surjective as every output is \\ associated with at least one input. Do take note that it does not matter how many inputs associate to one output, as long every output is associated with at least one input, the function is surjective. To prove that a function is surjective, you must show that there exists an element in the domain of the function for any arbitrary output in the range.
+From \Cref{inj} and \Cref{non_inj}, both functions are surjective as every output is associated with at least one input. Do take note that it does not matter how many inputs associate to one output, as long every output is associated with at least one input, the function is surjective. To prove that a function is surjective, you must show that there exists an element in the domain of the function for any arbitrary output in the range.
 
 \begin{figure}[h]
   \centering
@@ -80,44 +80,44 @@ From \Cref{inj} and \Cref{non_inj}, both functions are surjective as every outpu
 
 
 From \Cref{nsurj}, we can see that \(y\) has no input associated with it. As a result, the function here is not surjective. Lastly, \emph{bijective} functions can't be any easier.
-\begin{definition}{Bijective function}{}
+\begin{definition}
   A \textbf{bijective} function is a function that is both injective and surjective. 
 \end{definition}
 
 
-However, bijective functions have a superpower. A function is only bijective \textit{if and only if} it has an inverse. \marginnote{\footnotesize \textit{P iff Q, or "P if and only if Q", means that "if P then Q" and "if Q then P".}}
-\begin{theorem}{Bijection and inverses}{}
+However, bijective functions have a superpower. A function is only bijective \textit{if and only if} it has an inverse.\footnote{P iff Q, or "P if and only if Q", means that "if P then Q" and "if Q then P".}
+\begin{theorem}
   A function, \(f:A \to B\), has an inverse if and only if it is bijective.
 \end{theorem}
-\begin{proof}{Bijection and inverses}{}
+\begin{proof}
   To begin such proofs where there is a "if and only if" clause, we will prove both cases separately. First, we claim that if the function has an inverse, then it is bijective. To prove this, we simply prove that \(f\) is injective and surjective. Then, we claim that if a function is bijective, then it has an inverse. With both proofs below, we show that \(f\) has an inverse if and only if it is a bijection.
 \end{proof}
-\begin{lemma}{Inverse function has bijections}{}
+\begin{lemma}
   If a function, \(f: A \to B\), has an inverse, then it is bijective. 
   \label{inversebiject}
 \end{lemma}
-\begin{proof}{Inverse functions has bijections}{}
+\begin{proof}
   Suppose \(f^{-1}\) is the inverse of \(f\). Notice that \(f^{-1}(f(x))\) is injective as it is simply \(f(x)=x\). Suppose \(a, a^\prime \in A\) and \(f(a)=f(a^\prime)\), then \(f^{-1}(f(a))=f^{-1}(f(a^\prime)))\). Notice that by injectivity of \(f^{-1}(f(x))\), \(a=a^\prime\). Hence, \(f\) is injective. Then, suppose \(b \in B\), we wish to show that the function is surjective. Also, \(f(f^{-1}(x))\) is surjective(it is the identity function). Let \(f^{-1}(b)=x\) and \(f(f^{-1}(b))=c\) for some \(c \in B\). By a simple substitution, \(f(f^{-1}(b))=f(x)=c\), thereby showing there exists a \(x \in A\) for every \(c \in B\). The two cases proves that \(f\) is bijective if it has an inverse.
 \end{proof}
-\begin{lemma}{Bijective function has inverses}{}
+\begin{lemma}
   If a function, \(f: A \to B\), is a bijection, then it has an inverse.
   \label{bijectinverse}
 \end{lemma}
-\begin{proof}{Bijective function has inverses}{}
+\begin{proof}
   Let us define \(f^{-1}\) as \(f^{-1}: B \to A\). Let \(b \in B\). Since \(f\) is surjective, there exists \(a \in A\) such that \(f(a)=b\). Let \(f^{-1}(b)=a\). Since \(f\) is injective, \(f^{-1}\) is well-defined, or a function that outputs the same value given the same input. Next, we will show that \(f^{-1}\) is indeed the inverse of \(f\) by showing the composition of the two is an identity function. Again, let \(a \in A\) and \(b=f(a)\) which implies, by definition, \(f^{-1}(b)=a\). Composing the two functions, \(f(f^{-1}(b))=f(a)=b\), which shows that \(f^{-1}\) is indeed the inverse function. The other case of \(f^{-1} \circ f\) is similar. Hence, if \(f\) is a bijection, then it has an inverse.
 \end{proof}
-\begin{remark}{}{}
+\begin{remark}
   This serves as a very good example showing how the reader should prove the injectivity, surjectivity, and bijectivity of functions. Also, this explains why in the previous exercise, the function \(h(x)=(x-7)^2\) is bounded, only taking \(x\) values larger than 7. The function is not bijective in \(\mathbb{R}\), as evident in the graph as it is not injective. Hence, the bounds are needed for \(h\) to have an inverse.
 \end{remark}
-\begin{marginfigure}
+\begin{figure}
   \centering
-  \begin{tikzpicture}[scale=0.3, samples=50]
+  \begin{tikzpicture}
     \begin{axis}[xlabel=\(x\), ylabel=\(y\), axis lines=left, domain=0:20]
       \addplot[mark=none, color=blue]{(x - 7)^2}; 
     \end{axis} 
   \end{tikzpicture}
   \caption{Plot of \((x-7)^2\).}
-\end{marginfigure}
+\end{figure}
 \begin{problem}
   Determine if the following functions are injective or surjective or bijective in its domain:
   \begin{enumerate}[label=\alph*)]
@@ -127,7 +127,6 @@ However, bijective functions have a superpower. A function is only bijective \te
   \end{enumerate}
 \end{problem}
 \begin{problem}[1]
-
   Prove that:
   \begin{enumerate}[label=\alph*)]
     \item{The composition of two injective functions is \textit{injective}.}
@@ -140,12 +139,11 @@ However, bijective functions have a superpower. A function is only bijective \te
 \end{problem}
 
 \subsubsection*{Further problems}
-\hrule
 \begin{problem}[1]
   \textit{(Polynomial remainder theorem)} Let \(f(x)\) be a polynomial. If \(f(a)=0\), prove that \(x-a\) is a factor of \(f(x)\).
 \end{problem}
 \begin{problem}[1]
-  We shall define an area function, \(A(f,x_1,x_2)\) which gives us the area under a given function \(f(x)\) \sidenote{\footnotesize\textit{If you are skeptical about the area function provides the area for any function, you are absolutely right. This property that a function can be integrated is called integrability. If you are interested, there are many types, such as the physicist favourite "square-integrability". However, the point of the problem remains.}} bound by \(x_1\leq x\leq x_2\).
+  We shall define an area function, \(A(f,x_1,x_2)\) which gives us the area under a given function \(f(x)\) \footnote{If you are skeptical about the area function provides the area for any function, you are absolutely right. This property that a function can be integrated is called integrability. If you are interested, there are many types, such as the physicist favourite "square-integrability". However, the point of the problem remains.} bound by \(x_1\leq x\leq x_2\).
   \begin{enumerate}[label=\alph*)]
     \item{Using an example, show that \(A(f,x_1,x_2)\) cannot be bijective.}
     \item{Also using an example, disprove that \(A(fg,x_1,x_2)=A(f,x_1,x_2)A(g,x_1,x_2)\).}
