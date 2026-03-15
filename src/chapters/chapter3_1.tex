@@ -51,7 +51,7 @@ which is known as a \emph{differential equation} whose solution is a shape calle
 \end{figure}
 
 
-The core of deriving \Cref{cycloid} is by analyzing the small displacements of the ball as it moves down, tiny displacements, or \emph{infinitesimal} displacements. Infinitesimal refers to a quantity that is smaller than any positive real number, but not zero, which sounds weird at first. Calculus is the study of infinitesimal changes, and through analyzing small changes, we can understand a much larger picture. It turns out, a large class of problems in physics and even other sciences can be solved by the methods of calculus. It is surprisingly powerful how we can essentially utilize tiny changes to understand the whole. But enough of philosophical musings, let's get to the math. You would notice that the entirety of this chapter (and the next chapter too) is about the Brachistochrone problem, needless to say, you should get yourself familiar with the problem. As a teaser, the rigor in calculus is due to the \emph{limit}, and I shall present a crude but intuitive definition of it. 
+The core of deriving \Cref{cycloid} is by analyzing the small displacements of the ball as it moves down, tiny displacements, or \emph{infinitesimal} displacements. Infinitesimal refers to a quantity that is smaller than any positive real number, but not zero, which sounds weird at first. Remeber this sentence, this implies that infinitesimals are \textit{not} real numbers. Calculus is the study of infinitesimal changes, and through analyzing small changes, we can understand a much larger picture. It turns out, a large class of problems in physics and even other sciences can be solved by the methods of calculus. It is surprisingly powerful how we can essentially utilize tiny changes to understand the whole. But enough of philosophical musings, let's get to the math. You would notice that the entirety of this chapter (and the next chapter too) is about the Brachistochrone problem, needless to say, you should get yourself familiar with the problem. As a teaser, the rigor in calculus is due to the \emph{limit}, and I shall present a crude but intuitive definition of it. 
 
 
 \begin{definition}
@@ -84,16 +84,17 @@ I am about to pose a completely nonsensical question, what is \(f(0)\)? Easy, in
 
 
 Supposing you are the first one to notice that \(f\) seems to approach 1 as x goes to 0. You would be absolutely correct. Turns out, the limit as x approaches 0 is 1, which we write as
-\begin{equation*}
+\begin{equation}
   \lim_{x\to 0}\frac{\sin(x)}{x}=1
-\end{equation*}
+  \label{sinc0}
+\end{equation}
 
 
 Using limits, we are able to "eliminate" this discontinuity in the function. Limits enable us to study behavior of functions that otherwise would not be possible by conventional means. Of course, I have not shown why this limit is 1 or that it even \textit{exists}. While the exact derivation will be left to the later chapters, we can use SageMath to help us evaluate this limit. To put it simply, Sage is a mathematics software system like Mathematica, but unlike many of its counterparts, it is free and open source. To evaluate this limit in Sage, we use the following syntax (enter the following code line by line):
 \begin{sagecommandline}
   sage: f(x)=sin(x)/x
-  sage: limit(f,x,0) 
+  sage: f.limit(x=0)
 \end{sagecommandline}
 
-Line 1 defines the function and line 2 evaluates the limit of \(f\) as x approaches 0. Expectedly, Sage yields the value 1 for the limit. We shall be using Sage for the rest of the book so do read up on the syntax of Sage. A quick Google search should suffice.
+Line 1 defines the function and line 2 evaluates the limit of \(f\) as x approaches 0. Expectedly, Sage yields the value 1 for the limit. We shall be using Sage for the rest of the book so do read up on the syntax of Sage. A quick Google search should suffice. Coming back to calculus, treat limits as an integral part (pun intended) of calculus, but the nitty-gritty shall be brushed aside for now. All in all, remembering that infinitesimals like \(x\) in \Cref{sinc0} are not real numbers, but are special quantities that enable us to reason, with rigor in due time, a lot of problems.
 

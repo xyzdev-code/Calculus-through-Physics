@@ -3,11 +3,11 @@
 import sagetex
 _st_ = sagetex.SageTeXProcessor('main', version='2022/08/21 v3.6.1', version_check=True)
 try:
- _st_.current_tex_line = 93
+ _st_.current_tex_line = 94
  _st_.commandline(0, r"""
   sage: f(x)=sin(x)/x
-  sage: limit(f,x,0)
+  sage: f.limit(x=0)
 """, globals(), locals(), True)
 except:
- _st_.goboom(96)
+ _st_.goboom(97)
 _st_.endofdoc()

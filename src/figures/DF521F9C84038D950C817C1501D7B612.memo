@@ -1,0 +1,5 @@
+\mmzMemo 
+\global \mmzContextExtra {}%
+%
+\mmzSource 
+\begin {tikzpicture} \draw [line width=2pt, -stealth, red] (0,0,0) -- (2,0,0) node[pos=1.1]{\(\vec {a}\)}; \draw [line width=2pt, -stealth, blue] (0,0,0) -- (0,0,-3) node[pos=1.1]{\(\vec {b}\)}; \draw [line width=2pt, -stealth, purple] (0,0,0) -- (1,3,1) node[pos=1.1]{\(\vec {c}\)}; \draw [dotted, line width=1.5pt] (2,0,0) -- (2,0,-3); \draw [dotted, line width=1.5pt] (2,0,0) -- (3,3,1); \draw [dotted, line width=1.5pt] (0,0,-3) -- (2,0,-3); \draw [dotted, line width=1.5pt] (0,0,-3) -- (1,3,-2); \draw [dotted, line width=1.5pt] (1,3,1) -- (1,3,-2); \draw [dotted, line width=1.5pt] (1,3,1) -- (3,3,1); \draw [dotted, line width=1.5pt] (2,0,-3) -- (3,3,-2); \draw [dotted, line width=1.5pt] (1,3,-2) -- (3,3,-2); \draw [dotted, line width=1.5pt] (3,3,1) -- (3,3,-2); \end {tikzpicture}

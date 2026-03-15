@@ -1,0 +1,5 @@
+\mmzMemo 
+\global \mmzContextExtra {}%
+%
+\mmzSource 
+\begin {tikzpicture} \filldraw [red!60] (0,0) ellipse (1cm and 2cm) node[below, yshift=-60, color=black]{X}; \filldraw [blue!60] (4,0) ellipse (1cm and 2cm) node[below, yshift=-60, color=black]{Y}; \filldraw [gray] (0,1) circle (3pt); \filldraw [gray] (0,0) circle (3pt); \filldraw [gray] (0,-1) circle (3pt); \filldraw [gray] (4,1) circle (3pt) node[above, color=black]{\(y\)}; \filldraw [gray] (4,-1) circle (3pt); \draw [->, black] (0,1) -- (4,1); \draw [->, black] (0,0) -- (4,1); \draw [->, black] (0,-1) -- (4,-1); \end {tikzpicture}

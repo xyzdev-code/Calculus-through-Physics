@@ -6,4 +6,4 @@
 \lstinputlisting[firstline=4,lastline=4,firstnumber=2,style=SageInput]{main.sagetex.scmd}
 \lstinputlisting[firstline=5,lastline=5,firstnumber=3,style=SageInput]{main.sagetex.scmd}
 \vspace{\sagecommandlineskip}}{}{}{}{}}
-%aa7e30881441053e948b572151efdfba% md5sum of corresponding .sage file (minus "goboom", "current_tex_line", and pause/unpause lines)
+%2ab99cf71e5895f3d3dd93b80306dbc5% md5sum of corresponding .sage file (minus "goboom", "current_tex_line", and pause/unpause lines)

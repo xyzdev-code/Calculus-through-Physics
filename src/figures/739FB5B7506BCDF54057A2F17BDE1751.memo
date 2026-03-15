@@ -1,0 +1,5 @@
+\mmzMemo 
+\global \mmzContextExtra {}%
+%
+\mmzSource 
+\begin {tikzpicture} \draw [line width=2pt, blue, -stealth] (0,0) -- (3,4) node[anchor=west] {\(\vec {a}\)}; \draw [line width=2pt, blue, -stealth] (3,4) -- (1,5) node[anchor=east] {\(\vec {b}\)}; \end {tikzpicture}

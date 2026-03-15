@@ -1,0 +1,5 @@
+\mmzMemo 
+\global \mmzContextExtra {}%
+%
+\mmzSource 
+\begin {tikzpicture} \draw [thin, gray!40] (-4,-4) grid (4,4); \draw [line width=2pt, blue, -stealth] (0,0) -- (2,4) node[anchor=south west]{\(\vec {b}\)}; \draw [line width=2pt, red, -stealth] (0,0) -- (-1,-2) node[anchor=north east]{\(\vec {a}\)}; \draw [<->] (-4,0) -- (4,0) node[right]{\(x\)}; \draw [<->] (0,-4) -- (0,4) node[above]{\(y\)}; \end {tikzpicture}

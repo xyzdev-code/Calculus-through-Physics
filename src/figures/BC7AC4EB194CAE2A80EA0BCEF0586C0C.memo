@@ -1,0 +1,5 @@
+\mmzMemo 
+\global \mmzContextExtra {}%
+%
+\mmzSource 
+\begin {tikzpicture}[ roundnode/.style={circle, draw=black!60, fill=white!5, very thick, minimum size=10mm}, squarednode/.style={rectangle, draw=black!60, fill=white!5, very thick, minimum size=15mm}, ] \node [roundnode] (x) {\(x\)}; \node [squarednode] (maintopic) [right of=x, xshift=1.5cm] {\(g\)}; \node [roundnode] (fx) [right of=maintopic, xshift=1.5cm] {\(g(x)\)}; \node [squarednode] (gtopic) [right of=fx, xshift=1.5cm] {\(f\)}; \node [roundnode] (final) [right of=gtopic, xshift=1.5cm] {\(f(g(x))\)}; \draw [->] (maintopic.east) -- (fx.west); \draw [->] (x.east) -- (maintopic.west); \draw [->] (fx.east) -- (gtopic.west); \draw [->] (gtopic.east) -- (final.west); \end {tikzpicture}

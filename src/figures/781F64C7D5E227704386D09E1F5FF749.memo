@@ -1,0 +1,5 @@
+\mmzMemo 
+\global \mmzContextExtra {}%
+%
+\mmzSource 
+\begin {tikzpicture}[scale=1.8] \coordinate (a) at (0,0); \coordinate (b) at (4,0); \coordinate (c) at (4,2); \draw (a) -- (b)node[midway, below]{a} -- (c)node[midway,right]{b} -- (a)node[midway,left, above]{c}; \draw (a) node[anchor=east,align=center] {B}; \draw (b) node[anchor=west,align=center] {C}; \draw (c) node[anchor=south]{A}; \MarkRightAngle {a}{b}{c}; \end {tikzpicture}

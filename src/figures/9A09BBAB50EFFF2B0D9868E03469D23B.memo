@@ -1,0 +1,5 @@
+\mmzMemo 
+\global \mmzContextExtra {}%
+%
+\mmzSource 
+\begin {tikzpicture}[scale=0.8] \draw [line width=2pt, -stealth, blue] (0,0) -- (0,1) node[anchor=south west]{\(\jhat _{\text {before}}\)}; \draw [line width=2pt, -stealth, blue] (0,0) -- (1,1) node[anchor=north west]{\(\jhat _{\text {intermediate}}\)}; \draw [line width=2pt, -stealth, blue] (0,0) -- (-1,1) node[anchor=south west]{\(\jhat _{\text {after}}\)}; \draw [gray!60, thin] (-4, -4) grid (4,4); \draw [blue!40, thin, xslant=tan 45] (-4, -4) grid (4,4); \draw [red!40, thin, rotate=90, xslant=tan 45] (-4, -4) grid (4,4); \end {tikzpicture}

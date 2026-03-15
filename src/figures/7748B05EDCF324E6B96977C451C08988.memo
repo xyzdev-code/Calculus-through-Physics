@@ -1,0 +1,5 @@
+\mmzMemo 
+\global \mmzContextExtra {}%
+%
+\mmzSource 
+\begin {tikzpicture} \draw [line width=2pt, -stealth, red] (0,0,0) -- (1,0,0) node[pos=1.1]{\(\jhat \)}; \draw [line width=2pt, -stealth, blue] (0,0,0) -- (0,0,1) node[pos=1.4]{\(\ihat \)}; \draw [line width=2pt, -stealth, purple] (0,0,0) -- (0,1,0) node[pos=1.3]{\(\khat \)}; \end {tikzpicture}
