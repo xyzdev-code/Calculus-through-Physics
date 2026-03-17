@@ -1,5 +1,5 @@
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{Preface}{xi}{chapter*.2}%
+\contentsline {chapter}{Preface}{ix}{chapter*.2}%
 \contentsline {part}{Part\ I\hspace {\betweenumberspace }Precalculus}{1}{part.1}%
 \contentsline {chapter}{\numberline {1}Functions}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Function basics}{3}{section.1.1}%
