@@ -1,5 +1,5 @@
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{Preface}{ix}{chapter*.2}%
+\contentsline {chapter}{Preface}{xi}{chapter*.2}%
 \contentsline {part}{Part\ I\hspace {\betweenumberspace }Precalculus}{1}{part.1}%
 \contentsline {chapter}{\numberline {1}Functions}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Function basics}{3}{section.1.1}%
@@ -19,3 +19,4 @@
 \contentsline {part}{Part\ II\hspace {\betweenumberspace }Calculus I}{51}{part.2}%
 \contentsline {chapter}{\numberline {3}Derivatives}{53}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Essence of calculus}{53}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Differentials}{56}{section.3.2}%

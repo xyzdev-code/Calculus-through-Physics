@@ -27,7 +27,7 @@
  \draw (tempa) -- ($(#3)!2!(tempc)$) -- (tempb);
 }
 \usepackage{mparhack}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \pgfplotsset{compat=1.18}
 \makeatletter
 \@removefromreset{footnote}{chapter}
@@ -57,18 +57,19 @@
   \chapter*{Copyright notice}
   \vspace*{\fill}
     Calculus through Physics  © 2025 by Xiao Yaozi is licensed under CC BY-NC-ND 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/4.0/
-  \newpage
-  \tableofcontents
-  \addcontentsline{toc}{chapter}{Preface}
+  \begin{dedication}
+    To my parents, who have supported me in everything I do.
+  \end{dedication}
   \chapter*{Preface}
   
   This book is a fairly standard calculus textbook which covers the most of the standard Calculus I to IV material. What is \textit{different} is that this book attacks the problem of pedagogy of calculus by bringing in \textit{physics}, more specifically, classical mechanics. To be clear, this is not a physics textbook in any capacity, it is just that I believe that by utilizing classical mechanics, readers are able to tap into their intuition as forces and classical mechanics are quite intuitive. Therefore, I hope that calculus will be easier to learn.
 
 
-  What is unfortunate is that calculus has gained a "notorious" reputation among high school students as being a hard to learn, esoteric subject. Those who have learned calculus seemed to have entered a sort of cult. While it is true that calculus is quite a big departure from precalculus, it is by no means impossible to learn and if the reader puts in the work, I can almost assure you that it is worth it (that is if you are pursuing any STEM subject). Another way to emphasize the importance of calculus, is by stating the seemingly sad fact that one cannot hope to run away from calculus, be it physics, chemistry or even biology. However, this is because calculus naturally arises from the problems in these subjects, not because scientists are evil and want to gatekeep. 
+  What is unfortunate is that calculus has gained a "notorious" reputation among high school students as being a hard to learn, esoteric subject. Those who have learned calculus seemed to have entered a sort of cult. While it is true that calculus is quite a big departure from precalculus, it is by no means impossible to learn and if the reader puts in the work, I can almost assure you that it is worth it (that is if you are pursuing any STEM subject). Another way to emphasize the importance of calculus, is by stating the seemingly sad fact that one cannot hope to run away from calculus, be it physics, chemistry or even biology. However, this is because calculus naturally arises from the problems in these subjects, not because scientists are evil and want to gate keep. 
 
 
-  I must make it absolutely clear, though, that the reader must have a basic knowledge of physics (forces, velocity etc.) to understand this book. In addition, the first part on precalculus does not use classical mechanics to frame the subject matter and are very brief. I expect the reader to ensure that the have a solid understanding of the subject matter. Problems in the text are sometimes accompanied by numbers which indicate the difficulty of a problem:
+  I must make it absolutely clear, though, that the reader must have a basic knowledge of physics (forces, velocity etc.) to understand this book. In addition, the first part on precalculus does not use classical mechanics to frame the subject matter and is very brief. I expect the reader to ensure that the have a solid understanding of the subject matter. Problems in the text are sometimes accompanied by numbers which indicate the difficulty of a problem:
+  \addcontentsline{toc}{chapter}{Preface}
   \begin{enumerate}
     \item{\textbf{(1)} represents an essential problem the reader should attempt, it should not be very difficult.}
     \item{\textbf{(2)} represents a slightly difficult problem that is good for the reader to attempt, and with some careful thinking, it should be doable.}
@@ -76,11 +77,12 @@
   \end{enumerate}
 
 
-  No asterisks mean that a problem is trivial and can be done if the reader needs more practice. 
+  No numbers mean that a problem is trivial and can be done if the reader needs more practice. 
 
 
   Another point to note about the book is that for mathematical programming, I shall be using SageMath, a free and open source mathematics software system. Please download it from its official website to follow along certain parts of the book. 
   \raggedbottom
+  \tableofcontents
   \mainmatter
   \include{chapters/chapter1_1}
   \include{chapters/chapter1_2}
@@ -94,4 +96,5 @@
   \include{chapters/chapter2_6}
   \include{chapters/chapter2_7}
   \include{chapters/chapter3_1}
+  \include{chapters/chapter3_2}
  \end{document}
