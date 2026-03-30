@@ -9,7 +9,7 @@ Perhaps framing an established pedagogical subject like calculus through the unc
 \end{problem}
 
 
-What do you think is the fastest path? Perhaps a straight line, a quarter circle? Turns out, it is more complex than that. It was said that when Johann Bernoulli posed this question to the scientific journal Acta Eruditorum, Newton stayed up for an entire night and mailed in the solution. Bernoulli immediately recognized it was from Newton, exclaiming that he "recognizes a lion from his claw mark". This problem was introduced while calculus was in its infancy, so we can gather some insight on why calculus was developed the way it is. Unfortunately, the whole solution would require integration, the topic in Part II. I shall first present a sketch of what is in store. Some preliminaries out of the gate, the formulas for kinetic energy (KE) and gravitational potential energy (GPE) are as such:
+What do you think is the fastest path? Perhaps a straight line, a quarter circle? Turns out, it is more complex than that. It was said that when Johann Bernoulli posed this question to the scientific journal Acta Eruditorum, Newton stayed up for an entire night and mailed in the solution anonymously. Bernoulli immediately recognized it was from Newton, exclaiming that he "recognizes a lion from his claw mark". This problem was introduced while calculus was in its infancy, so we are able to tackle it without the advanced calculus machinery. Unfortunately, the whole solution would require integration, the major topic in Part III. I shall first present a sketch of what is in store. Some preliminaries out of the gate, the formulas for kinetic energy (KE) and gravitational potential energy (GPE) are as such:
 
 
 \begin{align}
@@ -77,6 +77,7 @@ I am about to pose a completely nonsensical question, what is \(f(0)\)? Easy, in
   \begin{tikzpicture}
     \begin{axis}[xlabel=\(x\), ylabel=\(y\), axis lines=left, trig format=rad, samples=100, ymin=-1, ymax=1, xmax=4, xmin=-4]
       \addplot[mark=none, color=blue]{sin(x)/x};
+      \addplot[holdot] coordinates{(0,1)};
     \end{axis}
   \end{tikzpicture}
   \caption{Plot of \(f(x)\).}

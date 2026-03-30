@@ -1,0 +1,5 @@
+\mmzMemo 
+\global \mmzContextExtra {}%
+%
+\mmzSource 
+\begin {tikzpicture} \pgfplotsset {holdot/.style={color=blue,fill=white,only marks,mark=*}} \begin {axis}[xlabel=\(x\), ylabel=\(y\), axis lines=left, trig format=rad, samples=100, ymin=-1, ymax=1, xmax=4, xmin=-4] \addplot [mark=none, color=blue]{sin(x)/x}; \addplot [holdot] coordinates{(0,1)}; \end {axis} \end {tikzpicture}
