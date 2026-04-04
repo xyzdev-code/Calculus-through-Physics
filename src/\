@@ -36,22 +36,18 @@ As you may see, the heat distribution may look awfully complex, even in one-dime
 
 Zooming in to an individual point on \Cref{discreteheatgraph}, say the third point from \(x=0\), we notice it is surrounded by two points of lower temperature. From this, we can probably infer that if we let time pass, the temperature at this point will probably decrease. How about another point, for example the point right above the \(x=3\) mark. It is surrounded by a lower point and a higher point. However, since the difference in temperature between the higher point and it is lower than the difference between it and the lower point, it will probably increase in temperature as time passes. Hence, we can generalize that
 \begin{lemma}
-  Given equally spaced points \(x_1,x_2,x_3\) on the heat distribution graph where \(x_1<x_2<x_3\), define the function \(T\) such that it yields the temperature at the point \(x\). If the average temperature of \(x_1\) and \(x_3\), denoted by \(\frac{T(x_1)+T(x_3)}{2}\), is larger than the temperature at \(x_2\), then \(x_2\) will heat up. Likewise, if the average temperature is lower, \(x_2\) will tend to cool down.\footnote{For the sake of completeness, the heat distribution function \(T(x,t)\) also varies with time, which is explained later.}
+  Given points \(x_1,x_2,x_3\) on the heat distribution graph where \(x_1<x_2<x_3\), define the function \(T\) such that it yields the temperature at the point \(x\). If the average temperature of \(x_1\) and \(x_3\), denoted by \(\frac{T(x_1)+T(x_3)}{2}\), is larger than the temperature at \(x_2\), then \(x_2\) will heat up. Likewise, if the average temperature is lower, \(x_2\) will tend to cool down.\footnote{For the sake of completeness, the heat distribution function \(T(x,t)\) also varies with time, but that would complicate the current matter.}
 \end{lemma}
 
 
 Bravo, this at least provides some insight, albeit very qualitatively, to how the distribution of heat may change. But, we can definitely do better than this. Imagine a cup of hot tea cooling down in a room, the hotter the tea, the faster the tea cools down at that point in time. Conversely, if the tea is cooler, then the rate of heat transfer is also going to be lower. Using this analogy, I may write
 \begin{lemma}
-  The rate in which \(x_2\) heats up is proportional to the average of \(x_1\) and \(x_3\) minus the temperature of \(x_2\) itself, or \footnote{Essentially what the fraction is saying is the change of \(T\) over a certain time period \(\Delta t\), also known as rate of change.}
+  The rate in which \(x_2\) heats up is proportional to the average of \(x_1\) and \(x_3\) minus the temperature of \(x_2\) itself, or\footnote{Essentially what the fraction is saying is the change of \(T\) over a certain time period \(\Delta t\), also known as rate of change.}
   \begin{equation}
-    \frac{\Delta T(x_2, t)}{\Delta t}=\alpha \left(\frac{T(x_1,t)+T(x_3,t)}{2}-T(x_2,t)\right)
+    \frac{\Delta T(x_2, t)}{\Delta t}=\alpha \left(\frac{T(x_1)+T(x_3)}{2}-T(x_2)\right)
     \label{heattransfer1d}
   \end{equation}
 \end{lemma}
 
 
-\Cref{heattransfer1d} gives us some insight into why heat transfer is so complicated, even in the one-dimensional case. Notice that \(T(x,t)\) varies with two variables, space and time. If \Cref{heattransfer1d} only varies with time or space, the problem would be dumb down by a lot. We can, however, do this by shifting our focus to only one point on the curve, throwing spatial variation out of the window. This does not mean that the heat distribution will simplify into one point, but we shall look at one point at any given time.
-
-\begin{problem}[2]
-  Solve for two possible \(T(x,t)\) such that they satisfy \Cref{heattransfer1d}. (Hint: Try very trivial functions.) What do such functions imply physically?
-\end{problem}
+\Cref{heattransfer1d} gives us some insight into why heat transfer is so complicated, even in the one-dimensional case. Notice that \(T(x,t)\) varies with two variables, space and time. If \Cref{heattransfer1d} only varies with time or space, the problem would be dumb down by a lot. We can, however, do this by shifting our focus to only one point on the curve, throwing spatial variation out of the window.

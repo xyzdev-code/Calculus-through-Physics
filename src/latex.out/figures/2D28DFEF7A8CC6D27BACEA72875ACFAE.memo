@@ -1,0 +1,5 @@
+\mmzMemo 
+\global \mmzContextExtra {}%
+%
+\mmzSource 
+\begin {tikzpicture} \begin {axis}[xlabel=\(x\), ylabel=\(t\), axis lines=left] \addplot [mark=none, color=blue, samples=20, domain=0:4, only marks]{-0.25*sin(deg(x)) + 0.45*sin(2*deg(x)) + 0.15*sin(6*deg(x))}; \end {axis} \end {tikzpicture}

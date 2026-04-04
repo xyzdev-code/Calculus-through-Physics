@@ -7,7 +7,7 @@ doctest this file with "sage -t main_doctest.sage".
 It is always safe to delete this file; it is not used in typesetting your
 document.
 
-Sage commandline, line 95::
+Sage commandline, line 56::
 
   sage: f(x)=sin(x)/x
   sage: f.limit(x=0)
