@@ -37,6 +37,7 @@ In the previous section, we defined a function as a rule that assigns to each el
             \fill (\x,\y) circle (2pt);
           }
         }
+        \draw (0, 0) node[anchor=north east]{0};
       \end{tikzpicture}
       \caption{A visualization of the Cartesian product \(\mathbb{Z} \times \mathbb{Z}\). Each dot represents an ordered pair of integers.}
       \label{cartesianproduct}
@@ -45,7 +46,7 @@ In the previous section, we defined a function as a rule that assigns to each el
 
 But why are ordered pairs and Cartesian products relevant to functions? Well, we can represent a function as a set of ordered pairs, where each ordered pair consists of an element from the domain and its corresponding element in the range. This leads us to a more formal definition of a function.
 \begin{definition}
-  A \textbf{function} \(f\) from a set \(A\) (the domain) to a set \(B\) (the range) is a subset of the Cartesian product \(A \times B\) such that for every element \(a \in A\), there exists exactly one element \(b \in B\) such that the ordered pair \((a,b)\) is in the subset. We denote this function as \(f: A \to B\) and write \(f(a) = b\).
+  A function \(f\) from a set \(A\) (the domain) to a set \(B\) (the range) is a subset of the Cartesian product \(A \times B\) such that for every element \(a \in A\), there exists exactly one element \(b \in B\) such that the ordered pair \((a,b)\) is in the subset. We denote this function as \(f: A \to B\) and write \(f(a) = b\).
 \end{definition}
 
 

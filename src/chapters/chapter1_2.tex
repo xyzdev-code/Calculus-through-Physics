@@ -95,13 +95,7 @@ If I ask you what is \(\arcsin(B)\), you may say it is \(\frac{b}{c}\). But, wha
   f \circ f^{-1}(y) = y, y \in Y \text{\, and \,} f^{-1} \circ f(x) = x, x \in X
 \end{equation}
 
-\begin{note}
-  One common misconception is that \(f(f^{-1}(x))=f^{-1}(f(x))\) for any function. While this is technically true, you may apply this fact wrongly. For example, take the following function:
-  \begin{equation*}
-    f(x)=\sin(x), f^{-1}: \{y: -1 \leq y \leq 1 \} \to \mathbb{R}
-  \end{equation*}
-  This looks deceptively simple, when asked to evaluate \(f^{-1}(f(\pi))\), it is \(\pi\) (You may want to verify it yourself). But what is \(f(f^{-1}(\pi))\)? Well, according to our definition of \(f\), \(f^{-1}(\pi)\) is simply not defined. In actuality, to find \(f^{-1}(\pi)\), we need complex numbers, which is not allowed in the definition. Hence, you must be extra careful when you are dealing with function inverses and pay attention to the domain and range.
-\end{note}
+
 
 To find the inverse function of a function \(f\), we have to find the function that maps the outputs of the \(f\) back to its inputs. To solve algebraically, we set \(f(x)\) for some arbitrary \(x\) to \(y\), and make \(x\) the subject of the equation.
 \begin{example}
@@ -114,7 +108,7 @@ To find the inverse function of a function \(f\), we have to find the function t
   \end{align*}
   Hence, the inverse function is \(f^{-1}(y)=3y-7\).
 \end{example}
-\begin{example}{Common inverse functions}{}
+\begin{example}
   Some common examples of inverse functions:
   \begin{enumerate}
     \item{Trigonometry: \begin{align*}
