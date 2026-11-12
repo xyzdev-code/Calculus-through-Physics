@@ -1,62 +1,59 @@
 \part{Calculus I}
-\chapter{Derivatives}
-\section{Essence of calculus}
+
+\chapter{Basic derivatives}
+
+\section{Introduction to electrostatics}
 
 
-Perhaps framing an established pedagogical subject like calculus through the unconventional lens of physics is not optimal, but I will try my best. One of the most infamous problems in physics is thermal conduction, which I will frame as such for now
-\begin{problem}
-  Bring two identical one-dimensional rods with different temperatures into contact such that they line up in a straight line, what will be the temperature distribution at some time \(t\)?
-\end{problem}
+Perhaps framing such a well taught subject through the lens of physics is indeed quite unconventional, but I will try my best. I have chosen the realm of electrostatics to begin our deep dive into calculus, and we should slowly progress towards electrodynamics in the later chapters. It is fine if you do not have a deep understanding of the subject matter stated above. (In fact, if you have a complete understanding of these then you obviously have had mastered calculus and more.) For the reason I believe electromagnetism is a great topic to teach calculus in, look at the following equations:
 
-The topic of heat conduction proved to be very much non-trivial, even Newton's solution to the problem only holds for small temperature differences. However, the breakthrough would only come more than a hundred years later, when Joseph Fourier, equipped with many advancements in the study of calculus, tackled the problem with the infamous \textbf{Fourier series}. Tackling the heat conduction problem is multi-layered, requiring tools from each level of calculus. Hence, this is a rich problem no matter which stage of calculus one is at.
-
-
-
-The core of deriving what will be known as the \textbf{heat equation} is by analyzing the small sections of the whole system, tiny sections, or \emph{infinitesimal} sections. Infinitesimal refers to a quantity that is smaller than any positive real number, but not zero, which sounds weird at first. Remember this sentence, this implies that infinitesimals are \textit{not} real numbers. Calculus is the study of infinitesimal changes, and through analyzing small changes, we can understand a much larger picture. It turns out, a large class of problems in physics and even other sciences can be solved by the methods of calculus. It is surprisingly powerful how we can essentially utilize tiny changes to understand the whole. But enough of philosophical musings, let's get to the math. 
+\begin{align}
+  \nabla \cdot \vec{E} &= \frac{\rho}{\epsilon_0} \\
+  \nabla \cdot \vec{B} &= 0 \\
+  \nabla \times \vec{E} &= -\pdv{\vec{B}}{t} \\
+  \oint_{\mathcal{P}} \vec{H} \cdot \dd{\vec{l}} &= I_{f_{enc}} + \odv{}{t} \int_{\mathcal{S}} \vec{D} \cdot \dd{a}
+\end{align}
 
 
-\begin{definition}
-  The \textbf{limit} of a function \(f(x)\) as \(x\) approaches \(a\) is the value that \(f(x)\) approaches as \(x\) gets arbitrarily close to \(a\). We write
-  \begin{equation}
-    \lim_{x \to a} f(x) = L
-  \end{equation}
-  where \(L\) is the limit of \(f(x)\) as \(x\) approaches \(a\). \footnotemark
-\end{definition}
-\footnotetext{Actually, \(f(a)\) does not even have to exist, it can be undefined.}
+These are the famous \emph{Maxwell Equations} which collectively describes how electric and magnetic fields are generated. This together with the Lorentz force law forms the foundation of classical electromagnetism. The Lorentz force law is as such:
 
-
-Instead of plunging into evaluating limits immediately, I want to motivate the reader to understand the origin of the need for limits. Take the following function as an example \footnote{This is actually the \(\sinc\) function, used commonly in signal processing.}
 \begin{equation}
-  f(x) = \frac{\sin(x)}{x}
+  \vec{F} = q(\vec{E} + \vec{v}\times\vec{B})
 \end{equation}
 
 
-I am about to pose a completely nonsensical question, what is \(f(0)\)? Easy, inasmuch as there is a 0 in the denominator, \(f(0)\) is undefined. That is not wrong, but perhaps when we plot the graph of \(f\), we shall notice something interesting
+That is quite a lot to take in. I shall explain some of the symbols you have seen, \(\vec{E}\) and \(\vec{B}\) are the electric and magnetic fields respectively. For the rest, we will get to them as we progress through the book. Currently, only the Lorentz force law seems manageable.\footnote{\(\vec{v}\) is velocity of the object.} Even if you just skimmed through the above equations, you would notice two very important symbols that would be the main focus for the next two parts of the book: \(\int\) and \(\odv{}{t}\). The former is called the \textbf{integral} and the latter is called the \textbf{derivative}. We shall focus on the latter in this part. But first, I shall acquaint you with some prerequisite knowledge regarding electrostatics, the study of electric charges at \emph{rest}. Generally, when dealing with electrostatics here, we will deal with \emph{point charges}.
+\begin{definition}
+  A \textbf{point charge} is an electric charge that has no spatial size, area or volume.
+\end{definition}
 
-\begin{figure}[h]
-  \centering
+
+An electric charge can be \emph{positive} or \emph{negative}. Like charges \emph{repel} each other and unlike charges \emph{attract} each other. Charge is \emph{quantized}, meaning it comes in integer multiples of an elementary charge, or \(e=1.602176634\times 10^{-19}\si{\coulomb}\).
+
+\begin{figure}[H]
+  \begin{center}
   \begin{tikzpicture}
-    \begin{axis}[xlabel=\(x\), ylabel=\(y\), axis lines=left, trig format=rad, samples=100, ymin=-1, ymax=1, xmax=4, xmin=-4]
-      \addplot[mark=none, color=blue]{sin(x)/x};
-      \addplot[holdot] coordinates{(0,1)};
-    \end{axis}
+  \foreach \i [evaluate={\angle=(\i-1)*360/\NE;}] in {1,...,\NE}{
+    \draw[EFieldLineArrow={0.6}] (0,0) -- (\angle:\R);
+  }
+  \draw[charge+] (0,0) circle (7pt) node[black,scale=0.8] {$+q$};
   \end{tikzpicture}
-  \caption{Plot of \(f(x)\).}
+    \caption{A positive point charge.\protect\footnotemark}
+  \end{center}
 \end{figure}
 
 
-Supposing you are the first one to notice that \(f\) seems to approach 1 as x goes to 0. You would be absolutely correct. Turns out, the limit as \(x\) approaches 0 is 1, which we write as
-\begin{equation}
-  \lim_{x\to 0}\frac{\sin(x)}{x}=1
-  \label{sinc0}
-\end{equation}
+\footnotetext{Of course, for illustration purposes, I have drawn the charges with color and size, but real charges do not look like this.}
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}
+  \foreach \i [evaluate={\angle=(\i-1)*360/\NE;}] in {1,...,\NE}{
+    \draw[EFieldLineArrow={0.5}] (\angle:\R) -- (0:0);
+  }
+  \draw[charge-] (0,0) circle (7pt) node[black,scale=0.8] {$-q$};
+\end{tikzpicture}
+  \end{center}
+  \caption{A negative point charge.}
+\end{figure}
 
-
-Using limits, we are able to "eliminate" this discontinuity in the function. Limits enable us to study behavior of functions that otherwise would not be possible by conventional means. Of course, I have not shown why this limit is 1 or that it even \textit{exists}. While the exact derivation will be left to the later chapters, we can use SageMath to help us evaluate this limit. To put it simply, Sage is a mathematics software system like Mathematica, but unlike many of its counterparts, it is free and open source. To evaluate this limit in Sage, we use the following syntax (enter the following code line by line):
-\begin{sagecommandline}
-  sage: f(x)=sin(x)/x
-  sage: f.limit(x=0)
-\end{sagecommandline}
-
-Line 1 defines the function and line 2 evaluates the limit of \(f\) as \(x\) approaches 0. Expectedly, Sage yields the value 1 for the limit. We shall be using Sage for the rest of the book so do read up on the syntax of Sage. A quick Google search should suffice. Coming back to calculus, treat limits as an integral part (pun intended) of calculus, but the nitty-gritty shall be brushed aside for now. All in all, remembering that infinitesimals like \(x\) in \Cref{sinc0} are not real numbers, but are special quantities that enable us to reason, with rigor in due time, a lot of problems.
-
+Notice the lines going in and out of the charges, those are called the \emph{electric field}.

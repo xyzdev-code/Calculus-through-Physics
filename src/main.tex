@@ -3,23 +3,21 @@
 \usepackage[none]{hyphenat}
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
-\usepackage{pgfplots, fancyhdr, lipsum, gensymb, indentfirst, enumitem, graphicx, pdfpages, xltabular, xparse, needspace, sagetex, amssymb, float, mathtools, siunitx}
+\usepackage{pgfplots, fancyhdr, lipsum, gensymb, indentfirst, enumitem, graphicx, pdfpages, xltabular, xparse, needspace, sagetex, amssymb, float, mathtools, siunitx, physics}
 \usepackage[italic]{derivative}
 \usepackage[T1]{fontenc}
 \usepackage{perpage}
 \MakePerPage{footnote}
 \usepackage[autostyle]{csquotes}
-\usepackage{newtxmath}
-\usepackage{newtxtext}
+\usepackage{newtx}
 \DeclareMathOperator{\sinc}{sinc}
-\DeclareMathOperator{\trace}{Tr}
 \usepackage{anyfontsize}
 \MakeOuterQuote{"}
 \graphicspath{{./assets/images}}
 \newcommand{\ihat}{\boldsymbol{\hat{\textbf{\i}}}}
 \newcommand{\jhat}{\boldsymbol{\hat{\textbf{\j}}}}
 \newcommand{\khat}{\boldsymbol{\hat{\textbf{k}}}}
-\usetikzlibrary{calc, pgfplots.fillbetween, angles, quotes, babel}
+\usetikzlibrary{calc, pgfplots.fillbetween, angles, quotes, babel, decorations.markings,intersections}
 \newcommand{\MarkRightAngle}[4][.2cm]% #1=size (optional), #2-#4 three points: \angle #2#3#4
 {\coordinate (tempa) at ($(#3)!#1!(#2)$);
  \coordinate (tempb) at ($(#3)!#1!(#4)$);
@@ -48,7 +46,22 @@
 \newtheorem{challenge}{Challenge}
 \usepackage[prefix=figures/]{memoize}
 \pgfplotsset{holdot/.style={color=blue,fill=white,only marks,mark=*}}
-
+\colorlet{Ecol}{orange!90!black}
+\colorlet{EcolFL}{orange!80!black}
+\colorlet{Bcol}{blue!90!black}
+\tikzstyle{EcolEP}=[blue!80!white]
+\colorlet{veccol}{green!45!black}
+\tikzstyle{charge+}=[very thin,top color=red!50,bottom color=red!90!black,shading angle=20]
+\tikzstyle{charge-}=[very thin,top color=blue!50,bottom color=blue!80,shading angle=20]
+\tikzstyle{vector}=[->,thick,veccol]
+\tikzset{EFieldLineArrow/.style={EcolFL,decoration={markings,mark=at position #1 with {\arrow{latex}}},
+                                 postaction={decorate}},
+         EFieldLineArrow/.default=0.5}
+\def\R{1.8}
+\def\NE{8}
+\def\NV{4}
+\usetikzlibrary{angles,quotes} % for pic (angle labels)
+\usepackage{xcolor}
 \title{Calculus through Physics}
 \author{Xiao Yaozi}
 \date{}

@@ -349,11 +349,14 @@ As for vector triple product, the process of computation is very similar. We fir
   \end{equation}
 
 
-  Hence, by using the Gram-Schmidt process, find vector \(\vec{v_1}\) that is orthogonal to \(\vec{a}=\begin{bsmallmatrix}
+  To find a vector orthogonal to several vectors at once, subtract its projection onto each of them.
+
+
+  Hence, by using the Gram-Schmidt process, find  vector \(\vec{v_1}\) that is orthogonal to \(\vec{a}=\begin{bsmallmatrix}
     1 \\
     1 \\
     0
-  \end{bsmallmatrix}\). Repeat this process to find a vector \(\vec{v_2}\) that is orthogonal to both \(\vec{a}\) and \(\vec{v_1}\). Do it once more to find a vector \(\vec{v_3}\) that is orthogonal to \(\vec{a}\), \(\vec{v_1}\) and \(\vec{v_2}\). Verify that all the vectors are orthogonal to each other using their dot products.
+  \end{bsmallmatrix}\) (using a vector \(\vec{b}=\ihat\)). Repeat this process to find a vector \(\vec{v_2}\) that is orthogonal to both \(\vec{a}\) and \(\vec{v_1}\) (using \(\khat\)). Do it once more to find a vector \(\vec{v_3}\) (using \(\jhat\)). Verify that \(\vec{a}, \vec{v_1}, \vec{v_2}\) are orthogonal to each other using their dot products. What do you notice about \(\vec{v_3}\)?
 \end{problem}
 %
 % \begin{enumerate}

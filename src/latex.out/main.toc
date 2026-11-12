@@ -15,6 +15,6 @@
 \contentsline {section}{\numberline {2.6}An aside: Bra-ket and functions as vectors}{46}{section.2.6}%
 \contentsline {section}{\numberline {2.7}An aside: Eigenvalues and Eigenfunctions}{50}{section.2.7}%
 \contentsline {part}{Part\ II\hspace {\betweenumberspace }Calculus I}{51}{part.2}%
-\contentsline {chapter}{\numberline {3}Derivatives}{53}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Essence of calculus}{53}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Basic heat flow}{56}{section.3.2}%
+\contentsline {chapter}{\numberline {3}Basic derivatives}{53}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction to electrostatics}{53}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Test}{55}{section.3.2}%
