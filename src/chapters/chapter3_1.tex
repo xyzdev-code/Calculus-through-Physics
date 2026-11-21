@@ -18,7 +18,7 @@ Perhaps framing such a well taught subject through the lens of physics is indeed
 These are the famous \emph{Maxwell Equations} which collectively describes how electric and magnetic fields are generated. This together with the Lorentz force law forms the foundation of classical electromagnetism. The Lorentz force law is as such:
 
 \begin{equation}
-  \vec{F} = q(\vec{E} + \vec{v}\times\vec{B})
+  \vec{F} = q(\vec{E} + \vec{v}\times\vec{B}) \label{lorentzforce}
 \end{equation}
 
 
@@ -43,7 +43,7 @@ An electric charge can be \emph{positive} or \emph{negative}. Like charges \emph
 \end{figure}
 
 
-\footnotetext{Of course, for illustration purposes, I have drawn the charges with color and size, but real charges do not look like this.}
+\footnotetext{Of course, for illustration purposes, I have drawn the charges with color, but real charges do not look like this.}
 \begin{figure}[H]
   \begin{center}
     \begin{tikzpicture}
@@ -56,4 +56,54 @@ An electric charge can be \emph{positive} or \emph{negative}. Like charges \emph
   \caption{A negative point charge.}
 \end{figure}
 
-Notice the lines going in and out of the charges, those are called the \emph{electric field}.
+Notice the lines going in and out of the charges, those are called the \emph{electric field}. For now, we will take it that electric fields originate from charges, but they also can originate from time varying electric currents. 
+\begin{definition}
+  The \textbf{electric field} is something that associates each point in space with a force vector, this kind of mathematical object are known as \emph{vector fields}. The force will be in the direction of the force on a stationary positive test charge that is placed there. The magnitude or the strength of the field is defined as the force exerted per unit of positive electric charge at that point. We can write that as:
+  \begin{equation}
+    |\vec{E}| = \frac{F}{q}
+  \end{equation}
+
+
+  where \(F\) is the force acting on the charge and \(q\) is the magnitude of the charge.
+\end{definition}
+
+
+It is probably now a good time to explain the unit system we will be dealing in, SI units. There are other units commonly used for electrodynamics, for example Gaussian units. Formulas are slightly different in both versions and there are many conversion tables you can look up.
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}
+  \def\R{0.2}
+  \def\M{4}
+  \def\xmax{4.5}
+  \def\ymax{3.5}
+  \coordinate (Q) at (-0.25*\xmax,0.5*\ymax);
+  \coordinate (M) at ( 0.30*\xmax,0.5*\ymax);
+  \coordinate (F) at ( 1.15*\xmax,0.5*\ymax);
+  
+  % ELECTRIC FIELD
+  \foreach \i [evaluate={\y=(\i-0.5)*\ymax/\M;}] in {1,...,\M}{
+    \draw[EFieldLine] (0,\y) -- (\xmax,\y);
+  }
+  \node[Ecol,right] at (1.05*\xmax,0.88*\ymax) {$\vb{E}$};
+  
+  % PATH
+  \draw[dashed] (Q) -- (F);
+  
+  % CHARGE
+  \draw[vector]  (Q) ++ (\R,0) --++ (0.1*\xmax,0) node[above] {$\vb{v}_0$};
+  \draw[vector,EFcol] (M) --++ (0.24*\xmax,0) node[above] {$\vb{F}$};
+  \draw[vector]  (F) ++ (\R,0) --++ (0.25*\xmax,0) node[above] {$\vb{v}_\text{f}$};
+  
+  % CHARGE
+  \draw[charge+] (Q) circle (\R) node {$+$};
+  \draw[charge+] (M) circle (\R) node {$+$};
+  \draw[charge+] (F) circle (\R) node {$+$};
+  
+\end{tikzpicture}
+    \caption{A positive electric charge accelerating in the direction of the \(\vec{E}\) field.}
+  \end{center}
+\end{figure}
+
+
+As you can see, the positive charge gains velocity as it travels through the region with the electric field. Say the electric field strength is \(5\si{\newton\per\coulomb}\) and the charge is \(2\si{\coulomb}\). Then the charge will experience a force of \(10\si{\newton}\). In fact, we have already seen the first part of the \Cref{lorentzforce}, \(\vec{F}=q\vec{E}\), in action.
+

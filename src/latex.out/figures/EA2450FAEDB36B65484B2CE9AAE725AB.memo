@@ -1,0 +1,5 @@
+\mmzMemo 
+\global \mmzContextExtra {}%
+%
+\mmzSource 
+\begin {tikzpicture} \def \R {0.2} \def \M {4} \def \xmax {4.5} \def \ymax {3.5} \coordinate (Q) at (-0.25*\xmax ,0.5*\ymax ); \coordinate (M) at ( 0.30*\xmax ,0.5*\ymax ); \coordinate (F) at ( 1.15*\xmax ,0.5*\ymax ); \par \foreach \i [evaluate={\y =(\i -0.5)*\ymax /\M ;}] in {1,...,\M }{ \draw [EFieldLine] (0,\y ) -- (\xmax ,\y ); } \node [Ecol,right] at (1.05*\xmax ,0.88*\ymax ) {$\vb {E}$}; \par \draw [dashed] (Q) -- (F); \par \draw [vector] (Q) ++ (\R ,0) --++ (0.1*\xmax ,0) node[above] {$\vb {v}_0$}; \draw [vector,EFcol] (M) --++ (0.24*\xmax ,0) node[above] {$\vb {F}$}; \draw [vector] (F) ++ (\R ,0) --++ (0.25*\xmax ,0) node[above] {$\vb {v}_\text {f}$}; \par \draw [charge+] (Q) circle (\R ) node {$+$}; \draw [charge+] (M) circle (\R ) node {$+$}; \draw [charge+] (F) circle (\R ) node {$+$}; \par \end {tikzpicture}

@@ -3,7 +3,7 @@
 \usepackage[none]{hyphenat}
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
-\usepackage{pgfplots, fancyhdr, lipsum, gensymb, indentfirst, enumitem, graphicx, pdfpages, xltabular, xparse, needspace, sagetex, amssymb, float, mathtools, siunitx, physics}
+\usepackage{pgfplots, fancyhdr, lipsum, gensymb, indentfirst, enumitem, graphicx, pdfpages, xltabular, xparse, needspace, sagetex, amssymb, float, mathtools, siunitx, physics, contour}
 \usepackage[italic]{derivative}
 \usepackage[T1]{fontenc}
 \usepackage{perpage}
@@ -57,6 +57,10 @@
 \tikzset{EFieldLineArrow/.style={EcolFL,decoration={markings,mark=at position #1 with {\arrow{latex}}},
                                  postaction={decorate}},
          EFieldLineArrow/.default=0.5}
+\tikzset{EFieldLine/.style={thick,EcolFL,decoration={markings,mark=at position #1 with {\arrow{latex}}},
+                                 postaction={decorate}},
+         EFieldLine/.default=0.5}
+\colorlet{EFcol}{red!60!black}
 \def\R{1.8}
 \def\NE{8}
 \def\NV{4}
