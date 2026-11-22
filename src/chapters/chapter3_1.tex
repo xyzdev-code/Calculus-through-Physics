@@ -58,7 +58,7 @@ An electric charge can be \emph{positive} or \emph{negative}. Like charges \emph
 
 Notice the lines going in and out of the charges, those are called the \emph{electric field}. For now, we will take it that electric fields originate from charges, but they also can originate from time varying electric currents. 
 \begin{definition}
-  The \textbf{electric field} is something that associates each point in space with a force vector, this kind of mathematical object are known as \emph{vector fields}. The force will be in the direction of the force on a stationary positive test charge that is placed there. The magnitude or the strength of the field is defined as the force exerted per unit of positive electric charge at that point. We can write that as:
+  The \textbf{electric field} is something that associates each point in space with a (force) vector, this kind of mathematical objects are known as \emph{vector fields}. The force will be in the direction of the force on a stationary positive test charge that is placed there. The magnitude or the strength of the field is defined as the force exerted per unit of positive electric charge at that point. We can write that as:
   \begin{equation}
     |\vec{E}| = \frac{F}{q}
   \end{equation}
@@ -106,4 +106,54 @@ It is probably now a good time to explain the unit system we will be dealing in,
 
 
 As you can see, the positive charge gains velocity as it travels through the region with the electric field. Say the electric field strength is \(5\si{\newton\per\coulomb}\) and the charge is \(2\si{\coulomb}\). Then the charge will experience a force of \(10\si{\newton}\). In fact, we have already seen the first part of the \Cref{lorentzforce}, \(\vec{F}=q\vec{E}\), in action.
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+  \def\R{0.2}
+  \def\M{4}
+  \def\xmax{4.5}
+  \def\ymax{3.5}
+  \coordinate (Q) at ( 1.25*\xmax,0.50*\ymax);
+  \coordinate (M) at ( 0.70*\xmax,0.50*\ymax);
+  \coordinate (F) at (-0.15*\xmax,0.50*\ymax);
+  
+  % ELECTRIC FIELD
+  \foreach \i [evaluate={\y=(\i-0.5)*\ymax/\M;}] in {1,...,\M}{
+    \draw[EFieldLine] (0,\y) -- (\xmax,\y);
+  }
+  \node[Ecol,right] at (1.05*\xmax,0.88*\ymax) {$\vb{E}$};
+  
+  % PATH
+  \draw[dashed] (Q) -- (F);
+  
+  % CHARGE
+  \draw[vector]  (Q) ++ (-\R,0) --++ (-0.1*\xmax,0) node[above] {$\vb{v}_0$};
+  \draw[vector,EFcol] (M) --++ (-0.24*\xmax,0) node[above] {$\vb{F}$};
+  \draw[vector]  (F) ++ (-\R,0) --++ (-0.25*\xmax,0) node[above] {$\vb{v}_\text{f}$};
+  
+  % CHARGE
+  \draw[charge-] (Q) circle (\R) node {$-$};
+  \draw[charge-] (M) circle (\R) node {$-$};
+  \draw[charge-] (F) circle (\R) node {$-$};
+  
+\end{tikzpicture}
+  \caption{A negative electric charge accelerating in the opposite direction of the \(\vec{E}\) field.}
+\end{figure}
 
+
+Similarly, a negative charge will experience a force opposite to the \(\vec{E}\) field. Notice how the field lines in both figures are equally spaced and parallel, if field lines are illustrated as such, then the electric field is taken to be \emph{uniform}. Since the density of such lines correlate to the field strength, a charge placed in a uniform electric field will experience the same electric force anywhere within this region. We shall introduce the last object in this section: the \textit{test charge}. For the purposes of this text, we will treat them like hypothetical electric charges where all we care is the influence of the electric field on it, and it has no influence on the field that is studied.
+
+\begin{problem}[1]
+  Suppose six equal charges, \(q\), are situated at the corners of a regular hexagon. Using \(\vec{F}=q\vec{E}\), what is the net force on a test charge at the center.
+\end{problem}
+\begin{problem}[1]
+  From the Lorentz force law in \Cref{lorentzforce}, if \(\vec{E}=\vec{0}\) and the angle between \(\vec{v}\) and a uniform \(\vec{B}\) is:
+  \begin{enumerate}[label=\alph*)]
+    \item{\(\ang{0}\)}
+    \item{\(\ang{90}\)}
+    \item{\(\ang{45}\)}
+  \end{enumerate}
+
+
+  find the strength of the force on the particle if \(q=2\si{\coulomb}\).
+\end{problem}
