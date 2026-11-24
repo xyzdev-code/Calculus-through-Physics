@@ -3,7 +3,7 @@
 \usepackage[none]{hyphenat}
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
-\usepackage{pgfplots, fancyhdr, lipsum, gensymb, indentfirst, enumitem, graphicx, pdfpages, xltabular, xparse, needspace, sagetex, amssymb, float, mathtools, siunitx, physics, contour}
+\usepackage{pgfplots, fancyhdr, lipsum, gensymb, indentfirst, enumitem, graphicx, pdfpages, xltabular, xparse, needspace, sagetex, amssymb, float, mathtools, siunitx, physics, contour, mathrsfs}
 \usepackage[italic]{derivative}
 \usepackage[T1]{fontenc}
 \usepackage{perpage}
@@ -30,7 +30,7 @@
 \makeatletter
 \@removefromreset{footnote}{chapter}
 \makeatother
-\usetikzlibrary{positioning}
+\usetikzlibrary{positioning, angles, scopes, arrows}
 \usepackage{zref-clever}
 \zcsetup{cap, abbrev}
 \zcRefTypeSetup{problem}{
@@ -61,6 +61,27 @@
                                  postaction={decorate}},
          EFieldLine/.default=0.5}
 \colorlet{EFcol}{red!60!black}
+\newcommand{\rc}{%
+\resizebox{!}{1.25ex}{%
+    \begin{tikzpicture}[>=round cap]
+        \clip (0.09em,-0.05ex) rectangle (0.61em,0.81ex);
+        \draw [line width=.11ex, <->, rounded corners=0.13ex] (0.1em,0.1ex) .. controls (0.24em,0.4ex) .. (0.35em,0.8ex) .. controls (0.29em,0.725ex) .. (0.25em,0.6ex) .. controls (0.7em,0.8ex) and (0.08em,-0.4ex) .. (0.55em,0.25ex);
+    \end{tikzpicture}%
+}%
+}
+
+%defining bold script r (vector)
+\newcommand{\brc}{%
+\resizebox{!}{1.3ex}{%
+    \begin{tikzpicture}[>=round cap]
+        \clip (0.085em,-0.1ex) rectangle (0.61em,0.875ex);
+        \draw [line width=.2ex, <->, rounded corners=0.13ex] (0.1em,0.1ex) .. controls (0.24em,0.4ex) .. (0.35em,0.8ex) .. controls (0.29em,0.725ex) .. (0.25em,0.6ex) .. controls (0.7em,0.8ex) and (0.08em,-0.4ex) .. (0.55em,0.25ex);
+    \end{tikzpicture}%
+}%
+}
+
+%defining bold script r with a hat (unit vector)
+\newcommand{\hrc}{\hat{\brc}}
 \def\R{1.8}
 \def\NE{8}
 \def\NV{4}
