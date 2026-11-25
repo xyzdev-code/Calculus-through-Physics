@@ -1,4 +1,4 @@
-\section{Derivatives}
+\section{Introduction to derivatives}
 
 
 Finally, right before we begin on calculus proper, there are a few more equations you will need to know. The \emph{electric force} on a charge \(q_1\) between two charges \(q_1\) and \(q_2\) is\footnote{Why does this law hold though? Well, it is derived from experiments.}:
@@ -14,3 +14,32 @@ I shall use \(\brc\) to indicate the separation vector between the two charges, 
 
 
 \emph{Potentials} are one of the most important constructs we are going to use, it is related to \emph{potential energy}. If a charge \(q\) has an electric potential energy \(U\), then \(U=qV\) where \(V\) is the potential. In other words, it is the electric potential energy per unit of electric charge. It bears the unit of \emph{volt}. With this, we will now tackle a famous law, the \textbf{Child-Langmuir law}. 
+
+
+Imagine two parallel metal plates separated by a gap of vacuum with a distance \(d\) along the x-axis. Electrons are "boiled" off one of the hot metal plates at \(x=0\), held at a potential of \(0\si{\volt}\). The electrons accelerate across the gap to the other plate at \(x=d\), held at a positive potential \(V_0\), meaning any charge \(q\) travelling from the prior plate to this plate will gain \(qV_0\) worth of electric potential energy. If we allow this process to continue for a while, a steady current \(\vec{I}\) will be formed between the plates.\footnote{For the purposes of this text, we will assume the plates are large relative to the separation between the plates, so \emph{edge effects} can be ignored.} 
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[>=stealth, thick]
+
+    \draw[line width=2pt] (0,-1.5) -- (0,1.5);
+    \draw[line width=2pt] (4,-1.5) -- (4,1.5);
+
+    \node[left] at (0,0) {Cathode};
+    \node[right] at (4,0) {Anode};
+
+    \node[below] at (0,-1.5) {$V(0)=0$};
+    \node[below] at (4,-1.5) {$V(d)=V_0$};
+
+    \draw[fill=white] (1.8,0) circle (0.12);
+    \node at (1.8,-0.03) {$-$};
+
+    \draw[->] (2.05,0) -- (3.5,0) node[midway, above] {$v$};
+
+    \draw[<->] (0,-2) -- (4,-2) node[midway, below] {$d$};
+
+\end{tikzpicture}
+  \caption{An electron moving between the two plates.}
+\end{figure}
+
+
+We will let \(V(x)\) be the potential at any point along the axis, therefore \(V(0)=0\) and \(V(d)=V_0\). \(v(x)\) shall be the velocity of the electron at some \(x\). Lastly, we will define \emph{volume charge density}, which is simply the amount of electric charge per unit volume, as \(\rho(x)\).
