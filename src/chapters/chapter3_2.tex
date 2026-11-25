@@ -42,4 +42,19 @@ Imagine two parallel metal plates separated by a gap of vacuum with a distance \
 \end{figure}
 
 
-We will let \(V(x)\) be the potential at any point along the axis, therefore \(V(0)=0\) and \(V(d)=V_0\). \(v(x)\) shall be the velocity of the electron at some \(x\). Lastly, we will define \emph{volume charge density}, which is simply the amount of electric charge per unit volume, as \(\rho(x)\).
+We will let \(V(x)\) be the potential at any point along the axis, therefore \(V(0)=0\) and \(V(d)=V_0\). \(v(x)\) shall be the velocity of the electron at some \(x\). Lastly, we will define \emph{volume charge density}, which is simply the amount of electric charge per unit volume, as \(\rho(x)\). From the \textbf{Poisson's equation} (which we will delve into in depth much later), we will now take the following statement as fact\footnote{Technically, this is a simplification of the full Poisson's equation, which is \(\nabla^2 V=-\frac{\rho}{\epsilon_0}\).}:
+\begin{equation}
+  \odv[2]{V}{x} = -\frac{\rho}{\epsilon_0}
+\end{equation}
+
+
+Do you see it? Yes, we have seen the mighty \textbf{derivative} in action. The \(\odv{}{x}\) symbol, well technically what you saw is called the \emph{second derivative}, which is basically taking the derivative twice. Of course, what is a derivative? I shall present the definition below:
+\begin{definition}
+  The \textbf{derivative} quantifies the sensitivity of the change of a function's output with respect to its inputs. For a \emph{differentiable} function (a function that has a derivative) \(f(x)\), its derivative at some \(x\) is:
+  \begin{equation}
+    \odv{}{x}f(x) = \lim_{h\to 0}\frac{f(x+h)-f(x)}{h} \label{derivative}
+  \end{equation}
+\end{definition}
+
+
+Getting the notation out of the way, \(\odv{}{x}\) is a \emph{whole}, you would treat it as one object, it is importantly not a \emph{fraction} with d in its numerator and d\(x\) in its denominator. To save some strokes, we can also write \Cref{derivative} as \(\odv{f}{x}\). Even with the definition, the derivative may still seem elusive. For example, with is \(\lim_{h\to 0}\)? For now, we will say this means that \(h\) \emph{approaches} 0. Obviously, \(h\) cannot be 0, but as \(h\) becomes smaller and smaller, our expression in \Cref{derivative} will become more accurate. Qualitatively, if a function looks very steep around a certain point, any small perturbation on inputs around that point is likely to have a larger effect on the output, hence the derivative will also be larger. 
